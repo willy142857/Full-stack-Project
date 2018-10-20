@@ -1,4 +1,4 @@
-.c_password input[type="text"] {
+.c_password input_[type="text"] {
   background: none repeat scroll 0 0 #f7f8f9;
   border: 1px solid #E8E8E8;
   padding: 9px;
@@ -45,5 +45,21 @@
 }
 
 .invalid_feedback{
-  color: red;
+ color: red;
 }
+
+.is-invalid{
+  border: 1px solid red;
+  background: none repeat scroll 0 0 #f7f8f9;
+  padding: 9px;
+  width: 100%;
+}
+
+.is-valid{
+  background: none repeat scroll 0 0 #f7f8f9;
+  border: 1px solid #E8E8E8;
+  padding: 9px;
+  width: 100%;
+}
+
+
