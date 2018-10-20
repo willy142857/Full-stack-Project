@@ -6,44 +6,46 @@
           <h2>註冊</h2>
           <div class="dotted_line"></div>
 
-          <div class="checkout_form">
-            <div class="c_name_box">
-              <div class="c_name_box_left">
-                <p>姓名 <span>*</span></p>
-                <input type="text">
+          <div class="checkout_form" >
+            <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+              <div class="c_name_box">
+                <div class="c_name_box_left">
+                  <p>姓名 <span>*</span></p>
+                  <input type= "text">
+                </div>
               </div>
-            </div>
-            <div class="c_mail_box">
-              <div class="c_mail_box_left">
-                <p>信箱 <span>*</span></p>
-                <input type="text">
+              <div class="c_mail_box">
+                <div class="c_mail_box_left">
+                  <p>信箱 <span>*</span></p>
+                  <input type="text">
+                </div>
+                <div class="c_mail_box_left">
+                  <p>手機號碼 <span>*</span></p>
+                  <input type="text">
+                </div>
               </div>
-              <div class="c_mail_box_left">
-                <p>手機號碼 <span>*</span></p>
-                <input type="text">
+              <div class="c_password">
+                <div class="c_password_left">
+                  <p>密碼(至少六碼) <span>*</span></p>
+                  <input type="text">
+                </div>
+                <div class="c_password_left">
+                  <p>確認密碼 <span>*</span></p>
+                  <input type="text">
+                </div>
               </div>
-            </div>
-            <div class="c_password">
-              <div class="c_password_left">
-                <p>密碼(至少六碼) <span>*</span></p>
-                <input type="text">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> 記錄我的資料，下次自動登入
+                </label><br>
+                <label>
+                  <input type="checkbox"> 我已詳閱並同意使用者條款
+                </label>
               </div>
-              <div class="c_password_left">
-                <p>確認密碼 <span>*</span></p>
-                <input type="text">
+              <div class="password_commit">
+                <input type="submit" value="註冊" />
               </div>
-            </div>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox"> 記錄我的資料，下次自動登入
-              </label><br>
-              <label>
-                <input type="checkbox"> 我已詳閱並同意使用者條款
-              </label>
-            </div>
-            <div class="password_commit">
-              <input type="submit" value="註冊" />
-            </div>
+            </form>
           </div>
         </div>
       </div>
