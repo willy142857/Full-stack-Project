@@ -1,0 +1,46 @@
+.c_password input[type="text"] {
+  background: none repeat scroll 0 0 #f7f8f9;
+  border: 1px solid #E8E8E8;
+  padding: 9px;
+  width: 100%;
+}
+
+.c_password {
+  overflow: hidden;
+  padding-bottom: 15px;
+}
+
+.c_password_left {
+  float: left;
+  margin-right: 4%;
+  width: 48%;
+}
+
+.password_commit {
+  padding: 0px;
+}
+
+.password_commit>input[type="submit"] {
+  background: none repeat scroll 0 0 #ff6766;
+  border: 2px solid #ff6766;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 8px auto 15px;
+  padding: 7px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 15%;
+}
+
+.password_commit>input[type="submit"]:hover {
+  background: #fff;
+  color: #232323;
+}
+
+.register_area {
+  background: none repeat scroll 0 0 #f7f8f9;
+  border-top: 1px solid #eeeeee;
+  padding: 60px 0;
+}
+
