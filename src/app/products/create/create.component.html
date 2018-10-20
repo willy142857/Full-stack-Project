@@ -4,9 +4,9 @@
       <div class="checkout_left">
 
         <h2>新增募資計畫</h2>
-        <div class="dotted_line"></div>
+        <span class="dotted_line"></span>
 
-        <div class="checkout_form">
+        <form class="checkout_form" (ngSubmit)="onSubmit(form)" #form="ngForm">
           <div class="product_name">
             <label for="title">名稱 *</label>
             <input type="text" id="title" placeholder="請輸入名稱" name="name" [(ngModel)]="name" required>
@@ -25,9 +25,12 @@
             <input type="file" id="cover">
           </div>
           <div class="submit_btn form-group submitRow">
-            <input type="submit" name="submit" value="Submit form" (click)="printData()">
+            <input type="submit" value="Submit" [disabled]="!form.valid">
+            <!-- TODO: 設定router-->
+            <a class="btn btn-link" href="#">取消</a>
           </div>
-        </div>
+        </form>
+
       </div>
     </div>
   </div>

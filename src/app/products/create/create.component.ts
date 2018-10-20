@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-create',
@@ -10,9 +11,12 @@ export class CreateComponent implements OnInit {
   name = this.product.name;
   price = this.product.price;
   description = this.product.description;
-  constructor() {}
+  constructor(private p: ProductService) {}
 
   ngOnInit() {}
+  onSubmit(form) {
+    console.log(form);
+  }
   printData() {
     console.log(this.name + '\n' + this.price + '\n' + this.description);
   }
