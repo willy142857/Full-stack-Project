@@ -44,3 +44,6 @@
   padding: 60px 0;
 }
 
+.invalid_feedback{
+  color: red;
+}

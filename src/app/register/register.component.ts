@@ -6,12 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  model: any = {};
+  ngOnInit() {}
   onSubmit(form) {
-    console.log(form);
+    console.log(this.model);
   }
 }
