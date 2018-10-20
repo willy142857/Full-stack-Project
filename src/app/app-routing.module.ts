@@ -1,13 +1,13 @@
 import { CommodityComponent } from './commodity/commodity.component';
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './member/login/login.component';
 import { LayoutComponent } from './layout/layout.component';
 import { CartComponent } from './cart/cart.component';
 import { CreateComponent } from './products/create/create.component';
 import { EditComponent } from './products/edit/edit.component';
 import { IndexComponent } from './products/index/index.component';
-import { RegisterComponent } from './register/register.component';
+import { RegisterComponent } from './member/register/register.component';
 
 const routes: Routes = [
   {
