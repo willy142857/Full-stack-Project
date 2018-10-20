@@ -8,9 +8,19 @@ import { ProductService } from '../product.service';
 })
 export class CreateComponent implements OnInit {
   product = new Product();
+  founder = '';
+  email = '';
+  startDate = Date;
+  endDate = Date;
   name = this.product.name;
-  price = this.product.price;
+  targetPrice: number;
+  brief = '';
+  image;
   description = this.product.description;
+  feedbackPirce: number;
+  feedbackDescription = '';
+  feedbackDate;
+  relativeWeb;
   constructor(private p: ProductService) {}
 
   ngOnInit() {}
@@ -18,7 +28,7 @@ export class CreateComponent implements OnInit {
     console.log(form);
   }
   printData() {
-    console.log(this.name + '\n' + this.price + '\n' + this.description);
+    // console.log(this.name + '\n' + this.price + '\n' + this.description);
   }
 }
 export class Product {
