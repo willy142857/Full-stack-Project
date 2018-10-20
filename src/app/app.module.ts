@@ -15,6 +15,8 @@ import { CreateComponent } from './products/create/create.component';
 import { EditComponent } from './products/edit/edit.component';
 import { IndexComponent } from './products/index/index.component';
 import { CartComponent } from './cart/cart.component';
+import { CommodityComponent } from './commodity/commodity.component';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { CartComponent } from './cart/cart.component';
     CreateComponent,
     EditComponent,
     IndexComponent,
-    CartComponent
+    CartComponent,
+    CommodityComponent
   ],
   imports: [BrowserModule, HttpClientModule, FormsModule, AppRoutingModule],
   providers: [],
