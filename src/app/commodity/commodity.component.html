@@ -7,26 +7,6 @@
             <div class="col-md-6 col-sm-6 col-xs-12">
               <div class="single_product_image_tab">
                 <div role="tabpanel">
-
-                  <!-- Nav tabs -->
-                  <ul class="nav nav-tabs product_detail_zoom_tab" role="tablist">
-                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">
-                        <div class="small_img">
-                          <img src="/assets/images/small_img1.jpg" alt="" />
-                        </div>
-                      </a></li>
-                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">
-                        <div class="small_img">
-                          <img src="/assets/images/p_thumb.png" alt="" />
-                        </div>
-                      </a></li>
-                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">
-                        <div class="small_img">
-                          <img src="/assets/images/p_thumb2.png" alt="" />
-                        </div>
-                      </a></li>
-                  </ul>
-
                   <!-- Tab panes -->
                   <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="home">
@@ -62,11 +42,10 @@
 
               <div class="product_detail_heading">
                 <div class="detail_heading_left">
-                  <h3>Gray Structured Cool Handmade T-Shirt</h3>
-                  <div class="old_price_gray">
-                    <p> $90.30 </p>
+                  <div>
+                    <h3>{{list.name}}</h3>
+                    <br><h5>by {{list.applier}}</h5>
                   </div>
-                  <div class="new_price_gray"><del> $100.30 </del></div>
                 </div>
                 <div class="detail_heading_right">
                   <ul id="detail_star">
@@ -78,6 +57,18 @@
                   </ul>
                   <p>(5 Review)</p>
                 </div>
+                <div>
+                  <form style="display: inline;">類別：
+                    <select id="category" class="form-control">
+                      <option>生活</option>
+                      <option>科技</option>
+                      <option>設計</option>
+                      <option>飲食</option>
+                      <option>社會</option>
+                      <option>動畫電影</option>
+                    </select>
+                  </form>
+                </div>
               </div>
 
               <div class="panel-group product_accordion" id="home-accordion-single" role="tablist" aria-multiselectable="true">
@@ -86,21 +77,14 @@
                     <h4 class="panel-title product_accordion_head">
                       <a data-toggle="collapse" data-parent="#home-accordion-single" href="#collapseOneP" aria-expanded="true"
                         aria-controls="collapseOneP">
-                        Description
+                        簡介
                         <span class="floatright"><i class="fa fa-minus"></i></span>
                       </a>
                     </h4>
                   </div>
                   <div id="collapseOneP" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOneP">
                     <div class="panel-body product_ac_body">
-                      <p>Pellentesque habitant morbi tristique senectus et netus et males suada fames acila turpis
-                        egestas. Vestibulum tortor quam, feugialth vitae, ultricies eget, tempor sitare amet, ante.
-                        Donec eu libero sitkar amet quam.</p>
-                      <ul id="product_accord_nav">
-                        <li><a href="">Tristique senectus et netus aspernatur aut.</a></li>
-                        <li><a href="">Labore doloam aliquam quaerat voluptatem.</a></li>
-                        <li><a href="">Nisi ut aliquid ex ea commodi consequatue.</a></li>
-                      </ul>
+                      <p>{{list.brief_intro}}</p>
                     </div>
                   </div>
                 </div>
@@ -109,15 +93,25 @@
                     <h4 class="panel-title product_accordion_head">
                       <a class="collapsed" data-toggle="collapse" data-parent="#home-accordion-single" href="#collapseTwoP"
                         aria-expanded="false" aria-controls="collapseTwoP">
-                        size & fit
+                        募資狀況
                         <span class="floatright"><i class="fa fa-plus"></i></span>
                       </a>
                     </h4>
                   </div>
                   <div id="collapseTwoP" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwoP">
-                    <div class="panel-body fit">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                      wolf moon officia aute, non cupidatat skateboard dolor brunch.
+                    <div>
+                      <svg width="75" height="75">
+                        <circle cx="40" cy="40" r="35" fill="#FDB900" />
+                        <path stroke-linecap="round" stroke-width="5" stroke="#fff" fill="none" d="M40 10
+                                     a 30 30 0 0 1 0 60
+                                     a 30 30 0 0 1 0 -60">
+                        </path>
+                        <text id="count" x="40" y="40" text-anchor="middle" dy="7" font-size="20">{{list.get / list.budget}}%</text>
+                      </svg>
+                      <div class="panel-body fit">
+                        已募資金額：{{list.get}}
+                        <br>目標金額：{{list.budget}}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -126,7 +120,7 @@
                     <h4 class="panel-title product_accordion_head">
                       <a class="collapsed" data-toggle="collapse" data-parent="#home-accordion-single" href="#collapseThreeP"
                         aria-expanded="false" aria-controls="collapseThreeP">
-                        delivery & returns
+                        詳細資料
                         <span class="floatright"><i class="fa fa-plus"></i></span>
                       </a>
                     </h4>
@@ -135,55 +129,23 @@
                     <div class="panel-body product_accordion_head">
                       <div class="single_color sp_single_col">
                         <div class="color_heading">
-                          <h5>Colors</h5>
-                        </div>
-                        <div class="color_detail">
-                          <div class="panel-body colors_cat">
-                            <ul id="cat_color">
-                              <li><a class="col-7" href=""></a></li>
-                              <li><a class="col-8" href=""></a></li>
-                              <li><a class="col-9" href=""></a></li>
-                              <li><a class="col-10" href=""></a></li>
-                            </ul>
-                          </div>
-
+                          <h5>贊助人數：{{list.people}}人</h5>
                         </div>
                       </div>
                       <div class="single_color">
                         <div class="color_heading">
-                          <h5>Select size</h5>
-                        </div>
-                        <div class="color_detail">
-                          <div class="color_size_detail">
-                            <ul id="color_size">
-                              <li><a href="">xs</a></li>
-                              <li><a href="">s</a></li>
-                              <li><a href="">m</a></li>
-                              <li><a href="">l</a></li>
-                              <li><a href="">xl</a></li>
-                            </ul>
-                          </div>
+                          <h5>剩餘時間：{{this.today | date:'y/MM/d' }}天</h5>
                         </div>
                       </div>
                       <div class="single_color">
                         <div class="color_heading">
-                          <h5>Quantity</h5>
+                          <h5>時程：{{list.createdAt | date:'y/MM/d' }} ~ {{list.updatedAt | date:'y/MM/d' }}</h5>
                         </div>
-                        <div class="color_detail">
-                          <div class="size_down">
-                            <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity[113]"
-                              max="119" min="0" step="1">
-                          </div>
-                          <div class="size_cart">
-                            <a href="">Add to cart</a>
-                          </div>
-                          <div class="size_heart">
-                            <a href=""><img src="/assets/images/Product-Details-heart.png" alt="" /></a>
-                          </div>
-                          <div class="size_heart">
-                            <a href=""><img src="/assets/images/Product-Details-arrow.png" alt="" /></a>
-                          </div>
+                      </div>
 
+                      <div class="single_color">
+                        <div class="color_heading">
+                          <h5>聯絡信箱：{{list.email}}</h5>
                         </div>
                       </div>
 
@@ -200,6 +162,36 @@
   </div>
 </section>
 
+<section class="main_category_area product_page_caro">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="main_category_right product-box">
+          <h3 class="product">贊助計畫方案</h3>
+          <div class="multi_line"></div>
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div id="owl-example-single" class="owl-carousel">
+                <div class=item>
+                  <div class="multi_lines_text">
+                    {{list.feedback_description}}
+                    <div>
+                      回饋金額：{{list.feedback}}
+                    </div>
+                    <button>
+                      <a href="#">贊助</a>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="product_page_tab_area">
   <div class="container">
     <div class="row">
@@ -208,8 +200,6 @@
           <div role="tabpanel">
             <ul class="nav nav-tabs tab-product" role="tablist">
               <li role="presentation" class="active"><a href="#home2" aria-controls="home2" role="tab" data-toggle="tab">Description</a></li>
-              <li role="presentation"><a href="#profile2" aria-controls="profile2" role="tab" data-toggle="tab">ADDITIONAL
-                  INFORMATION</a></li>
               <li role="presentation"><a href="#messages2" aria-controls="messages2" role="tab" data-toggle="tab">Review
                   (2)</a></li>
             </ul>
@@ -218,21 +208,8 @@
               <div role="tabpanel" class="tab-pane active" id="home2">
                 <h2>Description</h2>
                 <div class="multi_line"></div>
-                <p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-                  dicta sunt explicabo. Nemo enimsal ipsam salamthi voluptatem quia voluptas sit aspernatur aut odit
-                  aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptateras sequi nesciunt resmla
-                  Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed
-                  quia non numquae eius modi tempora inciduntia ut labore et dolore magnam aliquam quaerat voluptatem.
-                </p>
-              </div>
-              <div role="tabpanel" class="tab-pane" id="profile2">
-                <h2>Additional Information</h2>
-                <div class="multi_line"></div>
-                <p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-                  dicta sunt explicabo. Nemo enimsal ipsam salamthi voluptatem quia voluptas sit aspernatur aut odit
-                  aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptateras sequi nesciunt resmla
-                  Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed
-                  quia non numquae eius modi tempora inciduntia ut labore et dolore magnam aliquam quaerat voluptatem.
+                <p>
+                  {{list.description}}
                 </p>
               </div>
               <div role="tabpanel" class="tab-pane" id="messages2">
@@ -316,257 +293,3 @@
     </div>
   </div>
 </section>
-
-<section class="main_category_area product_page_caro">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="main_category_right product-box">
-          <h3 class="product">related products</h3>
-          <div class="multi_line"></div>
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-              <div id="owl-example-single" class="owl-carousel">
-                <div class="item">
-                  <div class="item-img">
-                    <img src="/assets/images/t_item16.jpg" alt="" />
-                    <div class="tr-add-cart">
-                      <ul>
-                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
-                        <li><a class="tr_text" href="#">ADD TO CART</a></li>
-                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
-                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="item-new">
-                    <p>New</p>
-                  </div>
-                  <div class="item-sub">
-                    <a href="product-detail.html">
-                      <h5>AROS SLIM HEAVY CHINO</h5>
-                    </a>
-                    <p>$ 181.00 <span><del>$ 212.00</del></span></p>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="item-img">
-                    <img src="/assets/images/t_item13.jpg" alt="" />
-                    <div class="tr-add-cart">
-                      <ul>
-                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
-                        <li><a class="tr_text" href="#">ADD TO CART</a></li>
-                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
-                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="item-new">
-                    <p>New</p>
-                    <span>-10%</span>
-                  </div>
-                  <div class="item-sub">
-                    <a href="product-detail.html">
-                      <h5>men’s fashion blue jean coat</h5>
-                    </a>
-                    <p>$ 130.00 <span><del>$ 150</del></span></p>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="item-img">
-                    <img src="/assets/images/t_item11.jpg" alt="" />
-                    <div class="tr-add-cart">
-                      <ul>
-                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
-                        <li><a class="tr_text" href="#">ADD TO CART</a></li>
-                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
-                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="item-new">
-                    <p>New</p>
-                  </div>
-                  <div class="item-sub">
-                    <a href="product-detail.html">
-                      <h5>houndsmooth wool t-shirt</h5>
-                    </a>
-                    <p>$ 168<span><del>$ 212</del></span></p>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="item-img">
-                    <img src="/assets/images/t_item12.jpg" alt="" />
-                    <div class="tr-add-cart">
-                      <ul>
-                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
-                        <li><a class="tr_text" href="#">ADD TO CART</a></li>
-                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
-                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="item-new">
-                    <p>New</p>
-                    <span>-10%</span>
-                  </div>
-                  <div class="item-sub">
-                    <a href="product-detail.html">
-                      <h5>structured collarless coat</h5>
-                    </a>
-                    <p>$ 133.20<span><del>$ 140.00</del></span></p>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="item-img">
-                    <img src="/assets/images/t_item1.jpg" alt="" />
-                    <div class="tr-add-cart">
-                      <ul>
-                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
-                        <li><a class="tr_text" href="#">ADD TO CART</a></li>
-                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
-                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="item-new">
-                    <p>New</p>
-                    <span>-10%</span>
-                  </div>
-                  <div class="item-sub">
-                    <a href="product-detail.html">
-                      <h5>houndsmooth wool t-shirt</h5>
-                    </a>
-                    <p>$90.00 <span><del>$100</del></span></p>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="item-img">
-                    <img src="/assets/images/t_item2.jpg" alt="" />
-                    <div class="tr-add-cart">
-                      <ul>
-                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
-                        <li><a class="tr_text" href="#">ADD TO CART</a></li>
-                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
-                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="item-new">
-                    <p>New</p>
-                    <span>-10%</span>
-                  </div>
-                  <div class="item-sub">
-                    <a href="product-detail.html">
-                      <h5>AROS SLIM HEAVY CHINO</h5>
-                    </a>
-                    <p>$90.00 <span><del>$100</del></span></p>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="item-img">
-                    <img src="/assets/images/t_item3.jpg" alt="" />
-                    <div class="tr-add-cart">
-                      <ul>
-                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
-                        <li><a class="tr_text" href="#">ADD TO CART</a></li>
-                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
-                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="item-new">
-                    <p>New</p>
-                  </div>
-                  <div class="item-sub">
-                    <a href="product-detail.html">
-                      <h5>AROS SLIM HEAVY CHINO</h5>
-                    </a>
-                    <p>$90.00</p>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="item-img">
-                    <img src="/assets/images/t_item2.jpg" alt="" />
-                    <div class="tr-add-cart">
-                      <ul>
-                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
-                        <li><a class="tr_text" href="#">ADD TO CART</a></li>
-                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
-                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="item-new">
-                    <p>New</p>
-                  </div>
-                  <div class="item-sub">
-                    <a href="product-detail.html">
-                      <h5>houndsmooth wool t-shirt</h5>
-                    </a>
-                    <p>$90.00</p>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="item-img">
-                    <img src="/assets/images/t_item3.jpg" alt="" />
-                    <div class="tr-add-cart">
-                      <ul>
-                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
-                        <li><a class="tr_text" href="#">ADD TO CART</a></li>
-                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
-                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="item-new">
-                    <p>New</p>
-                    <span>-10%</span>
-                  </div>
-                  <div class="item-sub">
-                    <a href="product-detail.html">
-                      <h5>AROS SLIM HEAVY CHINO</h5>
-                    </a>
-                    <p>$110.00 <span><del>$120</del></span></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
- <!-- JS Files -->
- <script src="https://code.jquery.com/jquery.min.js"></script>
- <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-<script>
- $(function() {
- $( "#slider-range" ).slider({
-   range: true,
-   min: 150,
-   max: 1500,
-   values: [ 520, 1100 ],
-   slide: function( event, ui ) {
-   $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-   }
- });
- $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-   " - $" + $( "#slider-range" ).slider( "values", 1 ) );
- });
- </script>
- <script src="js/owl.carousel.min.js"></script>
- <script src="js/lightbox.min.js"></script>
- <script src="js/jquery.elevatezoom.js"></script>
- <script src="js/bootstrap-select.min.js"></script>
-<script src="js/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
-<script src="js/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-<script src="js/rs-plugin/rs.home.js"></script>
- <script src="js/bootstrap.min.js"></script>
-<!--Opacity & Other IE fix for older browser-->
-<!--[if lte IE 8]>
- <script type="text/javascript" src="js/ie-opacity-polyfill.js"></script>
-<![endif]-->
- <script src="js/main.js"></script>
