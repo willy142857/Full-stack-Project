@@ -7,32 +7,15 @@ import { ProductService } from '../product.service';
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit {
-  product = new Product();
-  founder = '';
-  email = '';
-  startDate = Date;
-  endDate = Date;
-  name = this.product.name;
-  targetPrice: number;
-  brief = '';
-  image;
-  description = this.product.description;
-  feedbackPirce: number;
-  feedbackDescription = '';
-  feedbackDate;
-  relativeWeb;
-  constructor(private p: ProductService) {}
-
+  model: any = {};
+  nowDate = new Date();
+  constructor(private product: ProductService) {}
   ngOnInit() {}
   onSubmit(form) {
-    console.log(form);
+    this.product.set();
+    console.log(form.value);
   }
   printData() {
     // console.log(this.name + '\n' + this.price + '\n' + this.description);
   }
-}
-export class Product {
-  name = '';
-  price: number;
-  description = '';
 }

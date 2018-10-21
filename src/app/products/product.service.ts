@@ -4,11 +4,23 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ProductService {
-  constructor() { }
+  constructor() {}
+  set() {}
+  get() {}
 }
 
 export class Product {
+  founder = '';
+  email = '';
+  startDate: Date;
+  endDate: Date;
   name = '';
-  price: number;
+  targetPrice: number;
+  brief = '';
+  image;
   description = '';
+  feedbackPirce: number;
+  feedbackDescription = '';
+  feedbackDate: Date;
+  relativeWeb = '';
 }

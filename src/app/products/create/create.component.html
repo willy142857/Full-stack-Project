@@ -1,78 +1,85 @@
 <section class="checkout_area">
   <div class="container">
     <div class="row">
-      <div class="checkout_left">
-
-        <h2>{{ '提案' | translate }}</h2>
-        <span class="dotted_line"></span>
-
-        <form class="checkout_form" (ngSubmit)="onSubmit(form)" #form="ngForm">
-          <div class="product_name">
-            <label for="founder">{{ '發起人' | translate }} *</label>
-            <input type="text" id="founder" placeholder="{{ '請輸入姓名' | translate }}" name="founder" [(ngModel)]="model.founder" required>
-          </div>
-          <div class="product_name">
-            <label for="email">{{ '電子信箱' | translate }} *</label>
-            <input type="text" id="email" placeholder="{{ '請輸入信箱' | translate }}" name="email" [(ngModel)]="model.femail" required>
-          </div>
-          <div class="product_name">
-            <label for="start_date">{{ '預計開始時間' | translate }} *</label>
-            <input type="text" id="start_date" name="start_date">
-          </div>
-          <div class="product_name">
-            <label for="end_date">{{ '預計結束時間' | translate }} *</label>
-            <input type="text" id="end_date" name="end_date">
-          </div>
-          <div class="product_name">
-            <label for="name">{{ '計畫名稱' | translate }} *</label>
-            <input type="text" id="name" placeholder="{{ '請輸入名稱' | translate }}" name="name" [(ngModel)]="model.name" required>
-          </div>
-          <div class="price_box">
-            <label for="price">{{ '計畫目標' | translate }} *</label>
-            <input type="text" id="price" placeholder="{{ '請輸入金額' | translate }}" name="price" [(ngModel)]="model.targetPrice" required>
-          </div>
-          <div class="product_name">
-            <label for="brief">{{ '計畫簡介' | translate }} *</label>
-            <input type="text" id="brief" placeholder="{{ '請輸入簡介' | translate }}" name="brief" [(ngModel)]="model.brief" required>
-          </div>
-          <div class="price_box">
-            <label for="cover">{{ '封面照片' | translate }} *</label>
-            <input type="file" id="cover">
-          </div>
-          <div class="s_order">
-            <label for="br">{{ '計畫說明' | translate }} *</label>
-            <textarea id="description" cols="30" rows="10" placeholder="{{ '請輸入說明' | translate }}" name="description"
-              [(ngModel)]="model.description" required></textarea>
-          </div>
-
-          <div class="product_name">
-            <label for="f_price">{{ '回饋選項金額' | translate }} *</label>
-            <input type="text" id="f_price" placeholder="{{ '請輸入金額' | translate }}" name="f_price" [(ngModel)]="model.feedbackPirce" required>
-          </div>
-          <div class="product_name">
-            <label for="f_date">{{ '回饋預計實現時間' | translate }} *</label>
-            <input type="text" id="f_date" name="f_date" [(ngModel)]="model.feedbackDate">
-          </div>
-          <div class="product_name">
-            <label for="f_description">{{ '回饋選項詳細說明' | translate }} *</label>
-            <input type="text" id="f_description" placeholder="{{ '請輸入說明' | translate }}" name="f_description"
-              [(ngModel)]="model.feedbackDescription" required>
-          </div>
-
-          <div class="product_name">
-            <label for="r_web">{{ '相關網頁' | translate }}</label>
-            <input type="text" id="r_web" placeholder="{{ '請輸入相關網頁' | translate }}" name="r_web" [(ngModel)]="model.relativeWeb">
-          </div>
-
-          <div class="submit_btn form-group submitRow">
-            <input type="submit" value="{{ '提交' | translate }}" [disabled]="form.invalid">
-            <!-- TODO: 設定router-->
-            <a class="btn btn-link" href="#">{{ '取消' | translate }}</a>
-          </div>
-        </form>
-
+      <div class="col-md-offset-1 col-md-10 col-sm-8 col-xs-12">
+        <div class=" checkout_left">
+          <h2>{{ '提案' | translate }}</h2>
+          <span class="dotted_line"></span>
+          <form class="checkout_form" (ngSubmit)="onSubmit(form)" #form="ngForm">
+            <div class="product_name">
+              <label for="founder">{{ '發起人' | translate }} *</label>
+              <input type="text" id="founder" placeholder="{{ '請輸入姓名' | translate }}" name="founder"
+                [(ngModel)]="model.founder" required>
+            </div>
+            <div class="product_name">
+              <label for="email">{{ '電子信箱' | translate }} *</label>
+              <input type="text" id="email" placeholder="{{ '請輸入信箱' | translate }}" name="email"
+                [(ngModel)]="model.femail" required>
+            </div>
+            <div class="p_date">
+              <div class="p_date_left">
+                <label for="start_date">{{ '預計開始時間' | translate }} *</label>
+                <input type="date" id="start_date" name="start_date" min="{{ nowDate | date:'yyyy-MM-dd' }}"
+                  [(ngModel)]="model.startDate" required>
+              </div>
+              <div class="p_date_right">
+                <label for="end_date">{{ '預計結束時間' | translate }}</label>
+                <input type="date" id="end_date" name="end_date" min="{{ nowDate | date:'yyyy-MM-dd' }}"
+                  [(ngModel)]="model.endDate" required>
+              </div>
+            </div>
+            <div class="product_name">
+              <label for="name">{{ '計畫名稱' | translate }} *</label>
+              <input type="text" id="name" placeholder="{{ '請輸入名稱' | translate }}" name="name"
+                [(ngModel)]="model.name" required>
+            </div>
+            <div class="price_box">
+              <label for="price">{{ '計畫目標' | translate }} *</label>
+              <input type="text" id="price" placeholder="{{ '請輸入金額' | translate }}" name="price"
+                [(ngModel)]="model.targetPrice" required>
+            </div>
+            <div class="product_name">
+              <label for="brief">{{ '計畫簡介' | translate }} *</label>
+              <input type="text" id="brief" placeholder="{{ '請輸入簡介' | translate }}" name="brief"
+                [(ngModel)]="model.brief" required>
+            </div>
+            <div class="price_box">
+              <label for="cover">{{ '封面照片' | translate }} *</label>
+              <input type="file" id="cover">
+            </div>
+            <div class="s_order">
+              <label for="br">{{ '計畫說明' | translate }} *</label>
+              <textarea id="description" cols="30" rows="10" placeholder="{{ '請輸入說明' | translate }}"
+                name="description" [(ngModel)]="model.description" required></textarea>
+            </div>
+            <div class="product_name">
+              <label for="f_price">{{ '回饋選項金額' | translate }} *</label>
+              <input type="text" id="f_price" placeholder="{{ '請輸入金額' | translate }}" name="f_price"
+                [(ngModel)]="model.feedbackPirce" required>
+            </div>
+            <div class="p_date">
+              <label for="f_date">{{ '回饋預計實現時間' | translate }} *</label>
+              <input type="date" id="f_date" name="f_date" min="{{ nowDate | date:'yyyy-MM-dd' }}"
+                [(ngModel)]="model.feedbackDate" required>
+            </div>
+            <div class="product_name">
+              <label for="f_description">{{ '回饋選項詳細說明' | translate }} *</label>
+              <input type="text" id="f_description" placeholder="{{ '請輸入說明' | translate }}" name="f_description"
+                [(ngModel)]="model.feedbackDescription" required>
+            </div>
+            <div class="product_name">
+              <label for="r_web">{{ '相關網頁' | translate }}</label>
+              <input type="text" id="r_web" placeholder="{{ '請輸入相關網頁' | translate }}" name="r_web"
+                [(ngModel)]="model.relativeWeb">
+            </div>
+            <div class="submit_btn form-group submitRow">
+              <input type="submit" value="{{ '提交' | translate }}" [disabled]="form.invalid">
+              <!-- TODO: 設定router-->
+              <a class="btn btn-link" href="#">{{ '取消' | translate }}</a>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-
 </section>
