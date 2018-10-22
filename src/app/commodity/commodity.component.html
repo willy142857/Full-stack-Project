@@ -44,7 +44,8 @@
                 <div class="detail_heading_left">
                   <div>
                     <h3>{{list.name}}</h3>
-                    <br><h5>by {{list.applier}}</h5>
+                    <br>
+                    <h5>by {{list.applier}}</h5>
                   </div>
                 </div>
                 <div class="detail_heading_right">
@@ -106,7 +107,8 @@
                                      a 30 30 0 0 1 0 60
                                      a 30 30 0 0 1 0 -60">
                         </path>
-                        <text id="count" x="40" y="40" text-anchor="middle" dy="7" font-size="20">{{list.get / list.budget}}%</text>
+                        <text id="count" x="40" y="40" text-anchor="middle" dy="7" font-size="20">{{list.get /
+                          list.budget}}%</text>
                       </svg>
                       <div class="panel-body fit">
                         已募資金額：{{list.get}}
@@ -134,12 +136,12 @@
                       </div>
                       <div class="single_color">
                         <div class="color_heading">
-                          <h5>剩餘時間：{{this.today | date:'y/MM/d' }}天</h5>
+                          <h5>剩餘時間：{{date()}}天</h5>
                         </div>
                       </div>
                       <div class="single_color">
                         <div class="color_heading">
-                          <h5>時程：{{list.createdAt | date:'y/MM/d' }} ~ {{list.updatedAt | date:'y/MM/d' }}</h5>
+                          <h5>時程：<br>{{list.startAt | date:'y/MM/d' }} ~ {{list.endAt | date:'y/MM/d' }}</h5>
                         </div>
                       </div>
 
@@ -178,9 +180,9 @@
                     <div>
                       回饋金額：{{list.feedback}}
                     </div>
-                    <button>
-                      <a href="#">贊助</a>
-                    </button>
+                    <div class="invest_button">
+                      <input type="submit" value="贊助計畫">
+                    </div>
                   </div>
                 </div>
               </div>
@@ -199,14 +201,13 @@
         <div class="product_page_tab">
           <div role="tabpanel">
             <ul class="nav nav-tabs tab-product" role="tablist">
-              <li role="presentation" class="active"><a href="#home2" aria-controls="home2" role="tab" data-toggle="tab">Description</a></li>
-              <li role="presentation"><a href="#messages2" aria-controls="messages2" role="tab" data-toggle="tab">Review
-                  (2)</a></li>
+              <li role="presentation" class="active"><a href="#home2" aria-controls="home2" role="tab" data-toggle="tab">商品描述</a></li>
+              <li role="presentation"><a href="#messages2" aria-controls="messages2" role="tab" data-toggle="tab">留言板</a></li>
             </ul>
 
             <div class="tab-content tab-p-details">
               <div role="tabpanel" class="tab-pane active" id="home2">
-                <h2>Description</h2>
+                <h2>商品描述</h2>
                 <div class="multi_line"></div>
                 <p>
                   {{list.description}}
@@ -216,7 +217,7 @@
                 <div class="review_comments">
                   <div class="review_heading">
                     <div class="review_heading_left">
-                      <h2><span>2 Review for </span> "Gray Structured T-Shirt"</h2>
+                      <h2><span>留言</span></h2>
                       <div class="multi_line"></div>
                     </div>
                     <div class="review_heading_right">
@@ -229,59 +230,40 @@
                       </ul>
                     </div>
                   </div>
-                  <div class="single_review_comment">
-                    <div class="single_review_img">
-                      <img src="/assets/images/single_rv1.png" alt="" />
-                    </div>
-                    <div class="single_review_text">
-                      <h4>A Stunning Beauty!</h4>
-                      <ul id="single_review_star">
-                        <li><a href="" class="fa fa-star"></a></li>
-                        <li><a href="" class="fa fa-star"></a></li>
-                        <li><a href="" class="fa fa-star"></a></li>
-                        <li><a href="" class="fa fa-star"></a></li>
-                        <li><a href="" class="fa fa-star"></a></li>
-                      </ul>
-                      <p>Semper orci etiam ac ultricies ante. Donec lobortis variusjusto et. Curabitur egestas aliquet
-                        massa non elementum. Quisque at risus nisl. Aliquam erat volutpat. Suspendisse potenti. Nullam
-                        porta faucibus elit.</p>
-                      <div class="review_italic">
-                        <p><span>Nicole Bailey,</span> 12.05.2013</p>
+                  <ng-container *ngFor='let item of messages'>
+                    <div class="single_review_comment">
+                      <div class="single_review_img">
+                        <img src="/assets/images/single_rv1.png" alt="" />
+                      </div>
+                      <div class="single_review_text">
+                        <h4>{{item.sum_review}}</h4>
+                        <ul id="single_review_star">
+                          <li><a href="" class="fa fa-star"></a></li>
+                          <li><a href="" class="fa fa-star"></a></li>
+                          <li><a href="" class="fa fa-star"></a></li>
+                          <li><a href="" class="fa fa-star"></a></li>
+                          <li><a href="" class="fa fa-star"></a></li>
+                        </ul>
+                        <p>{{item.review}}</p>
+                        <div class="review_italic">
+                          <p><span>{{item.name}}</span>, {{item.date | date:'y/MM/d'}}</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="single_review_comment last">
-                    <div class="single_review_img">
-                      <img src="/assets/images/single_rv2.png" alt="" />
+                  </ng-container>
+                  <div class="Review_input">
+                    <div class="review_input_heading">
+                      <h3>Write your review</h3>
+                      <div class="multi_line"></div>
                     </div>
-                    <div class="single_review_text last">
-                      <h4>A Stunning Beauty!</h4>
-                      <ul id="single_review_star">
-                        <li><a href="" class="fa fa-star"></a></li>
-                        <li><a href="" class="fa fa-star"></a></li>
-                        <li><a href="" class="fa fa-star"></a></li>
-                        <li><a href="" class="fa fa-star"></a></li>
-                        <li><a href="" class="fa fa-star"></a></li>
-                      </ul>
-                      <p>Semper orci etiam ac ultricies ante. Donec lobortis variusjusto et. Curabitur egestas aliquet
-                        massa non elementum. Quisque at risus nisl. Aliquam erat volutpat. Suspendisse potenti. Nullam
-                        porta faucibus elit.</p>
-                      <div class="review_italic">
-                        <p><span>Nicole Bailey,</span> 12.05.2013</p>
+                    <div class="review_comment">
+                      <input type="text" placeholder="Enter Your Nickname" /><br>
+                      <input type="text" placeholder="Summary of your Review" /><br>
+                      <textarea name="" id="" cols="30" rows="10" placeholder="Write your review"></textarea><br>
+                      <div class="message_button">
+                        <input type="submit" value="Submit Review"/>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div class="Review_input">
-                  <div class="review_input_heading">
-                    <h3>Write your review</h3>
-                    <div class="multi_line"></div>
-                  </div>
-                  <div class="review_comment_input">
-                    <input type="text" placeholder="Enter Your Nickname" /><br>
-                    <input type="text" placeholder="Summary of your Review" /><br>
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Write your review"></textarea><br>
-                    <input type="submit" value="Submit Review" />
                   </div>
                 </div>
               </div>

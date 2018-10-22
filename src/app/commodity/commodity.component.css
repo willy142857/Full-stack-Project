@@ -6,3 +6,68 @@ body {
 .multi_lines_text {
   white-space: pre-line;
 }
+
+.invest_button {
+  padding: 0px;
+}
+
+.invest_button>input[type="submit"] {
+  background: none repeat scroll 0 0 #ff6766;
+  border: 2px solid #ff6766;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 8px auto 15px;
+  padding: 7px;
+  margin-left: 200px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 80px;
+  height: 30px;
+}
+
+.invest_button>input[type="submit"]:hover {
+  background: #fff;
+  color: #232323;
+}
+
+.message_button>input[type="submit"] {
+  background: none repeat scroll 0 0 #ff6766;
+  border: 2px solid #ff6766;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 8px auto 15px;
+  padding: 7px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 120px;
+  height: 30px;
+}
+
+.message_button>input[type="submit"]:hover {
+  background: #fff;
+  color: #232323;
+}
+
+.review_comment input[type="text"] {
+  background: transparent none repeat scroll 0 0;
+  border: 1px solid #d3d3d3;
+  color: #333;
+  font-size: 12px;
+  height: 30px;
+  margin-bottom: 10px;
+  padding: 0 10px;
+  width: 400px;
+}
+
+.review_comment textarea {
+  background: transparent none repeat scroll 0 0;
+  border: 1px solid #d3d3d3;
+  color: #333;
+  font-size: 12px;
+  margin-bottom: 20px;
+  width: 400px;
+  padding: 0 10px;
+  height: 135px;
+}
