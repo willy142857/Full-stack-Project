@@ -12,8 +12,8 @@ export class ProductService {
 export class Product {
   founder = '';
   email = '';
-  startDate: Date;
-  endDate: Date;
+  startAt: Date;
+  endAt: Date;
   name = '';
   targetPrice: number;
   brief = '';
@@ -21,6 +21,6 @@ export class Product {
   description = '';
   feedbackPirce: number;
   feedbackDescription = '';
-  feedbackDate: Date;
+  feedbackAt: Date;
   relativeWeb = '';
 }

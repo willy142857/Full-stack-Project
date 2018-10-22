@@ -15,7 +15,4 @@ export class CreateComponent implements OnInit {
     this.product.set();
     console.log(form.value);
   }
-  printData() {
-    // console.log(this.name + '\n' + this.price + '\n' + this.description);
-  }
 }

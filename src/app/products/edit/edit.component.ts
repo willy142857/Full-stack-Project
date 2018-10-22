@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-edit',
@@ -7,22 +8,19 @@ import { ProductService } from '../product.service';
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
-  product = new Product();
-  name = this.product.name;
-  price = this.product.price;
-  description = this.product.description;
+  model: any = {};
+  id;
+  constructor(
+    private product: ProductService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
-  constructor(private p: ProductService) {}
-
-  ngOnInit() {}
-  onSubmit(form) {}
-  printData() {
-    console.log(this.name + '\n' + this.price + '\n' + this.description);
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.id = params['id'];
+    });
+    console.log(this.id);
   }
-}
-
-export class Product {
-  name = '';
-  price: number;
-  description = '';
+  onSubmit(form) {}
 }

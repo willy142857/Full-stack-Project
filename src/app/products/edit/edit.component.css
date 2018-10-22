@@ -1,10 +1,39 @@
-.ng-valid[required],
+/* .ng-valid[required],
 .ng-valid.required {
-  border-left: 5px solid #42A948;
-  /* green */
-}
+  border: 1px solid #42A948;
+} */
 
 .ng-invalid:not(form) {
-  border-left: 5px solid #a94442;
-  /* red */
+  border: 1px solid #ff6766;
+}
+
+input[type="date"]::-webkit-clear-button {
+  display: none;
+}
+
+input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+.p_date input[type="date"] {
+  background: none repeat scroll 0 0 #f7f8f9;
+  border: 1px solid #E8E8E8;
+  padding: 3px;
+  width: 100%;
+}
+
+.p_date {
+  overflow: hidden;
+  padding-bottom: 15px;
+}
+
+.p_date_left {
+  float: left;
+  margin-right: 4%;
+  width: 48%;
+}
+
+.p_date_right {
+  float: left;
+  width: 48%;
 }

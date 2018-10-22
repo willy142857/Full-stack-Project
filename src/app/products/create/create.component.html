@@ -14,18 +14,18 @@
             <div class="product_name">
               <label for="email">{{ '電子信箱' | translate }} *</label>
               <input type="text" id="email" placeholder="{{ '請輸入信箱' | translate }}" name="email"
-                [(ngModel)]="model.femail" required>
+                [(ngModel)]="model.email" required>
             </div>
             <div class="p_date">
               <div class="p_date_left">
                 <label for="start_date">{{ '預計開始時間' | translate }} *</label>
                 <input type="date" id="start_date" name="start_date" min="{{ nowDate | date:'yyyy-MM-dd' }}"
-                  [(ngModel)]="model.startDate" required>
+                  [(ngModel)]="model.startAt" required>
               </div>
               <div class="p_date_right">
                 <label for="end_date">{{ '預計結束時間' | translate }}</label>
                 <input type="date" id="end_date" name="end_date" min="{{ nowDate | date:'yyyy-MM-dd' }}"
-                  [(ngModel)]="model.endDate" required>
+                  [(ngModel)]="model.endAt" required>
               </div>
             </div>
             <div class="product_name">
@@ -60,7 +60,7 @@
             <div class="p_date">
               <label for="f_date">{{ '回饋預計實現時間' | translate }} *</label>
               <input type="date" id="f_date" name="f_date" min="{{ nowDate | date:'yyyy-MM-dd' }}"
-                [(ngModel)]="model.feedbackDate" required>
+                [(ngModel)]="model.feedbackAt" required>
             </div>
             <div class="product_name">
               <label for="f_description">{{ '回饋選項詳細說明' | translate }} *</label>
