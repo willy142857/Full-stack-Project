@@ -1,18 +1,28 @@
-/* .ng-valid[required],
-.ng-valid.required {
-  border: 1px solid #42A948;
-} */
-
-.ng-invalid:not(form) {
-  border: 1px solid #ff6766;
-}
-
 input[type="date"]::-webkit-clear-button {
   display: none;
 }
 
 input[type="date"]::-webkit-inner-spin-button {
   display: none;
+}
+
+.p_area {
+  background: none repeat scroll 0 0 #f7f8f9;
+  border-top: 1px solid #eeeeee;
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.t_center {
+  text-align: center;
+}
+
+.checkout_form label {
+  color: #212121;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #3f3f3f;
 }
 
 .p_date input[type="date"] {
@@ -22,7 +32,17 @@ input[type="date"]::-webkit-inner-spin-button {
   width: 100%;
 }
 
-.p_date {
+.p_price input[type="text"],
+.p_price input[type="date"],
+.p_price input[type="file"] {
+  background: none repeat scroll 0 0 #f7f8f9;
+  border: 1px solid #E8E8E8;
+  padding: 9px;
+  width: 100%;
+}
+
+.p_date,
+.p_price {
   overflow: hidden;
   padding-bottom: 15px;
 }
@@ -36,4 +56,23 @@ input[type="date"]::-webkit-inner-spin-button {
 .p_date_right {
   float: left;
   width: 48%;
+}
+
+.p_price_left {
+  float: left;
+  margin-right: 4%;
+  width: 40%;
+}
+
+.b {
+  font-weight: bold;
+}
+
+.p_form {
+  margin-top: 5%;
+  padding-top: 5%;
+  padding-right: 5%;
+  padding-bottom: 5%;
+  padding-left: 5%;
+  border: 1px solid #E8E8E8;
 }

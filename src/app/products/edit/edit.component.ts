@@ -9,7 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class EditComponent implements OnInit {
   model: any = {};
-  id;
+  id: number;
   constructor(
     private product: ProductService,
     private router: Router,
@@ -21,6 +21,7 @@ export class EditComponent implements OnInit {
       this.id = params['id'];
     });
     console.log(this.id);
+    this.model = this.product.get();
   }
   onSubmit(form) {}
 }
