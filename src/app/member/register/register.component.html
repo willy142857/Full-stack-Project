@@ -39,7 +39,7 @@
               <div class="c_password">
                 <div class="c_password_left">
                   <p>密碼(至少六碼) <span>*</span></p>
-                  <input type="text" [(ngModel)]="model.password" name="password" #password="ngModel" [ngClass]="{ 'is-valid': (!form.submitted || !password.invalid) ,'is-invalid': (form.submitted && password.invalid) }" 
+                  <input type="password" [(ngModel)]="model.password" name="password" #password="ngModel" [ngClass]="{ 'is-valid': (!form.submitted || !password.invalid) ,'is-invalid': (form.submitted && password.invalid) }" 
                     required />
                   <div *ngIf="form.submitted && password.invalid" class="invalid_feedback">
                     Password is required
@@ -47,7 +47,7 @@
                 </div>
                 <div class="c_password_left">
                   <p>確認密碼 <span>*</span></p>
-                  <input type="text" [(ngModel)]="model.password_confirm" name="password_confirm" #password_confirm="ngModel">
+                  <input type="password" [(ngModel)]="model.password_confirm" name="password_confirm" #password_confirm="ngModel">
                   <div *ngIf=" password.value  !== password_confirm.value" class="invalid_feedback">
                     密碼不一致
                   </div>
