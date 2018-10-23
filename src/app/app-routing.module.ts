@@ -8,6 +8,8 @@ import { CreateComponent } from './products/create/create.component';
 import { EditComponent } from './products/edit/edit.component';
 import { IndexComponent } from './products/index/index.component';
 import { RegisterComponent } from './member/register/register.component';
+import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+import { RetrievepasswordComponent } from './retrievepassword/retrievepassword.component';
 
 const routes: Routes = [
   {
@@ -41,6 +43,15 @@ const routes: Routes = [
       {
         path: 'commodity',
         component: CommodityComponent
+      },
+      {
+        path: 'resetPassword',
+        component: ResetpasswordComponent
+      }
+      ,
+      {
+        path: 'retrievePassword',
+        component: RetrievepasswordComponent
       }
     ]
   }
