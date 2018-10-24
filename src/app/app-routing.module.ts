@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './member/login/login.component';
 import { LayoutComponent } from './layout/layout.component';
 import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 import { CreateComponent } from './products/create/create.component';
 import { EditComponent } from './products/edit/edit.component';
 import { IndexComponent } from './products/index/index.component';
@@ -41,14 +42,17 @@ const routes: Routes = [
         component: CartComponent
       },
       {
+        path: 'checkout',
+        component: CheckoutComponent
+      },
+      {
         path: 'commodity',
         component: CommodityComponent
       },
       {
         path: 'resetPassword',
         component: ResetpasswordComponent
-      }
-      ,
+      },
       {
         path: 'retrievePassword',
         component: RetrievepasswordComponent

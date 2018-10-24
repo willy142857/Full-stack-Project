@@ -16,6 +16,7 @@ import { CreateComponent } from './products/create/create.component';
 import { EditComponent } from './products/edit/edit.component';
 import { IndexComponent } from './products/index/index.component';
 import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 import { CommodityComponent } from './commodity/commodity.component';
 
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -40,7 +41,8 @@ export function createTranslateLoader(http: HttpClient) {
     CartComponent,
     CommodityComponent,
     ResetpasswordComponent,
-    RetrievepasswordComponent
+    RetrievepasswordComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
