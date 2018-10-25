@@ -19,7 +19,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { RetrievepasswordComponent } from './retrievepassword/retrievepassword.component';
 import { SharedModule } from './shared/shared.module';
-import { ProductModule } from './product/product.module';
+import { AuthGuard } from './auth.guard';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -42,7 +42,6 @@ export function createTranslateLoader(http: HttpClient) {
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -50,10 +49,10 @@ export function createTranslateLoader(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    ProductModule,
-    SharedModule
+    SharedModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

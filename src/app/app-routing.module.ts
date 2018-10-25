@@ -1,16 +1,14 @@
 import { CommodityComponent } from './commodity/commodity.component';
 import { NgModule, Component } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { LoginComponent } from './member/login/login.component';
 import { LayoutComponent } from './layout/layout.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-import { CreateComponent } from './product/create/create.component';
-import { EditComponent } from './product/edit/edit.component';
-import { IndexComponent } from './product/index/index.component';
 import { RegisterComponent } from './member/register/register.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { RetrievepasswordComponent } from './retrievepassword/retrievepassword.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {
@@ -18,16 +16,8 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
-        path: 'index',
-        component: IndexComponent
-      },
-      {
-        path: 'create',
-        component: CreateComponent
-      },
-      {
-        path: 'edit/:id',
-        component: EditComponent
+        path: '',
+        loadChildren: './product/product.module#ProductModule'
       },
       {
         path: 'login',
@@ -62,7 +52,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      enableTracing: false,
+      preloadingStrategy: PreloadAllModules
+    })
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
