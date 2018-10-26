@@ -10,6 +10,7 @@ export class CartComponent implements OnInit {
   totalmoney;
   constructor(private cartsservice: CartsService) {
     this.cartsservice.totalCharge();
+    this.totalmoney = this.cartsservice.totalmoney;
   }
 
   get list() {
