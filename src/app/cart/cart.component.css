@@ -1,0 +1,72 @@
+.cart_quantity ul li span {
+  background: none repeat scroll 0 0 #fff;
+  border: 1px solid #e8eaec;
+  color: #333;
+  display: block;
+  font-size: 12px;
+  height: 23px;
+  padding-top: 3px;
+  text-align: center;
+  width: 23px;
+}
+.cart_quantity ul li button {
+  background: none repeat scroll 0 0 #fff;
+  border: 1px solid #e8eaec;
+  color: #333;
+  display: block;
+  font-size: 12px;
+  height: 23px;
+  padding-top: 3px;
+  text-align: center;
+  width: 23px;
+}
+
+.product_form_total>a[href="/checkout"] {
+  background: none repeat scroll 0 0 #fff;
+  border: 2px solid #ff6766;
+  color: #232323;
+  display: block;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 8px auto 15px;
+  padding: 7px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.product_form_total>a[href="/checkout"]:hover {
+  background: none repeat scroll 0 0 #ff6766;
+  color: #fff;
+}
+
+.main_cart_area .product_form_total>a[href="/checkout"] {
+  background: none repeat scroll 0 0 #f7f8f9;
+}
+
+.main_cart_area .product_form_total>a[href="/checkout"]:hover {
+  background: none repeat scroll 0 0 #ff6766;
+  border: 2px solid #ff6766;
+  color: #fff;
+}
+
+.mycoupon {
+  background: none repeat scroll 0 0 #f7f8f9;
+  border: 2px solid #ff6766;
+  color: #232323;
+  display: block;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 8px auto 15px;
+  padding: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 155px;
+}
+
+.mycoupon:hover {
+  background: none repeat scroll 0 0 #ff6766;
+  color: #fff;
+}
