@@ -12,7 +12,10 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {}
   onSubmit(form) {
     console.log(this.model);
-    this.memberService.member.push(this.model);
+    this.memberService.member.name = this.model.name;
+    this.memberService.member.mail = this.model.mail;
+    this.memberService.member.phone = this.model.phone;
+    this.memberService.member.password = this.model.password;
     console.log(this.memberService.member);
   }
 }

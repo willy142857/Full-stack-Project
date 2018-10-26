@@ -7,17 +7,15 @@ import { MemberService } from '../member.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  constructor(private memberService: MemberService) {}
-
-  ngOnInit() {}
-
-  get model() {
-    return this.model;
+  constructor(public memberService: MemberService) {}
+  get member() {
+    return this.memberService.member;
   }
-
+  model: any = {};
+  ngOnInit() {}
   onSubmit(form) {
-    console.log(this.model);
-    this.memberService.member.push(this.model);
+    console.log(form);
+    
     console.log(this.memberService.member);
   }
 }
