@@ -9,13 +9,12 @@ import { CompileShallowModuleMetadata } from '@angular/compiler';
 })
 export class CommodityComponent implements OnInit {
   today = new Date();
+  items = [];
   get list() {
-    console.log(this.today);
     return this.commoditiesService.commodity;
   }
 
   get messages() {
-    console.log(this.today);
     return this.commoditiesService.messages;
   }
   diff: number;
@@ -33,6 +32,13 @@ export class CommodityComponent implements OnInit {
       return this.diffDays;
     }
   }
+
+  add_to_cart(event) {
+    if (confirm('確定加入購物車?')) {
+      console.log(event);
+    }
+  }
+
   // deadline: number = Date(this.list.updatedAt);
   constructor(private commoditiesService: CommoditiesService) {}
   ngOnInit() {}
