@@ -129,11 +129,11 @@
             </div> -->
           </ng-container>
 
-          <div class="coupon_box">
+          <!-- <div class="coupon_box">
             <input type="text" placeholder="coupon code" />
-            <!-- <input type="button" class="mycoupon" value="apply coupon"> -->
+            <input type="button" class="mycoupon" value="apply coupon">
             <input type="submit" value="apply coupon">
-          </div>
+          </div> -->
         </div>
       </div>
 
@@ -185,7 +185,7 @@
                   <div class="panel-body cart_p_body">
                     <div class="c_single_item">
                       <p>SubTotal</p>
-                      <span>$184.00</span>
+                      <span>${{totalmoney}}</span>
                     </div>
                     <div class="c_single_item cart_last_total">
                       <p>Shipping Charge</p>
@@ -193,14 +193,14 @@
                     </div>
                     <div class="c_total_item sp_single_item">
                       <p>Total</p>
-                      <span>${{ totalmoney }}</span>
+                      <span>${{totalmoney}}</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <a href="#" class="cart_update">Update Cart</a>
-            <a href="/checkout">Proceed to checkout</a>
+            <a [routerLink]="['/checkout']">Proceed to checkout</a>
             <!-- <input type="submit" value="Proceed to checkout"> -->
           </div>
         </div>

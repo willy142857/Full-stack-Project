@@ -5,8 +5,10 @@ import { Injectable } from '@angular/core';
 })
 
 export class CartsService {
-
-  constructor() { }
+  totalmoney;
+  constructor() {
+    this.totalCharge();
+  }
   list = [
     {
       name: 'blue denim casual',
@@ -35,9 +37,23 @@ export class CartsService {
       type: 'COAT',
       price: 70,
       count: 2,
-    },
+    }
   ];
+  buttomClickMinus(index) {
+    if (this.list[index].count > 1) {
+      this.list[index].count--;
+    }
+    this.totalCharge();
+  }
 
-  coupon = ['80', '70', '60'];
-
+  buttomClickPlus(index) {
+    this.list[index].count++;
+    this.totalCharge();
+  }
+  totalCharge() {
+    this.totalmoney = 0;
+    for (let index = 0; index < this.list.length; index++) {
+      this.totalmoney = this.totalmoney + this.list[index].count * this.list[index].price;
+    }
+  }
 }
