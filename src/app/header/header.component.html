@@ -9,8 +9,9 @@
       </div>
       <div class="col-md-6 col-sm-6 col-xs-12">
         <div class="header_top_right floatright">
-          <p><a [routerLink]="['/login']">{{ '登入' | translate}}</a> /
+          <p [hidden]="isLogin"><a [routerLink]="['/login']">{{ '登入' | translate }}</a> /
             <a [routerLink]="['/register']">{{ '註冊' | translate }}</a></p>
+          <p [hidden]="!isLogin"><a [routerLink]="['/profile']">{{ '會員中心' | translate }}</a></p>
           <nav class="currency alignleft">
             <ul>
               <li><a href="">NTD</a>
@@ -50,7 +51,8 @@
           <ul class="checkout">
             <!-- TODO:設定路由 -->
             <li><a href="checkout.html"><i class="fa fa-heart-o"></i>{{ '願望清單' | translate }}</a></li>
-            <li class="mobi_right_li"><a href="checkout.html"><i class="fa fa-shopping-cart"></i>{{ '清單' | translate }}</a></li>
+            <li class="mobi_right_li"><a href="checkout.html"><i class="fa fa-shopping-cart"></i>{{
+                '清單' | translate }}</a></li>
           </ul>
           <div class="w_likes">
             <span>3</span>

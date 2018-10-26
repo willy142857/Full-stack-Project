@@ -11,7 +11,7 @@ const routes: Routes = [
     path: '',
     children: [
       {
-        path: 'index',
+        path: '',
         component: IndexComponent
       },
       {
