@@ -95,3 +95,29 @@ hr.style-five:after {
 .multi_line_long {
   margin-left: 0px;
 }
+.fa {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\f006";
+}
+
+.fa:hover{
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\f006";
+  color: #ff6766;
+}
+
+.pink{
+  color: #ff6766;
+}

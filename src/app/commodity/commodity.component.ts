@@ -1,6 +1,5 @@
 import { CommoditiesService } from './commodities.service';
 import { Component, OnInit } from '@angular/core';
-import { CompileShallowModuleMetadata } from '@angular/compiler';
 
 @Component({
   selector: 'app-commodity',
@@ -9,7 +8,7 @@ import { CompileShallowModuleMetadata } from '@angular/compiler';
 })
 export class CommodityComponent implements OnInit {
   today = new Date();
-  items = [];
+  stars: any = [false, false, false, false, false];
   get list() {
     return this.commoditiesService.commodity;
   }
@@ -38,7 +37,12 @@ export class CommodityComponent implements OnInit {
       console.log(event);
     }
   }
-
+  score_stars(number) {
+    this.stars = [];
+    for (let i = 0; i < 5; i++) {
+      this.stars.push(i < number);
+    }
+  }
   // deadline: number = Date(this.list.updatedAt);
   constructor(private commoditiesService: CommoditiesService) {}
   ngOnInit() {}

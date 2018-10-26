@@ -50,11 +50,10 @@
                 </div>
                 <div class="detail_heading_right">
                   <ul id="detail_star">
-                    <ng-container *ngFor="let item of items">
-                    <li><a class="fa fa-star-o" href=""></a></li>
+                    <ng-container *ngFor="let star of stars; let i = index">
+                      <li><a class="fa fa-star-o" [ngClass]="{'pink': star}" (click)="score_stars(i+1)"></a></li>
                     </ng-container>
                   </ul>
-                  <p>(5 Review)</p>
                 </div>
                 <div>
                   <form style="display: inline;">類別：
