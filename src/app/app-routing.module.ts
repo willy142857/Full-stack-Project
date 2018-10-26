@@ -8,7 +8,7 @@ import { RegisterComponent } from './member/register/register.component';
 import { ProfileComponent } from './member/profile/profile.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { RetrievepasswordComponent } from './retrievepassword/retrievepassword.component';
-import { AuthGuard } from './auth.guard';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   {

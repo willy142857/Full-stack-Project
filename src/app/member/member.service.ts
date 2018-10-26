@@ -11,7 +11,7 @@ export class MemberService {
     password: 'abcd1234',
     address: '五柳樹旁',
     sex: '男',
-    birth: Date,
+    birth: '0365-02-11',
     introduction:
       '先生不知何許人也，亦不詳其姓字。宅邊有五柳樹，因以為號焉閑靜少言，不慕榮利。好讀書，不求甚解，每有會意，\
       便欣然忘食。性嗜酒，家貧，不能常得。親舊知其如此，或置酒而招之。造飲輒盡，期在必醉，既醉而退，曾不吝情去留。\
@@ -20,12 +20,4 @@ export class MemberService {
   };
 
   constructor() {}
-
-  isLogin = false;
-  login(email: string, password: string) {
-    if (email === '123@gmail.com' && password === '123') {
-      this.isLogin = true;
-      console.log('login success\n');
-    }
-  }
 }

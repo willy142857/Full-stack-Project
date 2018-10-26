@@ -18,7 +18,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { RetrievepasswordComponent } from './retrievepassword/retrievepassword.component';
 import { SharedModule } from './shared/shared.module';
-import { AuthGuard } from './auth.guard';
+import { AuthGuard } from './auth/auth.guard';
 import { ProfileComponent } from './member/profile/profile.component';
 import { ProductModule } from './product/product.module';
 
