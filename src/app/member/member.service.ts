@@ -12,7 +12,7 @@ export class MemberService {
     address: '',
     sex: '男',
     birth: Date,
-    introduction: Text = ""
+    introduction: ''
   };
 
   constructor() {}
