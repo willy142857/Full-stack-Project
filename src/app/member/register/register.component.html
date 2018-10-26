@@ -8,28 +8,28 @@
 
           <div class="checkout_form">
             <form (ngSubmit)="form.form.valid && onSubmit(form)" #form="ngForm">
-              <div class="c_name_box">
-                <div class="c_name_box_left">
+              <div class="c_password">
+                <div class="c_password_left">
                   <p>姓名 <span>*</span></p>
-                  <input type="text" [(ngModel)]="model.name" name="name" #name="ngModel" [ngClass]="{ 'is-invalid': form.submitted && name.invalid }"
+                  <input type="text" [(ngModel)]="model.name" name="name" #name="ngModel" [ngClass]="{ 'is-valid': (!form.submitted || !name.invalid) ,'is-invalid': (form.submitted && name.invalid) }"
                     required />
                   <div *ngIf="form.submitted && name.invalid" class="invalid_feedback">
                     Name is required
                   </div>
                 </div>
               </div>
-              <div class="c_mail_box">
-                <div class="c_mail_box_left">
+              <div class="c_password">
+                <div class="c_password_left">
                   <p>信箱 <span>*</span></p>
-                  <input type="text" [(ngModel)]="model.mail" name="mail" #mail="ngModel" [ngClass]="{ 'is-invalid': form.submitted && mail.invalid }"
+                  <input type="text" [(ngModel)]="model.mail" name="mail" #mail="ngModel" [ngClass]="{ 'is-valid': (!form.submitted || !mail.invalid) ,'is-invalid': (form.submitted && mail.invalid) }"
                     required />
                   <div *ngIf="form.submitted && mail.invalid" class="invalid_feedback">
                     Email is required
                   </div>
                 </div>
-                <div class="c_mail_box_left">
+                <div class="c_password_left">
                   <p>手機號碼 <span>*</span></p>
-                  <input type="text" [(ngModel)]="model.phone" name="phone" #phone="ngModel" [ngClass]="{ 'is-invalid': form.submitted && phone.invalid }"
+                  <input type="text" [(ngModel)]="model.phone" name="phone" #phone="ngModel" [ngClass]="{ 'is-valid': (!form.submitted || !phone.invalid) ,'is-invalid': (form.submitted && phone.invalid) }"
                     required />
                   <div *ngIf="form.submitted && phone.invalid" class="invalid_feedback">
                     Phone number is required
@@ -47,7 +47,7 @@
                 </div>
                 <div class="c_password_left">
                   <p>確認密碼 <span>*</span></p>
-                  <input type="password" [(ngModel)]="model.password_confirm" name="password_confirm" #password_confirm="ngModel">
+                  <input type="password" [(ngModel)]="model.password_confirm" name="password_confirm" #password_confirm="ngModel" [ngClass]="{ 'is-valid': (!form.submitted || !password_confirm.invalid) ,'is-invalid': (form.submitted && password_confirm.invalid) }" required>
                   <div *ngIf=" password.value  !== password_confirm.value" class="invalid_feedback">
                     密碼不一致
                   </div>

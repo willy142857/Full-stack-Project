@@ -6,6 +6,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { RegisterComponent } from './member/register/register.component';
+import { ProfileComponent } from './member/profile/profile.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { RetrievepasswordComponent } from './retrievepassword/retrievepassword.component';
 import { AuthGuard } from './auth.guard';
@@ -46,6 +47,10 @@ const routes: Routes = [
       {
         path: 'retrievePassword',
         component: RetrievepasswordComponent
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent
       }
     ]
   }

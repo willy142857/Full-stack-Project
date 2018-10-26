@@ -20,6 +20,7 @@ import { ResetpasswordComponent } from './resetpassword/resetpassword.component'
 import { RetrievepasswordComponent } from './retrievepassword/retrievepassword.component';
 import { SharedModule } from './shared/shared.module';
 import { AuthGuard } from './auth.guard';
+import { ProfileComponent } from './member/profile/profile.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -37,7 +38,8 @@ export function createTranslateLoader(http: HttpClient) {
     CommodityComponent,
     ResetpasswordComponent,
     RetrievepasswordComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
