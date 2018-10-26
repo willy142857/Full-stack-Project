@@ -4,8 +4,6 @@
   padding: 0;
 }
 
-
-
 .fullwidthbanner-container {
   width: 100%;
   position: relative;
@@ -14,6 +12,36 @@
 }
 
 .fullwidthbanner-container .fullwidthbanner {
+
   width: 100%;
   position: relative;
+}
+
+.p_box {
+  margin-top: 0%;
+}
+
+.p_name {
+  margin-top: 3%;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.p_founder {
+  margin-top: 3%;
+  font-size: 18px;
+}
+
+.p_dsp {
+  margin-top: 4%;
+  font-size: 15px;
+  word-break: break-all;
+  margin-bottom: 10%;
+}
+
+.p_title {
+  text-align: center;
+  font-size: 30;
+  font-weight: bold;
+  margin-top: 3%;
 }
