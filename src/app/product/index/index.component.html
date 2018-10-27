@@ -6,7 +6,7 @@
       <ul>
         <ng-container *ngFor="let item of items">
           <li data-transition="random" data-slotamount="7" data-masterspeed="1000">
-            <img [src]="item.img" alt="slide">
+            <img [src]="item.img" alt="slide" [routerLink]="['/commodity']" routerLinkActive="router-link-active" >
 
             <div class="tp-caption large_black sfr" data-x="120" data-y="230" data-speed="1100"
               data-start="1400" data-easing="easeInOutBack" style="font-family: 'Montserrat', sans-serif; font-size: 50px;
@@ -15,7 +15,7 @@
             </div>
             <div class="tp-caption large_black sfr carousel-caption-inner" data-x="120" data-y="300"
               data-speed="1100" data-start="1400" data-easing="easeInOutBack">
-              <img src="assets/images/sep-b.png">
+              <img src="assets/images/sep-b.png" >
             </div>
             <div class="tp-caption lfb carousel-caption-inner" data-x="120" data-y="350" data-speed="1300"
               data-start="1700" data-easing="easeInOutBack" style="font-family: cabin Sans; font-size: 17px; font-weight: bold; text-transform: uppercase; color: #232323;">
@@ -42,7 +42,7 @@
             <div *ngFor="let item of tests" class="col-md-4 col-sm-4 col-xs-12">
               <div class="p_box">
                 <div class="images_box">
-                  <img src="assets/images/promo_img2.jpg" alt="">
+                  <img src="assets/images/promo_img2.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                 </div>
                 <div class="p_name">{{ item.name }}</div>
                 <div class="p_founder">{{ item.founder }}</div>
@@ -73,7 +73,7 @@
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="fresh_blog">
-          <h2>fresh from the blog</h2>
+          <h2>fresh from the plans</h2>
           <div class="multi_line"></div>
 
           <div id="blog-caro" class="carousel slide" data-ride="carousel">
@@ -102,7 +102,7 @@
                       </div>
                     </div>
                     <div class="fresh_blog_img">
-                      <img src="assets/images/blog1.jpg" alt="" />
+                      <img src="assets/images/blog1.jpg" alt="" [routerLink]="['/commodity']" routerLinkActive="router-link-active">
                     </div>
                   </div>
                   <div class="col-md-6 col-sm-6 col-xs-12">
@@ -125,7 +125,7 @@
                       </div>
                     </div>
                     <div class="fresh_blog_img">
-                      <img src="assets/images/blog2.jpg" alt="" />
+                      <img src="assets/images/blog2.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active" />
                     </div>
                   </div>
                 </div>
@@ -152,7 +152,7 @@
                       </div>
                     </div>
                     <div class="fresh_blog_img">
-                      <img src="assets/images/blog1.jpg" alt="" />
+                      <img src="assets/images/blog1.jpg" alt="" [routerLink]="['/commodity']" routerLinkActive="router-link-active"/>
                     </div>
                   </div>
                   <div class="col-md-6 col-sm-6 col-xs-12">
@@ -175,7 +175,7 @@
                       </div>
                     </div>
                     <div class="fresh_blog_img">
-                      <img src="assets/images/blog2.jpg" alt="" />
+                      <img src="assets/images/blog2.jpg" alt="" [routerLink]="['/commodity']" routerLinkActive="router-link-active"/>
                     </div>
                   </div>
                 </div>
@@ -231,7 +231,7 @@
                       <div class="owl-item" style="width: 240px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item1.jpg" alt="">
+                            <img src="assets/images/t_item1.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -246,7 +246,7 @@
                           </div>
                           <div class="item-sub">
                             <a href="product-detail.html">
-                              <h5>gray shadow jean shirt </h5>
+                              <h5>肉粽防波提 </h5>
                             </a>
                             <p>$70.00</p>
                           </div>
@@ -255,7 +255,7 @@
                       <div class="owl-item" style="width: 240px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item2.jpg" alt="">
+                            <img src="assets/images/t_item2.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul></ul>
                               <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -271,7 +271,7 @@
                           </div>
                           <div class="item-sub">
                             <a href="product-detail.html">
-                              <h5>gray shadow jean shirt </h5>
+                              <h5>gg整形手術 </h5>
                             </a>
                             <p>$90.00 <span><del>$100</del></span></p>
                           </div>
@@ -280,7 +280,7 @@
                       <div class="owl-item" style="width: 240px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item3.jpg" alt="">
+                            <img src="assets/images/t_item3.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -295,7 +295,7 @@
                           </div>
                           <div class="item-sub">
                             <a href="product-detail.html">
-                              <h5>gray shadow jean shirt </h5>
+                              <h5>gggggggg </h5>
                             </a>
                             <p>$110.00</p>
                           </div>
@@ -304,7 +304,7 @@
                       <div class="owl-item" style="width: 240px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item4.jpg" alt="">
+                            <img src="assets/images/t_item4.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -319,7 +319,7 @@
                           </div>
                           <div class="item-sub">
                             <a href="product-detail.html">
-                              <h5>gray shadow jean shirt </h5>
+                              <h5>youtuber斂財計畫 </h5>
                             </a>
                             <p>$130.00</p>
                           </div>
@@ -328,7 +328,7 @@
                       <div class="owl-item" style="width: 240px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item14.jpg" alt="">
+                            <img src="assets/images/t_item14.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -353,7 +353,7 @@
                       <div class="owl-item" style="width: 240px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item2.jpg" alt="">
+                            <img src="assets/images/t_item2.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -369,7 +369,7 @@
                           </div>
                           <div class="item-sub">
                             <a href="product-detail.html">
-                              <h5>gray shadow jean shirt</h5>
+                              <h5>導演練習</h5>
                             </a>
                             <p>$90.00 <span><del>$100</del></span></p>
                           </div>
@@ -378,7 +378,7 @@
                       <div class="owl-item" style="width: 240px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item3.jpg" alt="">
+                            <img src="assets/images/t_item3.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -393,7 +393,7 @@
                           </div>
                           <div class="item-sub">
                             <a href="product-detail.html">
-                              <h5>gray shadow jean shirt</h5>
+                              <h5>先不要</h5>
                             </a>
                             <p>$190.00</p>
                           </div>
@@ -402,7 +402,7 @@
                       <div class="owl-item" style="width: 240px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item2.jpg" alt="">
+                            <img src="assets/images/t_item2.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -426,7 +426,7 @@
                       <div class="owl-item" style="width: 240px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item3.jpg" alt="">
+                            <img src="assets/images/t_item3.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -466,7 +466,7 @@
                       <div class="owl-item" style="width: 33px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item1.jpg" alt="">
+                            <img src="assets/images/t_item1.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -490,7 +490,7 @@
                       <div class="owl-item" style="width: 33px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item2.jpg" alt="">
+                            <img src="assets/images/t_item2.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -515,7 +515,7 @@
                       <div class="owl-item" style="width: 33px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item7.jpg" alt="">
+                            <img src="assets/images/t_item7.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -540,7 +540,7 @@
                       <div class="owl-item" style="width: 33px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item4.jpg" alt="">
+                            <img src="assets/images/t_item4.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -564,7 +564,7 @@
                       <div class="owl-item" style="width: 33px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item1.jpg" alt="">
+                            <img src="assets/images/t_item1.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -588,7 +588,7 @@
                       <div class="owl-item" style="width: 33px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item5.jpg" alt="">
+                            <img src="assets/images/t_item5.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -613,7 +613,7 @@
                       <div class="owl-item" style="width: 33px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item3.jpg" alt="">
+                            <img src="assets/images/t_item3.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -637,7 +637,7 @@
                       <div class="owl-item" style="width: 33px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item6.jpg" alt="">
+                            <img src="assets/images/t_item6.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -662,7 +662,7 @@
                       <div class="owl-item" style="width: 33px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item7.jpg" alt="">
+                            <img src="assets/images/t_item7.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -701,7 +701,7 @@
                       <div class="owl-item" style="width: 33px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item1.jpg" alt="">
+                            <img src="assets/images/t_item1.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -726,7 +726,7 @@
                       <div class="owl-item" style="width: 33px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item2.jpg" alt="">
+                            <img src="assets/images/t_item2.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -750,7 +750,7 @@
                       <div class="owl-item" style="width: 33px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item7.jpg" alt="">
+                            <img src="assets/images/t_item7.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -774,7 +774,7 @@
                       <div class="owl-item" style="width: 33px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item5.jpg" alt="">
+                            <img src="assets/images/t_item5.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -799,7 +799,7 @@
                       <div class="owl-item" style="width: 33px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item1.jpg" alt="">
+                            <img src="assets/images/t_item1.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -823,7 +823,7 @@
                       <div class="owl-item" style="width: 33px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item2.jpg" alt="">
+                            <img src="assets/images/t_item2.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -848,7 +848,7 @@
                       <div class="owl-item" style="width: 33px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item3.jpg" alt="">
+                            <img src="assets/images/t_item3.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -872,7 +872,7 @@
                       <div class="owl-item" style="width: 33px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item2.jpg" alt="">
+                            <img src="assets/images/t_item2.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -896,7 +896,7 @@
                       <div class="owl-item" style="width: 33px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item3.jpg" alt="">
+                            <img src="assets/images/t_item3.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -937,7 +937,7 @@
                       <div class="owl-item" style="width: 33px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item1.jpg" alt="">
+                            <img src="assets/images/t_item1.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -961,7 +961,7 @@
                       <div class="owl-item" style="width: 33px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item2.jpg" alt="">
+                            <img src="assets/images/t_item2.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -986,7 +986,7 @@
                       <div class="owl-item" style="width: 33px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item3.jpg" alt="">
+                            <img src="assets/images/t_item3.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -1011,7 +1011,7 @@
                       <div class="owl-item" style="width: 33px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item4.jpg" alt="">
+                            <img src="assets/images/t_item4.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -1035,7 +1035,7 @@
                       <div class="owl-item" style="width: 33px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item1.jpg" alt="">
+                            <img src="assets/images/t_item1.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -1059,7 +1059,7 @@
                       <div class="owl-item" style="width: 33px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item2.jpg" alt="">
+                            <img src="assets/images/t_item2.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -1083,7 +1083,7 @@
                       <div class="owl-item" style="width: 33px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item3.jpg" alt="">
+                            <img src="assets/images/t_item3.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -1108,7 +1108,7 @@
                       <div class="owl-item" style="width: 33px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item2.jpg" alt="">
+                            <img src="assets/images/t_item2.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
@@ -1132,7 +1132,7 @@
                       <div class="owl-item" style="width: 33px;">
                         <div class="item">
                           <div class="item-img">
-                            <img src="assets/images/t_item3.jpg" alt="">
+                            <img src="assets/images/t_item3.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                             <div class="tr-add-cart">
                               <ul>
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
