@@ -22,7 +22,7 @@
                 <div class="c_password_left">
                   <p>信箱 <span>*</span></p>
                   <input type="text" [(ngModel)]="model.mail" name="mail" #mail="ngModel" [ngClass]="{ 'is-valid': (!form.submitted || !mail.invalid) ,'is-invalid': (form.submitted && mail.invalid) }"
-                    required />
+                    required email/>
                   <div *ngIf="form.submitted && mail.invalid" class="invalid_feedback">
                     Email is required
                   </div>
@@ -63,7 +63,7 @@
                 </label>
               </div>
               <div class="password_commit">
-                <input type="submit" value="註冊" [routerLink]="['/']" routerLinkActive="active">
+                <input type="submit" value="註冊">
               </div>
             </form>
           </div>
