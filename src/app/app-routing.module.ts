@@ -1,24 +1,10 @@
 import { CommodityComponent } from './commodity/commodity.component';
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
-import { LoginComponent } from './member/login/login.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-import { RegisterComponent } from './member/register/register.component';
-import { ProfileComponent } from './member/profile/profile.component';
-import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
-import { RetrievepasswordComponent } from './retrievepassword/retrievepassword.component';
-import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'register',
-    component: RegisterComponent
-  },
   {
     path: 'cart',
     component: CartComponent
@@ -34,18 +20,6 @@ const routes: Routes = [
   {
     path: 'commodity/:id',
     component: CommodityComponent
-  },
-  {
-    path: 'resetPassword',
-    component: ResetpasswordComponent
-  },
-  {
-    path: 'retrievePassword',
-    component: RetrievepasswordComponent
-  },
-  {
-    path: 'profile',
-    component: ProfileComponent
   }
 ];
 

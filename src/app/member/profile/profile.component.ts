@@ -15,7 +15,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {}
   onSubmit(form) {
     console.log(form);
-    
+
     console.log(this.memberService.member);
   }
 }
