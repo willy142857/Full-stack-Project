@@ -1,0 +1,962 @@
+<!-- HOME SLIDER -->
+<div class="slider-wrap">
+  <div class="fullwidthbanner-container">
+    <div class="fullwidthbanner">
+      <!-- TODO:將圖片用ngfor顯示在首頁，並設定點擊後導向路由-->
+      <ul>
+        <ng-container *ngFor="let item of items">
+          <li data-transition="random" data-slotamount="7" data-masterspeed="1000">
+            <img [src]="item.img" alt="slide" [routerLink]="['/commodity']" routerLinkActive="router-link-active">
+
+            <div class="tp-caption large_black sfr" data-x="120" data-y="230" data-speed="1100" data-start="1400"
+              data-easing="easeInOutBack" style="font-family: 'Montserrat', sans-serif; font-size: 50px;
+                  font-weight: 700; line-height:80px;text-transform: uppercase; color: #232323; text-shadow: 0 0 3px #fff">
+              {{item.name}}
+            </div>
+            <div class="tp-caption large_black sfr carousel-caption-inner" data-x="120" data-y="300" data-speed="1100"
+              data-start="1400" data-easing="easeInOutBack">
+              <img src="assets/images/sep-b.png">
+            </div>
+            <div class="tp-caption lfb carousel-caption-inner" data-x="120" data-y="350" data-speed="1300" data-start="1700"
+              data-easing="easeInOutBack" style="font-family: cabin Sans; font-size: 17px; font-weight: bold; text-transform: uppercase; color: #232323;">
+              剩餘{{ item.date }}天
+            </div>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- HOME SLIDER -->
+
+<h2 class="p_title">{{ '進行中的提案' | translate }}</h2>
+
+<section class="promotion_area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="promo_inner">
+          <div class="row">
+
+            <div *ngFor="let item of tests" class="col-md-4 col-sm-4 col-xs-12">
+              <div class="p_box">
+                <div class="images_box">
+                  <img src="assets/images/promo_img2.jpg" alt="" [routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                </div>
+                <div class="p_name">{{ item.name }}</div>
+                <div class="p_founder">{{ item.founder }}</div>
+                <div class="p_dsp">{{ item.brief }}</div>
+                <svg width="350">
+                  <line x1="0" y1="0" x2="350" y2="0" fill="none" stroke-width="3" stroke="#cccccc" />
+                  <line x1="0" y1="0" x2="350" y2="0" fill="none" stroke-width="3" stroke-linecap="round" stroke="#16982B"
+                    stroke-dasharray="350" [style.stroke-dashoffset]="progress(item)" />
+                  <text id="count" x="0" y="20" text-anchor="left" dy="7" font-size="15">
+                    {{ item.currPrice | currency:'':'symbol':'1.0-0' }}</text>
+                  <text id="time" x="280" y="20" text-anchor="right" dy="7" font-size="15">
+                    剩餘{{ item.date }}天</text>
+                </svg>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div [hidden]="true">
+
+  <section class="fresh_blog_area">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="fresh_blog">
+            <h2>fresh from the plans</h2>
+            <div class="multi_line"></div>
+
+            <div id="blog-caro" class="carousel slide" data-ride="carousel">
+
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <div class="fresh_blog_text">
+                        <h2><span>_</span> 13</h2>
+                        <div class="months">
+                          <div class="month_right">
+                            <p>April 2015 </p>
+                            <span><i class="fa fa-comment-o"></i>12</span>
+                          </div>
+                          <div class="fresh_blog_bottom_text">
+                            <h4>trendy cloth designs made from<br> our team</h4>
+                            <p>Trendy Collection</p>
+                            <div class="view_post">
+                              <a class="" href="">view post
+                                <i class="fa fa-long-arrow-right"></i>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="fresh_blog_img">
+                        <img src="assets/images/blog1.jpg" alt="" />
+                      </div>
+                    </div>
+                    <div class="fresh_blog_img">
+                      <img src="assets/images/blog1.jpg" alt="" [routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="fresh_blog_text">
+                      <h2><span>_</span> 12</h2>
+                      <div class="months">
+                        <div class="month_right">
+                          <p>April 2015 </p>
+                          <span><i class="fa fa-comment-o"></i>9</span>
+                        </div>
+                        <div class="fresh_blog_bottom_text">
+                          <h4>trendy cloth designs made from<br> our team</h4>
+                          <p>Trendy Collection</p>
+                          <div class="view_post">
+                            <a class="" href="">view post
+                              <i class="fa fa-long-arrow-right"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="fresh_blog_img">
+                      <img src="assets/images/blog2.jpg" alt="" [routerLink]="['/commodity']" routerLinkActive="router-link-active" />
+                    </div>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <div class="fresh_blog_text">
+                        <h2><span>_</span> 11</h2>
+                        <div class="months">
+                          <div class="month_right">
+                            <p>April 2015 </p>
+                            <span><i class="fa fa-comment-o"></i>12</span>
+                          </div>
+                          <div class="fresh_blog_bottom_text">
+                            <h4>trendy cloth designs made from<br> our team</h4>
+                            <p>Trendy Collection</p>
+                            <div class="view_post">
+                              <a class="" href="">view post
+                                <i class="fa fa-long-arrow-right"></i>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="fresh_blog_img">
+                        <img src="assets/images/blog1.jpg" alt="" />
+                      </div>
+                    </div>
+                    <div class="fresh_blog_img">
+                      <img src="assets/images/blog1.jpg" alt="" [routerLink]="['/commodity']" routerLinkActive="router-link-active" />
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="fresh_blog_text">
+                      <h2><span>_</span> 10</h2>
+                      <div class="months">
+                        <div class="month_right">
+                          <p>April 2015 </p>
+                          <span><i class="fa fa-comment-o"></i>9</span>
+                        </div>
+                        <div class="fresh_blog_bottom_text">
+                          <h4>trendy cloth designs made from<br> our team</h4>
+                          <p>Trendy Collection</p>
+                          <div class="view_post">
+                            <a class="" href="">view post
+                              <i class="fa fa-long-arrow-right"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="fresh_blog_img">
+                      <img src="assets/images/blog2.jpg" alt="" [routerLink]="['/commodity']" routerLinkActive="router-link-active" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Controls -->
+              <a class="left carousel-control" href="#blog-caro" role="button" data-slide="prev">
+                <i class='fa fa-angle-left'></i>
+              </a>
+              <a class="right carousel-control" href="#blog-caro" role="button" data-slide="next">
+                <i class='fa fa-angle-right'></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="trending_area">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="trending_box">
+            <h2>New fundraising Plans</h2>
+            <div class="multi_line"></div>
+
+            <div role="tabpanel">
+
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">new
+                    <span>x</span></a></li>
+                <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">
+                    best <span>x</span></a></li>
+                <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">
+                    trending <span>x</span></a></li>
+                <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">
+                    creative </a></li>
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home">
+                  <div id="owl-example1" class="owl-carousel owl-example-i2 owl-theme" style="opacity: 1; display: block;">
+                    <div class="owl-wrapper-outer">
+                      <div class="owl-wrapper" style="width: 4320px; left: 0px; display: block; transition: all 1000ms ease 0s; transform: translate3d(0px, 0px, 0px);">
+                        <div class="owl-item" style="width: 240px;">
+                          <div class="item">
+                            <div class="item-img">
+                              <img src="assets/images/t_item1.jpg" alt="" [routerLink]="['/commodity']"
+                                routerLinkActive="router-link-active">
+                              <div class="tr-add-cart">
+                                <ul>
+                                  <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                  <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                  <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                  <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="item-new">
+                              <p>New</p>
+                            </div>
+                            <div class="item-sub">
+                              <a href="product-detail.html">
+                                <h5>肉粽防波提 </h5>
+                              </a>
+                              <p>$70.00</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="owl-item" style="width: 240px;">
+                          <div class="item">
+                            <div class="item-img">
+                              <img src="assets/images/t_item2.jpg" alt="" [routerLink]="['/commodity']"
+                                routerLinkActive="router-link-active">
+                              <div class="tr-add-cart">
+                                <ul></ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+
+                              </div>
+                            </div>
+                            <div class="item-new">
+                              <p>New</p>
+                              <span>-10%</span>
+                            </div>
+                            <div class="item-sub">
+                              <a href="product-detail.html">
+                                <h5>gg整形手術 </h5>
+                              </a>
+                              <p>$90.00 <span><del>$100</del></span></p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="owl-item" style="width: 240px;">
+                          <div class="item">
+                            <div class="item-img">
+                              <img src="assets/images/t_item3.jpg" alt="" [routerLink]="['/commodity']"
+                                routerLinkActive="router-link-active">
+                              <div class="tr-add-cart">
+                                <ul>
+                                  <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                  <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                  <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                  <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                </ul>
+                              </div>
+                              <div class="item-new">
+                                <p>New</p>
+                                <span>-10%</span>
+                              </div>
+                              <div class="item-sub">
+                                <a href="product-detail.html">
+                                  <h5>gray shadow jean shirt </h5>
+                                </a>
+                                <p>$90.00 <span><del>$100</del></span></p>
+                              </div>
+                            </div>
+                            <div class="item-new">
+                              <p>New</p>
+                            </div>
+                            <div class="item-sub">
+                              <a href="product-detail.html">
+                                <h5>gggggggg </h5>
+                              </a>
+                              <p>$110.00</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="owl-item" style="width: 240px;">
+                          <div class="item">
+                            <div class="item-img">
+                              <img src="assets/images/t_item4.jpg" alt="" [routerLink]="['/commodity']"
+                                routerLinkActive="router-link-active">
+                              <div class="tr-add-cart">
+                                <ul>
+                                  <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                  <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                  <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                  <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="item-new">
+                              <p>New</p>
+                            </div>
+                            <div class="item-sub">
+                              <a href="product-detail.html">
+                                <h5>youtuber斂財計畫 </h5>
+                              </a>
+                              <p>$130.00</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="owl-item" style="width: 240px;">
+                          <div class="item">
+                            <div class="item-img">
+                              <img src="assets/images/t_item14.jpg" alt="" [routerLink]="['/commodity']"
+                                routerLinkActive="router-link-active">
+                              <div class="tr-add-cart">
+                                <ul>
+                                  <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                  <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                  <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                  <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="owl-item" style="width: 240px;">
+                          <div class="item">
+                            <div class="item-img">
+                              <img src="assets/images/t_item2.jpg" alt="" [routerLink]="['/commodity']"
+                                routerLinkActive="router-link-active">
+                              <div class="tr-add-cart">
+                                <ul>
+                                  <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                  <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                  <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                  <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="item-new">
+                              <p>New</p>
+                              <span>-10%</span>
+                            </div>
+                            <div class="item-sub">
+                              <a href="product-detail.html">
+                                <h5>導演練習</h5>
+                              </a>
+                              <p>$90.00 <span><del>$100</del></span></p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="owl-item" style="width: 240px;">
+                          <div class="item">
+                            <div class="item-img">
+                              <img src="assets/images/t_item3.jpg" alt="" [routerLink]="['/commodity']"
+                                routerLinkActive="router-link-active">
+                              <div class="tr-add-cart">
+                                <ul>
+                                  <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                  <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                  <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                  <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="item-new">
+                              <p>New</p>
+                            </div>
+                            <div class="item-sub">
+                              <a href="product-detail.html">
+                                <h5>先不要</h5>
+                              </a>
+                              <p>$190.00</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="owl-item" style="width: 240px;">
+                          <div class="item">
+                            <div class="item-img">
+                              <img src="assets/images/t_item2.jpg" alt="" [routerLink]="['/commodity']"
+                                routerLinkActive="router-link-active">
+                              <div class="tr-add-cart">
+                                <ul>
+                                  <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                  <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                  <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                  <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="owl-item" style="width: 240px;">
+                          <div class="item">
+                            <div class="item-img">
+                              <img src="assets/images/t_item3.jpg" alt="" [routerLink]="['/commodity']"
+                                routerLinkActive="router-link-active">
+                              <div class="tr-add-cart">
+                                <ul>
+                                  <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                  <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                  <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                  <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="owl-item" style="width: 240px;">
+                            <div class="item">
+                              <div class="item-img">
+                                <img src="assets/images/t_item3.jpg" alt="">
+                                <div class="tr-add-cart">
+                                  <ul>
+                                    <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                    <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                    <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                    <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                              <div class="item-new">
+                                <p>New</p>
+                                <span>-10%</span>
+                              </div>
+                              <div class="item-sub">
+                                <a href="product-detail.html">
+                                  <h5>black men leather coat</h5>
+                                </a>
+                                <p>$180.00 <span><del>$200</del></span></p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="owl-controls clickable">
+                        <div class="owl-buttons">
+                          <div class="owl-prev"><i class="fa fa-angle-left"></i></div>
+                          <div class="owl-next"><i class="fa fa-angle-right"></i></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div role="tabpanel" class="tab-pane" id="profile">
+                    <div id="owl-example2" class="owl-carousel owl-example-i2 owl-theme" style="opacity: 0; display: block;">
+                      <div class="owl-wrapper-outer">
+                        <div class="owl-wrapper" style="width: 594px; left: 0px; display: block;">
+                          <div class="owl-item" style="width: 33px;">
+                            <div class="item">
+                              <div class="item-img">
+                                <img src="assets/images/t_item1.jpg" alt="" [routerLink]="['/commodity']"
+                                  routerLinkActive="router-link-active">
+                                <div class="tr-add-cart">
+                                  <ul>
+                                    <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                    <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                    <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                    <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="owl-item" style="width: 33px;">
+                            <div class="item">
+                              <div class="item-img">
+                                <img src="assets/images/t_item2.jpg" alt="" [routerLink]="['/commodity']"
+                                  routerLinkActive="router-link-active">
+                                <div class="tr-add-cart">
+                                  <ul>
+                                    <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                    <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                    <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                    <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="owl-item" style="width: 33px;">
+                            <div class="item">
+                              <div class="item-img">
+                                <img src="assets/images/t_item7.jpg" alt="" [routerLink]="['/commodity']"
+                                  routerLinkActive="router-link-active">
+                                <div class="tr-add-cart">
+                                  <ul>
+                                    <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                    <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                    <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                    <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="owl-item" style="width: 33px;">
+                            <div class="item">
+                              <div class="item-img">
+                                <img src="assets/images/t_item4.jpg" alt="" [routerLink]="['/commodity']"
+                                  routerLinkActive="router-link-active">
+                                <div class="tr-add-cart">
+                                  <ul>
+                                    <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                    <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                    <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                    <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="owl-item" style="width: 33px;">
+                            <div class="item">
+                              <div class="item-img">
+                                <img src="assets/images/t_item1.jpg" alt="" [routerLink]="['/commodity']"
+                                  routerLinkActive="router-link-active">
+                                <div class="tr-add-cart">
+                                  <ul>
+                                    <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                    <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                    <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                    <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="owl-item" style="width: 33px;">
+                            <div class="item">
+                              <div class="item-img">
+                                <img src="assets/images/t_item5.jpg" alt="" [routerLink]="['/commodity']"
+                                  routerLinkActive="router-link-active">
+                                <div class="tr-add-cart">
+                                  <ul>
+                                    <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                    <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                    <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                    <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="owl-item" style="width: 33px;">
+                            <div class="item">
+                              <div class="item-img">
+                                <img src="assets/images/t_item3.jpg" alt="" [routerLink]="['/commodity']"
+                                  routerLinkActive="router-link-active">
+                                <div class="tr-add-cart">
+                                  <ul>
+                                    <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                    <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                    <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                    <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="owl-item" style="width: 33px;">
+                            <div class="item">
+                              <div class="item-img">
+                                <img src="assets/images/t_item6.jpg" alt="" [routerLink]="['/commodity']"
+                                  routerLinkActive="router-link-active">
+                                <div class="tr-add-cart">
+                                  <ul>
+                                    <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                    <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                    <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                    <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="owl-item" style="width: 33px;">
+                            <div class="item">
+                              <div class="item-img">
+                                <img src="assets/images/t_item7.jpg" alt="" [routerLink]="['/commodity']"
+                                  routerLinkActive="router-link-active">
+                                <div class="tr-add-cart">
+                                  <ul>
+                                    <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                    <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                    <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                    <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="owl-controls clickable">
+                          <div class="owl-buttons">
+                            <div class="owl-prev"><i class="fa fa-angle-left"></i></div>
+                            <div class="owl-next"><i class="fa fa-angle-right"></i></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane" id="messages">
+                      <div id="owl-example3" class="owl-carousel owl-example-i2 owl-theme" style="opacity: 0; display: block;">
+                        <div class="owl-wrapper-outer">
+                          <div class="owl-wrapper" style="width: 594px; left: 0px; display: block;">
+                            <div class="owl-item" style="width: 33px;">
+                              <div class="item">
+                                <div class="item-img">
+                                  <img src="assets/images/t_item1.jpg" alt="" [routerLink]="['/commodity']"
+                                    routerLinkActive="router-link-active">
+                                  <div class="tr-add-cart">
+                                    <ul>
+                                      <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                      <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                      <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                      <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="owl-item" style="width: 33px;">
+                              <div class="item">
+                                <div class="item-img">
+                                  <img src="assets/images/t_item2.jpg" alt="" [routerLink]="['/commodity']"
+                                    routerLinkActive="router-link-active">
+                                  <div class="tr-add-cart">
+                                    <ul>
+                                      <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                      <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                      <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                      <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="owl-item" style="width: 33px;">
+                              <div class="item">
+                                <div class="item-img">
+                                  <img src="assets/images/t_item7.jpg" alt="" [routerLink]="['/commodity']"
+                                    routerLinkActive="router-link-active">
+                                  <div class="tr-add-cart">
+                                    <ul>
+                                      <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                      <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                      <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                      <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="owl-item" style="width: 33px;">
+                              <div class="item">
+                                <div class="item-img">
+                                  <img src="assets/images/t_item5.jpg" alt="" [routerLink]="['/commodity']"
+                                    routerLinkActive="router-link-active">
+                                  <div class="tr-add-cart">
+                                    <ul>
+                                      <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                      <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                      <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                      <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="owl-item" style="width: 33px;">
+                              <div class="item">
+                                <div class="item-img">
+                                  <img src="assets/images/t_item1.jpg" alt="" [routerLink]="['/commodity']"
+                                    routerLinkActive="router-link-active">
+                                  <div class="tr-add-cart">
+                                    <ul>
+                                      <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                      <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                      <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                      <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="owl-item" style="width: 33px;">
+                              <div class="item">
+                                <div class="item-img">
+                                  <img src="assets/images/t_item2.jpg" alt="" [routerLink]="['/commodity']"
+                                    routerLinkActive="router-link-active">
+                                  <div class="tr-add-cart">
+                                    <ul>
+                                      <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                      <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                      <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                      <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="owl-item" style="width: 33px;">
+                              <div class="item">
+                                <div class="item-img">
+                                  <img src="assets/images/t_item3.jpg" alt="" [routerLink]="['/commodity']"
+                                    routerLinkActive="router-link-active">
+                                  <div class="tr-add-cart">
+                                    <ul>
+                                      <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                      <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                      <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                      <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="owl-item" style="width: 33px;">
+                              <div class="item">
+                                <div class="item-img">
+                                  <img src="assets/images/t_item2.jpg" alt="" [routerLink]="['/commodity']"
+                                    routerLinkActive="router-link-active">
+                                  <div class="tr-add-cart">
+                                    <ul>
+                                      <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                      <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                      <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                      <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="owl-item" style="width: 33px;">
+                              <div class="item">
+                                <div class="item-img">
+                                  <img src="assets/images/t_item3.jpg" alt="" [routerLink]="['/commodity']"
+                                    routerLinkActive="router-link-active">
+                                  <div class="tr-add-cart">
+                                    <ul>
+                                      <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                      <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                      <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                      <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="owl-controls clickable">
+                            <div class="owl-buttons">
+                              <div class="owl-prev"><i class="fa fa-angle-left"></i></div>
+                              <div class="owl-next"><i class="fa fa-angle-right"></i></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div role="tabpanel" class="tab-pane" id="settings">
+                        <div id="owl-example4" class="owl-carousel owl-example-i2 owl-theme" style="opacity: 0; display: block;">
+                          <div class="owl-wrapper-outer">
+                            <div class="owl-wrapper" style="width: 594px; left: 0px; display: block;">
+                              <div class="owl-item" style="width: 33px;">
+                                <div class="item">
+                                  <div class="item-img">
+                                    <img src="assets/images/t_item1.jpg" alt="" [routerLink]="['/commodity']"
+                                      routerLinkActive="router-link-active">
+                                    <div class="tr-add-cart">
+                                      <ul>
+                                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                        <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="owl-item" style="width: 33px;">
+                                <div class="item">
+                                  <div class="item-img">
+                                    <img src="assets/images/t_item2.jpg" alt="" [routerLink]="['/commodity']"
+                                      routerLinkActive="router-link-active">
+                                    <div class="tr-add-cart">
+                                      <ul>
+                                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                        <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="owl-item" style="width: 33px;">
+                                <div class="item">
+                                  <div class="item-img">
+                                    <img src="assets/images/t_item3.jpg" alt="" [routerLink]="['/commodity']"
+                                      routerLinkActive="router-link-active">
+                                    <div class="tr-add-cart">
+                                      <ul>
+                                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                        <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="owl-item" style="width: 33px;">
+                                <div class="item">
+                                  <div class="item-img">
+                                    <img src="assets/images/t_item4.jpg" alt="" [routerLink]="['/commodity']"
+                                      routerLinkActive="router-link-active">
+                                    <div class="tr-add-cart">
+                                      <ul>
+                                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                        <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="owl-item" style="width: 33px;">
+                                <div class="item">
+                                  <div class="item-img">
+                                    <img src="assets/images/t_item1.jpg" alt="" [routerLink]="['/commodity']"
+                                      routerLinkActive="router-link-active">
+                                    <div class="tr-add-cart">
+                                      <ul>
+                                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                        <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="owl-item" style="width: 33px;">
+                                <div class="item">
+                                  <div class="item-img">
+                                    <img src="assets/images/t_item2.jpg" alt="" [routerLink]="['/commodity']"
+                                      routerLinkActive="router-link-active">
+                                    <div class="tr-add-cart">
+                                      <ul>
+                                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                        <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="owl-item" style="width: 33px;">
+                                <div class="item">
+                                  <div class="item-img">
+                                    <img src="assets/images/t_item3.jpg" alt="" [routerLink]="['/commodity']"
+                                      routerLinkActive="router-link-active">
+                                    <div class="tr-add-cart">
+                                      <ul>
+                                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                        <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="owl-item" style="width: 33px;">
+                                <div class="item">
+                                  <div class="item-img">
+                                    <img src="assets/images/t_item2.jpg" alt="" [routerLink]="['/commodity']"
+                                      routerLinkActive="router-link-active">
+                                    <div class="tr-add-cart">
+                                      <ul>
+                                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                        <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="owl-item" style="width: 33px;">
+                                <div class="item">
+                                  <div class="item-img">
+                                    <img src="assets/images/t_item3.jpg" alt="" [routerLink]="['/commodity']"
+                                      routerLinkActive="router-link-active">
+                                    <div class="tr-add-cart">
+                                      <ul>
+                                        <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                        <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                        <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                        <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="owl-controls clickable">
+                              <div class="owl-buttons">
+                                <div class="owl-prev"><i class="fa fa-angle-left"></i></div>
+                                <div class="owl-next"><i class="fa fa-angle-right"></i></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+</div>

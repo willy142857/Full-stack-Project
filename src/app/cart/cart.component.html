@@ -1,4 +1,4 @@
-<section class="breadcumb_top_area">
+<!-- <section class="breadcumb_top_area">
   <div class="container">
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
@@ -8,7 +8,8 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
+
 <div class="breadcumb_area">
   <div class="container">
     <div class="row">
@@ -32,111 +33,115 @@
         <div class="main_cart_left">
           <div class="cart_heading">
             <div class="h_item1">
-              <p>product</p>
+              <p>商品</p>
             </div>
             <div class="h_item2">
-              <p>Price</p>
+              <p>單件金額</p>
             </div>
             <div class="h_item3">
-              <p>Quantity</p>
+              <p>數量</p>
             </div>
             <div class="h_item4">
-              <p>total</p>
+              <p>金額</p>
             </div>
           </div>
-          <div class="cart_item">
-            <div class="cart_item_img">
-              <img src="images/cart_img1.jpg" alt="" />
-              <p>blue denim casual <br>shirt</p>
+
+          <ng-container *ngFor="let item of list; let indexhere = index">
+            <div class="cart_item">
+              <div class="cart_item_img">
+                <img src= {{item.img}} alt="" />
+                <p>{{item.name}} <br>{{item.type}}</p>
+              </div>
+              <div class="cart_price">
+                <p>${{item.price}}</p>
+              </div>
+              <div class="cart_quantity">
+                <ul>
+                  <li><button (click)="buttomClickMinus(indexhere)"><i class="fa fa-minus"></i></button></li>
+                  <li><span>{{ item.count }}</span></li>
+                  <li><button (click)="buttomClickPlus(indexhere)"><i class="fa fa-plus"></i></button></li>
+                </ul>
+              </div>
+              <div class="cart_total">
+                <p>${{item.count * item.price}}</p>
+                <span><i class="fa fa-close"></i></span>
+              </div>
             </div>
-            <div class="cart_price">
-              <p>$90</p>
+            <!-- <div class="cart_item">
+              <div class="cart_item_img">
+                <img src="images/cart_img2.jpg" alt="" />
+                <p>structured collarless <br>coat</p>
+              </div>
+              <div class="cart_price">
+                <p>$80</p>
+              </div>
+              <div class="cart_quantity">
+                <ul>
+                  <li><a href=""><i class="fa fa-minus"></i></a></li>
+                  <li><a href="">2</a></li>
+                  <li><a href=""><i class="fa fa-plus"></i></a></li>
+                </ul>
+              </div>
+              <div class="cart_total">
+                <p>$180.00</p>
+                <span><i class="fa fa-close"></i></span>
+              </div>
             </div>
-            <div class="cart_quantity">
-              <ul>
-                <li><a href=""><i class="fa fa-minus"></i></a></li>
-                <li><a href="">2</a></li>
-                <li><a href=""><i class="fa fa-plus"></i></a></li>
-              </ul>
+            <div class="cart_item">
+              <div class="cart_item_img">
+                <img src="images/cart_img3.jpg" alt="" />
+                <p>houndsmooth wool <br>t-shirt</p>
+              </div>
+              <div class="cart_price">
+                <p>$110</p>
+              </div>
+              <div class="cart_quantity">
+                <ul>
+                  <li><a href=""><i class="fa fa-minus"></i></a></li>
+                  <li><a href="">2</a></li>
+                  <li><a href=""><i class="fa fa-plus"></i></a></li>
+                </ul>
+              </div>
+              <div class="cart_total">
+                <p>$180.00</p>
+                <span><i class="fa fa-close"></i></span>
+              </div>
             </div>
-            <div class="cart_total">
-              <p>$180.00</p>
-              <span><i class="fa fa-close"></i></span>
-            </div>
-          </div>
-          <div class="cart_item">
-            <div class="cart_item_img">
-              <img src="images/cart_img2.jpg" alt="" />
-              <p>structured collarless <br>coat</p>
-            </div>
-            <div class="cart_price">
-              <p>$80</p>
-            </div>
-            <div class="cart_quantity">
-              <ul>
-                <li><a href=""><i class="fa fa-minus"></i></a></li>
-                <li><a href="">2</a></li>
-                <li><a href=""><i class="fa fa-plus"></i></a></li>
-              </ul>
-            </div>
-            <div class="cart_total">
-              <p>$180.00</p>
-              <span><i class="fa fa-close"></i></span>
-            </div>
-          </div>
-          <div class="cart_item">
-            <div class="cart_item_img">
-              <img src="images/cart_img3.jpg" alt="" />
-              <p>houndsmooth wool <br>t-shirt</p>
-            </div>
-            <div class="cart_price">
-              <p>$110</p>
-            </div>
-            <div class="cart_quantity">
-              <ul>
-                <li><a href=""><i class="fa fa-minus"></i></a></li>
-                <li><a href="">2</a></li>
-                <li><a href=""><i class="fa fa-plus"></i></a></li>
-              </ul>
-            </div>
-            <div class="cart_total">
-              <p>$180.00</p>
-              <span><i class="fa fa-close"></i></span>
-            </div>
-          </div>
-          <div class="cart_item">
-            <div class="cart_item_img">
-              <img src="images/cart_img4.jpg" alt="" />
-              <p>men’s fashion blue <br>jean coat</p>
-            </div>
-            <div class="cart_price">
-              <p>$70</p>
-            </div>
-            <div class="cart_quantity">
-              <ul>
-                <li><a href=""><i class="fa fa-minus"></i></a></li>
-                <li><a href="">2</a></li>
-                <li><a href=""><i class="fa fa-plus"></i></a></li>
-              </ul>
-            </div>
-            <div class="cart_total">
-              <p>$180.00</p>
-              <span><i class="fa fa-close"></i></span>
-            </div>
-          </div>
-          <div class="coupon_box">
+            <div class="cart_item">
+              <div class="cart_item_img">
+                <img src="images/cart_img4.jpg" alt="" />
+                <p>men’s fashion blue <br>jean coat</p>
+              </div>
+              <div class="cart_price">
+                <p>$70</p>
+              </div>
+              <div class="cart_quantity">
+                <ul>
+                  <li><button><i class="fa fa-minus"></i></button></li>
+                  <li><span>{{ jeanCoat }}</span></li>
+                  <li><button (click)="bottomClickPlus(jeanCoat)"><i class="fa fa-plus"></i></button></li>
+                </ul>
+              </div>
+              <div class="cart_total">
+                <p>$180.00</p>
+                <span><i class="fa fa-close"></i></span>
+              </div>
+            </div> -->
+          </ng-container>
+
+          <!-- <div class="coupon_box">
             <input type="text" placeholder="coupon code" />
+            <input type="button" class="mycoupon" value="apply coupon">
             <input type="submit" value="apply coupon">
-          </div>
+          </div> -->
         </div>
       </div>
+
       <div class="col-md-3 col-sm-4 col-xs-12">
         <div class="main_cart_right">
           <div class="product_form_total">
-
-
             <div class="panel-group" id="home-accordion" role="tablist" aria-multiselectable="true">
-              <div class="panel panel-default">
+              <!-- <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingOne">
                   <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#home-accordion" href="#collapseOne" aria-expanded="true"
@@ -165,13 +170,13 @@
                     <input type="submit" value="Update Totals">
                   </div>
                 </div>
-              </div>
+              </div> -->
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingTwo">
                   <h4 class="panel-title">
                     <a class="collapsed" data-toggle="collapse" data-parent="#home-accordion" href="#collapseTwo"
                       aria-expanded="false" aria-controls="collapseTwo">
-                      Cart totals
+                      購物金額
                       <span class="floatright"><i class="fa fa-plus"></i></span>
                     </a>
                   </h4>
@@ -179,23 +184,24 @@
                 <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                   <div class="panel-body cart_p_body">
                     <div class="c_single_item">
-                      <p>SubTotal</p>
-                      <span>$184.00</span>
+                      <p>小計</p>
+                      <span>${{totalmoney}}</span>
                     </div>
                     <div class="c_single_item cart_last_total">
-                      <p>Shipping Charge</p>
-                      <span>Free</span>
+                      <p>郵資</p>
+                      <span>免費</span>
                     </div>
                     <div class="c_total_item sp_single_item">
                       <p>Total</p>
-                      <span>$854.00</span>
+                      <span>${{totalmoney}}</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <a href="" class="cart_update">Update Cart</a>
-            <input type="submit" value="Proceed to checkout">
+            <a href="#" class="cart_update">更新購物車</a>
+            <a [routerLink]="['/checkout']">結帳</a>
+            <!-- <input type="submit" value="Proceed to checkout"> -->
           </div>
         </div>
       </div>

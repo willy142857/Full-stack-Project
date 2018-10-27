@@ -1,0 +1,277 @@
+<section class="gray_tshirt_area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="gray_tshirt">
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="single_product_image_tab">
+                <div role="tabpanel">
+                  <!-- Tab panes -->
+                  <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="home">
+                      <div class="single_p_image">
+                        <a href="/assets/images/single-large.jpg" data-lightbox="image-1" data-title="My caption"><img
+                            src="images/product-plus.png" alt="" /></a>
+                        <img id="zoom_02" src="/assets/images/Product-Details-04.jpg" data-zoom-image="/assets/images/single-large.jpg"
+                          alt="" />
+                      </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="profile">
+                      <div class="single_p_image">
+                        <a href="/assets/images/single-large1.png" data-lightbox="image-1" data-title="My caption"><img
+                            src="/assets/images/product-plus.png" alt="" /></a>
+                        <img id="zoom_03" src="/assets/images/product_detail_05.png" data-zoom-image="/assets/images/single-large1.png"
+                          alt="" />
+                      </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="messages">
+                      <div class="single_p_image">
+                        <a href="/assets/images/single-large2.png" data-lightbox="image-1" data-title="My caption"><img
+                            src="/assets/images/product-plus.png" alt="" /></a>
+                        <img id="zoom_04" src="/assets/images/product_detail_06.png" data-zoom-image="/assets/images/single-large2.png"
+                          alt="" />
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+
+              <div class="product_detail_heading">
+                <div class="detail_heading_left">
+                  <div>
+                    <h3>{{list.name}}</h3>
+                    <br>
+                    <h5>by {{list.applier}}</h5>
+                  </div>
+                </div><br>
+                <div class="detail_heading_right">
+                  <ul id="detail_star">
+                    <ng-container *ngFor="let star of stars; let i = index">
+                      <li><a class="fa fa-star-o" [ngClass]="{'pink': star}" (click)="score_stars(i+1)"></a></li>
+                    </ng-container>
+                  </ul>
+                  <p>comment</p>
+                </div><br>
+                <div class="detail_heading_left">
+                  <div>
+                    類別： {{list.category}}
+                  </div>
+                </div>
+              </div>
+              <div class="panel-group product_accordion" id="home-accordion-single" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default product_default">
+                  <div class="panel-heading product_accordion_heading" role="tab" id="headingOneP">
+                    <h4 class="panel-title product_accordion_head">
+                      <a data-toggle="collapse" data-parent="#home-accordion-single" href="#collapseOneP" aria-expanded="true"
+                        aria-controls="collapseOneP">
+                        簡介
+                        <span class="floatright"><i class="fa fa-minus"></i></span>
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseOneP" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOneP">
+                    <div class="panel-body product_ac_body">
+                      <p>{{list.brief_intro}}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default product_default">
+                  <div class="panel-heading product_accordion_heading" role="tab" id="headingTwoP">
+                    <h4 class="panel-title product_accordion_head">
+                      <a class="collapsed" data-toggle="collapse" data-parent="#home-accordion-single" href="#collapseTwoP"
+                        aria-expanded="false" aria-controls="collapseTwoP">
+                        募資狀況
+                        <span class="floatright"><i class="fa fa-plus"></i></span>
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseTwoP" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwoP">
+                    <div>
+                      <svg width="75" height="75">
+                        <circle cx="40" cy="40" r="35" fill="#FDB900" />
+                        <path stroke-linecap="round" stroke-width="5" stroke="#fff" fill="none" d="M40 10
+                                     a 30 30 0 0 1 0 60
+                                     a 30 30 0 0 1 0 -60">
+                        </path>
+                        <text id="count" x="40" y="40" text-anchor="middle" dy="7" font-size="20">{{list.get /
+                          list.budget * 100}}%</text>
+                      </svg>
+                      <div class="panel-body fit">
+                        已募資金額：{{list.get}}
+                        <br>目標金額：{{list.budget}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default product_default">
+                  <div class="panel-heading product_accordion_heading" role="tab" id="headingThreeP">
+                    <h4 class="panel-title product_accordion_head">
+                      <a class="collapsed" data-toggle="collapse" data-parent="#home-accordion-single" href="#collapseThreeP"
+                        aria-expanded="false" aria-controls="collapseThreeP">
+                        詳細資料
+                        <span class="floatright"><i class="fa fa-plus"></i></span>
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseThreeP" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThreeP">
+                    <div class="panel-body product_accordion_head">
+                      <div class="single_color sp_single_col">
+                        <div class="color_heading">
+                          <h5>贊助人數：{{list.people}}人</h5>
+                        </div>
+                      </div>
+                      <div class="single_color">
+                        <div class="color_heading">
+                          <h5>剩餘時間：{{date()}}天</h5>
+                        </div>
+                      </div>
+                      <div class="single_color">
+                        <div class="color_heading" width="400">
+                          <h5>時程：<br>{{list.startAt | date:'y/MM/d' }} ~ {{list.endAt | date:'y/MM/d' }}</h5>
+                        </div>
+                      </div>
+
+                      <div class="single_color">
+                        <div class="color_heading">
+                          <h5>聯絡信箱：{{list.email}}</h5>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="main_category_area product_page_caro">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="main_category_right product-box">
+          <h2 class="product">贊助計畫方案</h2>
+          <div class="multi_line_long"></div>
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div>
+                <ng-container *ngFor="let plan of list.plans; let i = index;">
+                  <div>
+                    <form (submit)="add_to_cart(list)">
+                      <div class="item">
+                        <div>
+                          <h3>方案{{i+1}}：</h3>
+                        </div>
+                        <div class="multi_lines_text">
+                          {{plan.feedback_description}}
+                          <div>
+                            回饋金額：{{plan.feedback}}
+                          </div>
+                          <div class="invest_button">
+                            <input type="submit" value="贊助計畫">
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                    <hr class="style-five" />
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="product_page_tab_area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="product_page_tab">
+          <div role="tabpanel">
+            <ul class="nav nav-tabs tab-product" role="tablist">
+              <li role="presentation" class="active"><a href="#home2" aria-controls="home2" role="tab" data-toggle="tab">商品描述</a></li>
+              <li role="presentation"><a href="#messages2" aria-controls="messages2" role="tab" data-toggle="tab">留言板</a></li>
+            </ul>
+
+            <div class="tab-content tab-p-details">
+              <div role="tabpanel" class="tab-pane active" id="home2">
+                <h2>商品描述</h2>
+                <div class="multi_line"></div>
+                <p>
+                  {{list.description}}
+                </p>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="messages2">
+                <div class="review_comments">
+                  <div class="review_heading">
+                    <div class="review_heading_left">
+                      <h2><span>留言</span></h2>
+                      <div class="multi_line"></div>
+                    </div>
+                    <div class="review_heading_right">
+                      <ul id="review_heading_star">
+                        <li><a href="" class="fa fa-star"></a></li>
+                        <li><a href="" class="fa fa-star"></a></li>
+                        <li><a href="" class="fa fa-star"></a></li>
+                        <li><a href="" class="fa fa-star"></a></li>
+                        <li><a href="" class="fa fa-star"></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <ng-container *ngFor='let item of messages'>
+                    <div class="single_review_comment">
+                      <div class="single_review_img">
+                        <img src="/assets/images/single_rv1.png" alt="" />
+                      </div>
+                      <div class="single_review_text">
+                        <h4>{{item.sum_review}}</h4>
+                        <ul id="single_review_star">
+                          <li><a href="" class="fa fa-star"></a></li>
+                          <li><a href="" class="fa fa-star"></a></li>
+                          <li><a href="" class="fa fa-star"></a></li>
+                          <li><a href="" class="fa fa-star"></a></li>
+                          <li><a href="" class="fa fa-star"></a></li>
+                        </ul>
+                        <p>{{item.review}}</p>
+                        <div class="review_italic">
+                          <p><span>{{item.name}}</span>, {{item.date | date:'y/MM/d'}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </ng-container>
+                  <div class="Review_input">
+                    <div class="review_input_heading">
+                      <h3>Write your review</h3>
+                      <div class="multi_line"></div>
+                    </div>
+                    <div class="review_comment">
+                      <input type="text" placeholder="Enter Your Nickname" /><br>
+                      <input type="text" placeholder="Summary of your Review" /><br>
+                      <textarea name="" id="" cols="30" rows="10" placeholder="Write your review"></textarea><br>
+                      <div class="message_button">
+                        <input type="submit" value="Submit Review" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

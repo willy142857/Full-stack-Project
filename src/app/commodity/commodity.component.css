@@ -1,0 +1,129 @@
+body {
+  font-family: "微软雅黑";
+  text-align:center;font-family: 'Open Sans', sans-serif;
+}
+
+.multi_lines_text {
+  white-space: pre-line;
+}
+
+.invest_button {
+  padding: 0px;
+}
+
+.invest_button>input[type="submit"] {
+  background: none repeat scroll 0 0 #ff6766;
+  border: 2px solid #ff6766;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 8px auto 15px;
+  padding: 7px;
+  margin-left: 200px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 80px;
+  height: 30px;
+}
+
+.invest_button>input[type="submit"]:hover {
+  background: #fff;
+  color: #232323;
+}
+
+.message_button>input[type="submit"] {
+  background: none repeat scroll 0 0 #ff6766;
+  border: 2px solid #ff6766;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 8px auto 15px;
+  padding: 7px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 120px;
+  height: 30px;
+}
+
+.message_button>input[type="submit"]:hover {
+  background: #fff;
+  color: #232323;
+}
+
+.review_comment input[type="text"] {
+  background: transparent none repeat scroll 0 0;
+  border: 1px solid #d3d3d3;
+  color: #333;
+  font-size: 12px;
+  height: 30px;
+  margin-bottom: 10px;
+  padding: 0 10px;
+  width: 400px;
+}
+
+.review_comment textarea {
+  background: transparent none repeat scroll 0 0;
+  border: 1px solid #d3d3d3;
+  color: #333;
+  font-size: 12px;
+  margin-bottom: 20px;
+  width: 400px;
+  padding: 0 10px;
+  height: 135px;
+}
+
+hr.style-five {
+  border: 0;
+    height: 1px;
+    width: 600px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+hr.style-five:after {
+  /* Not really supposed to work, but does */
+  content: '\00a0'; /* Prevent margin collapse */
+}
+
+
+.multi_line_long {
+  border-bottom: 2px solid #ff6766;
+  border-top: 1px solid #ff6766;
+  height: 5px;
+  margin: 0 auto 20px;
+  width: 200px;
+}
+.multi_line_long {
+  margin-left: 0px;
+}
+.fa {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\f006";
+}
+
+.fa:hover{
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\f006";
+  color: #ff6766;
+}
+
+.pink{
+  color: #ff6766;
+}
+
+.color_heading {
+  float: left;
+  overflow: hidden;
+  width: 50%;
+}

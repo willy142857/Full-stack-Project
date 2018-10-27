@@ -93,7 +93,7 @@ body {
 }
 
 body {
-  font-family: 'Cabin', sans-serif;
+  font-family: karla, -apple-system, BlinkMacSystemFont, "Segoe UI", "微軟正黑體", "Microsoft JhengHei", sans-serif;
 }
 
 .section-padding {
@@ -1158,7 +1158,7 @@ ul.cat_nav li a:hover {
   text-decoration: none;
 }
 
-.item-sub>p {
+.item-sub p {
   color: #ff6766;
   margin-bottom: 0;
   margin-top: 4px;
@@ -2249,11 +2249,12 @@ ul.wid_social li a:hover {
 }
 
 .s_order textarea {
-  height: 104px;
+  height: 120px;
 }
 
 .s_order {
   margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 

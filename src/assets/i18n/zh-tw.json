@@ -1,0 +1,32 @@
+{
+  "login": "登入",
+  "signup": "註冊",
+  "name": "姓名",
+  "account": "帳號",
+  "email": "信箱",
+  "password": "密碼",
+  "home": "首頁",
+  "category": "分類",
+  "search": "搜尋",
+
+  "create": {
+    "raiseFund": "提案",
+    "founder": "提案人",
+    "startAt": "預計開始時間",
+    "endAt": "預計結束時間",
+    "name": "計畫名稱",
+    "target": "計畫目標",
+    "brief": "計畫簡介",
+    "img": "封面照片",
+    "description": "計畫說明",
+    "fAmount": "回饋選項金額",
+    "fAt": "回饋預計實現時間",
+    "fDescription": "回饋選項詳細說明",
+    "web": "相關網頁",
+    "isCheck": "我已詳閱並同意提案契約書",
+    "alertUncheck": "你為甚麼敢不同意?",
+    "submit": "提交",
+    "cancel": "取消"
+  }
+
+}

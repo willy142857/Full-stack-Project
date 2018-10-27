@@ -1,39 +1,35 @@
-import { NgModule, Component } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { LayoutComponent } from './layout/layout.component';
+import { CommodityComponent } from './commodity/commodity.component';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { CartComponent } from './cart/cart.component';
-import { CreateComponent } from './products/create/create.component';
-import { EditComponent } from './products/edit/edit.component';
-import { IndexComponent } from './products/index/index.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: LayoutComponent,
-    children: [
-      {
-        path: 'index',
-        component: IndexComponent
-      },
-      {
-        path: 'create',
-        component: CreateComponent
-      },
-      {
-        path: 'edit:/id',
-        component: EditComponent
-      },
-      {
-        path: 'login',
-        component: LoginComponent
-      }
-    ]
+    path: 'cart',
+    component: CartComponent
+  },
+  {
+    path: 'checkout',
+    component: CheckoutComponent
+  },
+  {
+    path: 'commodity',
+    component: CommodityComponent
+  },
+  {
+    path: 'commodity/:id',
+    component: CommodityComponent
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      enableTracing: false,
+      preloadingStrategy: PreloadAllModules
+    })
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
