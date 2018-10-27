@@ -12,7 +12,7 @@ export class CommoditiesService {
       category: '科技',
       budget: 100000,
       brief_intro: '這個商品真的很好.............................................................',
-      get: 50000,
+      get: 40000,
       people: 50,
       startAt: '2018-09-11T19:49:35.917Z',
       endAt: '2018-11-11T19:49:35.917Z',

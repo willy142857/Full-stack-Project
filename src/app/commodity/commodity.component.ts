@@ -1,3 +1,4 @@
+import { CartsService } from './../cart/carts.service';
 import { CommoditiesService } from './commodities.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class CommodityComponent implements OnInit {
   today = new Date();
   stars: any = [false, false, false, false, false];
+  new_commodity: any;
   get list() {
     return this.commoditiesService.commodity;
   }
@@ -34,7 +36,14 @@ export class CommodityComponent implements OnInit {
 
   add_to_cart(event) {
     if (confirm('確定加入購物車?')) {
-      console.log(event);
+     this.new_commodity = {
+      name: event.name,
+      img: 'images/cart_img2.jpg',
+      type: event.category,
+      price: 100,
+      count: 1,
+      };
+      this.cartsservice.list.push(this.new_commodity);
     }
   }
   score_stars(number) {
@@ -44,6 +53,7 @@ export class CommodityComponent implements OnInit {
     }
   }
   // deadline: number = Date(this.list.updatedAt);
-  constructor(private commoditiesService: CommoditiesService) {}
+  constructor(private commoditiesService: CommoditiesService,
+    private cartsservice: CartsService) {}
   ngOnInit() {}
 }
