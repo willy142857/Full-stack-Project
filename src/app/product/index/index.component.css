@@ -19,6 +19,7 @@
 
 .p_box {
   margin-top: 0%;
+  height: 500px;
 }
 
 .p_name {
@@ -37,6 +38,8 @@
   font-size: 15px;
   word-break: break-all;
   margin-bottom: 10%;
+  height: 80px;
+  overflow: hidden;
 }
 
 .p_title {
