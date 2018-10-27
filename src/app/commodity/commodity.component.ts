@@ -55,5 +55,7 @@ export class CommodityComponent implements OnInit {
   // deadline: number = Date(this.list.updatedAt);
   constructor(private commoditiesService: CommoditiesService,
     private cartsservice: CartsService) {}
-  ngOnInit() {}
+  ngOnInit() {
+    scroll(0, 0);
+  }
 }
