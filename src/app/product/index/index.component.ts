@@ -137,11 +137,14 @@ export class IndexComponent implements OnInit {
       targetPrice: '8700'
     }
   ];
+  dasharray = 350;
   constructor() {}
 
   ngOnInit() {}
 
   progress(item): number {
-    return 100 - (item.currPrice / item.targetPrice) * 100;
+    return (
+      this.dasharray - (item.currPrice / item.targetPrice) * this.dasharray
+    );
   }
 }
