@@ -121,3 +121,9 @@ hr.style-five:after {
 .pink{
   color: #ff6766;
 }
+
+.color_heading {
+  float: left;
+  overflow: hidden;
+  width: 50%;
+}

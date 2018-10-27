@@ -9,6 +9,7 @@ export class CommoditiesService {
   commodity = {
       name: '口罩',
       applier: 'john',
+      category: '科技',
       budget: 100000,
       brief_intro: '這個商品真的很好.............................................................',
       get: 50000,

@@ -6,7 +6,7 @@
       <ul>
         <ng-container *ngFor="let item of items">
           <li data-transition="random" data-slotamount="7" data-masterspeed="1000">
-            <img [src]="item.img" alt="slide">
+            <img [src]="item.img" alt="slide" [routerLink]="['/commodity']" routerLinkActive="router-link-active" >
 
             <div class="tp-caption large_black sfr" data-x="120" data-y="230" data-speed="1100"
               data-start="1400" data-easing="easeInOutBack" style="font-family: 'Montserrat', sans-serif; font-size: 50px;
@@ -15,7 +15,7 @@
             </div>
             <div class="tp-caption large_black sfr carousel-caption-inner" data-x="120" data-y="300"
               data-speed="1100" data-start="1400" data-easing="easeInOutBack">
-              <img src="assets/images/sep-b.png">
+              <img src="assets/images/sep-b.png" >
             </div>
             <div class="tp-caption lfb carousel-caption-inner" data-x="120" data-y="350" data-speed="1300"
               data-start="1700" data-easing="easeInOutBack" style="font-family: cabin Sans; font-size: 17px; font-weight: bold; text-transform: uppercase; color: #232323;">
@@ -42,7 +42,7 @@
             <div *ngFor="let item of tests" class="col-md-4 col-sm-4 col-xs-12">
               <div class="p_box">
                 <div class="images_box">
-                  <img src="assets/images/promo_img2.jpg" alt="">
+                  <img src="assets/images/promo_img2.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
                 </div>
                 <div class="p_name">{{ item.name }}</div>
                 <div class="p_founder">{{ item.founder }}</div>
@@ -68,6 +68,15 @@
 
 <div [hidden]="true">
 
+<<<<<<< HEAD
+<section class="fresh_blog_area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="fresh_blog">
+          <h2>fresh from the plans</h2>
+          <div class="multi_line"></div>
+=======
   <section class="fresh_blog_area">
     <div class="container">
       <div class="row">
@@ -75,6 +84,7 @@
           <div class="fresh_blog">
             <h2>fresh from the blog</h2>
             <div class="multi_line"></div>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
 
             <div id="blog-caro" class="carousel slide" data-ride="carousel">
 
@@ -105,6 +115,33 @@
                         <img src="assets/images/blog1.jpg" alt="" />
                       </div>
                     </div>
+<<<<<<< HEAD
+                    <div class="fresh_blog_img">
+                      <img src="assets/images/blog1.jpg" alt="" [routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="fresh_blog_text">
+                      <h2><span>_</span> 12</h2>
+                      <div class="months">
+                        <div class="month_right">
+                          <p>April 2015 </p>
+                          <span><i class="fa fa-comment-o"></i>9</span>
+                        </div>
+                        <div class="fresh_blog_bottom_text">
+                          <h4>trendy cloth designs made from<br> our team</h4>
+                          <p>Trendy Collection</p>
+                          <div class="view_post">
+                            <a class="" href="">view post
+                              <i class="fa fa-long-arrow-right"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="fresh_blog_img">
+                      <img src="assets/images/blog2.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active" />
+=======
                     <div class="col-md-6 col-sm-6 col-xs-12">
                       <div class="fresh_blog_text">
                         <h2><span>_</span> 12</h2>
@@ -127,6 +164,7 @@
                       <div class="fresh_blog_img">
                         <img src="assets/images/blog2.jpg" alt="" />
                       </div>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                     </div>
                   </div>
                 </div>
@@ -155,6 +193,33 @@
                         <img src="assets/images/blog1.jpg" alt="" />
                       </div>
                     </div>
+<<<<<<< HEAD
+                    <div class="fresh_blog_img">
+                      <img src="assets/images/blog1.jpg" alt="" [routerLink]="['/commodity']" routerLinkActive="router-link-active"/>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="fresh_blog_text">
+                      <h2><span>_</span> 10</h2>
+                      <div class="months">
+                        <div class="month_right">
+                          <p>April 2015 </p>
+                          <span><i class="fa fa-comment-o"></i>9</span>
+                        </div>
+                        <div class="fresh_blog_bottom_text">
+                          <h4>trendy cloth designs made from<br> our team</h4>
+                          <p>Trendy Collection</p>
+                          <div class="view_post">
+                            <a class="" href="">view post
+                              <i class="fa fa-long-arrow-right"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="fresh_blog_img">
+                      <img src="assets/images/blog2.jpg" alt="" [routerLink]="['/commodity']" routerLinkActive="router-link-active"/>
+=======
                     <div class="col-md-6 col-sm-6 col-xs-12">
                       <div class="fresh_blog_text">
                         <h2><span>_</span> 10</h2>
@@ -177,6 +242,7 @@
                       <div class="fresh_blog_img">
                         <img src="assets/images/blog2.jpg" alt="" />
                       </div>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                     </div>
                   </div>
                 </div>
@@ -222,6 +288,69 @@
                     creative </a></li>
               </ul>
 
+<<<<<<< HEAD
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="home">
+                <div id="owl-example1" class="owl-carousel owl-example-i2 owl-theme" style="opacity: 1; display: block;">
+                  <div class="owl-wrapper-outer">
+                    <div class="owl-wrapper" style="width: 4320px; left: 0px; display: block; transition: all 1000ms ease 0s; transform: translate3d(0px, 0px, 0px);">
+                      <div class="owl-item" style="width: 240px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item1.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="item-new">
+                            <p>New</p>
+                          </div>
+                          <div class="item-sub">
+                            <a href="product-detail.html">
+                              <h5>肉粽防波提 </h5>
+                            </a>
+                            <p>$70.00</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="owl-item" style="width: 240px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item2.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul></ul>
+                              <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                              <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                              <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                              <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+
+                            </div>
+                          </div>
+                          <div class="item-new">
+                            <p>New</p>
+                            <span>-10%</span>
+                          </div>
+                          <div class="item-sub">
+                            <a href="product-detail.html">
+                              <h5>gg整形手術 </h5>
+                            </a>
+                            <p>$90.00 <span><del>$100</del></span></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="owl-item" style="width: 240px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item3.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+=======
               <!-- Tab panes -->
               <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="home">
@@ -258,6 +387,7 @@
                               <img src="assets/images/t_item2.jpg" alt="">
                               <div class="tr-add-cart">
                                 <ul></ul>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                                 <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
                                 <li><a class="tr_text" href="#">ADD TO CART</a></li>
                                 <li><a class="fa fa-heart tr_heart" href="#"></a></li>
@@ -275,6 +405,55 @@
                               </a>
                               <p>$90.00 <span><del>$100</del></span></p>
                             </div>
+<<<<<<< HEAD
+                          </div>
+                          <div class="item-new">
+                            <p>New</p>
+                          </div>
+                          <div class="item-sub">
+                            <a href="product-detail.html">
+                              <h5>gggggggg </h5>
+                            </a>
+                            <p>$110.00</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="owl-item" style="width: 240px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item4.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="item-new">
+                            <p>New</p>
+                          </div>
+                          <div class="item-sub">
+                            <a href="product-detail.html">
+                              <h5>youtuber斂財計畫 </h5>
+                            </a>
+                            <p>$130.00</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="owl-item" style="width: 240px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item14.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+=======
                           </div>
                         </div>
                         <div class="owl-item" style="width: 240px;">
@@ -322,9 +501,73 @@
                                 <h5>gray shadow jean shirt </h5>
                               </a>
                               <p>$130.00</p>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                             </div>
                           </div>
                         </div>
+<<<<<<< HEAD
+                      </div>
+                      <div class="owl-item" style="width: 240px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item2.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="item-new">
+                            <p>New</p>
+                            <span>-10%</span>
+                          </div>
+                          <div class="item-sub">
+                            <a href="product-detail.html">
+                              <h5>導演練習</h5>
+                            </a>
+                            <p>$90.00 <span><del>$100</del></span></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="owl-item" style="width: 240px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item3.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="item-new">
+                            <p>New</p>
+                          </div>
+                          <div class="item-sub">
+                            <a href="product-detail.html">
+                              <h5>先不要</h5>
+                            </a>
+                            <p>$190.00</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="owl-item" style="width: 240px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item2.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+=======
                         <div class="owl-item" style="width: 240px;">
                           <div class="item">
                             <div class="item-img">
@@ -396,9 +639,24 @@
                                 <h5>gray shadow jean shirt</h5>
                               </a>
                               <p>$190.00</p>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                             </div>
                           </div>
                         </div>
+<<<<<<< HEAD
+                      </div>
+                      <div class="owl-item" style="width: 240px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item3.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+=======
                         <div class="owl-item" style="width: 240px;">
                           <div class="item">
                             <div class="item-img">
@@ -420,6 +678,7 @@
                                 <h5>v-neck men blue t-shirt </h5>
                               </a>
                               <p>$180.00</p>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                             </div>
                           </div>
                         </div>
@@ -459,6 +718,23 @@
                   </div>
                 </div>
 
+<<<<<<< HEAD
+              <div role="tabpanel" class="tab-pane" id="profile">
+                <div id="owl-example2" class="owl-carousel owl-example-i2 owl-theme" style="opacity: 0; display: block;">
+                  <div class="owl-wrapper-outer">
+                    <div class="owl-wrapper" style="width: 594px; left: 0px; display: block;">
+                      <div class="owl-item" style="width: 33px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item1.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+=======
                 <div role="tabpanel" class="tab-pane" id="profile">
                   <div id="owl-example2" class="owl-carousel owl-example-i2 owl-theme" style="opacity: 0; display: block;">
                     <div class="owl-wrapper-outer">
@@ -484,9 +760,24 @@
                                 <h5>super Clover Robe Jacket</h5>
                               </a>
                               <p>$90.00</p>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                             </div>
                           </div>
                         </div>
+<<<<<<< HEAD
+                      </div>
+                      <div class="owl-item" style="width: 33px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item2.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+=======
                         <div class="owl-item" style="width: 33px;">
                           <div class="item">
                             <div class="item-img">
@@ -509,9 +800,24 @@
                                 <h5>black men leather coat</h5>
                               </a>
                               <p>$90.00 <span><del>$100</del></span></p>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                             </div>
                           </div>
                         </div>
+<<<<<<< HEAD
+                      </div>
+                      <div class="owl-item" style="width: 33px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item7.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+=======
                         <div class="owl-item" style="width: 33px;">
                           <div class="item">
                             <div class="item-img">
@@ -534,9 +840,24 @@
                                 <h5>v-neck men blue t-shirt </h5>
                               </a>
                               <p>$90.00 <span><del>$100</del></span></p>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                             </div>
                           </div>
                         </div>
+<<<<<<< HEAD
+                      </div>
+                      <div class="owl-item" style="width: 33px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item4.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+=======
                         <div class="owl-item" style="width: 33px;">
                           <div class="item">
                             <div class="item-img">
@@ -558,9 +879,24 @@
                                 <h5>houndsmooth wool t-shirt</h5>
                               </a>
                               <p>$90.00</p>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                             </div>
                           </div>
                         </div>
+<<<<<<< HEAD
+                      </div>
+                      <div class="owl-item" style="width: 33px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item1.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+=======
                         <div class="owl-item" style="width: 33px;">
                           <div class="item">
                             <div class="item-img">
@@ -582,9 +918,24 @@
                                 <h5>black men leather coat</h5>
                               </a>
                               <p>$90.00</p>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                             </div>
                           </div>
                         </div>
+<<<<<<< HEAD
+                      </div>
+                      <div class="owl-item" style="width: 33px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item5.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+=======
                         <div class="owl-item" style="width: 33px;">
                           <div class="item">
                             <div class="item-img">
@@ -607,9 +958,24 @@
                                 <h5>AROS SLIM HEAVY CHINO</h5>
                               </a>
                               <p>$90.00 <span><del>$100</del></span></p>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                             </div>
                           </div>
                         </div>
+<<<<<<< HEAD
+                      </div>
+                      <div class="owl-item" style="width: 33px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item3.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+=======
                         <div class="owl-item" style="width: 33px;">
                           <div class="item">
                             <div class="item-img">
@@ -631,9 +997,24 @@
                                 <h5>black men leather coat</h5>
                               </a>
                               <p>$90.00</p>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                             </div>
                           </div>
                         </div>
+<<<<<<< HEAD
+                      </div>
+                      <div class="owl-item" style="width: 33px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item6.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+=======
                         <div class="owl-item" style="width: 33px;">
                           <div class="item">
                             <div class="item-img">
@@ -656,9 +1037,24 @@
                                 <h5>volv checked casual shirt</h5>
                               </a>
                               <p>$90.00 <span><del>$100</del></span></p>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                             </div>
                           </div>
                         </div>
+<<<<<<< HEAD
+                      </div>
+                      <div class="owl-item" style="width: 33px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item7.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+=======
                         <div class="owl-item" style="width: 33px;">
                           <div class="item">
                             <div class="item-img">
@@ -680,6 +1076,7 @@
                                 <h5>yellow Clover Robe Jacket</h5>
                               </a>
                               <p>$90.00</p>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                             </div>
                           </div>
                         </div>
@@ -694,6 +1091,23 @@
                   </div>
                 </div>
 
+<<<<<<< HEAD
+              <div role="tabpanel" class="tab-pane" id="messages">
+                <div id="owl-example3" class="owl-carousel owl-example-i2 owl-theme" style="opacity: 0; display: block;">
+                  <div class="owl-wrapper-outer">
+                    <div class="owl-wrapper" style="width: 594px; left: 0px; display: block;">
+                      <div class="owl-item" style="width: 33px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item1.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+=======
                 <div role="tabpanel" class="tab-pane" id="messages">
                   <div id="owl-example3" class="owl-carousel owl-example-i2 owl-theme" style="opacity: 0; display: block;">
                     <div class="owl-wrapper-outer">
@@ -720,9 +1134,24 @@
                                 <h5>black men leather coat</h5>
                               </a>
                               <p>$90.00 <span><del>$100</del></span></p>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                             </div>
                           </div>
                         </div>
+<<<<<<< HEAD
+                      </div>
+                      <div class="owl-item" style="width: 33px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item2.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+=======
                         <div class="owl-item" style="width: 33px;">
                           <div class="item">
                             <div class="item-img">
@@ -744,9 +1173,24 @@
                                 <h5>black men leather coat</h5>
                               </a>
                               <p>$90.00</p>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                             </div>
                           </div>
                         </div>
+<<<<<<< HEAD
+                      </div>
+                      <div class="owl-item" style="width: 33px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item7.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+=======
                         <div class="owl-item" style="width: 33px;">
                           <div class="item">
                             <div class="item-img">
@@ -768,9 +1212,24 @@
                                 <h5>yellow Clover Robe Jacket</h5>
                               </a>
                               <p>$90.00</p>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                             </div>
                           </div>
                         </div>
+<<<<<<< HEAD
+                      </div>
+                      <div class="owl-item" style="width: 33px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item5.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+=======
                         <div class="owl-item" style="width: 33px;">
                           <div class="item">
                             <div class="item-img">
@@ -793,9 +1252,24 @@
                                 <h5>structured collarless coat</h5>
                               </a>
                               <p>$90.00 <span><del>$100</del></span></p>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                             </div>
                           </div>
                         </div>
+<<<<<<< HEAD
+                      </div>
+                      <div class="owl-item" style="width: 33px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item1.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+=======
                         <div class="owl-item" style="width: 33px;">
                           <div class="item">
                             <div class="item-img">
@@ -817,9 +1291,24 @@
                                 <h5>super Clover Robe Jacket</h5>
                               </a>
                               <p>$90.00</p>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                             </div>
                           </div>
                         </div>
+<<<<<<< HEAD
+                      </div>
+                      <div class="owl-item" style="width: 33px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item2.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+=======
                         <div class="owl-item" style="width: 33px;">
                           <div class="item">
                             <div class="item-img">
@@ -842,9 +1331,24 @@
                                 <h5>black men leather coat</h5>
                               </a>
                               <p>$90.00 <span><del>$100</del></span></p>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                             </div>
                           </div>
                         </div>
+<<<<<<< HEAD
+                      </div>
+                      <div class="owl-item" style="width: 33px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item3.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+=======
                         <div class="owl-item" style="width: 33px;">
                           <div class="item">
                             <div class="item-img">
@@ -866,9 +1370,24 @@
                                 <h5>full hand animal jacket</h5>
                               </a>
                               <p>$90.00</p>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                             </div>
                           </div>
                         </div>
+<<<<<<< HEAD
+                      </div>
+                      <div class="owl-item" style="width: 33px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item2.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+=======
                         <div class="owl-item" style="width: 33px;">
                           <div class="item">
                             <div class="item-img">
@@ -890,9 +1409,24 @@
                                 <h5>black men leather coat</h5>
                               </a>
                               <p>$90.00</p>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                             </div>
                           </div>
                         </div>
+<<<<<<< HEAD
+                      </div>
+                      <div class="owl-item" style="width: 33px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item3.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+=======
                         <div class="owl-item" style="width: 33px;">
                           <div class="item">
                             <div class="item-img">
@@ -915,6 +1449,7 @@
                                 <h5>men’s fashion blue jean coat</h5>
                               </a>
                               <p>$90.00 <span><del>$100</del></span></p>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                             </div>
                           </div>
                         </div>
@@ -930,6 +1465,23 @@
                   </div>
                 </div>
 
+<<<<<<< HEAD
+              <div role="tabpanel" class="tab-pane" id="settings">
+                <div id="owl-example4" class="owl-carousel owl-example-i2 owl-theme" style="opacity: 0; display: block;">
+                  <div class="owl-wrapper-outer">
+                    <div class="owl-wrapper" style="width: 594px; left: 0px; display: block;">
+                      <div class="owl-item" style="width: 33px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item1.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+=======
                 <div role="tabpanel" class="tab-pane" id="settings">
                   <div id="owl-example4" class="owl-carousel owl-example-i2 owl-theme" style="opacity: 0; display: block;">
                     <div class="owl-wrapper-outer">
@@ -955,9 +1507,24 @@
                                 <h5>black men leather coat</h5>
                               </a>
                               <p>$90.00</p>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                             </div>
                           </div>
                         </div>
+<<<<<<< HEAD
+                      </div>
+                      <div class="owl-item" style="width: 33px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item2.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+=======
                         <div class="owl-item" style="width: 33px;">
                           <div class="item">
                             <div class="item-img">
@@ -980,9 +1547,24 @@
                                 <h5>AROS SLIM HEAVY CHINO</h5>
                               </a>
                               <p>$90.00 <span><del>$100</del></span></p>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                             </div>
                           </div>
                         </div>
+<<<<<<< HEAD
+                      </div>
+                      <div class="owl-item" style="width: 33px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item3.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+=======
                         <div class="owl-item" style="width: 33px;">
                           <div class="item">
                             <div class="item-img">
@@ -1005,9 +1587,24 @@
                                 <h5>black men leather coat</h5>
                               </a>
                               <p>$90.00 <span><del>$100</del></span></p>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                             </div>
                           </div>
                         </div>
+<<<<<<< HEAD
+                      </div>
+                      <div class="owl-item" style="width: 33px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item4.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+=======
                         <div class="owl-item" style="width: 33px;">
                           <div class="item">
                             <div class="item-img">
@@ -1029,9 +1626,24 @@
                                 <h5>houndsmooth wool t-shirt</h5>
                               </a>
                               <p>$90.00</p>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                             </div>
                           </div>
                         </div>
+<<<<<<< HEAD
+                      </div>
+                      <div class="owl-item" style="width: 33px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item1.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+=======
                         <div class="owl-item" style="width: 33px;">
                           <div class="item">
                             <div class="item-img">
@@ -1053,9 +1665,24 @@
                                 <h5>casual fashion wool coat</h5>
                               </a>
                               <p>$90.00</p>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                             </div>
                           </div>
                         </div>
+<<<<<<< HEAD
+                      </div>
+                      <div class="owl-item" style="width: 33px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item2.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+=======
                         <div class="owl-item" style="width: 33px;">
                           <div class="item">
                             <div class="item-img">
@@ -1077,9 +1704,24 @@
                                 <h5>structured collarless coat</h5>
                               </a>
                               <p>$90.00</p>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                             </div>
                           </div>
                         </div>
+<<<<<<< HEAD
+                      </div>
+                      <div class="owl-item" style="width: 33px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item3.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+=======
                         <div class="owl-item" style="width: 33px;">
                           <div class="item">
                             <div class="item-img">
@@ -1102,9 +1744,24 @@
                                 <h5>casual fashion wool coat</h5>
                               </a>
                               <p>$90.00 <span><del>$100</del></span></p>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                             </div>
                           </div>
                         </div>
+<<<<<<< HEAD
+                      </div>
+                      <div class="owl-item" style="width: 33px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item2.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+=======
                         <div class="owl-item" style="width: 33px;">
                           <div class="item">
                             <div class="item-img">
@@ -1126,9 +1783,24 @@
                                 <h5>structured collarless coat</h5>
                               </a>
                               <p>$90.00</p>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                             </div>
                           </div>
                         </div>
+<<<<<<< HEAD
+                      </div>
+                      <div class="owl-item" style="width: 33px;">
+                        <div class="item">
+                          <div class="item-img">
+                            <img src="assets/images/t_item3.jpg" alt=""[routerLink]="['/commodity']" routerLinkActive="router-link-active">
+                            <div class="tr-add-cart">
+                              <ul>
+                                <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li>
+                                <li><a class="tr_text" href="#">ADD TO CART</a></li>
+                                <li><a class="fa fa-heart tr_heart" href="#"></a></li>
+                                <li><a class="fa fa-search tr_search" href="product-detail.html"></a></li>
+                              </ul>
+=======
                         <div class="owl-item" style="width: 33px;">
                           <div class="item">
                             <div class="item-img">
@@ -1150,6 +1822,7 @@
                                 <h5>black men leather coat</h5>
                               </a>
                               <p>$90.00 </p>
+>>>>>>> 67458d6e2ab4f5602562320ab57385aba311bfaa
                             </div>
                           </div>
                         </div>

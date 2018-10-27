@@ -32,6 +32,10 @@ const routes: Routes = [
     component: CommodityComponent
   },
   {
+    path: 'commodity/:id',
+    component: CommodityComponent
+  },
+  {
     path: 'resetPassword',
     component: ResetpasswordComponent
   },
