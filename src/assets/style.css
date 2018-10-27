@@ -1158,7 +1158,7 @@ ul.cat_nav li a:hover {
   text-decoration: none;
 }
 
-.item-sub>p {
+.item-sub p {
   color: #ff6766;
   margin-bottom: 0;
   margin-top: 4px;

@@ -1,0 +1,66 @@
+<section class="contact_p_area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-8 col-xs-12">
+        <div class="contact_box_left">
+          <h4>個人資料</h4>
+          <div class="multi_line"></div>
+        </div>
+
+        <form (ngSubmit)="form.valid && onSubmit(form)" #form="ngForm">
+          <div class="c_password">
+            <div class="c_password_left">
+              <p>姓名 <span>*</span></p>
+              <input type="text" [(ngModel)]="member.name" name="name" #name="ngModel" [ngClass]="{ 'is-valid': (!form.submitted || !name.invalid) ,'is-invalid': (form.submitted && name.invalid) }"
+                required />
+              <div *ngIf="form.submitted && name.invalid" class="invalid_feedback">
+                Name is required
+              </div>
+            </div>
+            <div class="c_password_left">
+              <p>信箱 <span>*</span></p>
+              <input type="text" [(ngModel)]="member.mail" name="mail" #mail="ngModel" [ngClass]="{ 'is-valid': (!form.submitted || !mail.invalid) ,
+                'is-invalid': (form.submitted && mail.invalid) }"
+                required />
+              <div *ngIf="form.submitted && mail.invalid" class="invalid_feedback">
+                Mail is required
+              </div>
+            </div>
+            <div class="c_password_left">
+              <p>手機號碼 <span>*</span></p>
+              <input type="text" [(ngModel)]="member.phone" name="phone" #phone="ngModel" [ngClass]="{ 'is-valid': (!form.submitted || !phone.invalid) ,'is-invalid': (form.submitted && phone.invalid) }"
+                required [value]="member.phone" />
+              <div *ngIf="form.submitted && phone.invalid" class="invalid_feedback">
+                Phone number is required
+              </div>
+            </div>
+            <div class="c_password_left">
+              <p>性別 </p>
+              <input type="radio" name="text" value="男" [(ngModel)]="member.sex" check="member.sex==男" />男
+              <input type="radio" name="text" value="女" [(ngModel)]="member.sex" check="member.sex==女" />女
+            </div>
+            <div class="c_password_left">
+              <p>地址</p>
+              <input type="text" class="is-valid" [(ngModel)]="member.address" name="address"
+                #address="ngModel">
+            </div>
+            <div class="c_password_left">
+              <p>生日</p>
+              <input type="date" class="is-valid" [(ngModel)]="member.birth" name="birth" #birth="ngModel" />
+            </div>
+            <div class="input_form">
+              <div class="input_right">
+                <p>個人介紹</p>
+                <textarea name="message" [(ngModel)]="member.introduction"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="password_commit">
+            <input type="submit" value="修正" [routerLink]="['/']" routerLinkActive="active">
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>

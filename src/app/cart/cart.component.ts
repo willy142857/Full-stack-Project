@@ -7,40 +7,25 @@ import { CartsService } from './carts.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-
-  totalmoney = 0;
+  totalmoney;
   constructor(private cartsservice: CartsService) {
-    this.totalCharge();
+    this.cartsservice.totalCharge();
+    this.totalmoney = this.cartsservice.totalmoney;
   }
 
   get list() {
     return this.cartsservice.list;
   }
 
-  get coupon() {
-    return this.cartsservice.coupon;
-  }
-
   ngOnInit() {
   }
-
   buttomClickMinus(index) {
-    if (this.list[index].count > 0) {
-      this.list[index].count--;
-    }
-    this.totalCharge();
+    this.cartsservice.buttomClickMinus(index);
+    this.totalmoney = this.cartsservice.totalmoney;
   }
 
   buttomClickPlus(index) {
-    this.list[index].count++;
-    this.totalCharge();
+    this.cartsservice.buttomClickPlus(index);
+    this.totalmoney = this.cartsservice.totalmoney;
   }
-
-  totalCharge() {
-    this.totalmoney = 0;
-    for (let index = 0; index < this.list.length; index++) {
-      this.totalmoney = this.totalmoney + this.list[index].count * this.list[index].price;
-    }
-  }
-
 }

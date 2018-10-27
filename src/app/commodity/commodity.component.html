@@ -50,13 +50,10 @@
                 </div>
                 <div class="detail_heading_right">
                   <ul id="detail_star">
-                    <li><a class="fa fa-star-o red" href=""></a></li>
-                    <li><a class="fa fa-star-o red" href=""></a></li>
-                    <li><a class="fa fa-star-o red" href=""></a></li>
-                    <li><a class="fa fa-star-o" href=""></a></li>
-                    <li><a class="fa fa-star-o" href=""></a></li>
+                    <ng-container *ngFor="let star of stars; let i = index">
+                      <li><a class="fa fa-star-o" [ngClass]="{'pink': star}" (click)="score_stars(i+1)"></a></li>
+                    </ng-container>
                   </ul>
-                  <p>(5 Review)</p>
                 </div>
                 <div>
                   <form style="display: inline;">類別：
@@ -169,22 +166,32 @@
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="main_category_right product-box">
-          <h3 class="product">贊助計畫方案</h3>
-          <div class="multi_line"></div>
+          <h2 class="product">贊助計畫方案</h2>
+          <div class="multi_line_long"></div>
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
-              <div id="owl-example-single" class="owl-carousel">
-                <div class=item>
-                  <div class="multi_lines_text">
-                    {{list.feedback_description}}
-                    <div>
-                      回饋金額：{{list.feedback}}
-                    </div>
-                    <div class="invest_button">
-                      <input type="submit" value="贊助計畫">
-                    </div>
+              <div>
+                <ng-container *ngFor="let plan of list.plans; let i = index;">
+                  <div>
+                    <form (submit)="add_to_cart(list)">
+                      <div class="item">
+                        <div>
+                          <h3>方案{{i+1}}：</h3>
+                        </div>
+                        <div class="multi_lines_text">
+                          {{plan.feedback_description}}
+                          <div>
+                            回饋金額：{{plan.feedback}}
+                          </div>
+                          <div class="invest_button">
+                            <input type="submit" value="贊助計畫">
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                    <hr class="style-five" />
                   </div>
-                </div>
+                </ng-container>
               </div>
             </div>
           </div>
@@ -261,7 +268,7 @@
                       <input type="text" placeholder="Summary of your Review" /><br>
                       <textarea name="" id="" cols="30" rows="10" placeholder="Write your review"></textarea><br>
                       <div class="message_button">
-                        <input type="submit" value="Submit Review"/>
+                        <input type="submit" value="Submit Review" />
                       </div>
                     </div>
                   </div>

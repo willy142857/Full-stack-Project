@@ -1,6 +1,5 @@
 import { CommoditiesService } from './commodities.service';
 import { Component, OnInit } from '@angular/core';
-import { CompileShallowModuleMetadata } from '@angular/compiler';
 
 @Component({
   selector: 'app-commodity',
@@ -9,13 +8,12 @@ import { CompileShallowModuleMetadata } from '@angular/compiler';
 })
 export class CommodityComponent implements OnInit {
   today = new Date();
+  stars: any = [false, false, false, false, false];
   get list() {
-    console.log(this.today);
     return this.commoditiesService.commodity;
   }
 
   get messages() {
-    console.log(this.today);
     return this.commoditiesService.messages;
   }
   diff: number;
@@ -31,6 +29,18 @@ export class CommodityComponent implements OnInit {
       this.diff = Math.abs(new Date(this.list.endAt).getTime() - new Date().getTime());
       this.diffDays = Math.ceil(this.diff / (1000 * 3600 * 24));
       return this.diffDays;
+    }
+  }
+
+  add_to_cart(event) {
+    if (confirm('確定加入購物車?')) {
+      console.log(event);
+    }
+  }
+  score_stars(number) {
+    this.stars = [];
+    for (let i = 0; i < 5; i++) {
+      this.stars.push(i < number);
     }
   }
   // deadline: number = Date(this.list.updatedAt);

@@ -9,7 +9,6 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './member/login/login.component';
 import { NavComponent } from './nav/nav.component';
-import { LayoutComponent } from './layout/layout.component';
 import { RegisterComponent } from './member/register/register.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
@@ -19,7 +18,9 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { RetrievepasswordComponent } from './retrievepassword/retrievepassword.component';
 import { SharedModule } from './shared/shared.module';
-import { AuthGuard } from './auth.guard';
+import { AuthGuard } from './auth/auth.guard';
+import { ProfileComponent } from './member/profile/profile.component';
+import { ProductModule } from './product/product.module';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -31,13 +32,13 @@ export function createTranslateLoader(http: HttpClient) {
     FooterComponent,
     LoginComponent,
     NavComponent,
-    LayoutComponent,
     RegisterComponent,
     CartComponent,
     CommodityComponent,
     ResetpasswordComponent,
     RetrievepasswordComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +51,7 @@ export function createTranslateLoader(http: HttpClient) {
       }
     }),
     SharedModule,
+    ProductModule,
     AppRoutingModule
   ],
   providers: [AuthGuard],
