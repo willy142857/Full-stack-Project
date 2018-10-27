@@ -47,28 +47,21 @@
                     <br>
                     <h5>by {{list.applier}}</h5>
                   </div>
-                </div>
+                </div><br>
                 <div class="detail_heading_right">
                   <ul id="detail_star">
                     <ng-container *ngFor="let star of stars; let i = index">
                       <li><a class="fa fa-star-o" [ngClass]="{'pink': star}" (click)="score_stars(i+1)"></a></li>
                     </ng-container>
                   </ul>
-                </div>
-                <div>
-                  <form style="display: inline;">類別：
-                    <select id="category" class="form-control">
-                      <option>生活</option>
-                      <option>科技</option>
-                      <option>設計</option>
-                      <option>飲食</option>
-                      <option>社會</option>
-                      <option>動畫電影</option>
-                    </select>
-                  </form>
+                  <p>comment</p>
+                </div><br>
+                <div class="detail_heading_left">
+                  <div>
+                    類別： {{ list.category }}
+                  </div>
                 </div>
               </div>
-
               <div class="panel-group product_accordion" id="home-accordion-single" role="tablist" aria-multiselectable="true">
                 <div class="panel panel-default product_default">
                   <div class="panel-heading product_accordion_heading" role="tab" id="headingOneP">
@@ -137,7 +130,7 @@
                         </div>
                       </div>
                       <div class="single_color">
-                        <div class="color_heading">
+                        <div class="color_heading" width="400">
                           <h5>時程：<br>{{list.startAt | date:'y/MM/d' }} ~ {{list.endAt | date:'y/MM/d' }}</h5>
                         </div>
                       </div>
