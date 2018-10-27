@@ -10,7 +10,7 @@
         <form (ngSubmit)="form.valid && onSubmit(form)" #form="ngForm">
           <div class="c_password">
             <div class="c_password_left">
-              <p>姓名 <span>*</span></p>
+              <p>{{ 'name' | translate }} <span>*</span></p>
               <input type="text" [(ngModel)]="member.name" name="name" #name="ngModel" [ngClass]="{ 'is-valid': (!form.submitted || !name.invalid) ,'is-invalid': (form.submitted && name.invalid) }"
                 required />
               <div *ngIf="form.submitted && name.invalid" class="invalid_feedback">
@@ -18,7 +18,7 @@
               </div>
             </div>
             <div class="c_password_left">
-              <p>信箱 <span>*</span></p>
+              <p>{{ 'email' | translate }} <span>*</span></p>
               <input type="text" [(ngModel)]="member.mail" name="mail" #mail="ngModel" [ngClass]="{ 'is-valid': (!form.submitted || !mail.invalid) ,
                 'is-invalid': (form.submitted && mail.invalid) }"
                 required />

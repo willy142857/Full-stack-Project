@@ -10,7 +10,9 @@ export class CreateComponent implements OnInit {
   model: any = {};
   nowDate = new Date();
   constructor(private product: ProductService, private router: Router) {}
-  ngOnInit() {}
+  ngOnInit() {
+    scroll(0, 0);
+  }
   onSubmit(form) {
     this.product.set();
     this.router.navigateByUrl('/');

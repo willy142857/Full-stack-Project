@@ -1,6 +1,33 @@
 {
-  "登入": "log in",
-  "註冊": "sign up",
-  "帳號": "account",
-  "密碼": "password"
+  "login": "login",
+  "signup": "signup",
+  "name": "name",
+  "account": "account",
+  "email": "e-mail",
+  "password": "password",
+  "home": "home",
+  "category": "category",
+  "search": "search",
+
+  "create": {
+    "raiseFund": "Raise Fund",
+    "founder": "fundraiser",
+    "startAt": "start date",
+    "endAt": "end date",
+    "name": "name",
+    "target": "計畫目標",
+    "brief": "計畫簡介",
+    "img": "封面照片",
+    "description": "計畫說明",
+    "fAmount": "回饋選項金額",
+    "fAt": "回饋預計實現時間",
+    "fDescription": "回饋選項詳細說明",
+    "web": "相關網頁",
+    "isCheck": "我已詳閱並同意提案契約書",
+    "alertUncheck": "你為甚麼敢不同意?",
+    "submit": "submit",
+    "cancel": "cancel"
+  }
+
+
 }

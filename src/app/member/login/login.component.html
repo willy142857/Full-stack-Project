@@ -26,12 +26,12 @@
             <p>{{'如果您已經有帳號了，請登入' | translate}}</p>
 
             <div class="email">
-              <strong>{{'電子信箱' | translate}} :</strong><sup class="surely">*</sup><br />
+              <strong>{{ 'email' | translate }} :</strong><sup class="surely">*</sup><br />
               <input type="email" name="email" class="" value="" placeholder="E-mail" />
             </div><!-- .email -->
 
             <div class="password">
-              <strong>{{'密碼' | translate}} :</strong><sup class="surely">*</sup><br />
+              <strong>{{ 'password' | translate }} :</strong><sup class="surely">*</sup><br />
               <input type="password" name="password" class="" value="" placeholder="密碼" />
               <a class="forgot" href="#" [routerLink]="['/','retrievePassword']" routerLinkActive="active">忘記密碼
                 ?</a>
