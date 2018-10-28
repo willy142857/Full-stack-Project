@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../product.service';
+import { ProjectService } from '../project.service';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-create',
@@ -9,12 +9,12 @@ import { Router } from '@angular/router';
 export class CreateComponent implements OnInit {
   model: any = {};
   nowDate = new Date();
-  constructor(private product: ProductService, private router: Router) {}
+  constructor(private project: ProjectService, private router: Router) {}
   ngOnInit() {
     scroll(0, 0);
   }
   onSubmit(form) {
-    this.product.set();
+    this.project.set();
     this.router.navigateByUrl('/');
     console.log(form.value);
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../product.service';
+import { ProjectService } from '../project.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -11,7 +11,7 @@ export class EditComponent implements OnInit {
   model: any = {};
   id: number;
   constructor(
-    private product: ProductService,
+    private project: ProjectService,
     private router: Router,
     private route: ActivatedRoute
   ) {}
@@ -21,7 +21,7 @@ export class EditComponent implements OnInit {
       this.id = params['id'];
     });
     console.log(this.id);
-    this.model = this.product.get();
+    this.model = this.project.get();
   }
   onSubmit(form) {}
 }

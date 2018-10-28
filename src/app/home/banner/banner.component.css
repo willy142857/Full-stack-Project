@@ -1,0 +1,18 @@
+.fullscreen-container {
+  width: 100%;
+  position: relative;
+  padding: 0;
+}
+
+.fullwidthbanner-container {
+  width: 100%;
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+}
+
+.fullwidthbanner-container .fullwidthbanner {
+
+  width: 100%;
+  position: relative;
+}

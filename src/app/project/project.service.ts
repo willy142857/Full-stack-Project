@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
+export class ProjectService {
   test = {
     founder: '約瑞柯文哲',
     email: 'google@.gmail.com',

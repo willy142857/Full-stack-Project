@@ -1,0 +1,36 @@
+<h2 class="p_title">{{ '進行中的提案' | translate }}</h2>
+
+<section class="promotion_area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="promo_inner">
+          <div class="row">
+
+            <div *ngFor="let item of tests" class="col-md-4 col-sm-4 col-xs-12">
+              <div class="p_box">
+                <div class="images_box">
+                  <img src="assets/images/promo_img2.jpg" alt="" [routerLink]="['/commodity']"
+                    routerLinkActive="router-link-active">
+                </div>
+                <div class="p_name">{{ item.name }}</div>
+                <div class="p_founder">{{ item.founder }}</div>
+                <div class="p_dsp">{{ item.brief }}</div>
+                <svg width="350">
+                  <line x1="0" y1="0" x2="350" y2="0" fill="none" stroke-width="3" stroke="#cccccc" />
+                  <line x1="0" y1="0" x2="350" y2="0" fill="none" stroke-width="3" stroke-linecap="round"
+                    stroke="#16982B" [style.stroke-dasharray]="dasharray" [style.stroke-dashoffset]="progress(item)" />
+                  <text id="count" x="0" y="20" text-anchor="left" dy="7" font-size="15">
+                    {{ item.currPrice | currency:'':'symbol':'1.0-0' }}</text>
+                  <text id="time" x="280" y="20" text-anchor="right" dy="7" font-size="15">
+                    剩餘{{ item.date }}天</text>
+                </svg>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

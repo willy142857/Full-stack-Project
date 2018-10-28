@@ -6,15 +6,14 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './layouts/header/header.component';
-import { NavComponent } from './layouts/nav/nav.component';
-import { FooterComponent } from './layouts/footer/footer.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { CommodityComponent } from './commodity/commodity.component';
 
 import { SharedModule } from './shared/shared.module';
-import { ProductModule } from './product/product.module';
+import { LayoutsModule } from './layouts/layouts.module';
+import { HomeModule } from './home/home.module';
+import { ProjectModule } from './project/project.module';
 import { MemberModule } from './member/member.module';
 
 export function createTranslateLoader(http: HttpClient) {
@@ -23,9 +22,6 @@ export function createTranslateLoader(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    NavComponent,
-    FooterComponent,
     CartComponent,
     CommodityComponent,
     CheckoutComponent
@@ -41,7 +37,9 @@ export function createTranslateLoader(http: HttpClient) {
       }
     }),
     SharedModule,
-    ProductModule,
+    LayoutsModule,
+    HomeModule,
+    ProjectModule,
     MemberModule,
     AppRoutingModule
   ],
