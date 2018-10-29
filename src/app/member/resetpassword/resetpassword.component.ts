@@ -12,7 +12,9 @@ export class ResetpasswordComponent implements OnInit {
   passwordEmpty = true;
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    scroll(0, 0);
+  }
   onSubmit(form) {
     if (this.newPassword !== this.newPasswordConfirm) {
       this.passwordCheck = false;

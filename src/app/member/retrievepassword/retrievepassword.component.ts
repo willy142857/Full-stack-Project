@@ -12,6 +12,7 @@ export class RetrievepasswordComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    scroll(0, 0);
   }
 
 
