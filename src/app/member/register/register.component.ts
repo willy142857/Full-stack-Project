@@ -10,7 +10,9 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
   constructor(private memberService: MemberService, private router: Router) {}
   model: any = {};
-  ngOnInit() {}
+  ngOnInit() {
+    scroll(0, 0);
+  }
   onSubmit(form) {
     console.log(this.model);
     this.memberService.member.name = this.model.name;
