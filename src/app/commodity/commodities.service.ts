@@ -12,7 +12,7 @@ export class CommoditiesService {
       category: '科技',
       budget: 100000,
       brief_intro: '這個商品真的很好.............................................................',
-      get: 40000,
+      get: 75000,
       people: 50,
       startAt: '2018-09-11T19:49:35.917Z',
       endAt: '2018-11-11T19:49:35.917Z',
@@ -37,19 +37,22 @@ export class CommoditiesService {
       name: 'John',
       sum_review: 'good product',
       review: 'I use this product as a ......, and it is very practical',
-      date: '2018-10-13T19:49:35.917Z'
+      date: '2018-10-13T19:49:35.917Z',
+      stars: [true, true, true, true, true]
     },
     {
       name: 'Max',
       sum_review: 'good product',
       review: 'I use this product as a ......, and it is very practical',
-      date: '2018-09-20T19:49:35.917Z'
+      date: '2018-09-20T19:49:35.917Z',
+      stars: [true, true, true, false, false]
     },
     {
       name: 'Howard',
       sum_review: 'good product',
       review: 'I use this product as a ......, and it is very practical',
-      date: '2018-10-17T19:49:35.917Z'
+      date: '2018-10-17T19:49:35.917Z',
+      stars: [true, true, true, true, false]
     }
   ];
 }

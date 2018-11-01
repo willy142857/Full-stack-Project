@@ -48,14 +48,6 @@
                     <h5>by {{list.applier}}</h5>
                   </div>
                 </div><br>
-                <div class="detail_heading_right">
-                  <ul id="detail_star">
-                    <ng-container *ngFor="let star of stars; let i = index">
-                      <li><a class="fa fa-star-o" [ngClass]="{'pink': star}" (click)="score_stars(i+1)"></a></li>
-                    </ng-container>
-                  </ul>
-                  <p>comment</p>
-                </div><br>
                 <div class="detail_heading_left">
                   <div>
                     類別： {{list.category}}
@@ -93,10 +85,16 @@
                     <div>
                       <svg width="75" height="75">
                         <circle cx="40" cy="40" r="35" fill="#FDB900" />
-                        <path stroke-linecap="round" stroke-width="5" stroke="#fff" fill="none" d="M40 10
-                                     a 30 30 0 0 1 0 60
-                                     a 30 30 0 0 1 0 -60">
+                        <path stroke-linecap="round" stroke-width="5" [style.stroke-dasharray]="list.get / list.budget * 200"
+                          stroke="#fff" fill="none" d="M40 10
+                                     a 30 30 0 0 1 0 60">
                         </path>
+                        <ng-container *ngIf="list.get / list.budget * 100 > 50">
+                          <path stroke-linecap="round" stroke-width="5" [style.stroke-dasharray]="list.get / list.budget * 200 - 100"
+                            stroke="#fff" fill="none" d="M40 70
+                                     a 30 30 0 0 1 0 -60">
+                          </path>
+                        </ng-container>
                         <text id="count" x="40" y="40" text-anchor="middle" dy="7" font-size="20">{{list.get /
                           list.budget * 100}}%</text>
                       </svg>
@@ -220,33 +218,23 @@
                       <h2><span>留言</span></h2>
                       <div class="multi_line"></div>
                     </div>
-                    <div class="review_heading_right">
-                      <ul id="review_heading_star">
-                        <li><a href="" class="fa fa-star"></a></li>
-                        <li><a href="" class="fa fa-star"></a></li>
-                        <li><a href="" class="fa fa-star"></a></li>
-                        <li><a href="" class="fa fa-star"></a></li>
-                        <li><a href="" class="fa fa-star"></a></li>
-                      </ul>
-                    </div>
                   </div>
                   <ng-container *ngFor='let item of messages'>
                     <div class="single_review_comment">
                       <div class="single_review_img">
                         <img src="/assets/images/single_rv1.png" alt="" />
                       </div>
-                      <div class="single_review_text">
+                      <div class="single_review">
                         <h4>{{item.sum_review}}</h4>
+
                         <ul id="single_review_star">
-                          <li><a href="" class="fa fa-star"></a></li>
-                          <li><a href="" class="fa fa-star"></a></li>
-                          <li><a href="" class="fa fa-star"></a></li>
-                          <li><a href="" class="fa fa-star"></a></li>
-                          <li><a href="" class="fa fa-star"></a></li>
+                          <ng-container *ngFor="let item of item.stars">
+                            <li><a href="" class="fa fa-star-o" *ngIf="item"></a></li>
+                          </ng-container>
                         </ul>
                         <p>{{item.review}}</p>
                         <div class="review_italic">
-                          <p><span>{{item.name}}</span>, {{item.date | date:'y/MM/d'}}</p>
+                          <p><span>{{item.name}}</span> {{item.date | date:'y/MM/d'}}</p>
                         </div>
                       </div>
                     </div>
@@ -256,14 +244,23 @@
                       <h3>Write your review</h3>
                       <div class="multi_line"></div>
                     </div>
-                    <div class="review_comment">
-                      <input type="text" placeholder="Enter Your Nickname" /><br>
-                      <input type="text" placeholder="Summary of your Review" /><br>
-                      <textarea name="" id="" cols="30" rows="10" placeholder="Write your review"></textarea><br>
-                      <div class="message_button">
-                        <input type="submit" value="Submit Review" />
+                    <form>
+                      <div class="star">
+                        <ul>
+                          <ng-container *ngFor="let star of stars; let i = index">
+                            <li><a class="fa fa-star-o" [ngClass]="{'pink': star}" (click)="score_stars(i+1)"></a></li>
+                          </ng-container>
+                        </ul>
+                      </div><br>
+                      <div class="review_comment">
+                        <input type="text" placeholder="Enter Your Nickname" /><br>
+                        <input type="text" placeholder="Summary of your Review" /><br>
+                        <textarea name="" id="" cols="30" rows="10" placeholder="Write your review"></textarea><br>
+                        <div class="message_button">
+                          <input type="submit" value="Submit Review" />
+                        </div>
                       </div>
-                    </div>
+                    </form>
                   </div>
                 </div>
               </div>
