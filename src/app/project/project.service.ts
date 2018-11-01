@@ -18,6 +18,23 @@ export class ProjectService {
     feedbackAt: '2187-01-01',
     relativeWeb: 'google.com'
   };
+  category = [
+    'music',
+    'photograph',
+    'publication',
+    'art',
+    'design',
+    'food',
+    'modern',
+    'education',
+    'technology',
+    'social',
+    'act',
+    'games',
+    'placemaking',
+    'movies',
+    'comics'
+  ];
   constructor() {}
   set() {}
   get() {

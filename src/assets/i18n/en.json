@@ -9,6 +9,30 @@
   "category": "category",
   "search": "search",
 
+  "homepage": {
+    "trending": "trending",
+    "leftDay": "{{value}} days left"
+  },
+
+  "literature": "literature",
+  "life": "life",
+  "entertainment": "entertainment",
+  "music": "music",
+  "photograph": "photograph",
+  "publication": "publication",
+  "art": "art",
+  "design": "design",
+  "food": "food",
+  "modern": "modern",
+  "education": "education",
+  "technology": "technology",
+  "social": "social",
+  "act": "act",
+  "games": "games",
+  "placemaking": "placemaking",
+  "movies": "movies",
+  "comics": "comics",
+
   "create": {
     "raiseFund": "Raise Fund",
     "founder": "fundraiser",
@@ -28,6 +52,5 @@
     "submit": "submit",
     "cancel": "cancel"
   }
-
 
 }
