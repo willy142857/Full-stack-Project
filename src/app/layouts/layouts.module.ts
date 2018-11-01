@@ -6,10 +6,20 @@ import { LayoutsRoutingModule } from './layouts-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
+import { QAComponent } from './qa/qa.component';
 
 @NgModule({
   imports: [CommonModule, SharedModule, LayoutsRoutingModule],
-  declarations: [HeaderComponent, NavComponent, FooterComponent],
-  exports: [HeaderComponent, NavComponent, FooterComponent]
+  declarations: [
+    HeaderComponent,
+    NavComponent,
+    FooterComponent,
+    QAComponent
+  ],
+  exports: [
+    HeaderComponent,
+    NavComponent,
+    FooterComponent
+  ]
 })
 export class LayoutsModule {}

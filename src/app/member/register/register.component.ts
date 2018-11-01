@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MemberService } from '../member.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -7,9 +8,11 @@ import { MemberService } from '../member.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  constructor(private memberService: MemberService) {}
+  constructor(private memberService: MemberService, private router: Router) {}
   model: any = {};
-  ngOnInit() {}
+  ngOnInit() {
+    scroll(0, 0);
+  }
   onSubmit(form) {
     console.log(this.model);
     this.memberService.member.name = this.model.name;
@@ -17,5 +20,6 @@ export class RegisterComponent implements OnInit {
     this.memberService.member.phone = this.model.phone;
     this.memberService.member.password = this.model.password;
     console.log(this.memberService.member);
+    this.router.navigateByUrl('/');
   }
 }

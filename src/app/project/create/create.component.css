@@ -43,7 +43,8 @@ input[type="date"]::-webkit-inner-spin-button {
 .p_price input[type="text"],
 .p_price input[type="email"],
 .p_price input[type="date"],
-.p_price input[type="file"] {
+.p_price input[type="file"],
+.p_price select {
   background: none repeat scroll 0 0 #f7f8f9;
   border: 1px solid #E8E8E8;
   padding: 9px;

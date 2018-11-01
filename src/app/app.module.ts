@@ -24,7 +24,7 @@ export function createTranslateLoader(http: HttpClient) {
     AppComponent,
     CartComponent,
     CommodityComponent,
-    CheckoutComponent
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
