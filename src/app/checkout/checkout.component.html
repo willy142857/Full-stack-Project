@@ -83,14 +83,14 @@
 									<input type="text">
 								</div>
 							</div>
-							<div class="checkbox">
+							<!-- <div class="checkbox">
 								<label>
 								  <input type="checkbox"> 創立帳號
 								</label><br>
 								<label>
 								  <input type="checkbox"> 貨件送到不同地址
 								</label>
-							</div>
+							</div> -->
 
 
 						</div>
@@ -106,7 +106,7 @@
 							<div class="country_select country_select2">
 								<p>國家</p>
 								<select class="selectpicker sel_state">
-								  <option>Sate/Country</option>
+								  <option>Taiwan</option>
 								  <option>Bangladesh</option>
 								  <option>USA</option>
 								  <option>UK</option>
@@ -146,11 +146,11 @@
         </div>
 				<div class="col-md-3 col-sm-4 col-xs-12">
 					<div class="checkout_right">
-						<h4>Review of Your Order</h4>
+						<h4>購物內容</h4>
 						<div class="product_form_total">
 							<div class="c_main_item">
-								<p>Product</p>
-								<span>Total</span>
+								<p>商品</p>
+								<span>金額</span>
               </div>
 
               <ng-container *ngFor="let item of list">
@@ -172,19 +172,19 @@
                 </div> -->
               </ng-container>
 							<div class="c_single_item">
-								<p>subtotal</p>
+								<p>小計</p>
 								<span>${{totalmoney}}</span>
 							</div>
 							<div class="c_single_item sp_single_item">
-								<p>Shipping Charge</p>
-								<span>Free</span>
+								<p>郵資</p>
+								<span>免費</span>
 							</div>
 							<div class="c_total_item sp_single_item">
-								<p>Order Total</p>
+								<p>總金額</p>
 								<span>${{totalmoney}}</span>
 							</div>
 							<div class="c_payment">
-								<p>Select Payment Method</p>
+								<p>付款方式</p>
 								<select class="selectpicker sel_state">
 								  <option>Direct Bank Transfer</option>
 								  <option>Wire Transfer</option>
@@ -193,10 +193,10 @@
 							</div>
 							<div class="checkbox">
 								<label>
-								  <input type="checkbox"> I have Read & Accept <span>Terms & Conditions</span>
+								  <input type="checkbox"> 我已經詳細閱讀 <span>合約條款</span>
 								</label>
 							</div>
-							<input type="submit" value="Place order now"/>
+							<input type="submit" value="下單"/>
 						</div>
 					</div>
 				</div>
