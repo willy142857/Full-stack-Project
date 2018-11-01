@@ -8,8 +8,18 @@ import { Component, OnInit } from '@angular/core';
 export class QAComponent implements OnInit {
 
   constructor() { }
+  ask = false;
+
+  questionClick() {
+    if (this.ask === false) {
+      this.ask = true;
+    } else {
+      this.ask = false;
+    }
+  }
 
   ngOnInit() {
+    scroll(0, 0);
   }
 
 }
