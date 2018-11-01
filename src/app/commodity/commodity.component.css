@@ -104,6 +104,7 @@ hr.style-five:after {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f006";
+  color: #aaaaaa;
 }
 
 .fa:hover{
@@ -126,4 +127,58 @@ hr.style-five:after {
   float: left;
   overflow: hidden;
   width: 50%;
+}
+
+.single_review ul {
+  list-style: outside none none;
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+.single_review ul li {
+  display: inline;
+}
+
+.single_review ul li a {
+  color: #ff6766;
+  padding: 1px 2px;
+}
+
+.star{
+  float: left;
+  overflow: hidden;
+  width: 60%;
+}
+
+.star ul {
+  list-style: outside none none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  text-align: right;
+}
+
+.star ul li {
+  display: inline;
+}
+
+.star ul li .red {
+  color: #ff6766;
+}
+
+.star ul li a {
+  font-size: 15px;
+  padding: 2px;
+}
+
+.star ul li a:hover {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\f006";
+  color: #ff6766;
 }
