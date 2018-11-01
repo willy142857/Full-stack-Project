@@ -6,15 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./retrievepassword.component.css']
 })
 export class RetrievepasswordComponent implements OnInit {
-
   email = '';
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     scroll(0, 0);
   }
 
-
-
+  onSubmit(form, userMail) {
+  }
 }
