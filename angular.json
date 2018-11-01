@@ -47,7 +47,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/reloadJsFile.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -96,7 +98,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/js/reloadJsFile.js"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"
