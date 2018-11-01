@@ -12,7 +12,9 @@ export class ProfileComponent implements OnInit {
     return this.memberService.member;
   }
   model: any = {};
-  ngOnInit() {}
+  ngOnInit() {
+    scroll(0, 0);
+  }
   onSubmit(form) {
     console.log(form);
 
