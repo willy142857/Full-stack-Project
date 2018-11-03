@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-// declare function getUrlVars(): any;
+declare function getUrlVars(): any;
 declare function containerResized(): any;
 declare function restartBannerTimer(): any;
 declare function killBannerTimer(): any;
