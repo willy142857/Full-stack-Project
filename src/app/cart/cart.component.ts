@@ -18,6 +18,7 @@ export class CartComponent implements OnInit {
   }
 
   ngOnInit() {
+    scroll(0, 0);
   }
   buttomClickMinus(index) {
     this.cartsservice.buttomClickMinus(index);

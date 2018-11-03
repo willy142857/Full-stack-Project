@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class CreateComponent implements OnInit {
   model: any = {};
+  category = this.project.category;
   nowDate = new Date();
   constructor(private project: ProjectService, private router: Router) {}
   ngOnInit() {

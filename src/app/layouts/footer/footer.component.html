@@ -59,9 +59,6 @@
               <li><a [routerLink]="['/checkout']" routerLinkActive="router-link-active">帳單地址</a></li>
               <li><a [routerLink]="['/profile']" routerLinkActive="router-link-active">我的帳戶</a></li>
               <li><a [routerLink]="['/profile']" routerLinkActive="router-link-active">個人資料</a></li>
-              <!--<li><a href="">我的折扣</a></li>-->
-              <!--<li><a href="">Order History</a></li>
-              <li><a href="">Your Vouchers</a></li>-->
             </ul>
           </div>
         </div>
@@ -70,7 +67,7 @@
             <h5>客戶服務</h5>
             <div class="wid_line"></div>
             <ul class="widget_nav">
-              <li><a href="https://www.ntust.edu.tw">常見問答</a></li>
+              <li><a [routerLink]="['/qa']" routerLinkActive="router-link-active">常見問答</a></li>
               <!-- TODO:設定路由 -->
               <li><a href="">使用條款</a></li>
             </ul>

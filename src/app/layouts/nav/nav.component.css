@@ -1,0 +1,72 @@
+.nav_area {
+  background: none repeat scroll 0 0 #3c3c3c;
+}
+
+.nav_left {
+  background: none repeat scroll 0 0 #3c3c3c;
+  padding: 22px 0;
+  position: relative;
+  width: 17%;
+}
+.nav_left a {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  padding-left: 18px;
+  text-transform: uppercase;
+}
+.cat_mega_menu a{
+  color: black;
+  font-size: 14px;
+  font-weight: 700;
+  padding-left: 18px;
+  text-transform: uppercase;
+}
+.cat_mega_menu a:hover{
+  text-decoration: none;
+  color:#f06160;
+}
+
+.nav_left i {
+  margin-left: 65px;
+}
+
+.nav_right {
+  background: none repeat scroll 0 0 #3c3c3c;
+  padding: 22px 0;
+  position: relative;
+  width: 17%;
+}
+
+.nav_right a {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  padding-left: 35px;
+  text-transform: uppercase;
+}
+
+.c_totals_left a,
+.c_totals_right a {
+  padding-left: 0;
+}
+
+.nav_right a:hover {
+  text-decoration: none;
+  color:#f06160;
+}
+
+.nav_right img {
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: -7px;
+}
+
+.nav_center {
+  float: left;
+  width: 66%;
+}
+
+nav.mainmenu {
+  position: relative;
+}

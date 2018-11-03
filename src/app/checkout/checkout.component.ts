@@ -16,6 +16,7 @@ export class CheckoutComponent implements OnInit {
 
 
   ngOnInit() {
+    scroll(0, 0);
   }
 
 }
