@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-md-offset-2 col-sm-offset-2 col-md-8 col-sm-8 col-xs-12">
 
-        <div class=" checkout_left">
+        <div class="checkout_left">
           <h2 class="t_center">{{ 'create.raiseFund' | translate }}</h2>
           <div class="p_form">
             <form (ngSubmit)="form.form.valid&&onSubmit(form)" #form="ngForm">
@@ -46,7 +46,7 @@
                   </option>
                 </select>
               </div>
-              <div class="product_name">
+              <div class="form-group">
                 <label for="name">{{ 'create.name' | translate }} *</label>
                 <div [ngClass]="{'invalid': name.invalid&&form.submitted}">
                   <input type="text" id="name" placeholder="{{ '請輸入名稱' | translate }}" name="name"
@@ -65,7 +65,7 @@
                   </div>
                 </div>
               </div>
-              <div class="product_name">
+              <div class="form-group">
                 <label for="brief">{{ 'create.brief' | translate }} *</label>
                 <div [ngClass]="{'invalid': brief.invalid&&form.submitted}">
                   <input type="text" id="brief" placeholder="{{ '請輸入簡介' | translate }}" name="brief"
@@ -80,7 +80,7 @@
                     required>
                 </div>
               </div>
-              <div class="s_order">
+              <div class="s_order form-group">
                 <label for="br">{{ 'create.description' | translate }} *</label>
                 <div [ngClass]="{'invalid': dsp.invalid&&form.submitted}">
                   <textarea id="description" cols="30" rows="10" placeholder="{{ '請輸入說明' | translate }}"
@@ -108,7 +108,7 @@
                   </div>
                 </div>
               </div>
-              <div class="s_order">
+              <div class="s_order form-group">
                 <label for="f_description">{{ 'create.fDescription' | translate }} *</label>
                 <div [ngClass]="{'invalid': f_dsp.invalid&&form.submitted}">
                   <textarea type="text" id="f_description" cols="30" rows="10" placeholder="{{ '請輸入說明' | translate }}"
@@ -117,7 +117,7 @@
 
                 </div>
               </div>
-              <div class="product_name">
+              <div class="form-group">
                 <label for="r_web">{{ 'create.web' | translate }}</label>
                 <div [ngClass]="{'invalid': web.invalid&&form.submitted}">
                   <input type="text" id="r_web" placeholder="{{ '請輸入相關網頁' | translate }}" name="r_web"
