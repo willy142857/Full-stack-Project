@@ -12,6 +12,7 @@ export class ProfileComponent implements OnInit {
     return this.memberService.member;
   }
   model: any = {};
+  photo: any;
   ngOnInit() {
     scroll(0, 0);
   }
@@ -19,5 +20,17 @@ export class ProfileComponent implements OnInit {
     console.log(form);
 
     console.log(this.memberService.member);
+  }
+
+  readURL(input) {
+    if (input.target.files && input.target.files[0]) {
+      const reader = new FileReader();
+
+      reader.onload = e => {
+        this.photo = reader.result;
+      };
+
+      reader.readAsDataURL(input.target.files[0]);
+    }
   }
 }

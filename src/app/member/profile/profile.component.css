@@ -1,6 +1,6 @@
-.c_password input_[type="text"] {
+.c_password input_[type='text'] {
   background: none repeat scroll 0 0 #f7f8f9;
-  border: 1px solid #E8E8E8;
+  border: 1px solid #e8e8e8;
   padding: 9px;
   width: 100%;
 }
@@ -20,7 +20,7 @@
   padding: 0px;
 }
 
-.password_commit>input[type="submit"] {
+.password_commit > input[type='submit'] {
   background: none repeat scroll 0 0 #ff6766;
   border: 2px solid #ff6766;
   color: #fff;
@@ -33,7 +33,7 @@
   width: 15%;
 }
 
-.password_commit>input[type="submit"]:hover {
+.password_commit > input[type='submit']:hover {
   background: #fff;
   color: #232323;
 }
@@ -44,20 +44,20 @@
   padding: 60px 0;
 }
 
-.invalid_feedback{
- color: red;
+.invalid_feedback {
+  color: red;
 }
 
-.is-invalid{
+.is-invalid {
   border: 1px solid red;
   background: none repeat scroll 0 0 #f7f8f9;
   padding: 9px;
   width: 100%;
 }
 
-.is-valid{
+.is-valid {
   background: none repeat scroll 0 0 #f7f8f9;
-  border: 1px solid #E8E8E8;
+  border: 1px solid #e8e8e8;
   padding: 9px;
   width: 100%;
 }
@@ -66,4 +66,3 @@
   float: left;
   width: 100%;
 }
-

@@ -41,8 +41,7 @@
             </div>
             <div class="c_password_left">
               <p>地址</p>
-              <input type="text" class="is-valid" [(ngModel)]="member.address" name="address"
-                #address="ngModel">
+              <input type="text" class="is-valid" [(ngModel)]="member.address" name="address" #address="ngModel">
             </div>
             <div class="c_password_left">
               <p>生日</p>
@@ -55,6 +54,9 @@
               </div>
             </div>
           </div>
+          <p>大頭照</p>
+          <input type="file" (change)="readURL($event)" accept="image/gif, image/jpeg, image/png" />
+          <img [src]="photo" style="width:50%; height: 50%; overflow:scroll;" />
           <div class="password_commit">
             <input type="submit" value="修正" [routerLink]="['/']" routerLinkActive="active">
           </div>
