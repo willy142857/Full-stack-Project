@@ -3,142 +3,113 @@
 
     <div class="row">
       <div class="col-md-offset-2 col-sm-offset-2 col-md-8 col-sm-8 col-xs-12">
+        <h2 class="t_center">{{ 'create.raiseFund' | translate }}</h2>
 
-        <div class="checkout_left">
-          <h2 class="t_center">{{ 'create.raiseFund' | translate }}</h2>
-          <div class="p_form">
-            <form (ngSubmit)="form.form.valid&&onSubmit(form)" #form="ngForm">
-              <div class="form-group">
-                <label for="founder">{{ 'create.founder' | translate }} *</label>
-                <div [ngClass]="{'invalid': founder.invalid&&form.submitted}">
-                  <input type="text" id="founder" placeholder="{{ '請輸入姓名' | translate }}" name="founder"
-                    [(ngModel)]="model.founder" #founder="ngModel" required>
+        <div class="p_form">
+          <form (ngSubmit)="form.form.valid&&onSubmit(form)" #form="ngForm">
+            <div class="form-group" [ngClass]="{'invalid': founder.invalid&&form.submitted}">
+              <label for="founder">{{ 'create.founder' | translate }} *</label>
+              <input type="text" id="founder" placeholder="{{ '請輸入姓名' | translate }}" name="founder"
+                maxlength="20" [(ngModel)]="model.founder" #founder="ngModel" required>
+            </div>
+            <div class="form-group" [ngClass]="{'invalid': email.invalid&&(email.dirty||form.submitted)}">
+              <label for="email">{{ 'email' | translate }} *</label>
+              <input type="email" id="email" placeholder="{{ '請輸入信箱' | translate }}" name="email"
+                maxlength="60" [(ngModel)]="model.email" #email="ngModel" email required>
+            </div>
+            <div class="form-group">
+              <div class="form-control-left" [ngClass]="{'invalid': startAt.invalid&&form.submitted}">
+                <label for="start_date">{{ 'create.startAt' | translate }} *</label>
+                <input type="date" id="start_date" name="start_date" min="{{ nowDate | date:'yyyy-MM-dd' }}"
+                  [(ngModel)]="model.startAt" #startAt="ngModel" required>
+              </div>
+              <div class="form-control-right" [ngClass]="{'invalid': endAt.invalid&&form.submitted}">
+                <label for="end_date">{{ 'create.endAt' | translate }}</label>
+                <input type="date" id="end_date" name="end_date" min="{{ nowDate | date:'yyyy-MM-dd' }}"
+                  [(ngModel)]="model.endAt" #endAt="ngModel" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="category"> {{ 'category' | translate }}</label>
+              <select id="category" name="category" [(ngModel)]="model.category" required>
+                <option *ngFor="let c of category">
+                  {{ c | translate }}
+                </option>
+              </select>
+            </div>
+            <div class="form-group" [ngClass]="{'invalid': name.invalid&&form.submitted}">
+              <label for="name">{{ 'create.name' | translate }} *</label>
+              <input type="text" id="name" placeholder="{{ '請輸入名稱' | translate }}" name="name"
+                [(ngModel)]="model.name" #name="ngModel" required>
+            </div>
+            <div class="form-group">
+              <div class="form-control-left">
+                <label for="price">{{ 'create.target' | translate }} *</label>
+                <div class="input-group" [ngClass]="{'invalid': price.invalid&&(price.dirty||form.submitted)}">
+                  <input type="number" id="price" placeholder="8787" maxlength="8" name="price"
+                    [(ngModel)]="model.targetPrice" #price="ngModel" pattern="\d{1,8}" required>
+                  <span class="input-group-addon">NTD</span>
                 </div>
               </div>
-              <div class="form-group">
-                <label for="email">{{ 'email' | translate }} *</label>
-                <div [ngClass]="{'invalid': email.invalid&&(email.dirty||form.submitted)}">
-                  <input type="email" id="email" placeholder="{{ '請輸入信箱' | translate }}" name="email"
-                    [(ngModel)]="model.email" #email="ngModel" email required>
+            </div>
+            <div class="form-group" [ngClass]="{'invalid': brief.invalid&&form.submitted}">
+              <label for="brief">{{ 'create.brief' | translate }} *</label>
+              <input type="text" id="brief" placeholder="{{ '請輸入簡介' | translate }}" name="brief"
+                [(ngModel)]="model.brief" #brief="ngModel" required>
+            </div>
+            <div class="form-group" [ngClass]="{'invalid': img.invalid&&form.submitted}">
+              <label for="cover">{{ 'create.img' | translate }} *</label>
+              <input type="file" id="cover" name="file" [(ngModel)]="model.img" #img="ngModel"
+                required>
+            </div>
+            <div class="s_order form-group" [ngClass]="{'invalid': dsp.invalid&&form.submitted}">
+              <label for="br">{{ 'create.description' | translate }} *</label>
+              <textarea id="description" cols="30" rows="10" placeholder="{{ '請輸入說明' | translate }}"
+                name="description" [(ngModel)]="model.description" #dsp="ngModel" required></textarea>
+            </div>
+            <div class="line"></div>
+            <div class="form-group">
+              <div class="form-control-left" [ngClass]="{'invalid': f_price.invalid&&(f_price.dirty||form.submitted)}">
+                <label for="f_price">{{ 'create.fAmount' | translate }} *</label>
+                <div class="input-group">
+                  <input type="number" id="f_price" placeholder="87" name="f_price" #f_price="ngModel"
+                    [(ngModel)]="model.feedbackPirce" pattern="\d{1,100}" required>
+                  <span class="input-group-addon">NTD</span>
                 </div>
               </div>
-              <div class="form-group">
-                <div class="form-control-left">
-                  <label for="start_date">{{ 'create.startAt' | translate }} *</label>
-                  <div [ngClass]="{'invalid': startAt.invalid&&form.submitted}">
-                    <input type="date" id="start_date" name="start_date" min="{{ nowDate | date:'yyyy-MM-dd' }}"
-                      [(ngModel)]="model.startAt" #startAt="ngModel" required>
-                  </div>
-                </div>
-                <div class="form-control-right">
-                  <label for="end_date">{{ 'create.endAt' | translate }}</label>
-                  <div [ngClass]="{'invalid': endAt.invalid&&form.submitted}">
-                    <input type="date" id="end_date" name="end_date" min="{{ nowDate | date:'yyyy-MM-dd' }}"
-                      [(ngModel)]="model.endAt" #endAt="ngModel" required>
-                  </div>
-                </div>
+            </div>
+            <div class="form-group">
+              <div class="form-control-left" [ngClass]="{'invalid': f_date.invalid&&form.submitted}">
+                <label for="f_date">{{ 'create.fAt' | translate }} *</label>
+                <input type="date" id="f_date" name="f_date" min="{{ nowDate | date:'yyyy-MM-dd' }}"
+                  [(ngModel)]="model.feedbackAt" #f_date="ngModel" required>
               </div>
-              <div class="form-group">
-                <label for="category"> {{ 'category' | translate }}</label>
-                <select id="category" name="category" [(ngModel)]="model.category" required>
-                  <option *ngFor="let c of category">
-                    {{ c | translate }}
-                  </option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="name">{{ 'create.name' | translate }} *</label>
-                <div [ngClass]="{'invalid': name.invalid&&form.submitted}">
-                  <input type="text" id="name" placeholder="{{ '請輸入名稱' | translate }}" name="name"
-                    [(ngModel)]="model.name" #name="ngModel" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="form-group_left">
-                  <label for="price">{{ 'create.target' | translate }} *</label>
-                  <div class="input-group">
-                    <div [ngClass]="{'invalid': price.invalid&&(price.dirty||form.submitted)}">
-                      <input type="text" id="price" placeholder="8787" maxlength="8" name="price"
-                        [(ngModel)]="model.targetPrice" #price="ngModel" pattern="\d{1,8}" required>
-                    </div>
-                    <span class="input-group-addon">NTD</span>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="brief">{{ 'create.brief' | translate }} *</label>
-                <div [ngClass]="{'invalid': brief.invalid&&form.submitted}">
-                  <input type="text" id="brief" placeholder="{{ '請輸入簡介' | translate }}" name="brief"
-                    [(ngModel)]="model.brief" #brief="ngModel" required>
-                </div>
-              </div>
-              <div class="form-group">
-
-                <label for="cover">{{ 'create.img' | translate }} *</label>
-                <div [ngClass]="{'invalid': img.invalid&&form.submitted}">
-                  <input type="file" id="cover" name="file" [(ngModel)]="model.img" #img="ngModel"
-                    required>
-                </div>
-              </div>
-              <div class="s_order form-group">
-                <label for="br">{{ 'create.description' | translate }} *</label>
-                <div [ngClass]="{'invalid': dsp.invalid&&form.submitted}">
-                  <textarea id="description" cols="30" rows="10" placeholder="{{ '請輸入說明' | translate }}"
-                    name="description" [(ngModel)]="model.description" #dsp="ngModel" required></textarea>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="form-group_left">
-                  <label for="f_price">{{ 'create.fAmount' | translate }} *</label>
-                  <div class="input-group">
-                    <div [ngClass]="{'invalid': f_price.invalid&&(f_price.dirty||form.submitted)}">
-                      <input type="text" id="f_price" placeholder="87" name="f_price" #f_price="ngModel"
-                        [(ngModel)]="model.feedbackPirce" pattern="\d{1,100}" required>
-                    </div>
-                    <span class="input-group-addon">NTD</span>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="form-control-left">
-                  <label for="f_date">{{ 'create.fAt' | translate }} *</label>
-                  <div [ngClass]="{'invalid': f_date.invalid&&form.submitted}">
-                    <input type="date" id="f_date" name="f_date" min="{{ nowDate | date:'yyyy-MM-dd' }}"
-                      [(ngModel)]="model.feedbackAt" #f_date="ngModel" required>
-                  </div>
-                </div>
-              </div>
-              <div class="s_order form-group">
-                <label for="f_description">{{ 'create.fDescription' | translate }} *</label>
-                <div [ngClass]="{'invalid': f_dsp.invalid&&form.submitted}">
-                  <textarea type="text" id="f_description" cols="30" rows="10" placeholder="{{ '請輸入說明' | translate }}"
-                    name="f_description" [(ngModel)]="model.feedbackDescription" #f_dsp="ngModel"
-                    required></textarea>
-
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="r_web">{{ 'create.web' | translate }}</label>
-                <div [ngClass]="{'invalid': web.invalid&&form.submitted}">
-                  <input type="text" id="r_web" placeholder="{{ '請輸入相關網頁' | translate }}" name="r_web"
-                    [(ngModel)]="model.relativeWeb" #web="ngModel" required>
-                </div>
-              </div>
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" ngModel name="check" #check="ngModel" required>
-                  {{ 'create.isCheck' | translate }}
-                </label>
-                <p class="uncheck" *ngIf="form.submitted && check.invalid">
-                  {{ 'create.alertUncheck' | translate }}</p>
-              </div>
-              <div class="submit_btn form-group submitRow">
-                <input type="submit" value="{{ 'create.submit' | translate }}">
-                <!-- TODO: 設定router-->
-                <a class="btn btn-link" [routerLink]="['/']">{{ 'create.cancel' | translate }}</a>
-              </div>
-            </form>
-          </div>
+            </div>
+            <div class="s_order form-group" [ngClass]="{'invalid': f_dsp.invalid&&form.submitted}">
+              <label for="f_description">{{ 'create.fDescription' | translate }} *</label>
+              <textarea type="text" id="f_description" cols="30" rows="10" placeholder="{{ '請輸入說明' | translate }}"
+                name="f_description" [(ngModel)]="model.feedbackDescription" #f_dsp="ngModel"
+                required></textarea>
+            </div>
+            <div class="form-group" [ngClass]="{'invalid': web.invalid&&form.submitted}">
+              <label for="r_web">{{ 'create.web' | translate }}</label>
+              <input type="text" id="r_web" placeholder="{{ '請輸入相關網頁' | translate }}" name="r_web"
+                [(ngModel)]="model.relativeWeb" #web="ngModel" required>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ngModel name="check" #check="ngModel" required>
+                {{ 'create.isCheck' | translate }}
+              </label>
+              <p class="uncheck" *ngIf="form.submitted && check.invalid">
+                {{ 'create.alertUncheck' | translate }}</p>
+            </div>
+            <div class="submit_btn form-group">
+              <input type="submit" value="{{ 'create.submit' | translate }}">
+              <!-- TODO: 設定router-->
+              <a class="btn btn-link" [routerLink]="['/']">{{ 'create.cancel' | translate }}</a>
+            </div>
+          </form>
         </div>
       </div>
     </div>

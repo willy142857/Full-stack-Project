@@ -1,26 +1,18 @@
-.c_password input_[type='text'] {
-  background: none repeat scroll 0 0 #f7f8f9;
-  border: 1px solid #e8e8e8;
-  padding: 9px;
-  width: 100%;
+.invalid input,
+.invalid textarea {
+  border: 1px solid red;
 }
 
-.c_password {
-  overflow: hidden;
-  padding-bottom: 15px;
-}
-
-.c_password_left {
-  float: left;
-  margin-right: 4%;
-  width: 48%;
+.profile-header {
+  text-align: center;
+  margin-bottom: 5%;
 }
 
 .password_commit {
   padding: 0px;
 }
 
-.password_commit > input[type='submit'] {
+.password_commit>input[type='submit'] {
   background: none repeat scroll 0 0 #ff6766;
   border: 2px solid #ff6766;
   color: #fff;
@@ -33,7 +25,7 @@
   width: 15%;
 }
 
-.password_commit > input[type='submit']:hover {
+.password_commit>input[type='submit']:hover {
   background: #fff;
   color: #232323;
 }
@@ -62,7 +54,4 @@
   width: 100%;
 }
 
-.input_right {
-  float: left;
-  width: 100%;
-}
+
