@@ -45,6 +45,7 @@ form label {
 
 .form-group {
   overflow: hidden;
+  padding: 1px;
 }
 
 .form-group input[type='text'],

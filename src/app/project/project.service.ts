@@ -19,21 +19,24 @@ export class ProjectService {
     relativeWeb: 'google.com'
   };
   category = [
-    'music',
-    'photograph',
-    'publication',
-    'art',
-    'design',
-    'food',
-    'modern',
-    'education',
-    'technology',
-    'social',
-    'act',
-    'games',
-    'placemaking',
-    'movies',
-    'comics'
+    '文藝',
+    '生活',
+    '娛樂',
+    '音樂',
+    '攝影',
+    '出版',
+    '美術',
+    '設計',
+    '飲食',
+    '時尚',
+    '教育',
+    '科技',
+    '社會',
+    '表演',
+    '遊戲',
+    '地方創生',
+    '電影動畫',
+    '插畫漫畫'
   ];
   constructor() {}
   set() {}
