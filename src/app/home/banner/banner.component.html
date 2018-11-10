@@ -4,14 +4,14 @@
     <div class="fullwidthbanner">
       <!-- TODO:將圖片用ngfor顯示在首頁，並設定點擊後導向路由-->
       <ul>
-        <ng-container *ngFor="let item of items">
+        <ng-container *ngFor="let project of projects">
           <li data-transition="random" data-slotamount="7" data-masterspeed="1000">
-            <img [src]="item.img" alt="slide" [routerLink]="['/commodity']" routerLinkActive="router-link-active">
+            <img [src]="project.img" alt="slide" [routerLink]="['/commodity']" routerLinkActive="router-link-active">
 
             <div class="tp-caption large_black sfr" data-x="120" data-y="230" data-speed="1100"
               data-start="1400" data-easing="easeInOutBack" style="font-family: 'Montserrat', sans-serif; font-size: 50px;
                     font-weight: 700; line-height:80px;text-transform: uppercase; color: #232323; text-shadow: 0 0 3px #fff">
-              {{item.name}}
+              {{ project.name }}
             </div>
             <div class="tp-caption large_black sfr carousel-caption-inner" data-x="120" data-y="300"
               data-speed="1100" data-start="1400" data-easing="easeInOutBack">
@@ -19,7 +19,7 @@
             </div>
             <div class="tp-caption lfb carousel-caption-inner" data-x="120" data-y="350" data-speed="1300"
               data-start="1700" data-easing="easeInOutBack" style="font-family: cabin Sans; font-size: 17px; font-weight: bold; text-transform: uppercase; color: #232323;">
-              剩餘{{ item.date }}天
+              剩餘{{ project.date }}天
             </div>
           </li>
         </ng-container>

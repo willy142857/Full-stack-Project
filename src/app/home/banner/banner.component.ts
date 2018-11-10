@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProjectService } from 'src/app/project/project.service';
 
 declare function getUrlVars(): any;
 declare function containerResized(): any;
@@ -39,7 +40,7 @@ declare function countDown(): any;
   styleUrls: ['./banner.component.css']
 })
 export class BannerComponent implements OnInit {
-  items = [
+  projects = [
     {
       img: 'assets/images/slider-temp.jpg',
       name: '計畫名稱',
@@ -56,7 +57,7 @@ export class BannerComponent implements OnInit {
       date: '7'
     }
   ];
-  constructor() { }
+  constructor(private projectService: ProjectService) {}
 
   ngOnInit() {
     getUrlVars();
