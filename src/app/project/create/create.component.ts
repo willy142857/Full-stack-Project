@@ -8,14 +8,14 @@ import { Router } from '@angular/router';
 })
 export class CreateComponent implements OnInit {
   model: any = {};
-  category = this.project.category;
+  category = this.projectService.category;
   nowDate = new Date();
-  constructor(private project: ProjectService, private router: Router) {}
+  constructor(private projectService: ProjectService, private router: Router) {}
   ngOnInit() {
     scroll(0, 0);
   }
   onSubmit(form) {
-    this.project.set();
+    this.projectService.set();
     this.router.navigateByUrl('/');
     console.log(form.value);
   }

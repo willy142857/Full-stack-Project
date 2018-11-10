@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../project.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Project } from '../project';
 
 @Component({
   selector: 'app-edit',
@@ -9,19 +10,21 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class EditComponent implements OnInit {
   model: any = {};
-  id: number;
+  category = this.projectService.category;
+  project: Project;
   constructor(
-    private project: ProjectService,
+    private projectService: ProjectService,
     private router: Router,
     private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.id = params['id'];
+      const id = params.id;
+      this.projectService.getProject(id).subscribe((project: Project) => {
+        this.project = project;
+      });
     });
-    console.log(this.id);
-    this.model = this.project.get();
   }
   onSubmit(form) {}
 }
