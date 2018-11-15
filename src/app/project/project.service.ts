@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { Project } from './project';
 @Injectable({
   providedIn: 'root'
 })
@@ -42,9 +43,18 @@ export class ProjectService {
   constructor(private httpClient: HttpClient) {}
   set() {}
   getProjects() {
-    return this.httpClient.get('http://localhost:8000/api/projects');
+    return this.httpClient.get(`${environment.api}/projects`);
   }
   getProject(id: number) {
-    return this.httpClient.get(`http://localhost:8000/api/projects/${id}`);
+    return this.httpClient.get(`${environment.api}/projects/${id}`);
+  }
+  createProject(project: Project) {
+    return this.httpClient.post(`${environment.api}/projects/create`, project);
+  }
+  editProject(project: Project, id: number) {
+    return this.httpClient.post(
+      `${environment.api}/projects/${id}/edit`,
+      project
+    );
   }
 }

@@ -9,25 +9,26 @@ export class AuthService {
   redirectUrl = '/';
 
   constructor(private router: Router, private httpClient: HttpClient) {}
-  checkLogin(email: string, password: string) {
-    if (email === '123@gmail.com' && password === '123') {
-      this.router.navigateByUrl(this.redirectUrl);
-      console.log('login success\n');
-    } else {
-      this.router.navigateByUrl('/login');
-    }
-  }
   register(user: any) {
-    return this.httpClient.post('http://localhost:8000/api/register', user);
+    return this.httpClient.post(`${environment.api}/register`, user);
   }
   login(user: any) {
-    return this.httpClient.post('http://localhost:8000/api/login', user);
+    this.httpClient
+      .post(`${environment.api}/login`, user)
+      .subscribe((data: any) => {
+        if (data.token) {
+          localStorage.setItem('token', data.token);
+          this.router.navigateByUrl(this.redirectUrl);
+        } else {
+          alert('fail');
+        }
+      });
   }
   logout() {
     localStorage.removeItem('token');
   }
 
   isLogin() {
-    return localStorage.getItem('token');
+    return localStorage.getItem('token') !== '';
   }
 }
