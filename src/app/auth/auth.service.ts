@@ -24,6 +24,11 @@ export class AuthService {
         }
       });
   }
+
+  retrievepassword(email: any) {
+    return this.httpClient.post(`${environment.api}/retrievepassword`, email);
+  }
+
   logout() {
     localStorage.removeItem('token');
   }

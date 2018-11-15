@@ -33,17 +33,4 @@ export class LoginComponent implements OnInit {
   //     alert('請輸入密碼');
   //   }
   // }
-
-  login() {
-    // 檢查帳號密碼
-    this.authService.login(this.user).subscribe((data: any) => {
-      console.log(data);
-      if (data.token) {
-        localStorage.setItem('token', data.token);
-        this.router.navigate(['/']);
-      } else {
-        alert('登入失敗');
-      }
-    });
-  }
 }
