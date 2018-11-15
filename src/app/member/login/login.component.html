@@ -20,19 +20,19 @@
         </div><!-- .grid_6 -->
 
         <div class="grid_6 registedBlock">
-          <form class="registed" (ngSubmit)="login(form,f1,f2)" #form="ngForm">
+          <form class="registed"  #form="ngForm">
             <h2>{{'已註冊會員' | translate}}</h2>
 
             <p>{{'如果您已經有帳號了，請登入' | translate}}</p>
 
             <div class="email">
               <strong>{{ 'email' | translate }} :</strong><sup class="surely">*</sup><br />
-              <input type="email" [(ngModel)]="email" #f1="ngModel" name="email" class="" value="" placeholder="E-mail" required>
+              <input type="email" [(ngModel)]="user.email" #f1="ngModel" name="email" class="" value="" placeholder="E-mail" required>
             </div><!-- .email -->
 
             <div class="password">
               <strong>{{ 'password' | translate }} :</strong><sup class="surely">*</sup><br />
-              <input type="password" [(ngModel)]="password" #f2="ngModel" name="password" class="" value="" placeholder="密碼" required/>
+              <input type="password" [(ngModel)]="user.password" #f2="ngModel" name="password" class="" value="" placeholder="密碼" required/>
               <a class="forgot" href="#" [routerLink]="['/','retrievePassword']" routerLinkActive="active">忘記密碼
                 ?</a>
             </div><!-- .password -->
@@ -43,7 +43,7 @@
             </div><!-- .remember -->
 
             <div class="submit">
-              <input type="submit" value="登入" />
+              <input (click)="login()" type="submit" value="登入" />
               <sup class="surely">*</sup><span>{{'必須欄位' | translate}}</span>
             </div><!-- .submit -->
           </form><!-- .registed -->
