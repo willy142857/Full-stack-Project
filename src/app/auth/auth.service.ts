@@ -10,7 +10,18 @@ export class AuthService {
 
   constructor(private router: Router, private httpClient: HttpClient) {}
   register(user: any) {
-    return this.httpClient.post(`${environment.api}/register`, user);
+    this.httpClient.post(`${environment.api}/register`, user).subscribe(
+      (data: any) => {
+        if (data.success) {
+          this.router.navigate(['/login']);
+        } else {
+          alert('fail');
+        }
+      },
+      response => {
+        alert(response.error.message);
+      }
+    );
   }
   login(user: any) {
     this.httpClient
