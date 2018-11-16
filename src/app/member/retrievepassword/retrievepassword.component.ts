@@ -7,7 +7,9 @@ import { AuthService } from 'src/app/auth/auth.service';
   styleUrls: ['./retrievepassword.component.css']
 })
 export class RetrievepasswordComponent implements OnInit {
-  email = '';
+  user = {
+    email: '',
+  };
 
   constructor(private authService: AuthService) {}
 
@@ -15,6 +17,13 @@ export class RetrievepasswordComponent implements OnInit {
     scroll(0, 0);
   }
 
-  onSubmit(form, userMail) {
+  onSubmit(form, userMail) {}
+
+  retrievepassword() {
+    console.log('retrieve');
+    this.authService.retrievepassword(this.user).subscribe((data: any) => {
+      console.log(data);
+      console.log(this.user.email);
+    });
   }
 }

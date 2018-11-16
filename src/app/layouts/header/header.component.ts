@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   constructor(private auth: AuthService) {}
 
   get isLogin() {
-    return this.auth.isLogin;
+    return this.auth.isLogin();
   }
   ngOnInit() {
     scroll(0, 0);
