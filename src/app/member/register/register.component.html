@@ -21,9 +21,9 @@
               <div class="c_password">
                 <div class="c_password_left">
                   <p>{{ 'email' | translate }} <span>*</span></p>
-                  <input type="text" [(ngModel)]="model.email" name="email" #mail="ngModel" [ngClass]="{ 'is-valid': (!form.submitted || !email.invalid) ,'is-invalid': (form.submitted && email.invalid) }"
+                  <input type="text" [(ngModel)]="model.email" name="email" #email="ngModel" [ngClass]="{ 'is-valid': (!form.submitted || !email.invalid) ,'is-invalid': (form.submitted && email.invalid) }"
                     required email/>
-                  <div *ngIf="form.submitted && mail.invalid" class="invalid_feedback">
+                  <div *ngIf="form.submitted && email.invalid" class="invalid_feedback">
                     Email is required
                   </div>
                 </div>
