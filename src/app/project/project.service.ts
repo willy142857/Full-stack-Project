@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Project } from './project';
+import { Project, Category } from './project';
 @Injectable({
   providedIn: 'root'
 })
@@ -40,21 +40,23 @@ export class ProjectService {
     '電影動畫',
     '插畫漫畫'
   ];
+
   constructor(private httpClient: HttpClient) {}
   set() {}
   getProjects() {
-    return this.httpClient.get(`${environment.api}/projects`);
+    return this.httpClient.get(`${environment.api}/projects/index`);
   }
   getProject(id: number) {
     return this.httpClient.get(`${environment.api}/projects/${id}`);
   }
   createProject(project: Project) {
-    return this.httpClient.post(`${environment.api}/projects/create`, project);
+    // return this.httpClient.post(`${environment.api}/projects`, project);
   }
   editProject(project: Project, id: number) {
-    return this.httpClient.post(
-      `${environment.api}/projects/${id}/edit`,
-      project
-    );
+    // return this.httpClient.post(`${environment.api}/projects/${id}`,project);
+  }
+
+  getCategories() {
+    return this.httpClient.get(`${environment.api}/categories`);
   }
 }

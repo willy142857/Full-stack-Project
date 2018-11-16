@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,12 +10,16 @@ import { AuthService } from 'src/app/auth/auth.service';
 export class HeaderComponent implements OnInit {
   logo = 'assets/images/logo.png';
 
-  constructor(private auth: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   get isLogin() {
-    return this.auth.isLogin();
+    return this.authService.isLogin();
   }
   ngOnInit() {
     scroll(0, 0);
+  }
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/']);
   }
 }
