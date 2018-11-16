@@ -34,6 +34,6 @@ export class AuthService {
   }
 
   isLogin() {
-    return localStorage.getItem('token') !== '';
+    return localStorage.getItem('token') !== null;
   }
 }
