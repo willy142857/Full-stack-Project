@@ -27,8 +27,8 @@ export class AuthService {
     this.httpClient
       .post(`${environment.api}/login`, user)
       .subscribe((data: any) => {
-        if (data.token) {
-          localStorage.setItem('token', data.token);
+        if (data.access_token) {
+          localStorage.setItem('token', data.access_token);
           this.router.navigateByUrl(this.redirectUrl);
         } else {
           alert('fail');
