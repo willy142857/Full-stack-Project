@@ -1,65 +1,22 @@
-.c_password input_[type="text"] {
-  background: none repeat scroll 0 0 #f7f8f9;
-  border: 1px solid #E8E8E8;
-  padding: 9px;
-  width: 100%;
-}
-
-.c_password {
-  overflow: hidden;
-  padding-bottom: 15px;
-}
-
-.c_password_left {
-  float: left;
-  margin-right: 4%;
-  width: 48%;
-}
-
-.password_commit {
-  padding: 0px;
-}
-
-.password_commit>input[type="submit"] {
-  background: none repeat scroll 0 0 #ff6766;
-  border: 2px solid #ff6766;
-  color: #fff;
-  font-size: 13px;
-  font-weight: 700;
-  margin: 8px auto 15px;
-  padding: 7px;
+.register-header {
   text-align: center;
-  text-transform: uppercase;
-  width: 15%;
+  margin-bottom: 5%;
 }
 
-.password_commit>input[type="submit"]:hover {
-  background: #fff;
-  color: #232323;
-}
-
-.register_area {
-  background: none repeat scroll 0 0 #f7f8f9;
-  border-top: 1px solid #eeeeee;
-  padding: 60px 0;
-}
-
-.invalid_feedback{
- color: red;
-}
-
-.is-invalid{
+.invalid input,
+.invalid textarea {
   border: 1px solid red;
-  background: none repeat scroll 0 0 #f7f8f9;
-  padding: 9px;
-  width: 100%;
 }
 
-.is-valid{
-  background: none repeat scroll 0 0 #f7f8f9;
-  border: 1px solid #E8E8E8;
-  padding: 9px;
-  width: 100%;
+.invalid input:focus,
+.invalid textarea:focus {
+  outline: none;
+  border: 1px solid #ff0000;
+  box-shadow: 0px 0px 4px #ff0000;
+  -moz-box-shadow: 0px 0px 4px #ff0000;
+  -webkit-box-shadow: 0px 0px 4px #ff0000;
 }
 
-
+.invalid_feedback {
+  color: red;
+}

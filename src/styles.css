@@ -51,6 +51,7 @@ form label {
 .form-group input[type='text'],
 .form-group input[type='number'],
 .form-group input[type='email'],
+.form-group input[type='password'],
 .form-group input[type='file'],
 .form-group textarea,
 .form-group select {
@@ -72,6 +73,7 @@ form label {
 .form-group input[type='text']:focus,
 .form-group input[type='number']:focus,
 .form-group input[type='email']:focus,
+.form-group input[type='password']:focus,
 .form-group input[type='file']:focus,
 .form-group select:focus,
 .form-group textarea:focus {

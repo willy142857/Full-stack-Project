@@ -1,79 +1,67 @@
-<section class="register_area">
-  <div class="container">
+<section class="p_area">
+  <div class="content">
     <div class="row">
-      <div class="col-md-9 col-sm-8 col-xs-12">
-        <div class="checkout_left">
-          <h2>{{ 'signup' | translate }}</h2>
-          <div class="dotted_line"></div>
+      <div class="col-md-offset-2 col-md-4 col-sm-6 col-xs-12">
 
-          <div class="checkout_form">
-            <form (ngSubmit)="form.form.valid && onSubmit(form)" #form="ngForm">
-              <div class="c_password">
-                <div class="c_password_left">
-                  <p>{{ 'name' | translate }} <span>*</span></p>
-                  <input type="text" [(ngModel)]="model.name" name="name" #name="ngModel" [ngClass]="{ 'is-valid': (!form.submitted || !name.invalid) ,'is-invalid': (form.submitted && name.invalid) }"
-                    required />
-                  <div *ngIf="form.submitted && name.invalid" class="invalid_feedback">
-                    Name is required
-                  </div>
-                </div>
-              </div>
-              <div class="c_password">
-                <div class="c_password_left">
-                  <p>{{ 'email' | translate }} <span>*</span></p>
-                  <input type="text" [(ngModel)]="model.email" name="email" #email="ngModel" [ngClass]="{ 'is-valid': (!form.submitted || !email.invalid) ,'is-invalid': (form.submitted && email.invalid) }"
-                    required email/>
-                  <div *ngIf="form.submitted && email.invalid" class="invalid_feedback">
-                    Email is required
-                  </div>
-                </div>
-                <div class="c_password_left">
-                  <p>手機號碼 <span>*</span></p>
-                  <input type="text" [(ngModel)]="model.phone" name="phone" #phone="ngModel"
-                    [ngClass]="{ 'is-valid': (!form.submitted || !phone.invalid) ,'is-invalid': (form.submitted && phone.invalid) }"
-                    required />
-                  <div *ngIf="form.submitted && phone.invalid" class="invalid_feedback">
-                    Phone number is required
-                  </div>
-                </div>
-              </div>
-              <div class="c_password">
-                <div class="c_password_left">
-                  <p>密碼(至少六碼) <span>*</span></p>
-                  <input type="password" [(ngModel)]="model.password" name="password" #password="ngModel"
-                    [ngClass]="{ 'is-valid': (!form.submitted || !password.invalid) ,'is-invalid': (form.submitted && password.invalid) }"
-                    required />
-                  <div *ngIf="form.submitted && password.invalid" class="invalid_feedback">
-                    Password is required
-                  </div>
-                </div>
-                <div class="c_password_left">
-                  <p>確認密碼 <span>*</span></p>
-                  <input type="password" [(ngModel)]="model.password_confirm" name="password_confirm"
-                    #password_confirm="ngModel" [ngClass]="{ 'is-valid': (!form.submitted || !password_confirm.invalid) ,'is-invalid': (form.submitted && password_confirm.invalid) }"
-                    required>
-                  <div *ngIf=" password.value  !== password_confirm.value" class="invalid_feedback">
-                    密碼不一致
-                  </div>
-                </div>
-              </div>
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" [(ngModel)]="model.check" name="check" #check="ngModel"
-                    required />
-                  我已詳閱並同意使用者條款
-                  <div *ngIf="form.submitted && check.invalid" class="invalid_feedback">
-                    Check is required
-                  </div>
-                </label>
-              </div>
-              <div class="password_commit">
-                <input type="submit" value="註冊">
-              </div>
-            </form>
+        <h3 class="register-header">{{ '註冊' | translate }}</h3>
+
+        <form (ngSubmit)="form.form.valid && onSubmit(form)" #form="ngForm">
+          <div class="form-group" [ngClass]="{'invalid': form.submitted && name.invalid}">
+            <label>{{ '姓名' | translate }} *</label>
+            <input type="text" [(ngModel)]="model.name" name="name" #name="ngModel" required />
+            <div *ngIf="form.submitted && name.invalid" class="invalid_feedback">
+              Name is required
+            </div>
           </div>
-        </div>
+          <div class="form-group" [ngClass]="{'invalid': (form.submitted && email.invalid)}">
+            <label>{{ '信箱' | translate }} *</label>
+            <input type="text" [(ngModel)]="model.email" name="email" #email="ngModel" required
+              email>
+            <div *ngIf="form.submitted && email.invalid" class="invalid_feedback">
+              Email is required
+            </div>
+          </div>
+          <div class="form-group" [ngClass]="{ 'invalid': (form.submitted && phone.invalid) }">
+            <label>{{ '手機號碼' | translate }} *</label>
+            <input type="text" [(ngModel)]="model.phone" name="phone" #phone="ngModel" required>
+            <div *ngIf="form.submitted && phone.invalid" class="invalid_feedback">
+              Phone number is required
+            </div>
+          </div>
+          <div class="form-group" [ngClass]="{ 'invalid': (form.submitted && password.invalid) }">
+            <label>密碼(至少六碼) *</label>
+            <input type="password" [(ngModel)]="model.password" name="password" #password="ngModel"
+              required>
+            <div *ngIf="form.submitted && password.invalid" class="invalid_feedback">
+              Password is required
+            </div>
+          </div>
+          <div class="form-group" [ngClass]="{ 'invalid': (form.submitted && password_confirm.invalid) }">
+            <label>{{ '確認密碼' | translate }} *</label>
+            <input type="password" [(ngModel)]="model.password_confirm" name="password_confirm"
+              #password_confirm="ngModel" required>
+            <div *ngIf=" password.value  !== password_confirm.value" class="invalid_feedback">
+              密碼不一致
+            </div>
+          </div>
+
+          <div class="form-check">
+            <label>
+              <input type="checkbox" [(ngModel)]="model.check" name="check" #check="ngModel"
+                required>
+              我已詳閱並同意使用者條款
+            </label>
+            <div *ngIf="form.submitted && check.invalid" class="invalid_feedback">
+              Check is required
+            </div>
+          </div>
+
+          <div class="submit_btn form-group">
+            <input type="submit" value="{{ '註冊' | translate }}">
+          </div>
+        </form>
       </div>
+
     </div>
   </div>
 </section>
