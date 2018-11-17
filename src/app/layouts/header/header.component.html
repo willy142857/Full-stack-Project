@@ -17,13 +17,13 @@
           <!-- TODO:多國語言切換 -->
           <nav class="currency alignleft">
             <ul>
-              <li><a href="">NTD</a>
-                <!--<ul class="currency-dropdown">
-                  <li><a href="">EUR</a></li>
-                  <li><a href="">GBP</a></li>
-                  <li><a href="">CAD</a></li>
-                  <li><a href="">AUD</a></li>
-                </ul>-->
+              <li>
+                <a>{{ currLang | translate }}</a>
+                <ul class="currency-dropdown">
+                  <ng-container *ngFor="let lang of langs">
+                    <li><a *ngIf="lang!=currLang" (click)="changeLang(lang)">{{ lang | translate }}</a></li>
+                  </ng-container>
+                </ul>
               </li>
             </ul>
           </nav>

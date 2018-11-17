@@ -1,4 +1,7 @@
 {
+  "zh-tw": "繁體中文",
+  "en": "English",
+
   "login": "login",
   "signup": "signup",
   "name": "name",
