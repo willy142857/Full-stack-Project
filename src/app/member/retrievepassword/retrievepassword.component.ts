@@ -20,7 +20,7 @@ export class RetrievepasswordComponent implements OnInit {
   onSubmit(form, userMail) {}
 
   retrievepassword() {
-    this.authService.retrievepassword(this.user).subscribe((data: any) => {
+    this.authService.retrievePassword(this.user).subscribe((data: any) => {
     });
   }
 }

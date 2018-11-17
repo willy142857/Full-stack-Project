@@ -36,8 +36,12 @@ export class AuthService {
       });
   }
 
-  retrievepassword(user: any) {
+  retrievePassword(user: any) {
     return this.httpClient.post(`${environment.api}/retrievepassword`, user);
+  }
+
+  resetPassword(user: any) {
+    return this.httpClient.post(`${environment.api}/resetpassword`, user);
   }
 
   logout() {
