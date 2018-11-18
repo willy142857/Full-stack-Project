@@ -5,48 +5,48 @@
 
         <h3 class="profile-header">個人資料</h3>
 
-        <form (ngSubmit)="form.valid && onSubmit(form)" #form="ngForm">
+        <form *ngIf="user!==undefined" (ngSubmit)="form.valid && onSubmit(form)" #form="ngForm">
           <div class="col-md-6 col-sm-6 col-xs-12">
             <div class="form-group" [ngClass]="{'invalid': form.submitted && name.invalid}">
               <label>{{ 'name' | translate }}</label>
-              <input type="text" [(ngModel)]="member.name" name="name" #name="ngModel" required>
+              <input type="text" [(ngModel)]="user.name" name="name" #name="ngModel" required>
               <div *ngIf="form.submitted && name.invalid" class="invalid_feedback">
                 Name is required
               </div>
             </div>
-            <div class="form-group" [ngClass]="{'invalid': form.submitted && mail.invalid}">
+            <div class="form-group" [ngClass]="{'invalid': form.submitted && email.invalid}">
               <label>{{ 'email' | translate }}</label>
-              <input type="text" [(ngModel)]="member.mail" name="mail" #mail="ngModel" required>
-              <div *ngIf="form.submitted && mail.invalid" class="invalid_feedback">
+              <input type="text" [(ngModel)]="user.email" name="email" #email="ngModel" required>
+              <div *ngIf="form.submitted && email.invalid" class="invalid_feedback">
                 Mail is required
               </div>
             </div>
             <div class="form-group" [ngClass]="{'invalid': form.submitted && phone.invalid}">
               <label>手機號碼</label>
-              <input type="number" [(ngModel)]="member.phone" name="phone" #phone="ngModel" required>
+              <input type="number" [(ngModel)]="user.phone" name="phone" #phone="ngModel" required>
               <div *ngIf="form.submitted && phone.invalid" class="invalid_feedback">
                 Phone number is required
               </div>
             </div>
             <div class="form-group">
               <p><label>性別</label></p>
-              <input type="radio" name="text" value="男" [(ngModel)]="member.sex" check="member.sex==男" />男
-              <input type="radio" name="text" value="女" [(ngModel)]="member.sex" check="member.sex==女" />女
+              <input type="radio" name="text" value="男" [(ngModel)]="user.sex" check="user.sex==男" />男
+              <input type="radio" name="text" value="女" [(ngModel)]="user.sex" check="user.sex==女" />女
             </div>
             <div class="form-group">
               <label>地址</label>
-              <input type="text" class="is-valid" [(ngModel)]="member.address" name="address" #address="ngModel">
+              <input type="text" class="is-valid" [(ngModel)]="user.address" name="address" #address="ngModel">
             </div>
             <div class="form-group">
               <label>生日</label>
-              <input type="date" class="is-valid" [(ngModel)]="member.birth" name="birth" #birth="ngModel">
+              <input type="date" class="is-valid" [(ngModel)]="user.birth" name="birth" #birth="ngModel">
             </div>
           </div>
 
           <div class="col-md-6 col-sm-6 col-xs-12">
             <div class="s_order form-group">
               <label>個人介紹</label>
-              <textarea name="message" [(ngModel)]="member.introduction"></textarea>
+              <textarea name="message" [(ngModel)]="user.descrpition"></textarea>
             </div>
             <label>大頭照</label>
             <input type="file" (change)="readURL($event)" accept="image/gif, image/jpeg, image/png">

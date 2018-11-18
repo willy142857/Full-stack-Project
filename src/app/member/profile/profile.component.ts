@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MemberService } from '../member.service';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { Member } from '../member';
 
 @Component({
   selector: 'app-profile',
@@ -7,14 +10,31 @@ import { MemberService } from '../member.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  constructor(public memberService: MemberService) {}
+  constructor(
+    public memberService: MemberService,
+    private httpClient: HttpClient
+  ) {}
   get member() {
     return this.memberService.member;
   }
-  model: any = {};
+  //model: any = {};
+  user: Member;
   photo: any;
   ngOnInit() {
     scroll(0, 0);
+    this.httpClient
+      .get(`${environment.api}/profile?token=${localStorage.getItem('token')}`)
+      .subscribe(
+        (data: Member) => {
+          console.log(data);
+          this.user = data;
+        },
+        response => {
+          if (response.status === 401) {
+            alert('請先登入');
+          }
+        }
+      );
   }
   onSubmit(form) {
     console.log(form);
