@@ -23,3 +23,9 @@ export interface Category {
   id: number;
   category: string;
 }
+
+export interface Feedback {
+  feedback_date: string;
+  feedback_price: number;
+  feedback_description: string;
+}

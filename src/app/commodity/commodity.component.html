@@ -1,4 +1,4 @@
-<section class="gray_tshirt_area">
+<section class="gray_tshirt_area" *ngIf="list!==undefined">
   <div class="container">
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
@@ -43,14 +43,14 @@
               <div class="product_detail_heading">
                 <div class="detail_heading_left">
                   <div>
-                    <h3>{{list.name}}</h3>
+                    <h3>{{list?.name}}</h3>
                     <br>
-                    <h5>by {{list.applier}}</h5>
+                    <h5>by {{list?.fundraiser}}</h5>
                   </div>
                 </div><br>
                 <div class="detail_heading_left">
                   <div>
-                    類別： {{list.category}}
+                    類別： {{ list?.category_id }}
                   </div>
                 </div>
               </div>
@@ -67,7 +67,7 @@
                   </div>
                   <div id="collapseOneP" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOneP">
                     <div class="panel-body product_ac_body">
-                      <p>{{list.brief_intro}}</p>
+                      <p>{{list?.brief}}</p>
                     </div>
                   </div>
                 </div>
@@ -85,22 +85,20 @@
                     <div>
                       <svg width="75" height="75">
                         <circle cx="40" cy="40" r="35" fill="#FDB900" />
-                        <path stroke-linecap="round" stroke-width="5" [style.stroke-dasharray]="list.get / list.budget * 200"
+                        <path stroke-linecap="round" stroke-width="5" [style.stroke-dasharray]="list.curr_amount / list.goal_amount * 200"
                           stroke="#fff" fill="none" d="M40 10
                                      a 30 30 0 0 1 0 60">
                         </path>
-                        <ng-container *ngIf="list.get / list.budget * 100 > 50">
-                          <path stroke-linecap="round" stroke-width="5" [style.stroke-dasharray]="list.get / list.budget * 200 - 100"
+                          <path stroke-linecap="round" stroke-width="5" *ngIf="list.curr_amount / list.goal_amount * 100 > 50"
+                             [style.stroke-dasharray]="list.curr_amount / list.goal_amount * 200 - 100"
                             stroke="#fff" fill="none" d="M40 70
                                      a 30 30 0 0 1 0 -60">
                           </path>
-                        </ng-container>
-                        <text id="count" x="40" y="40" text-anchor="middle" dy="7" font-size="20">{{list.get /
-                          list.budget * 100}}%</text>
+                        <text id="count" x="40" y="40" text-anchor="middle" dy="7" font-size="20">{{list?.curr_amount / list?.goal_amount * 100}}%</text>
                       </svg>
                       <div class="panel-body fit">
-                        已募資金額：{{list.get}}
-                        <br>目標金額：{{list.budget}}
+                        已募資金額：{{list?.curr_amount}}
+                        <br>目標金額：{{list?.goal_amount}}
                       </div>
                     </div>
                   </div>
@@ -119,7 +117,7 @@
                     <div class="panel-body product_accordion_head">
                       <div class="single_color sp_single_col">
                         <div class="color_heading">
-                          <h5>贊助人數：{{list.people}}人</h5>
+                          <h5>贊助人數：{{list?.backer}}人</h5>
                         </div>
                       </div>
                       <div class="single_color">
@@ -128,14 +126,14 @@
                         </div>
                       </div>
                       <div class="single_color">
-                        <div class="color_heading" width="400">
-                          <h5>時程：<br>{{list.startAt | date:'y/MM/d' }} ~ {{list.endAt | date:'y/MM/d' }}</h5>
+                        <div class="color_heading" width="400" >
+                          <h5>時程：<br>{{list?.started_at | date:'y/MM/d' }} ~ {{list?.ended_at | date:'y/MM/d' }}</h5>
                         </div>
                       </div>
 
                       <div class="single_color">
                         <div class="color_heading">
-                          <h5>聯絡信箱：{{list.email}}</h5>
+                          <h5>聯絡信箱：{{list?.email}}</h5>
                         </div>
                       </div>
 
@@ -152,7 +150,7 @@
   </div>
 </section>
 
-<section class="main_category_area product_page_caro">
+<section class="main_category_area product_page_caro" *ngIf="feedbacks!==undefined">
   <div class="container">
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
@@ -162,7 +160,7 @@
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div>
-                <ng-container *ngFor="let plan of list.plans; let i = index;">
+                <ng-container *ngFor="let plan of feedbacks; let i = index;">
                   <div>
                     <form (submit)="add_to_cart(list)">
                       <div class="item">
@@ -172,7 +170,7 @@
                         <div class="multi_lines_text">
                           {{plan.feedback_description}}
                           <div>
-                            回饋金額：{{plan.feedback}}
+                            回饋金額：{{plan.feedback_price}}
                           </div>
                           <div class="invest_button">
                             <input type="submit" value="贊助計畫">
@@ -192,7 +190,7 @@
   </div>
 </section>
 
-<section class="product_page_tab_area">
+<section class="product_page_tab_area" *ngIf="list!==undefined">
   <div class="container">
     <div class="row">
       <div class="col-md-12">

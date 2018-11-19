@@ -1,3 +1,6 @@
+import { ActivatedRoute } from '@angular/router';
+import { Project, Feedback } from 'src/app/project/project';
+import { ProjectService } from './../project/project.service';
 import { CartsService } from './../cart/carts.service';
 import { CommoditiesService } from './commodities.service';
 import { Component, OnInit } from '@angular/core';
@@ -11,9 +14,9 @@ export class CommodityComponent implements OnInit {
   today = new Date();
   stars: any = [false, false, false, false, false];
   new_commodity: any;
-  get list() {
-    return this.commoditiesService.commodity;
-  }
+  list: Project;
+  feedback: Feedback;
+  feedbacks: Feedback[] = [];
 
   get messages() {
     return this.commoditiesService.messages;
@@ -21,14 +24,14 @@ export class CommodityComponent implements OnInit {
   diff: number;
   diffDays: number;
   date() {
-    if (new Date().getTime() < new Date(this.list.startAt).getTime()) {
-      return '未开始';
-    } else if (new Date().getTime() > new Date(this.list.endAt).getTime()) {
-      return '已结束';
+    if (new Date().getTime() < new Date(this.list.started_at).getTime()) {
+      return '!!未開始!!  ';
+    } else if (new Date().getTime() > new Date(this.list.ended_at).getTime()) {
+      return '!!已结束!!  ';
     } else if (
-      new Date(this.list.startAt).getTime() < new Date().getTime() &&
-      new Date().getTime() < new Date(this.list.endAt).getTime()) {
-      this.diff = Math.abs(new Date(this.list.endAt).getTime() - new Date().getTime());
+      new Date(this.list.started_at).getTime() < new Date().getTime() &&
+      new Date().getTime() < new Date(this.list.ended_at).getTime()) {
+      this.diff = Math.abs(new Date(this.list.ended_at).getTime() - new Date().getTime());
       this.diffDays = Math.ceil(this.diff / (1000 * 3600 * 24));
       return this.diffDays;
     }
@@ -53,9 +56,22 @@ export class CommodityComponent implements OnInit {
     }
   }
   // deadline: number = Date(this.list.updatedAt);
-  constructor(private commoditiesService: CommoditiesService,
-    private cartsservice: CartsService) {}
+  constructor(
+    private commoditiesService: CommoditiesService,
+    private cartsservice: CartsService,
+     private projectservic: ProjectService,
+     private route: ActivatedRoute) {}
   ngOnInit() {
     scroll(0, 0);
+    this.route.params.subscribe(data => {
+      const id = data.id;
+      this.projectservic.getProject(id).subscribe((project: Project) => {
+        this.list = project;
+        this.feedback = JSON.parse(this.list.feedback);
+        console.log(this.feedback);
+        this.feedbacks.push(this.feedback);
+
+      });
+    });
   }
 }
