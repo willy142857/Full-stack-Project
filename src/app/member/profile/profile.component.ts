@@ -23,7 +23,9 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     scroll(0, 0);
     this.httpClient
-      .get(`${environment.api}/profile?token=${localStorage.getItem('token')}`)
+      .get(`${environment.api}/profile`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+      })
       .subscribe(
         (data: Member) => {
           console.log(data);
