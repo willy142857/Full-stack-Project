@@ -46,8 +46,9 @@ export class ResetpasswordComponent implements OnInit {
       this.passwordEmpty = false;
     }
 
+    console.log(this.user.email);
     if (this.passwordCheck && !this.passwordEmpty) {
-      this.authService.retrievePassword(this.user).subscribe((data: any) => {});
+      this.authService.resetPassword(this.user).subscribe((data: any) => {});
     }
   }
 }
