@@ -41,7 +41,7 @@ export class AuthService {
   }
 
   resetPassword(user: any) {
-    return this.httpClient.post(`${environment.api}/resetpassword`, user);
+    return this.httpClient.patch(`${environment.api}/resetpassword`, user);
   }
 
   logout() {

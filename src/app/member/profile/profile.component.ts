@@ -17,13 +17,15 @@ export class ProfileComponent implements OnInit {
   get member() {
     return this.memberService.member;
   }
-  //model: any = {};
+  // model: any = {};
   user: Member;
   photo: any;
   ngOnInit() {
     scroll(0, 0);
     this.httpClient
-      .get(`${environment.api}/profile?token=${localStorage.getItem('token')}`)
+      .get(`${environment.api}/profile`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+      })
       .subscribe(
         (data: Member) => {
           console.log(data);
