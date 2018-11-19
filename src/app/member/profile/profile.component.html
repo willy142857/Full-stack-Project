@@ -46,11 +46,11 @@
           <div class="col-md-6 col-sm-6 col-xs-12">
             <div class="s_order form-group">
               <label>個人介紹</label>
-              <textarea name="message" [(ngModel)]="user.descrpition"></textarea>
+              <textarea name="description" [(ngModel)]="user.description"></textarea>
             </div>
             <label>大頭照</label>
             <input type="file" (change)="readURL($event)" accept="image/gif, image/jpeg, image/png">
-            <img [src]="photo" style="width:50%; height: 50%; overflow:scroll;">
+            <img *ngIf="photo!==undefined"[src]="photo" style="width:50%; height: 50%; overflow:scroll;">
           </div>
 
           <div class="col-md-12">

@@ -2,8 +2,8 @@ export interface Member {
   name: string;
   email: string;
   phone: string;
-  descrpition: Text;
-  sex: number;
+  description: Text;
+  sex: string;
   address: string;
   birth: Date;
 }

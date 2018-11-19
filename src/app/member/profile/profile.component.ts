@@ -40,10 +40,21 @@ export class ProfileComponent implements OnInit {
   }
   onSubmit(form) {
     console.log(form);
-
-    console.log(this.memberService.member);
+    this.httpClient
+      .put(`${environment.api}/profile`, this.user, {
+        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+      })
+      .subscribe(
+        (data: Member) => {
+          console.log(data);
+        },
+        response => {
+          if (response.status === 401) {
+            alert('請先登入');
+          }
+        }
+      );
   }
-
   readURL(input) {
     if (input.target.files && input.target.files[0]) {
       const reader = new FileReader();
