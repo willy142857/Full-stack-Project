@@ -17,7 +17,7 @@ export class ProfileComponent implements OnInit {
   get member() {
     return this.memberService.member;
   }
-  //model: any = {};
+  // model: any = {};
   user: Member;
   photo: any;
   ngOnInit() {
