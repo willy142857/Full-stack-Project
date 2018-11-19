@@ -3,6 +3,7 @@ import { MemberService } from '../member.service';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Member } from '../member';
+import { Route, RouterEvent, Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -12,12 +13,13 @@ import { Member } from '../member';
 export class ProfileComponent implements OnInit {
   constructor(
     public memberService: MemberService,
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private router: Router
   ) {}
   get member() {
     return this.memberService.member;
   }
-  // model: any = {};
+  //model: any = {};
   user: Member;
   photo: any;
   ngOnInit() {
@@ -34,6 +36,7 @@ export class ProfileComponent implements OnInit {
         response => {
           if (response.status === 401) {
             alert('請先登入');
+            this.router.navigate(['/login']);
           }
         }
       );
@@ -47,10 +50,12 @@ export class ProfileComponent implements OnInit {
       .subscribe(
         (data: Member) => {
           console.log(data);
+          alert('修正成功');
         },
         response => {
           if (response.status === 401) {
             alert('請先登入');
+            this.router.navigate(['/login']);
           }
         }
       );
