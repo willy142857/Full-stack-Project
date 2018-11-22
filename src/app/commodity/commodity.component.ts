@@ -1,9 +1,10 @@
 import { ActivatedRoute } from '@angular/router';
-import { Project, Feedback } from 'src/app/project/project';
+import { Project, Comment} from 'src/app/project/project';
 import { ProjectService } from './../project/project.service';
 import { CartsService } from './../cart/carts.service';
 import { CommoditiesService } from './commodities.service';
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-commodity',
@@ -15,12 +16,13 @@ export class CommodityComponent implements OnInit {
   stars: any = [false, false, false, false, false];
   new_commodity: any;
   list: Project;
-  feedback: Feedback;
-  feedbacks: Feedback[] = [];
+
+  percentage: any;
 
   get messages() {
     return this.commoditiesService.messages;
   }
+
   diff: number;
   diffDays: number;
   date() {
@@ -49,11 +51,12 @@ export class CommodityComponent implements OnInit {
       this.cartsservice.list.push(this.new_commodity);
     }
   }
-  score_stars(number) {
+  score_stars(comment: Comment) {
     this.stars = [];
     for (let i = 0; i < 5; i++) {
-      this.stars.push(i < number);
+      this.stars.push(i < comment.rating);
     }
+    return 1;
   }
   // deadline: number = Date(this.list.updatedAt);
   constructor(
@@ -67,10 +70,9 @@ export class CommodityComponent implements OnInit {
       const id = data.id;
       this.projectservic.getProject(id).subscribe((project: Project) => {
         this.list = project;
-        this.feedback = JSON.parse(this.list.feedback);
-        console.log(this.feedback);
-        this.feedbacks.push(this.feedback);
-
+        this.percentage = Number(this.list.curr_amount / this.list.goal_amount * 100).toFixed(2);
+        // this.feedback = JSON.parse(this.list.feedback);
+        console.log(this.list);
       });
     });
   }

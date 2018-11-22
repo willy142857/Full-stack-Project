@@ -94,7 +94,7 @@
                             stroke="#fff" fill="none" d="M40 70
                                      a 30 30 0 0 1 0 -60">
                           </path>
-                        <text id="count" x="40" y="40" text-anchor="middle" dy="7" font-size="20">{{list?.curr_amount / list?.goal_amount * 100}}%</text>
+                        <text id="count" x="40" y="40" text-anchor="middle" dy="7" font-size="20">{{percentage}}%</text>
                       </svg>
                       <div class="panel-body fit">
                         已募資金額：{{list?.curr_amount}}
@@ -150,7 +150,7 @@
   </div>
 </section>
 
-<section class="main_category_area product_page_caro" *ngIf="feedbacks!==undefined">
+<section class="main_category_area product_page_caro" *ngIf="list!==undefined">
   <div class="container">
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
@@ -160,7 +160,7 @@
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div>
-                <ng-container *ngFor="let plan of feedbacks; let i = index;">
+                <ng-container *ngFor="let feedback of list.feedbacks; let i = index;">
                   <div>
                     <form (submit)="add_to_cart(list)">
                       <div class="item">
@@ -168,9 +168,13 @@
                           <h3>方案{{i+1}}：</h3>
                         </div>
                         <div class="multi_lines_text">
-                          {{plan.feedback_description}}
+                         <span style="font-size: 24px">{{feedback.description}}</span>
                           <div>
-                            回饋金額：{{plan.feedback_price}}
+                            <span class="feedback_color">
+                            回饋金額：{{feedback.price}}<br>
+                            已贊助人數：{{feedback.backer}}<br>
+                            到期日期：{{feedback.date}}
+                          </span>
                           </div>
                           <div class="invest_button">
                             <input type="submit" value="贊助計畫">
@@ -217,22 +221,22 @@
                       <div class="multi_line"></div>
                     </div>
                   </div>
-                  <ng-container *ngFor='let item of messages'>
-                    <div class="single_review_comment">
+                  <ng-container *ngFor='let comment of list.comments'>
+                    <div class="single_review_comment" *ngIf="score_stars(comment)">
                       <div class="single_review_img">
                         <img src="/assets/images/single_rv1.png" alt="" />
                       </div>
                       <div class="single_review">
-                        <h4>{{item.sum_review}}</h4>
+                        <h4>{{comment.username}}</h4>
 
                         <ul id="single_review_star">
-                          <ng-container *ngFor="let item of item.stars">
-                            <li><a href="" class="fa fa-star-o" *ngIf="item"></a></li>
+                          <ng-container *ngFor="let star of stars">
+                            <li><a href="" class="fa fa-star-o" *ngIf="star"></a></li>
                           </ng-container>
                         </ul>
-                        <p>{{item.review}}</p>
+                        <p>{{comment.comment}}</p>
                         <div class="review_italic">
-                          <p><span>{{item.name}}</span> {{item.date | date:'y/MM/d'}}</p>
+                          <p>{{comment.date | date:'y/MM/d'}}</p>
                         </div>
                       </div>
                     </div>

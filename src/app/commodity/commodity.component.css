@@ -3,6 +3,10 @@ body {
   text-align:center;font-family: 'Open Sans', sans-serif;
 }
 
+.feedback_color {
+  color: gray;
+}
+
 .multi_lines_text {
   white-space: pre-line;
 }

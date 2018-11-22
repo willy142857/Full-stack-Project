@@ -11,8 +11,8 @@ export interface Project {
   goal_amount: number;
   backer: number;
   description: string;
-  feedback: string;
-  comment: string;
+  feedbacks: Feedback[];
+  comments: Comment[];
   img_path: string;
   relative_web: string;
   created_at: string;
@@ -24,8 +24,18 @@ export interface Category {
   category: string;
 }
 
-export interface Feedback {
-  feedback_date: string;
-  feedback_price: number;
-  feedback_description: string;
+export interface Comment {
+  username: string;
+  rating: number;
+  comment: string;
+  date: string;
+}
+
+interface Feedback {
+  date: string;
+  price: number;
+  description: string;
+  backer: number;
+  img_path?: any;
+  updated_at: string;
 }
