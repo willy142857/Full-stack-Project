@@ -99,5 +99,6 @@ export class CommodityComponent implements OnInit {
 
   createComment() {
     this.authService.createComment(this.comment);
+    window.location.reload();
   }
 }

@@ -54,8 +54,13 @@ export class AuthService {
 
   createComment(comment: any) {
     console.log(comment);
-    this.httpClient.post(`${environment.api}/comment`, comment).subscribe(
+    this.httpClient.post(`${environment.api}/comment`, comment, {
+      headers: {
+        Authorization:  `Bearer ${localStorage.getItem('token')}`
+      }
+    }).subscribe(
       (data: any) => {
+        console.log(data);
         if (data.success) {
           this.router.navigate([`/commodity/${comment.project_id}`]);
         } else {
