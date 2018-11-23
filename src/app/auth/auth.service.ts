@@ -51,4 +51,20 @@ export class AuthService {
   isLogin() {
     return localStorage.getItem('token') !== null;
   }
+
+  createComment(comment: any) {
+    console.log(comment);
+    this.httpClient.post(`${environment.api}/comment`, comment).subscribe(
+      (data: any) => {
+        if (data.success) {
+          this.router.navigate([`/commodity/${comment.project_id}`]);
+        } else {
+          alert('fail');
+        }
+      },
+      response => {
+        alert(response.error.message);
+      }
+    );
+  }
 }

@@ -35,7 +35,7 @@ body {
   color: #232323;
 }
 
-.message_button>input[type="submit"] {
+.message_button>input[type="button"] {
   background: none repeat scroll 0 0 #ff6766;
   border: 2px solid #ff6766;
   color: #fff;
