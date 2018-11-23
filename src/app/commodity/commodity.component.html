@@ -222,7 +222,7 @@
                     </div>
                   </div>
                   <ng-container *ngFor='let comment of list.comments'>
-                    <div class="single_review_comment" *ngIf="score_stars(comment)">
+                    <div class="single_review_comment" *ngIf="show_stars(comment)">
                       <div class="single_review_img">
                         <img src="/assets/images/single_rv1.png" alt="" />
                       </div>
@@ -249,17 +249,17 @@
                     <form>
                       <div class="star">
                         <ul>
-                          <ng-container *ngFor="let star of stars; let i = index">
+                          <ng-container *ngFor="let star of user_stars; let i = index">
                             <li><a class="fa fa-star-o" [ngClass]="{'pink': star}" (click)="score_stars(i+1)"></a></li>
                           </ng-container>
                         </ul>
                       </div><br>
                       <div class="review_comment">
-                        <input type="text" placeholder="Enter Your Nickname" /><br>
-                        <input type="text" placeholder="Summary of your Review" /><br>
-                        <textarea name="" id="" cols="30" rows="10" placeholder="Write your review"></textarea><br>
+                        <input type="text" placeholder="Enter Your Nickname" [(ngModel)]="comment.username" name="userName" /><br>
+                        <!-- <input type="text" placeholder="Summary of your Review" /><br> -->
+                        <textarea name="" id="" cols="30" rows="10" placeholder="Write your review" [(ngModel)]="comment.comment" name="comment"></textarea><br>
                         <div class="message_button">
-                          <input type="submit" value="Submit Review" />
+                          <input type="button" value="Submit Review" (click)="createComment()"/>
                         </div>
                       </div>
                     </form>
@@ -268,7 +268,6 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>

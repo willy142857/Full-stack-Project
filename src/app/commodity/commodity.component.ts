@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/auth/auth.service';
 import { ActivatedRoute } from '@angular/router';
 import { Project, Comment} from 'src/app/project/project';
 import { ProjectService } from './../project/project.service';
@@ -13,11 +14,18 @@ import { CommonModule } from '@angular/common';
 })
 export class CommodityComponent implements OnInit {
   today = new Date();
-  stars: any = [false, false, false, false, false];
+  user_stars: any = [false, false, false, false, false];
+  comment_stars: any = [false, false, false, false, false];
   new_commodity: any;
   list: Project;
-
   percentage: any;
+
+  comment = {
+    username: '',
+    project_id: Number,
+    rating: Number,
+    comment: '',
+  };
 
   get messages() {
     return this.commoditiesService.messages;
@@ -51,12 +59,21 @@ export class CommodityComponent implements OnInit {
       this.cartsservice.list.push(this.new_commodity);
     }
   }
-  score_stars(comment: Comment) {
-    this.stars = [];
+  score_stars(number) {
+    this.comment.rating = number;
+    this.user_stars = [];
     for (let i = 0; i < 5; i++) {
-      this.stars.push(i < comment.rating);
+      this.user_stars.push(i < number);
     }
-    comment.stars = this.stars;
+    return 1;
+  }
+
+  show_stars(comment: Comment) {
+    this.comment_stars = [];
+    for (let i = 0; i < 5; i++) {
+      this.comment_stars.push(i < comment.rating);
+    }
+    comment.stars = this.comment_stars;
     return 1;
   }
   // deadline: number = Date(this.list.updatedAt);
@@ -64,10 +81,12 @@ export class CommodityComponent implements OnInit {
     private commoditiesService: CommoditiesService,
     private cartsservice: CartsService,
      private projectservic: ProjectService,
-     private route: ActivatedRoute) {}
+     private route: ActivatedRoute,
+     private authService: AuthService) {}
   ngOnInit() {
     scroll(0, 0);
     this.route.params.subscribe(data => {
+      this.comment.project_id = data.id;
       const id = data.id;
       this.projectservic.getProject(id).subscribe((project: Project) => {
         this.list = project;
@@ -76,5 +95,10 @@ export class CommodityComponent implements OnInit {
         console.log(this.list);
       });
     });
+  }
+
+  createComment() {
+    this.authService.createComment(this.comment);
+    window.location.reload();
   }
 }
