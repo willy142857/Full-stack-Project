@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { JwtHelperService } from '@auth0/angular-jwt';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   redirectUrl = '/';
 
-  constructor(private router: Router, private httpClient: HttpClient) {}
+  constructor(private router: Router, private httpClient: HttpClient, private jwtHelper: JwtHelperService) {}
   register(user: any) {
     this.httpClient.post(`${environment.api}/register`, user).subscribe(
       (data: any) => {
@@ -49,16 +50,14 @@ export class AuthService {
   }
 
   isLogin() {
-    return localStorage.getItem('token') !== null;
+    return (localStorage.getItem('token') !== null &&
+      !this.jwtHelper.isTokenExpired());
   }
 
+  // 移到core/service/comment.service
   createComment(comment: any) {
     console.log(comment);
-    this.httpClient.post(`${environment.api}/comment`, comment, {
-      headers: {
-        Authorization:  `Bearer ${localStorage.getItem('token')}`
-      }
-    }).subscribe(
+    this.httpClient.post(`${environment.api}/comment`, comment).subscribe(
       (data: any) => {
         console.log(data);
         if (data.success) {
