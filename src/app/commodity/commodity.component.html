@@ -230,7 +230,7 @@
                         <h4>{{comment.username}}</h4>
 
                         <ul id="single_review_star">
-                          <ng-container *ngFor="let star of stars">
+                          <ng-container *ngFor="let star of comment.stars">
                             <li><a href="" class="fa fa-star-o" *ngIf="star"></a></li>
                           </ng-container>
                         </ul>

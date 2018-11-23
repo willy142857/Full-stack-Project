@@ -56,6 +56,7 @@ export class CommodityComponent implements OnInit {
     for (let i = 0; i < 5; i++) {
       this.stars.push(i < comment.rating);
     }
+    comment.stars = this.stars;
     return 1;
   }
   // deadline: number = Date(this.list.updatedAt);
