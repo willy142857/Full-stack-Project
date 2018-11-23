@@ -21,6 +21,7 @@ export class ProfileComponent implements OnInit {
     return this.memberService.member;
   }
   projects: Project[];
+  raisingProjects: Project[];
   dasharray = 350;
   user: Member;
   photo: any;
@@ -44,6 +45,17 @@ export class ProfileComponent implements OnInit {
             .subscribe((message: Project[]) => {
               this.projects = message;
               console.log(message);
+            });
+
+            this.httpClient
+            .get(`${environment.api}/profile/raisingProjects`, {
+              headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`
+              }
+            })
+            .subscribe((raising: Project[]) => {
+              this.raisingProjects = raising;
+              console.log(raising);
             });
         },
         response => {
