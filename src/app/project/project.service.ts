@@ -59,4 +59,10 @@ export class ProjectService {
   getCategories() {
     return this.httpClient.get(`${environment.api}/categories`);
   }
+
+  calcLeftDay(project: Project): number {
+    const end = new Date(project.ended_at);
+    const start = new Date(project.started_at);
+    return (end.getTime() - start.getTime()) / 1000 / 60 / 60 / 24;
+  }
 }
