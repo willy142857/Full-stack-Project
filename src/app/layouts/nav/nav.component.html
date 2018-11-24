@@ -4,36 +4,36 @@
       <a href="category-1.html">{{ 'category' | translate }}<i class="fa fa-bars"></i></a>
       <div class="cat_mega_menu">
         <div class="cat_left">
-          <h5>文藝</h5>
+          <h5>{{ '文藝' | translate }}</h5>
           <div class="cat_menu_line"></div>
           <ul class="cat_nav">
-            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">音樂</a></li>
-            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">攝影</a></li>
-            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">出版</a></li>
-            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">藝術</a></li>
-            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">設計</a></li>
+            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '音樂' | translate }}</a></li>
+            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '攝影' | translate }}</a></li>
+            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '出版' | translate }}</a></li>
+            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '藝術' | translate }}</a></li>
+            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '設計' | translate }}</a></li>
           </ul>
         </div>
         <div class="cat_middle">
-          <h5>生活</h5>
+          <h5>{{ '生活' | translate }}</h5>
           <div class="cat_menu_line"></div>
           <ul class="cat_nav">
-            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">飲食</a></li>
-            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">時尚</a></li>
-            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">教育</a></li>
-            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">科技</a></li>
-            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">社會</a></li>
+            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '飲食' | translate }}</a></li>
+            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '時尚' | translate }}</a></li>
+            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '教育' | translate }}</a></li>
+            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '科技' | translate }}</a></li>
+            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '社會' | translate }}</a></li>
           </ul>
         </div>
         <div class="cat_middle_right">
-          <h5>娛樂</h5>
+          <h5>{{ '娛樂' | translate }}</h5>
           <div class="cat_menu_line"></div>
           <ul class="cat_nav">
-            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">表演</a></li>
-            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">遊戲</a></li>
-            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">地方創生</a></li>
-            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">電影動畫</a></li>
-            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">插畫漫畫</a></li>
+            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '表演' | translate }}</a></li>
+            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '遊戲' | translate }}</a></li>
+            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '地方創生' | translate }}</a></li>
+            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '電影動畫' | translate }}</a></li>
+            <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '插畫漫畫' | translate }}</a></li>
           </ul>
         </div>
         <div class="cat_img">
@@ -46,34 +46,33 @@
         <ul id="nav">
           <li class="current-page-item"><a [routerLink]="['/']" routerLinkActive="router-link-active" >{{ 'home' | translate }}</a>
             <ul id="sub-menu4">
-                <li><a [routerLink]="['/']" routerLinkActive="router-link-active">Home Version Two</a></li>
-                <li><a [routerLink]="['/']" routerLinkActive="router-link-active">故事牆 </a></li>
-                <li><a [routerLink]="['/']" routerLinkActive="router-link-active">分享你的故事</a></li>
+                <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '故事牆' | translate }} </a></li>
+                <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '分享你的故事' | translate }}</a></li>
             </ul>
           </li>
-          <li><a [routerLink]="['/index']" routerLinkActive="router-link-active">探索</a>
+          <li><a [routerLink]="['/index']" routerLinkActive="router-link-active">{{ '探索' | translate }}</a>
             <ul id="sub-menu7">
-                <li><a [routerLink]="['/index']" routerLinkActive="router-link-active">所有計畫</a></li>
-                <li><a [routerLink]="['/index']" routerLinkActive="router-link-active">最後衝刺</a></li>
-                <li><a [routerLink]="['/index']" routerLinkActive="router-link-active">最新啟動</a></li>
+                <li><a [routerLink]="['/index']" routerLinkActive="router-link-active">{{ '所有計畫' | translate }}</a></li>
+                <li><a [routerLink]="['/index']" routerLinkActive="router-link-active">{{ '最後衝刺' | translate }}</a></li>
+                <li><a [routerLink]="['/index']" routerLinkActive="router-link-active">{{ '最新啟動' | translate }}</a></li>
             </ul>
           </li>
-          <li><a [routerLink]="['/create']" routerLinkActive="router-link-active">提案</a>
+          <li><a [routerLink]="['/create']" routerLinkActive="router-link-active">{{ '提案' | translate }}</a>
             <ul id="sub-menu7">
-              <li><a [routerLink]="['/create']" routerLinkActive="router-link-active">一次性集資</a></li>
-              <li><a [routerLink]="['/create']" routerLinkActive="router-link-active">訂閱式專案</a></li>
+              <li><a [routerLink]="['/create']" routerLinkActive="router-link-active">{{ '一次性集資' | translate }}</a></li>
+              <li><a [routerLink]="['/create']" routerLinkActive="router-link-active">{{ '訂閱式專案' | translate }}</a></li>
           </ul></li>
         </ul>
       </nav>
     </div>
     <div class="nav_right floatright">
       <!-- TODO:設定路由 -->
-      <a href="cart.html"><img src="assets/images/bag.png" alt="Bag" />我要贊助 2 計畫</a>
+      <a [routerLink]="['/cart']" routerLinkActive="router-link-active"><img src="assets/images/bag.png" alt="Bag" />我要贊助 2 計畫</a>
       <div class="cart_menu">
         <div class="cart_items">
           <div class="c_item_img floatleft">
             <!-- TODO:設定路由 -->
-            <a href="product-detail.html"><img src="assets/images/c_item1.jpg" alt="" /></a>
+            <a a [routerLink]="['/product']" routerLinkActive="router-link-active"><img src="assets/images/c_item1.jpg" alt="" /></a>
           </div>
           <div class="c_item_totals floatleft">
             <div class="c_item_totals_detail floatleft">
@@ -126,54 +125,54 @@
     </div>
 
 
-    <!-- MOBILE ONLY CONTENT -->
+    <!-- MOBILE ONLY CONTENT --
     <div class="only-for-mobile">
       <ul class="ofm">
         <li class="m_nav"><i class="fa fa-bars"></i> Navigation</li>
       </ul>
 
-      <!-- MOBILE MENU -->
+      <!-- MOBILE MENU --
       <div class="mobi-menu">
         <div id='cssmenu'>
           <ul>
             <li class='has-sub'>
-              <a [routerLink]="['/']" routerLinkActive="router-link-active"><span>Home</span></a>
+              <a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ 'Home' | translate }}</span></a>
               <ul class="sub-nav">
-                <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>故事牆</span></a></li>
-                <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>分享你的故事</span></a></li>
+                <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '故事牆' | translate }}</span></a></li>
+                <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '分享你的故事' | translate }}</span></a></li>
               </ul>
             </li>
             <li class='has-sub'>
-              <a href='category-1.html'><span>category</span></a>
+              <a href='category-1.html'><span>{{ 'category' | translate }}</span></a>
               <ul>
                 <li class='has-sub'>
-                  <a href='#'><span>文藝</span></a>
+                  <a href='#'><span>{{ '文藝' | translate }}</span></a>
                   <ul>
-                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>音樂</span></a></li>
-                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>攝影</span></a></li>
-                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>出版</span></a></li>
-                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>藝術</span></a></li>
-                      <li class='last'><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>設計</span></a></li>
+                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '音樂' | translate }}</span></a></li>
+                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '攝影' | translate }}</span></a></li>
+                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '出版' | translate }}</span></a></li>
+                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '藝術' | translate }}</span></a></li>
+                      <li class='last'><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '設計' | translate }}</span></a></li>
                   </ul>
                 </li>
                 <li class='has-sub'>
-                  <a href='#'><span>生活</span></a>
+                  <a href='#'><span>{{ '生活' | translate }}</span></a>
                   <ul>
-                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>飲食</span></a></li>
-                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>時尚</span></a></li>
-                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>教育</span></a></li>
-                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>科技</span></a></li>
-                      <li class='last'><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>社會</span></a></li>
+                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '飲食' | translate }}</span></a></li>
+                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '時尚' | translate }}</span></a></li>
+                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '教育' | translate }}</span></a></li>
+                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '科技' | translate }}</span></a></li>
+                      <li class='last'><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '社會' | translate }}</span></a></li>
                   </ul>
                 </li>
                 <li class='has-sub'>
-                  <a href='#'><span>娛樂</span></a>
+                  <a href='#'><span>{{ '娛樂' | translate }}</span></a>
                   <ul>
-                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>表演</span></a></li>
-                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>遊戲</span></a></li>
-                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>地方創生</span></a></li>
-                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>電影動畫</span></a></li>
-                      <li class='last'><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>插畫漫畫</span></a></li>
+                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '表演' | translate }}</span></a></li>
+                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '遊戲' | translate }}</span></a></li>
+                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '地方創生' | translate }}</span></a></li>
+                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '電影動畫' | translate }}</span></a></li>
+                      <li class='last'><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '插畫漫畫' | translate }}</span></a></li>
                   </ul>
                 </li>
                 <li class="img-nav">
@@ -199,22 +198,22 @@
               </ul>
             </li>
             <li class='has-sub'>
-              <a href='category-1.html'><span>探索</span></a>
+              <a href='category-1.html'><span>{{ '探索' | translate }}</span></a>
               <ul class="sub-nav">
-                <li><a href="#"><span>所有提案</span></a></li>
-                <li><a href="#"><span>最後衝刺</span></a></li>
-                <li><a href="#"><span>最新啟動</span></a></li>
+                <li><a href="#"><span>{{ '所有提案' | translate }}</span></a></li>
+                <li><a href="#"><span>{{ '最後衝刺' | translate }}</span></a></li>
+                <li><a href="#"><span>{{ '最新啟動' | translate }}</span></a></li>
               </ul>
             </li>
             <li class='has-sub'>
-              <a href='#'><span>提案</span></a>
+              <a href='#'><span>{{ '提案' | translate }}</span></a>
               <ul id="sub-nav">
-                <li><a href="category-1.html">一次性集資</a></li>
-                <li><a href="category-2.html">訂閱式專案</a></li>
+                <li><a href="category-1.html">{{ '一次性集資' | translate }}</a></li>
+                <li><a href="category-2.html">{{ '訂閱式專案' | translate }}</a></li>
               </ul>
             </li>
             <li>
-              <a [routerLink]="['/cart']" routerLinkActive="router-link-active"><span>我要贊助</span></a>
+              <a [routerLink]="['/cart']" routerLinkActive="router-link-active"><span>{{ '我要贊助' | translate }}</span></a>
             </li>
           </ul>
         </div>

@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { QAComponent } from './qa/qa.component';
+import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
 
 @NgModule({
   imports: [CommonModule, SharedModule, LayoutsRoutingModule],
@@ -14,7 +15,8 @@ import { QAComponent } from './qa/qa.component';
     HeaderComponent,
     NavComponent,
     FooterComponent,
-    QAComponent
+    QAComponent,
+    TermsOfUseComponent
   ],
   exports: [
     HeaderComponent,
