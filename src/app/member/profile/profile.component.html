@@ -153,3 +153,38 @@
     </div>
   </div>
 </div>
+
+<h3 class="profile-header">已提案的專案</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="promo_inner">
+        <div class="row">
+
+          <div *ngFor="let project of raisingProjects" class="col-md-4 col-sm-4 col-xs-12">
+            <div class="p_box">
+              <div class="images_box">
+                <img src="assets/images/promo_img2.jpg" alt="" [routerLink]="['/commodity']"
+                  routerLinkActive="router-link-active">
+              </div>
+              <div class="p_name">{{ project.name }}</div>
+              <div class="p_founder">{{ project.fundraiser }}</div>
+              <div class="p_dsp">{{ project.brief }}</div>
+              <svg width="350">
+                <line x1="0" y1="0" x2="350" y2="0" fill="none" stroke-width="3" stroke="#cccccc" />
+                <line x1="0" y1="0" x2="350" y2="0" fill="none" stroke-width="3" stroke-linecap="round"
+                  stroke="#16982B" [style.stroke-dasharray]="dasharray" [style.stroke-dashoffset]="progress(project)" />
+                <text id="count" x="0" y="20" text-anchor="left" dy="7" font-size="14">
+                  {{ project.curr_amount | currency:'':'symbol':'1.0-0' }}</text>
+                <text id="time" x="350" y="20" text-anchor="end" dy="7" font-size="14"
+                  [translate]="'homepage.leftDay'" [translateParams]="{ value: leftDay(project) }">
+                </text>
+              </svg>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

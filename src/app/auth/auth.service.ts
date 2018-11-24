@@ -32,7 +32,7 @@ export class AuthService {
           localStorage.setItem('token', data.access_token);
           this.router.navigateByUrl(this.redirectUrl);
         } else {
-          alert('fail');
+          alert('Email或密碼錯誤');
         }
       });
   }
