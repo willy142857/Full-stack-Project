@@ -64,5 +64,31 @@
     "不同意": "你為甚麼敢不同意?",
     "提交": "submit",
     "取消": "cancel"
+  },
+
+  "購物車": {
+    "商店": "SHOP",
+    "清單": "CART",
+    "商品": "PRODUCT",
+    "單件金額": "PRICE",
+    "數量": "QUANTITY",
+    "金額": "TOTAL",
+    "結帳": "PROCEED TO CHECKOUT",
+    "貨件地址": "SHIIPING ADDRESS",
+    "國家": "COUNTRY",
+    "姓名": "NAME",
+    "地址": "ADDRESS",
+    "備註": "ORDER NOTES",
+    "購物內容": "REVIEW OF YOUR ORDER",
+    "購物金額": "CART TOTALS",
+    "小計": "SUBTOTAL",
+    "郵資": "SHIPPING CHARGE",
+    "更新購物車": "UPDATE CART",
+    "免費": "FREE",
+    "總金額": "ORDER TOTAL",
+    "付款方式": "SELECT PAYMENT METHOD",
+    "下單": "PLACE ORDER NOW",
+    "我已經詳細閱讀": "I HAVE READ & ACCEPT",
+    "合約條款": "TERMS & CONDITIONS"
   }
 }

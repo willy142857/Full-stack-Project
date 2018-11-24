@@ -16,9 +16,9 @@
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="bread_box">
           <ul class="breadcumb">
-            <li><a href="index.html">首頁 <span>|</span></a></li>
-            <li><a href="">商店 <span>|</span></a></li>
-            <li class="active"><a href="">清單 </a></li>
+            <!-- <li><a href="index.html">首頁 <span>|</span></a></li> -->
+            <li><a href="">{{'購物車.商店' | translate}} <span>|</span></a></li>
+            <li class="active"><a href="">{{'購物車.清單' | translate}} </a></li>
           </ul>
         </div>
       </div>
@@ -33,16 +33,16 @@
         <div class="main_cart_left">
           <div class="cart_heading">
             <div class="h_item1">
-              <p>商品</p>
+              <p>{{'購物車.商品' | translate}}</p>
             </div>
             <div class="h_item2">
-              <p>單件金額</p>
+              <p>{{'購物車.單件金額' | translate}}</p>
             </div>
             <div class="h_item3">
-              <p>數量</p>
+              <p>{{'購物車.數量' | translate}}</p>
             </div>
             <div class="h_item4">
-              <p>金額</p>
+              <p>{{'購物車.金額' | translate}}</p>
             </div>
           </div>
 
@@ -176,7 +176,7 @@
                   <h4 class="panel-title">
                     <a class="collapsed" data-toggle="collapse" data-parent="#home-accordion" href="#collapseTwo"
                       aria-expanded="false" aria-controls="collapseTwo">
-                      購物金額
+                      {{'購物車.購物金額'|translate}}
                       <span class="floatright"><i class="fa fa-plus"></i></span>
                     </a>
                   </h4>
@@ -184,12 +184,12 @@
                 <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                   <div class="panel-body cart_p_body">
                     <div class="c_single_item">
-                      <p>小計</p>
+                      <p>{{'購物車.小計' | translate}}</p>
                       <span>${{totalmoney}}</span>
                     </div>
                     <div class="c_single_item cart_last_total">
-                      <p>郵資</p>
-                      <span>免費</span>
+                      <p>{{'購物車.郵資' | translate}}</p>
+                      <span>{{'購物車.免費' | translate}}</span>
                     </div>
                     <div class="c_total_item sp_single_item">
                       <p>Total</p>
@@ -199,8 +199,8 @@
                 </div>
               </div>
             </div>
-            <a href="#" class="cart_update">更新購物車</a>
-            <a [routerLink]="['/checkout']">結帳</a>
+            <a href="#" class="cart_update">{{'購物車.更新購物車' | translate}}</a>
+            <a [routerLink]="['/checkout']">{{'購物車.結帳' | translate}}</a>
             <!-- <input type="submit" value="Proceed to checkout"> -->
           </div>
         </div>
