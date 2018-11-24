@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { Member } from './member';
+import { Router } from '@angular/router';
+import { Project } from '../project/project';
 @Injectable({
   providedIn: 'root'
 })
@@ -19,5 +23,26 @@ export class MemberService {
       贊曰：黔婁之妻有言：「不戚戚於貧賤，不汲汲於富貴。」極其言，茲若人儔乎？酣觴賦詩，以樂其志。無懷氏之民歟！葛天氏之民歟！'
   };
 
-  constructor() {}
+  constructor(private router: Router, private httpClient: HttpClient) {}
+
+  updateProfile(user: Member) {
+    this.httpClient
+      .put(`${environment.api}/profile`, user).subscribe(
+        (data: Member) => {
+          console.log(data);
+          alert('修正成功');
+        },
+        response => {
+          if (response.status === 401) {
+            alert('請先登入');
+            this.router.navigate(['/login']);
+          }
+        }
+      );
+  }
+
+  addFollowing(project: Project) {}
+
+  addbacking(project: Project) {}
+
 }
