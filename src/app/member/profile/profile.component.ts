@@ -47,7 +47,7 @@ export class ProfileComponent implements OnInit {
               console.log(message);
             });
 
-            this.httpClient
+          this.httpClient
             .get(`${environment.api}/profile/raisingProjects`, {
               headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`
