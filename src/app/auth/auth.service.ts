@@ -71,4 +71,19 @@ export class AuthService {
       }
     );
   }
+
+  orderFeedback(feedback: any) {
+    console.log(feedback);
+    this.httpClient.post(`${environment.api}/feedback`, feedback).subscribe(
+      (data: any) => {
+        console.log(data);
+        if (!data.success) {
+          alert('fail');
+        }
+      },
+      response => {
+        alert(response.error.message);
+      }
+    );
+  }
 }

@@ -83,19 +83,11 @@
                   </div>
                   <div id="collapseTwoP" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwoP">
                     <div>
-                      <svg width="75" height="75">
-                        <circle cx="40" cy="40" r="35" fill="#FDB900" />
-                        <path stroke-linecap="round" stroke-width="5" [style.stroke-dasharray]="list.curr_amount / list.goal_amount * 200"
-                          stroke="#fff" fill="none" d="M40 10
-                                     a 30 30 0 0 1 0 60">
-                        </path>
-                          <path stroke-linecap="round" stroke-width="5" *ngIf="list.curr_amount / list.goal_amount * 100 > 50"
-                             [style.stroke-dasharray]="list.curr_amount / list.goal_amount * 200 - 100"
-                            stroke="#fff" fill="none" d="M40 70
-                                     a 30 30 0 0 1 0 -60">
-                          </path>
-                        <text id="count" x="40" y="40" text-anchor="middle" dy="7" font-size="20">{{percentage}}%</text>
-                      </svg>
+                      <div class="Bar">
+                        <div [style.width.%]="list.curr_amount / list.goal_amount * 100">
+                            <span>{{ percentage }}%</span>
+                        </div>
+                      </div>
                       <div class="panel-body fit">
                         已募資金額：{{list?.curr_amount}}
                         <br>目標金額：{{list?.goal_amount}}
