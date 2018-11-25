@@ -41,6 +41,10 @@ export class MemberService {
       );
   }
 
+  getRaisedProjects() {
+    return this.httpClient.get(`${environment.api}/profile/raisingProjects`);
+  }
+
   addFollowing(project: Project) {}
 
   addbacking(project: Project) {}

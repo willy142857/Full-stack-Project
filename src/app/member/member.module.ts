@@ -7,6 +7,7 @@ import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { RetrievepasswordComponent } from './retrievepassword/retrievepassword.component';
+import { RaisedProjectComponent } from './raised-project/raised-project.component';
 
 @NgModule({
   imports: [CommonModule, MemberRoutingModule, SharedModule],
@@ -15,7 +16,8 @@ import { RetrievepasswordComponent } from './retrievepassword/retrievepassword.c
     RegisterComponent,
     ProfileComponent,
     ResetpasswordComponent,
-    RetrievepasswordComponent
+    RetrievepasswordComponent,
+    RaisedProjectComponent
   ],
   exports: [
     LoginComponent,
