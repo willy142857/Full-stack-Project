@@ -154,7 +154,7 @@
               <div>
                 <ng-container *ngFor="let feedback of list.feedbacks; let i = index;">
                   <div>
-                    <form (submit)="add_to_cart(list)">
+                    <form (submit)="orderFeedback(feedback)">
                       <div class="item">
                         <div>
                           <h3>方案{{i+1}}：</h3>
