@@ -33,6 +33,7 @@ export interface Comment {
 }
 
 interface Feedback {
+  id: number;
   date: string;
   price: number;
   description: string;
