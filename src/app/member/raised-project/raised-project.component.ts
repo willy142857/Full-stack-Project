@@ -11,6 +11,7 @@ export class RaisedProjectComponent implements OnInit {
   constructor(private memberService: MemberService) {}
 
   raisedProjects: Project[];
+  dasharray = 350;
 
   ngOnInit() {
     this.memberService
@@ -18,6 +19,21 @@ export class RaisedProjectComponent implements OnInit {
       .subscribe((raisedProjects: Project[]) => {
         console.log(raisedProjects);
         this.raisedProjects = raisedProjects;
+        console.log(this.raisedProjects);
       });
+  }
+
+  progress(project: Project): number {
+    const ratio =
+      this.dasharray -
+      (project.curr_amount / project.goal_amount) * this.dasharray;
+    return ratio < 0 ? 0 : ratio;
+  }
+
+  // 計算剩餘日期
+  leftDay(project: Project): number {
+    const end = new Date(project.ended_at);
+    const start = new Date();
+    return Math.floor((end.getTime() - start.getTime()) / 1000 / 60 / 60 / 24);
   }
 }

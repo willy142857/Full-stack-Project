@@ -8,6 +8,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { RetrievepasswordComponent } from './retrievepassword/retrievepassword.component';
 import { RaisedProjectComponent } from './raised-project/raised-project.component';
+import { EditComponent } from './raised-project/edit/edit.component';
 
 @NgModule({
   imports: [CommonModule, MemberRoutingModule, SharedModule],
@@ -17,7 +18,8 @@ import { RaisedProjectComponent } from './raised-project/raised-project.componen
     ProfileComponent,
     ResetpasswordComponent,
     RetrievepasswordComponent,
-    RaisedProjectComponent
+    RaisedProjectComponent,
+    EditComponent
   ],
   exports: [
     LoginComponent,
