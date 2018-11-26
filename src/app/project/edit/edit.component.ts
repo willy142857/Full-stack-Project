@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../project.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Project } from '../project';
+import { Project, Category, Feedback } from '../project';
 
 @Component({
   selector: 'app-edit',
@@ -9,9 +9,15 @@ import { Project } from '../project';
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
-  model: any = {};
-  category = this.projectService.category;
+  id: number;
   project: Project;
+  categories: Category[];
+  feedback: Feedback = {
+    date: null,
+    price: null,
+    description: null
+  };
+  feedbacks: Feedback[] = [];
   constructor(
     private projectService: ProjectService,
     private router: Router,
@@ -20,11 +26,26 @@ export class EditComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      const id = params.id;
-      this.projectService.getProject(id).subscribe((project: Project) => {
+      this.projectService.getCategories().
+        subscribe((categories: Category[]) => {
+          this.categories = categories;
+        });
+      this.id = params.id;
+      this.projectService.getProject(this.id).subscribe((project: Project) => {
         this.project = project;
       });
     });
   }
-  onSubmit(form) {}
+
+  addFeedback() {
+    this.feedbacks.push(this.feedback);
+  }
+  onSubmit() {
+    this.projectService.editProject(this.project, this.id, this.feedbacks).subscribe((data: any) => {
+      if (data.success) {
+        this.router.navigateByUrl('/');
+      }
+      console.log(data.feedbacks);
+    });
+  }
 }
