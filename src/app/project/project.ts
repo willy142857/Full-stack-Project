@@ -32,7 +32,7 @@ export interface Comment {
   stars: Boolean[];
 }
 
-interface Feedback {
+export interface Feedback {
   id: number;
   date: string;
   price: number;

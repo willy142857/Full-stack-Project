@@ -74,6 +74,30 @@
                 [(ngModel)]="project.relative_web" #web="ngModel" required>
             </div>
 
+
+                <div class="wrap-table100">
+                  <div >
+                    <table>
+                      <thead>
+                        <tr class="table100-head">
+                          <th class="column1">{{'價錢' | translate}}</th>
+                          <th class="column2">{{'說明' | translate}}</th>
+                          <th class="column3">{{'贊助人數' | translate}}</th>
+                        </tr>
+                      </thead>
+                      <tbody *ngFor="let feedback of feedbacks">
+                          <tr>
+                            <td class="column1">{{feedback.price}}</td>
+                            <td class="column2">{{feedback.description}}</td>
+                            <td class="column3">{{feedback.backer}}</td>
+                          </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+
+
             <div class="submit_btn form-group">
               <input type="submit" value="{{ '計畫.修改' | translate }}">
               <a class="btn btn-link" [routerLink]="['/']">{{ '計畫.取消' | translate }}</a>

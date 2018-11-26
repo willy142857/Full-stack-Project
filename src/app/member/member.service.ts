@@ -48,12 +48,8 @@ export class MemberService {
     return this.httpClient.get(`${environment.api}/projects/${id}`);
   }
 
-  getRaisedProjectFeedback(id: number) {
-    return this.httpClient.get(`${environment.api}/projects/${id}/feedbacks`);
-  }
-
   editProject(project: Project, id: number) {
-    return this.httpClient.put(`${environment.api}/projects/${id}`, project);
+    return this.httpClient.put(`${environment.api}/project/${id}/raisingProjectFeedBacks`, project);
   }
 
   addFollowing(project: Project) {}
