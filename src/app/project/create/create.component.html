@@ -68,28 +68,36 @@
                 name="description" [(ngModel)]="project.description" #dsp="ngModel" required></textarea>
             </div>
             <div class="line"></div>
-            <div class="form-group">
-              <div class="form-control-left" [ngClass]="{'invalid': f_price.invalid&&(f_price.dirty||form.submitted)}">
-                <label for="f_price">{{ '計畫.回饋金額' | translate }} *</label>
-                <div class="input-group">
-                  <input type="text" id="f_price" placeholder="87" name="f_price" #f_price="ngModel"
-                    maxlength="20" [(ngModel)]="project.feedback1" pattern="\d{1,20}" required>
-                  <span class="input-group-addon">NTD</span>
+
+            <ng-container *ngFor="let f of project.feedbacks; let i=index">
+              <div class="form-group">
+                <div class="form-control-left" [ngClass]="{'invalid': f_price.invalid&&(f_price.dirty||form.submitted)}">
+                  <label for="f_price" [translate]="'計畫.回饋金額'" [translateParams]="{ value: i+1 }"> *</label>
+                  <div class="input-group">
+                    <input type="text" id="f_price" placeholder="87" name="f_price+{{ i }}" #f_price="ngModel"
+                      maxlength="20" [(ngModel)]="f.price" pattern="\d{1,20}" required>
+                    <span class="input-group-addon">NTD</span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="form-group">
-              <div class="form-control-left" [ngClass]="{'invalid': f_date.invalid&&form.submitted}">
-                <label for="f_date">{{ '計畫.回饋時間' | translate }} *</label>
-                <input type="date" id="f_date" name="f_date" min="{{ nowDate | date:'yyyy-MM-dd' }}"
-                  [(ngModel)]="project.feedback2" #f_date="ngModel" required>
+              <div class="form-group">
+                <div class="form-control-left" [ngClass]="{'invalid': f_date.invalid&&form.submitted}">
+                  <label for="f_date" [translate]="'計畫.回饋時間'" [translateParams]="{ value: i+1 }"> *</label>
+                  <input type="date" id="f_date" name="f_date+{{ i }}" min="{{ nowDate | date:'yyyy-MM-dd' }}"
+                    [(ngModel)]="f.date" #f_date="ngModel" required>
+                </div>
               </div>
+              <div class="s_order form-group" [ngClass]="{'invalid': f_dsp.invalid&&form.submitted}">
+                <label for="f_description" [translate]="'計畫.回饋說明'" [translateParams]="{ value: i+1 }"> *</label>
+                <textarea type="text" id="f_description" cols="30" rows="10" placeholder="{{ '請輸入說明' | translate }}"
+                  name="f_description+{{ i }}" [(ngModel)]="f.description" #f_dsp="ngModel" required></textarea>
+              </div>
+            </ng-container>
+
+            <div class="form-group">
+                <input type="button" value="{{ '計畫.新增選項' | translate }}" (click)="addFeedback()">
             </div>
-            <div class="s_order form-group" [ngClass]="{'invalid': f_dsp.invalid&&form.submitted}">
-              <label for="f_description">{{ '計畫.回饋說明' | translate }} *</label>
-              <textarea type="text" id="f_description" cols="30" rows="10" placeholder="{{ '請輸入說明' | translate }}"
-                name="f_description3" [(ngModel)]="project.feedback" #f_dsp="ngModel" required></textarea>
-            </div>
+
             <div class="form-group" [ngClass]="{'invalid': web.invalid&&form.submitted}">
               <label for="r_web">{{ '計畫.相關網頁' | translate }}</label>
               <input type="text" id="r_web" placeholder="{{ '請輸入相關網頁' | translate }}" name="r_web"
