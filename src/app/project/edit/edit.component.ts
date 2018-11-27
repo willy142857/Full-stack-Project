@@ -13,9 +13,13 @@ export class EditComponent implements OnInit {
   project: Project;
   categories: Category[];
   feedback: Feedback = {
+    id: null,
     date: null,
     price: null,
-    description: null
+    description: null,
+    backer: null,
+    img_path: null,
+    updated_at: null
   };
   feedbacks: Feedback[] = [];
   constructor(
@@ -38,7 +42,7 @@ export class EditComponent implements OnInit {
   }
 
   addFeedback() {
-    this.feedbacks.push(this.feedback);
+    this.project.feedbacks.push(this.feedback);
   }
   onSubmit() {
     this.projectService.editProject(this.project, this.id, this.feedbacks).subscribe((data: any) => {

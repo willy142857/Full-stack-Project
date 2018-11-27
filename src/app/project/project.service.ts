@@ -53,7 +53,7 @@ export class ProjectService {
      return this.httpClient.post(`${environment.api}/projects`, project);
   }
   editProject(project: Project, id: number, newFeedbacks: Feedback[]) {
-    return this.httpClient.post(`${environment.api}/projects/${id}`, project);
+    return this.httpClient.put(`${environment.api}/projects/${id}`, project);
   }
 
   getCategories() {

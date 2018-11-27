@@ -86,7 +86,7 @@
                 </tr>
               </thead>
               <tbody *ngFor="let feedback of project.feedbacks">
-                <tr>
+                <tr *ngIf="feedback.id">
                   <td>{{ feedback.price }}</td>
                   <td> {{ feedback.date }}</td>
                   <td>{{ feedback.description }}</td>
@@ -98,7 +98,7 @@
             <div class="form-group">
               <input type="button" value="{{ '計畫.新增選項' | translate }}" (click)="addFeedback()">
             </div>
-            <ng-container *ngFor="let f of feedbacks; let i=index">
+            <ng-container *ngFor="let f of project.feedbacks; let i=index">
               <div class="form-group">
                 <div class="form-control-left" [ngClass]="{'invalid': f_price.invalid&&(f_price.dirty||form.submitted)}">
                   <label for="f_price" [translate]="'計畫.回饋金額'" [translateParams]="{ value: i+1 }">
@@ -110,9 +110,7 @@
                     <span class="input-group-addon">NTD</span>
                   </div>
                 </div>
-              </div>
-              <div class="form-group">
-                <div class="form-control-left" [ngClass]="{'invalid': f_date.invalid&&form.submitted}">
+                <div class="form-control-right" [ngClass]="{'invalid': f_date.invalid&&form.submitted}">
                   <label for="f_date" [translate]="'計畫.回饋時間'" [translateParams]="{ value: i+1 }"> *</label>
                   <input type="date" id="f_date" name="f_date+{{ i }}" min="{{ project.ended_at | date:'yyyy-MM-dd' }}"
                     [(ngModel)]="f.date" #f_date="ngModel" required>
