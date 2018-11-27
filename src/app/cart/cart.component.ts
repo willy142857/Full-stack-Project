@@ -14,7 +14,8 @@ export class CartComponent implements OnInit {
   }
 
   get list() {
-    return this.cartsservice.list;
+    console.log(this.cartsservice.followingProjectlist);
+    return this.cartsservice.followingProjectlist;
   }
 
   ngOnInit() {

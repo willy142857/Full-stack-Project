@@ -12,7 +12,7 @@ export class CheckoutComponent implements OnInit {
   constructor(private cartsservice: CartsService, private router: Router) { }
 
   get list() {
-    return this.cartsservice.list;
+    return this.cartsservice.followingProjectlist;
   }
 
 

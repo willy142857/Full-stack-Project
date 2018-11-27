@@ -1,21 +1,56 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { environment } from 'src/environments/environment';
+import { Member } from '../member/member';
+import { Router } from '@angular/router';
+import { Project } from 'src/app/project/project';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class CartsService {
-  totalmoney;
-  list = [];
-  constructor(private httpClient: HttpClient) {
-    console.log('getFolloing', this.getFollowingProjects());
-    // if (this.getFollowingProjects() != NULL) {
-      this.list.push(this.getFollowingProjects());
-      this.totalCharge();
-    // }
+  constructor(private httpClient: HttpClient, private router: Router) {
+    this.totalCharge();
   }
+
+  totalmoney;
+  followingProjectlist = [];
+  user: Member;
+  projects: Project[];
+
+  // tslint:disable-next-line:use-life-cycle-interface
+  ngOnInit() {
+    this.httpClient
+      .get(`${environment.api}/profile`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+      })
+      .subscribe(
+        (data: Member) => {
+          console.log(data);
+          this.user = data;
+
+          this.httpClient
+            .get(`${environment.api}/profile/projects`, {
+              headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`
+              }
+            })
+            .subscribe((message: Project[]) => {
+              this.projects = message;
+              this.followingProjectlist = message;
+              console.log(message);
+            });
+        },
+        response => {
+          if (response.status === 401) {
+            alert('請先登入');
+            this.router.navigate(['/login']);
+          }
+        }
+      );
+  }
+
   // list = [
   //   {
   //     name: 'blue denim casual',
@@ -47,25 +82,21 @@ export class CartsService {
   //   }
   // ];
 
-  getFollowingProjects() {
-    return this.httpClient.get('http://localhost:8000/api/index');
-  }
-
   buttomClickMinus(index) {
-    if (this.list[index].count > 1) {
-      this.list[index].count--;
+    if (this.followingProjectlist[index].count > 1) {
+      this.followingProjectlist[index].count--;
     }
     this.totalCharge();
   }
 
   buttomClickPlus(index) {
-    this.list[index].count++;
+    this.followingProjectlist[index].count++;
     this.totalCharge();
   }
   totalCharge() {
     this.totalmoney = 0;
-    for (let index = 0; index < this.list.length; index++) {
-      this.totalmoney = this.totalmoney + this.list[index].count * this.list[index].price;
+    for (let index = 0; index < this.followingProjectlist.length; index++) {
+      this.totalmoney = this.totalmoney + this.followingProjectlist[index].count * this.followingProjectlist[index].price;
     }
   }
 }
