@@ -1,4 +1,4 @@
-import { Project } from 'src/app/project/project';
+import { Project, Feedback } from 'src/app/project/project';
 
 export interface Member {
   name: string;
@@ -9,5 +9,6 @@ export interface Member {
   birth: Date;
   photo: any;
   followingProjects?: Project[];
+  followingFeedbacks?: Feedback[];
   raisingProjects?: Project[];
 }

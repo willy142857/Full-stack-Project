@@ -41,3 +41,4 @@ export interface Feedback {
   img_path?: any;
   updated_at?: string;
 }
+

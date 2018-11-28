@@ -3,24 +3,23 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Member } from '../member/member';
 import { Router } from '@angular/router';
-import { Project } from 'src/app/project/project';
+import { Project, Feedback } from 'src/app/project/project';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class CartsService {
-  constructor(private httpClient: HttpClient, private router: Router) {
-    this.totalCharge();
-  }
+  constructor(private httpClient: HttpClient, private router: Router) { }
 
   totalmoney;
-  followingProjectlist = [];
+  followingProjectlist: Project[];
+  followingFeedbacklist: Feedback[];
   user: Member;
-  projects: Project[];
+
 
   // tslint:disable-next-line:use-life-cycle-interface
-  getFollowingProjects() {
+  getUserAllInfo() {
     this.httpClient
       .get(`${environment.api}/profile`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
@@ -29,18 +28,8 @@ export class CartsService {
         (data: Member) => {
           console.log(data);
           this.user = data;
-
-          this.httpClient
-            .get(`${environment.api}/profile/projects`, {
-              headers: {
-                Authorization: `Bearer ${localStorage.getItem('token')}`
-              }
-            })
-            .subscribe((message: Project[]) => {
-              this.projects = message;
-              this.followingProjectlist = message;
-              console.log(message);
-            });
+          this.followingProjectlist = data.followingProjects;
+          this.followingFeedbacklist = data.followingFeedbacks;
         },
         response => {
           if (response.status === 401) {
@@ -50,6 +39,13 @@ export class CartsService {
         }
       );
   }
+
+  // initialFollowingProject() {
+  //   for (let index = 0; index < this.followingProjectlist.length; index++) {
+  //     this.followingProjectlist[index].feedbackprice = this.followingFeedbacklist[index].price;
+  //     this.followingProjectlist[index].feedbackdescription = this.followingFeedbacklist[index].description;
+  //   }
+  // }
 
   // list = [
   //   {
@@ -83,20 +79,22 @@ export class CartsService {
   // ];
 
   buttomClickMinus(index) {
-    if (this.followingProjectlist[index].count > 1) {
-      this.followingProjectlist[index].count--;
-    }
+    // if (this.followingProjectlist[index].count > 1) {
+    //   this.followingProjectlist[index].count--;
+    // }
     this.totalCharge();
   }
 
   buttomClickPlus(index) {
-    this.followingProjectlist[index].count++;
+    // this.followingProjectlist[index].count++;
     this.totalCharge();
   }
+
   totalCharge() {
+    console.log(this.followingProjectlist.length);
     this.totalmoney = 0;
     for (let index = 0; index < this.followingProjectlist.length; index++) {
-      this.totalmoney = this.totalmoney + this.followingProjectlist[index].price;
+      this.totalmoney = this.totalmoney + this.followingFeedbacklist[index].price;
     }
   }
 }

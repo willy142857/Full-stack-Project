@@ -8,11 +8,7 @@ import { CartsService } from './carts.service';
 })
 export class CartComponent implements OnInit {
   totalmoney;
-  constructor(private cartsservice: CartsService) {
-    this.cartsservice.getFollowingProjects();
-    this.cartsservice.totalCharge();
-    this.totalmoney = this.cartsservice.totalmoney;
-  }
+  constructor(private cartsservice: CartsService) { }
 
   get list() {
     console.log(this.cartsservice.followingProjectlist);
@@ -21,6 +17,9 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {
     scroll(0, 0);
+    this.cartsservice.getUserAllInfo();
+    this.cartsservice.totalCharge();
+    this.totalmoney = this.cartsservice.totalmoney;
   }
   buttomClickMinus(index) {
     this.cartsservice.buttomClickMinus(index);
