@@ -5,32 +5,11 @@
         <div class="col-md-7 col-sm-6 col-xs-12">
           <div class="footer_top_left">
             <!-- TODO:取得訂閱email並處理 -->
-            <a href=""><i class="fa fa-envelope"></i>訂閱我們</a>
+            <i class="fa fa-envelope"></i>&nbsp;訂閱我們
             <input type="text" name="email" placeholder="你的Email" [(ngModel)]="data.email" />
             <input type="submit" value="submit" (click)="makeSubscription()" />
           </div>
         </div>
-        <!--<div class="col-md-5 col-sm-6 col-xs-12">
-          <div class="footer_top_right">
-            <ul id="payment">
-              <li><a href="">
-                  <img src="assets/images/pay1.png" alt="" />
-                </a></li>
-              <li><a href="">
-                  <img src="assets/images/pay2.png" alt="" />
-                </a></li>
-              <li><a href="">
-                  <img src="assets/images/pay3.png" alt="" />
-                </a></li>
-              <li><a href="">
-                  <img src="assets/images/pay4.png" alt="" />
-                </a></li>
-              <li><a href="">
-                  <img src="images/pay5.png" alt="" />
-                </a></li>
-            </ul>
-          </div>
-        </div>-->
       </div>
     </div>
   </div>
@@ -45,9 +24,6 @@
               <li><a [routerLink]="['/']" routerLinkActive="router-link-active">所有提案</a></li>
               <li><a [routerLink]="['/']" routerLinkActive="router-link-active">最後衝刺</a></li>
               <li><a [routerLink]="['/']" routerLinkActive="router-link-active">最新啟動</a></li>
-              <!--<li><a href="">Manufactures</a></li>
-              <li><a href="">Suppliers</a></li>
-              <li><a href="">Our Stores</a></li>-->
             </ul>
           </div>
         </div>
@@ -85,10 +61,6 @@
             <ul class="wid_social">
               <li><a class="fa fa-facebook" href="https://www.facebook.com/groups/ntusttalktalk2/"></a></li>
               <li><a class="fa fa-google-plus" href="https://www.ntust.edu.tw"></a></li>
-              <!--<li><a class="fa fa-twitter" href=""></a></li>
-              <li><a class="" href="fa fa-pinterest"></a></li>
-              <li><a class="fa fa-pinterest" href=""></a></li>
-              <li><a class="fa fa-rss" href=""></a></li>-->
             </ul>
           </div>
         </div>
