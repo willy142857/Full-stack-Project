@@ -9,6 +9,7 @@ import { CartsService } from './carts.service';
 export class CartComponent implements OnInit {
   totalmoney;
   constructor(private cartsservice: CartsService) {
+    this.cartsservice.getFollowingProjects();
     this.cartsservice.totalCharge();
     this.totalmoney = this.cartsservice.totalmoney;
   }

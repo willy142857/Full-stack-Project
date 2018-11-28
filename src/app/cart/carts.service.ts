@@ -20,7 +20,7 @@ export class CartsService {
   projects: Project[];
 
   // tslint:disable-next-line:use-life-cycle-interface
-  ngOnInit() {
+  getFollowingProjects() {
     this.httpClient
       .get(`${environment.api}/profile`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
@@ -96,7 +96,7 @@ export class CartsService {
   totalCharge() {
     this.totalmoney = 0;
     for (let index = 0; index < this.followingProjectlist.length; index++) {
-      this.totalmoney = this.totalmoney + this.followingProjectlist[index].count * this.followingProjectlist[index].price;
+      this.totalmoney = this.totalmoney + this.followingProjectlist[index].price;
     }
   }
 }

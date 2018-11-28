@@ -35,12 +35,12 @@
             <div class="h_item1">
               <p>{{'購物車.商品' | translate}}</p>
             </div>
-            <div class="h_item2">
-              <p>{{'購物車.單件金額' | translate}}</p>
+            <div class="h_item1">
+              <p>{{'購物車.方案' | translate}}</p>
             </div>
-            <div class="h_item3">
+            <!-- <div class="h_item3">
               <p>{{'購物車.數量' | translate}}</p>
-            </div>
+            </div> -->
             <div class="h_item4">
               <p>{{'購物車.金額' | translate}}</p>
             </div>
@@ -49,21 +49,21 @@
           <ng-container *ngFor="let item of list; let indexhere = index">
             <div class="cart_item">
               <div class="cart_item_img">
-                <img src= {{item.img}} alt="" />
+                <img src= {{item.img_path}} alt="" />
                 <p>{{item.name}}</p>
               </div>
-              <div class="cart_price">
-                <p>${{item.price}}</p>
+              <div class="cart_item_img">
+                <p>{{item.price}}</p>
               </div>
-              <div class="cart_quantity">
+              <!-- <div class="cart_quantity">
                 <ul>
                   <li><button (click)="buttomClickMinus(indexhere)"><i class="fa fa-minus"></i></button></li>
                   <li><span>{{ item.count }}</span></li>
                   <li><button (click)="buttomClickPlus(indexhere)"><i class="fa fa-plus"></i></button></li>
                 </ul>
-              </div>
+              </div> -->
               <div class="cart_total">
-                <p>${{item.count * item.price}}</p>
+                <p>${{item.price}}</p>
                 <span><i class="fa fa-close"></i></span>
               </div>
             </div>
