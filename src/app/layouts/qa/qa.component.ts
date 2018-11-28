@@ -9,13 +9,16 @@ export class QAComponent implements OnInit {
 
   constructor() { }
   ask = false;
+  ask1 = false;
 
-  questionClick() {
-    if (this.ask === false) {
-      this.ask = true;
+  questionClick(ask) {
+    console.log(ask);
+    if (!ask) {
+      ask = true;
     } else {
-      this.ask = false;
+      ask = false;
     }
+    console.log(ask);
   }
 
   ngOnInit() {

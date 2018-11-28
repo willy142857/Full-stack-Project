@@ -44,24 +44,26 @@
     <div class="nav_center">
       <nav class="mainmenu">
         <ul id="nav">
-          <li class="current-page-item"><a [routerLink]="['/']" routerLinkActive="router-link-active" >{{ 'home' | translate }}</a>
-            <ul id="sub-menu4">
+          <li class="current-page-item"><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ 'home' | translate }}</a>
+            <!--<ul id="sub-menu4">[ngClass]="{'current-page-item': currentPage==1 }"
                 <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '故事牆' | translate }} </a></li>
                 <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '分享你的故事' | translate }}</a></li>
-            </ul>
+            </ul>-->
           </li>
-          <li><a [routerLink]="['/index']" routerLinkActive="router-link-active">{{ '探索' | translate }}</a>
-            <ul id="sub-menu7">
-                <li><a [routerLink]="['/index']" routerLinkActive="router-link-active">{{ '所有計畫' | translate }}</a></li>
-                <li><a [routerLink]="['/index']" routerLinkActive="router-link-active">{{ '最後衝刺' | translate }}</a></li>
-                <li><a [routerLink]="['/index']" routerLinkActive="router-link-active">{{ '最新啟動' | translate }}</a></li>
-            </ul>
-          </li>
-          <li><a [routerLink]="['/create']" routerLinkActive="router-link-active">{{ '提案' | translate }}</a>
-            <ul id="sub-menu7">
+          <li class="current-page-item"><a [routerLink]="['/create']" routerLinkActive="router-link-active">{{ '提案' | translate }}</a>
+            <!--<ul id="sub-menu7">
               <li><a [routerLink]="['/create']" routerLinkActive="router-link-active">{{ '一次性集資' | translate }}</a></li>
               <li><a [routerLink]="['/create']" routerLinkActive="router-link-active">{{ '訂閱式專案' | translate }}</a></li>
-          </ul></li>
+          </ul>-->
+        </li>
+          <li class="current-page-item"><a [routerLink]="['/project']" routerLinkActive="router-link-active">{{ '探索' | translate }}</a>
+            <ul id="sub-menu7">
+                <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '所有計畫' | translate }}</a></li>
+                <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '最後衝刺' | translate }}</a></li>
+                <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '最新啟動' | translate }}</a></li>
+            </ul>
+          </li>
+
         </ul>
       </nav>
     </div>
@@ -125,13 +127,13 @@
     </div>
 
 
-    <!-- MOBILE ONLY CONTENT --
+    <!-- MOBILE ONLY CONTENT -->
     <div class="only-for-mobile">
       <ul class="ofm">
         <li class="m_nav"><i class="fa fa-bars"></i> Navigation</li>
       </ul>
 
-      <!-- MOBILE MENU --
+      <!-- MOBILE MENU -->
       <div class="mobi-menu">
         <div id='cssmenu'>
           <ul>
