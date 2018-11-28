@@ -37,6 +37,10 @@ export class AuthService {
       });
   }
 
+  makeSubscription(data: any) {
+    return this.httpClient.post(`${environment.api}/subscribe`, data);
+  }
+
   retrievePassword(user: any) {
     return this.httpClient.post(`${environment.api}/retrievepassword`, user);
   }

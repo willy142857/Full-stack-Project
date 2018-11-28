@@ -6,8 +6,8 @@
           <div class="footer_top_left">
             <!-- TODO:取得訂閱email並處理 -->
             <a href=""><i class="fa fa-envelope"></i>訂閱我們</a>
-            <input type="text" placeholder="你的Email" />
-            <input type="submit" value="submit" />
+            <input type="text" name="email" placeholder="你的Email" [(ngModel)]="data.email" />
+            <input type="submit" value="submit" (click)="makeSubscription()" />
           </div>
         </div>
         <div class="col-md-5 col-sm-6 col-xs-12">
