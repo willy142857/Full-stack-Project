@@ -151,10 +151,10 @@
 								<span>{{'購物車.金額'|translate}}</span>
               </div>
 
-              <ng-container *ngFor="let item of list">
+              <ng-container *ngFor="let item of projectlist">
                 <div class="c_single_item">
-                  <p>{{item.name}} x {{item.count}}</p>
-                  <span>${{item.price * item.count}}</span>
+                  <p>{{item.name}}</p>
+                  <span>${{item.feedbackprice}}</span>
                 </div>
                 <!-- <div class="c_single_item">
                   <p>wool t-shirt x 1</p>
