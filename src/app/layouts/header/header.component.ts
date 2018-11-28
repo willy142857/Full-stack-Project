@@ -12,7 +12,6 @@ export class HeaderComponent implements OnInit {
   logo = 'assets/images/logo.png';
   langs = this.translateService.getLangs();
   currLang = this.translateService.currentLang;
-
   constructor(
     private authService: AuthService,
     private translateService: TranslateService,
@@ -27,7 +26,7 @@ export class HeaderComponent implements OnInit {
   }
   ngOnInit() {
     scroll(0, 0);
-    console.log(this.langs);
+    // console.log(this.langs);
     this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
       this.currLang = this.translateService.currentLang;
     });

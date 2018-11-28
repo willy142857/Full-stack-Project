@@ -2,75 +2,84 @@
   background-color: #3c3c3c
 }
 
-.nav_area {
-  background: none repeat scroll 0 0 #3c3c3c;
+nav.currency {
+  margin-top: -2px;
 }
 
-.nav_left {
-  background: none repeat scroll 0 0 #3c3c3c;
-  padding: 22px 0;
+.currency ul {
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
+  top: 18px;
+  transition: .25s;
+}
+
+.currency ul li {
   position: relative;
-  width: 17%;
 }
-.nav_left a {
-  color: #fff;
-  font-size: 14px;
-  font-weight: 700;
-  padding-left: 18px;
+
+.currency-dropdown {
+  background: none repeat scroll 0 0 rgba(33, 33, 33, 0.8);
+  left: -5px;
+  margin-top: 39px;
+  position: absolute;
+  text-align: center;
+  top: 50px;
+  width: 58px;
+  transition: .25s;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  opacity: 0;
+}
+
+.currency ul li:hover ul.currency-dropdown {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+  filter: alpha(opacity=1);
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  opacity: 1;
+  padding: 19px 0 3px;
+  z-index: 10;
+}
+
+.currency-dropdown li {}
+
+.currency-dropdown li a {
+  display: block;
+  font-size: 12px;
+  padding: 3px;
+}
+
+.currency-dropdown li a:hover {
+  display: block;
+  font-size: 12px;
+  padding: 3px;
+}
+
+.currency ul li a {
+  color: #e8e8e8;
+  font-size: 12px;
+  font-weight: 500;
   text-transform: uppercase;
 }
-.cat_mega_menu a{
-  color: black;
-  font-size: 14px;
-  font-weight: 700;
-  padding-left: 18px;
-  text-transform: uppercase;
-}
-.cat_mega_menu a:hover{
+
+.currency ul li a:hover {
+  color: #ff6766;
   text-decoration: none;
-  color:#f06160;
 }
 
-.nav_left i {
-  margin-left: 65px;
+/* ============================================
+14. IE CSS
+===============================================*/
+.ie8 .currency-dropdown {
+  display: none;
+  opacity: 1;
 }
 
-.nav_right {
-  background: none repeat scroll 0 0 #3c3c3c;
-  padding: 22px 0;
-  position: relative;
-  width: 17%;
-}
-
-.nav_right a {
-  color: #fff;
-  font-size: 14px;
-  font-weight: 700;
-  padding-left: 35px;
-  text-transform: uppercase;
-}
-
-.c_totals_left a,
-.c_totals_right a {
-  padding-left: 0;
-}
-
-.nav_right a:hover {
-  text-decoration: none;
-  color:#f06160;
-}
-
-.nav_right img {
-  cursor: pointer;
-  margin-right: 10px;
-  margin-top: -7px;
-}
-
-.nav_center {
-  float: left;
-  width: 66%;
-}
-
-nav.mainmenu {
-  position: relative;
+.ie8 .currency-dropdown:hover {
+  display: block;
+  opacity: 1;
 }
