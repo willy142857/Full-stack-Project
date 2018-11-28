@@ -13,15 +13,10 @@ import { Project } from 'src/app/project/project';
 })
 export class ProfileComponent implements OnInit {
   constructor(
-    public memberService: MemberService,
     private httpClient: HttpClient,
     private router: Router
   ) {}
-  get member() {
-    return this.memberService.member;
-  }
-  projects: Project[];
-  raisingProjects: Project[];
+
   dasharray = 350;
   user: Member;
   photo: any;
@@ -35,28 +30,6 @@ export class ProfileComponent implements OnInit {
         (data: Member) => {
           console.log(data);
           this.user = data;
-
-          this.httpClient
-            .get(`${environment.api}/profile/projects`, {
-              headers: {
-                Authorization: `Bearer ${localStorage.getItem('token')}`
-              }
-            })
-            .subscribe((message: Project[]) => {
-              this.projects = message;
-              console.log(message);
-            });
-
-          this.httpClient
-            .get(`${environment.api}/profile/raisingProjects`, {
-              headers: {
-                Authorization: `Bearer ${localStorage.getItem('token')}`
-              }
-            })
-            .subscribe((raising: Project[]) => {
-              this.raisingProjects = raising;
-              console.log(raising);
-            });
         },
         response => {
           if (response.status === 401) {
