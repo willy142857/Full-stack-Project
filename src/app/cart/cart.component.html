@@ -46,14 +46,14 @@
             </div>
           </div>
 
-          <ng-container *ngFor="let item of list; let indexhere = index">
+          <ng-container *ngFor="let pitem of projectlist;">
             <div class="cart_item">
               <div class="cart_item_img">
-                <img src= {{item.img_path}} alt="" />
-                <p>{{item.name}}</p>
+                <img src= {{pitem.img_path}} alt="" />
+                <p>{{pitem.name}}</p>
               </div>
               <div class="cart_item_img">
-                <p>{{item.feedbackdescription}}</p>
+                <p>{{pitem?.feedbackdes}}</p>
               </div>
               <!-- <div class="cart_quantity">
                 <ul>
@@ -63,7 +63,7 @@
                 </ul>
               </div> -->
               <div class="cart_total">
-                <p>${{item.feedbackprice}}</p>
+                <p>${{pitem?.feedbackprice}}</p>
                 <span><i class="fa fa-close"></i></span>
               </div>
             </div>

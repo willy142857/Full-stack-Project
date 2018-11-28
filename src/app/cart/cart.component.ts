@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartsService } from './carts.service';
+import { ProjectPlus } from 'src/app/project/project';
 
 @Component({
   selector: 'app-cart',
@@ -8,19 +9,23 @@ import { CartsService } from './carts.service';
 })
 export class CartComponent implements OnInit {
   totalmoney;
-  constructor(private cartsservice: CartsService) { }
-
-  get list() {
-    console.log(this.cartsservice.followingProjectlist);
-    return this.cartsservice.followingProjectlist;
+  projectlist: ProjectPlus[];
+  constructor(private cartsservice: CartsService) {
+    this.cartsservice.getUserAllInfo();
   }
+
+  // get projectlist() {
+  //   console.log(this.cartsservice.followingProjectlist);
+  //   return this.cartsservice.followingProjectlist;
+  // }
 
   ngOnInit() {
     scroll(0, 0);
-    this.cartsservice.getUserAllInfo();
-    this.cartsservice.totalCharge();
+    this.projectlist = this.cartsservice.followingProjectlist;
     this.totalmoney = this.cartsservice.totalmoney;
+    console.log(this.projectlist);
   }
+
   buttomClickMinus(index) {
     this.cartsservice.buttomClickMinus(index);
     this.totalmoney = this.cartsservice.totalmoney;

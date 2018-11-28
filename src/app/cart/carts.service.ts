@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Member } from '../member/member';
 import { Router } from '@angular/router';
-import { Project, Feedback } from 'src/app/project/project';
+import { Feedback, ProjectPlus } from 'src/app/project/project';
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +13,10 @@ export class CartsService {
   constructor(private httpClient: HttpClient, private router: Router) { }
 
   totalmoney;
-  followingProjectlist: Project[];
+  followingProjectlist: ProjectPlus[];
   followingFeedbacklist: Feedback[];
   user: Member;
 
-
-  // tslint:disable-next-line:use-life-cycle-interface
   getUserAllInfo() {
     this.httpClient
       .get(`${environment.api}/profile`, {
@@ -38,14 +36,16 @@ export class CartsService {
           }
         }
       );
+    this.initialFollowingProject();
+    this.totalCharge();
   }
 
-  // initialFollowingProject() {
-  //   for (let index = 0; index < this.followingProjectlist.length; index++) {
-  //     this.followingProjectlist[index].feedbackprice = this.followingFeedbacklist[index].price;
-  //     this.followingProjectlist[index].feedbackdescription = this.followingFeedbacklist[index].description;
-  //   }
-  // }
+  initialFollowingProject() {
+    for (let index = 0; index < this.followingProjectlist.length; index++) {
+      this.followingProjectlist[index].feedbackprice = this.followingFeedbacklist[index].price;
+      this.followingProjectlist[index].feedbackdes = this.followingFeedbacklist[index].description;
+    }
+  }
 
   // list = [
   //   {
@@ -93,7 +93,7 @@ export class CartsService {
   totalCharge() {
     console.log(this.followingProjectlist.length);
     this.totalmoney = 0;
-    for (let index = 0; index < this.followingProjectlist.length; index++) {
+    for (let index = 0; index < this.followingFeedbacklist.length; index++) {
       this.totalmoney = this.totalmoney + this.followingFeedbacklist[index].price;
     }
   }
