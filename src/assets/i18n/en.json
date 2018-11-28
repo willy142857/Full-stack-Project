@@ -2,6 +2,8 @@
   "zh-tw": "繁體中文",
   "en": "English",
 
+  "一起讓美好的事物發生": "dream come true",
+
   "login": "login",
   "signup": "signup",
   "name": "name",
@@ -45,6 +47,12 @@
   "地方創生": "placemaking",
   "電影動畫": "movies",
   "插畫漫畫": "comics",
+  "藝術": "art",
+  "探索": "explore",
+  "所有計畫": "total",
+  "最後衝刺": "final",
+  "最新啟動": "new",
+  "提案": "proposal",
 
   "計畫": {
     "提案": "Raise Fund",
