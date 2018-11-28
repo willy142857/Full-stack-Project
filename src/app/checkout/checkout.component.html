@@ -15,10 +15,10 @@
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="bread_box">
           <ul class="breadcumb">
-            <li><a href="index.html">首頁 <span>|</span></a></li>
-            <li><a href="category-1.html">商店 <span>|</span></a></li>
-            <li><a [routerLink]="['/cart']">清單 <span>|</span></a></li>
-            <li class="active"><a href="">結帳 </a></li>
+            <!-- <li><a href="index.html">首頁 <span>|</span></a></li> -->
+            <li><a href="category-1.html">{{'購物車.商店' | translate}} <span>|</span></a></li>
+            <li><a [routerLink]="['/cart']">{{'購物車.清單' | translate}} <span>|</span></a></li>
+            <li class="active"><a href="">{{'購物車.結帳' | translate}} </a></li>
           </ul>
         </div>
       </div>
@@ -93,16 +93,16 @@
 							</div>
 						</div> -->
 
-						<h2>貨件地址</h2>
+						<h2>{{'購物車.貨件地址'|translate}}</h2>
 						<div class="dotted_line"></div>
-            <div>
+            <!-- <div>
               <label>
                 <input type="checkbox"> 資料同上
               </label>
-            </div>
+            </div> -->
 						<div class="shipping_form">
 							<div class="country_select country_select2">
-								<p>國家</p>
+								<p>{{'購物車.國家'|translate}}</p>
 								<select class="selectpicker sel_state">
 								  <option>Taiwan</option>
 								  <option>Bangladesh</option>
@@ -114,7 +114,7 @@
 							</div>
 							<div class="c_name_box">
 								<div class="c_name_box_left">
-									<p>姓名 <span>*</span></p>
+									<p>{{'購物車.姓名'|translate}} <span>*</span></p>
 									<input type="text">
 								</div>
 								<!-- <div class="c_name_box_right">
@@ -127,7 +127,7 @@
 								<input type="text">
 							</div> -->
 							<div class="c_address">
-								<p>地址 <span>*</span></p>
+								<p>{{'購物車.地址'|translate}} <span>*</span></p>
 								<input type="text" placeholder="">
 							</div>
 							<!-- <div class="s_town">
@@ -135,7 +135,7 @@
 								<input type="text" placeholder="Town/City">
 							</div> -->
 							<div class="s_order">
-								<p>備註 <span>*</span></p>
+								<p>{{'購物車.備註'|translate}} <span>*</span></p>
 								<textarea name="" cols="30" rows="10"></textarea>
 							</div>
 
@@ -144,11 +144,11 @@
         </div>
 				<div class="col-md-3 col-sm-4 col-xs-12">
 					<div class="checkout_right">
-						<h4>購物內容</h4>
+						<h4>{{'購物車.購物內容'|translate}}</h4>
 						<div class="product_form_total">
 							<div class="c_main_item">
-								<p>商品</p>
-								<span>金額</span>
+								<p>{{'購物車.商品'|translate}}</p>
+								<span>{{'購物車.金額'|translate}}</span>
               </div>
 
               <ng-container *ngFor="let item of list">
@@ -170,19 +170,19 @@
                 </div> -->
               </ng-container>
 							<div class="c_single_item">
-								<p>小計</p>
+								<p>{{'購物車.小計'|translate}}</p>
 								<span>${{totalmoney}}</span>
 							</div>
 							<div class="c_single_item sp_single_item">
-								<p>郵資</p>
-								<span>免費</span>
+								<p>{{'購物車.郵資'|translate}}</p>
+								<span>{{'購物車.免費'|translate}}</span>
 							</div>
 							<div class="c_total_item sp_single_item">
-								<p>總金額</p>
+								<p>{{'購物車.總金額'|translate}}</p>
 								<span>${{totalmoney}}</span>
 							</div>
 							<div class="c_payment">
-								<p>付款方式</p>
+								<p>{{'購物車.付款方式'|translate}}</p>
 								<select class="selectpicker sel_state">
 								  <option>Direct Bank Transfer</option>
 								  <option>Wire Transfer</option>
@@ -191,10 +191,10 @@
 							</div>
 							<div class="checkbox">
 								<label>
-								  <input type="checkbox"> 我已經詳細閱讀 <span>合約條款</span>
+								  <input type="checkbox"> {{ '購物車.我已經詳細閱讀' | translate }} <span>{{ '購物車.合約條款' | translate }}</span>
 								</label>
 							</div>
-							<input type="submit" value="下單"/>
+							<input type="submit" value="{{ '購物車.下單' | translate }}" (click)="checkout()">
 						</div>
 					</div>
 				</div>

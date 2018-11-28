@@ -26,23 +26,33 @@ export class MemberService {
   constructor(private router: Router, private httpClient: HttpClient) {}
 
   updateProfile(user: Member) {
-    this.httpClient
-      .put(`${environment.api}/profile`, user).subscribe(
-        (data: Member) => {
-          console.log(data);
-          alert('修正成功');
-        },
-        response => {
-          if (response.status === 401) {
-            alert('請先登入');
-            this.router.navigate(['/login']);
-          }
+    this.httpClient.put(`${environment.api}/profile`, user).subscribe(
+      (data: Member) => {
+        console.log(data);
+        alert('修正成功');
+      },
+      response => {
+        if (response.status === 401) {
+          alert('請先登入');
+          this.router.navigate(['/login']);
         }
-      );
+      }
+    );
+  }
+
+  getRaisedProjects() {
+    return this.httpClient.get(`${environment.api}/profile/raisingProjects`);
+  }
+
+  getRaisedProject(id: number) {
+    return this.httpClient.get(`${environment.api}/projects/${id}`);
+  }
+
+  editProject(project: Project, id: number) {
+    return this.httpClient.put(`${environment.api}/project/${id}/raisingProjectFeedBacks`, project);
   }
 
   addFollowing(project: Project) {}
 
   addbacking(project: Project) {}
-
 }

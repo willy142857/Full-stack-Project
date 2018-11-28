@@ -27,6 +27,11 @@ export class CommodityComponent implements OnInit {
     comment: '',
   };
 
+  feedback = {
+    feedback_id: Number,
+    project_id: Number,
+  };
+
   get messages() {
     return this.commoditiesService.messages;
   }
@@ -47,18 +52,6 @@ export class CommodityComponent implements OnInit {
     }
   }
 
-  add_to_cart(event) {
-    if (confirm('確定加入購物車?')) {
-     this.new_commodity = {
-      name: event.name,
-      img: 'images/cart_img2.jpg',
-      type: event.category,
-      price: 100,
-      count: 1,
-      };
-      this.cartsservice.list.push(this.new_commodity);
-    }
-  }
   score_stars(number) {
     this.comment.rating = number;
     this.user_stars = [];
@@ -87,6 +80,7 @@ export class CommodityComponent implements OnInit {
     scroll(0, 0);
     this.route.params.subscribe(data => {
       this.comment.project_id = data.id;
+      this.feedback.project_id = data.id;
       const id = data.id;
       this.projectservic.getProject(id).subscribe((project: Project) => {
         this.list = project;
@@ -100,5 +94,13 @@ export class CommodityComponent implements OnInit {
   createComment() {
     this.authService.createComment(this.comment);
     window.location.reload();
+  }
+
+  orderFeedback(event) {
+    if (confirm('確定加入購物車?')) {
+      this.feedback.feedback_id = event.id;
+      console.log(this.feedback);
+      this.authService.orderFeedback(this.feedback);
+    }
   }
 }

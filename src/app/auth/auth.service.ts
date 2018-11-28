@@ -37,6 +37,10 @@ export class AuthService {
       });
   }
 
+  makeSubscription(data: any) {
+    return this.httpClient.post(`${environment.api}/subscribe`, data);
+  }
+
   retrievePassword(user: any) {
     return this.httpClient.post(`${environment.api}/retrievepassword`, user);
   }
@@ -63,6 +67,21 @@ export class AuthService {
         if (data.success) {
           this.router.navigate([`/commodity/${comment.project_id}`]);
         } else {
+          alert('fail');
+        }
+      },
+      response => {
+        alert(response.error.message);
+      }
+    );
+  }
+
+  orderFeedback(feedback: any) {
+    console.log(feedback);
+    this.httpClient.post(`${environment.api}/feedback`, feedback).subscribe(
+      (data: any) => {
+        console.log(data);
+        if (!data.success) {
           alert('fail');
         }
       },

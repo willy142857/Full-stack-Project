@@ -1,5 +1,5 @@
 export interface Project {
-  id: number;
+  id?: number;
   fundraiser: string;
   email: string;
   name: string;
@@ -7,16 +7,16 @@ export interface Project {
   brief: string;
   started_at: string;
   ended_at: string;
-  curr_amount: number;
+  curr_amount?: number;
   goal_amount: number;
-  backer: number;
+  backer?: number;
   description: string;
   feedbacks: Feedback[];
-  comments: Comment[];
+  comments?: Comment[];
   img_path: string;
   relative_web: string;
-  created_at: string;
-  updated_at: string;
+  created_at?: string;
+  updated_at?: string;
 }
 
 export interface Category {
@@ -32,11 +32,12 @@ export interface Comment {
   stars: Boolean[];
 }
 
-interface Feedback {
+export interface Feedback {
+  id?: number;
   date: string;
   price: number;
   description: string;
-  backer: number;
+  backer?: number;
   img_path?: any;
-  updated_at: string;
+  updated_at?: string;
 }

@@ -7,6 +7,8 @@ import { RegisterComponent } from './register/register.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthGuard } from '../auth/auth.guard';
+import { RaisedProjectComponent } from './raised-project/raised-project.component';
+import { EditComponent } from './raised-project/edit/edit.component';
 
 const routes: Routes = [
   {
@@ -29,7 +31,15 @@ const routes: Routes = [
     path: 'profile',
     component: ProfileComponent,
     canActivate: [AuthGuard]
-  }
+  },
+  {
+    path: 'raised',
+    component: RaisedProjectComponent
+  },
+  {
+    path: 'raisedEdit/:id',
+    component: EditComponent
+  },
 ];
 
 @NgModule({

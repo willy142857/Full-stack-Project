@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartsService } from '../cart/carts.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
@@ -8,15 +9,19 @@ import { CartsService } from '../cart/carts.service';
 })
 export class CheckoutComponent implements OnInit {
   totalmoney = this.cartsservice.totalmoney;
-  constructor(private cartsservice: CartsService) { }
+  constructor(private cartsservice: CartsService, private router: Router) { }
 
   get list() {
-    return this.cartsservice.list;
+    return this.cartsservice.followingProjectlist;
   }
 
 
   ngOnInit() {
     scroll(0, 0);
+  }
+
+  checkout() {
+    this.router.navigate(['/']);
   }
 
 }
