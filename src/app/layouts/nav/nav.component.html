@@ -1,7 +1,7 @@
 <section class="nav_area">
   <div class="container">
     <div class="nav_left floatleft">
-      <a href="category-1.html">{{ 'category' | translate }}<i class="fa fa-bars"></i></a>
+      <a>{{ 'category' | translate }}<i class="fa fa-bars"></i></a>
       <div class="cat_mega_menu">
         <div class="cat_left">
           <h5>{{ '文藝' | translate }}</h5>
@@ -36,27 +36,16 @@
             <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '插畫漫畫' | translate }}</a></li>
           </ul>
         </div>
-        <div class="cat_img">
-          <img src="assets/images/menu_cat.png" alt="" />
-        </div>
       </div>
     </div>
     <div class="nav_center">
       <nav class="mainmenu">
         <ul id="nav">
-          <li class="current-page-item"><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ 'home' | translate }}</a>
-            <!--<ul id="sub-menu4">[ngClass]="{'current-page-item': currentPage==1 }"
-                <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '故事牆' | translate }} </a></li>
-                <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '分享你的故事' | translate }}</a></li>
-            </ul>-->
+          <li ng-class = "{current-page-item: pathUrl == /login }"><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ 'home' | translate }}</a>
           </li>
-          <li class="current-page-item"><a [routerLink]="['/create']" routerLinkActive="router-link-active">{{ '提案' | translate }}</a>
-            <!--<ul id="sub-menu7">
-              <li><a [routerLink]="['/create']" routerLinkActive="router-link-active">{{ '一次性集資' | translate }}</a></li>
-              <li><a [routerLink]="['/create']" routerLinkActive="router-link-active">{{ '訂閱式專案' | translate }}</a></li>
-          </ul>-->
+          <li ng-class="{current-page-item: pathUrl=== '/create' }"><a [routerLink]="['/create']" routerLinkActive="router-link-active">{{ '提案' | translate }}</a>
         </li>
-          <li class="current-page-item"><a [routerLink]="['/project']" routerLinkActive="router-link-active">{{ '探索' | translate }}</a>
+          <li ng-class="{current-page-item: pathUrl=== '/project'}"><a [routerLink]="['/project']" routerLinkActive="router-link-active">{{ '探索' | translate }}</a>
             <ul id="sub-menu7">
                 <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '所有計畫' | translate }}</a></li>
                 <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '最後衝刺' | translate }}</a></li>
@@ -68,12 +57,10 @@
       </nav>
     </div>
     <div class="nav_right floatright">
-      <!-- TODO:設定路由 -->
       <a [routerLink]="['/cart']" routerLinkActive="router-link-active"><img src="assets/images/bag.png" alt="Bag" />我要贊助 2 計畫</a>
       <div class="cart_menu">
         <div class="cart_items">
           <div class="c_item_img floatleft">
-            <!-- TODO:設定路由 -->
             <a a [routerLink]="['/product']" routerLinkActive="router-link-active"><img src="assets/images/c_item1.jpg" alt="" /></a>
           </div>
           <div class="c_item_totals floatleft">
@@ -139,10 +126,7 @@
           <ul>
             <li class='has-sub'>
               <a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ 'Home' | translate }}</span></a>
-              <ul class="sub-nav">
-                <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '故事牆' | translate }}</span></a></li>
-                <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '分享你的故事' | translate }}</span></a></li>
-              </ul>
+
             </li>
             <li class='has-sub'>
               <a href='category-1.html'><span>{{ 'category' | translate }}</span></a>
