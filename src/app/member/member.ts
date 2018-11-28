@@ -1,3 +1,5 @@
+import { Project } from 'src/app/project/project';
+
 export interface Member {
   name: string;
   phone: string;
@@ -6,4 +8,6 @@ export interface Member {
   address: string;
   birth: Date;
   photo: any;
+  followingProjects?: Project[];
+  raisingProjects?: Project[];
 }
