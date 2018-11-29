@@ -41,11 +41,14 @@
     <div class="nav_center">
       <nav class="mainmenu">
         <ul id="nav">
-          <li ng-class = "{current-page-item: pathUrl == /login }"><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ 'home' | translate }}</a>
+          <li [ngClass] = "{'current-page-item': pathUrl !== '/create' && pathUrl !== '/projects' }">
+            <a [routerLink]="['/']" routerLinkActive="router-link-active" (click)="check()" >{{ 'home' | translate }}</a>
           </li>
-          <li ng-class="{current-page-item: pathUrl=== '/create' }"><a [routerLink]="['/create']" routerLinkActive="router-link-active">{{ '提案' | translate }}</a>
+          <li [ngClass]="{'current-page-item': pathUrl === '/create' }">
+            <a [routerLink]="['/create']" routerLinkActive="router-link-active" (click)="check()">{{ '提案' | translate }}</a>
         </li>
-          <li ng-class="{current-page-item: pathUrl=== '/project'}"><a [routerLink]="['/project']" routerLinkActive="router-link-active">{{ '探索' | translate }}</a>
+          <li [ngClass]="{ 'current-page-item': pathUrl === '/projects' }">
+            <a [routerLink]="['/project']" routerLinkActive="router-link-active" (click)="check()">{{ '探索' | translate }}</a>
             <ul id="sub-menu7">
                 <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '所有計畫' | translate }}</a></li>
                 <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '最後衝刺' | translate }}</a></li>
