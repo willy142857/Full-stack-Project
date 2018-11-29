@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../project.service';
 import { ActivatedRoute } from '@angular/router';
 import { Category, Project } from '../project';
+import { SearchService } from 'src/app/core/service/search.service';
 
 @Component({
   selector: 'app-index',
@@ -14,11 +15,16 @@ export class IndexComponent implements OnInit {
   originalProj: Project[];
   projects: Project[];
 
-  constructor(private projectService: ProjectService, private route: ActivatedRoute) {}
+  constructor(
+    private projectService: ProjectService,
+    private route: ActivatedRoute,
+    public searchService: SearchService,
+    ) {}
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       const id = params.id;
+      const keyword = params.keyword;
 
       this.projectService.getCategories().
         subscribe((categories: Category[]) => {
@@ -30,14 +36,20 @@ export class IndexComponent implements OnInit {
         this.projects = this.originalProj;
         if (id) {
           this.filterProjects(id);
+        } else if (keyword) {
+          this.getSearch();
         }
       });
 
     });
   }
 
+  getSearch() {
+    this.projects = this.searchService.searchProjectsName;
+  }
+
   filterProjects(id: number) {
-    this.projects = this.originalProj.filter(project => project.category_id == id);
+    this.projects = this.originalProj.filter(project => project.category_id === id);
   }
 
   progress(project: Project): number {

@@ -16,6 +16,10 @@ const routes: Routes = [
     component: IndexComponent,
   },
   {
+    path: 'projects/search/:keyword',
+    component: IndexComponent,
+  },
+  {
     path: 'create',
     component: CreateComponent,
     canActivate: [AuthGuard]
