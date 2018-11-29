@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
   langs = this.translateService.getLangs();
   currLang = this.translateService.currentLang;
   searchWord;
+
   constructor(
     private authService: AuthService,
     private translateService: TranslateService,
@@ -21,23 +22,27 @@ export class HeaderComponent implements OnInit {
     public searchService: SearchService,
   ) { }
 
-  changeLang(lang: string) {
-    this.translateService.use(lang).subscribe(data => {});
-  }
-  get isLogin() {
-    return this.authService.isLogin();
-  }
   ngOnInit() {
     scroll(0, 0);
-    // console.log(this.langs);
     this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
+      localStorage.setItem('lang', this.translateService.currentLang);
       this.currLang = this.translateService.currentLang;
     });
   }
+
+  changeLang(lang: string) {
+    this.translateService.use(lang).subscribe(data => {});
+  }
+
+  get isLogin() {
+    return this.authService.isLogin();
+  }
+
   logout() {
     this.authService.logout();
     this.router.navigate(['/']);
   }
+
   enter(event: KeyboardEvent) {
     if ( event.keyCode === 13 ) {
       this.searchService.searchData.keyword = this.searchWord;
