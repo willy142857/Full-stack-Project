@@ -3702,7 +3702,7 @@ ul#single_blog_nav {
 }
 
 .single_p_image {
-  overflow: hidden;
+  overflow: inherit;
   position: relative;
 }
 
@@ -3716,7 +3716,7 @@ ul#single_blog_nav {
 }
 
 .single_product_image_tab {
-  background: #f3f4f5 none repeat scroll 0 0;
+  background:  none repeat scroll 0 0;
   position: relative;
 }
 
@@ -3736,7 +3736,7 @@ ul#single_blog_nav {
 }
 
 .single_p_image>img {
-  margin-left: 130px;
+  margin-left: 0px;
 }
 
 .detail_heading_left h3 {
