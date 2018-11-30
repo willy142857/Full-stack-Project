@@ -17,9 +17,10 @@
           <!-- TODO:多國語言切換 -->
           <nav class="currency alignleft">
             <ul>
-              <li><a>{{ currLang | translate }}</a>
+              <li><a class="changeMouse">{{ currLang | translate }}</a>
                 <ul class="currency-dropdown">
-                    <li *ngFor="let lang of langs"><a *ngIf="lang!=currLang" (click)="changeLang(lang)">{{ lang | translate }}</a></li>
+                    <li *ngFor="let lang of langs">
+                      <a class="changeMouse" *ngIf="lang!=currLang" (click)="changeLang(lang)">{{ lang | translate }}</a></li>
                 </ul>
               </li>
             </ul>

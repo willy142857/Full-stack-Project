@@ -41,6 +41,7 @@
     <div class="nav_center">
       <nav class="mainmenu">
         <ul id="nav">
+          <!--問: 顯示當前頁面的做法-->
           <li [ngClass] = "{'current-page-item': pathUrl !== '/create' && pathUrl !== '/projects' }">
             <a [routerLink]="['/']" routerLinkActive="router-link-active" (click)="check()" >{{ 'home' | translate }}</a>
           </li>
@@ -66,7 +67,8 @@
           {{'我要贊助' | translate}}</a>
       </div>
     </span>
-    <!--購物車項目總數的變數 和價錢的變數是哪個{{pitem?.feedbackdes}} ${{pitem?.feedbackprice}}-->
+    <!--問杰仕: 購物車項目總數的變數
+      價錢的變數是哪個{{pitem?.feedbackdes}} ${{pitem?.feedbackprice}}-->
     <span [hidden]="!isLogin">
       <div class="nav_right floatright">
         <a [routerLink]="['/cart']" routerLinkActive="router-link-active">
