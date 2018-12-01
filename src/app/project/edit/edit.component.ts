@@ -12,15 +12,6 @@ export class EditComponent implements OnInit {
   id: number;
   project: Project;
   categories: Category[];
-  feedback: Feedback = {
-    id: null,
-    date: null,
-    price: null,
-    description: null,
-    backer: null,
-    img_path: null,
-    updated_at: null
-  };
   feedbacks: Feedback[] = [];
   constructor(
     private projectService: ProjectService,
@@ -41,15 +32,27 @@ export class EditComponent implements OnInit {
     });
   }
 
-  addFeedback() {
-    this.project.feedbacks.push(this.feedback);
-  }
   onSubmit() {
     this.projectService.editProject(this.project, this.id, this.feedbacks).subscribe((data: any) => {
       if (data.success) {
         this.router.navigateByUrl('/');
       }
-      console.log(data.feedbacks);
     });
+  }
+
+  addFeedback() {
+    this.project.feedbacks.push(this.getNewProj());
+  }
+
+  getNewProj() {
+    return {
+      id: null,
+      date: null,
+      price: null,
+      description: null,
+      backer: null,
+      img_path: null,
+      updated_at: null
+    };
   }
 }

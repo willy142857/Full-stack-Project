@@ -9,6 +9,7 @@
   text-align: center;
   width: 23px;
 }
+
 .cart_quantity ul li button {
   background: none repeat scroll 0 0 #fff;
   border: 1px solid #e8eaec;
@@ -69,4 +70,44 @@
 .mycoupon:hover {
   background: none repeat scroll 0 0 #ff6766;
   color: #fff;
+}
+
+.cart_item .my_feedback_des{
+  float: left;
+  width: 25%;
+}
+
+.my_feedback_des>p {
+  color: #333333;
+  font-size: 12px;
+  margin-bottom: 0;
+  margin-top: 23px;
+  text-transform: uppercase;
+}
+
+.cart_item .my_delete_button {
+  float: left;
+  width: 5%;
+}
+.my_delete_button ul {
+  list-style: outside none none;
+  margin: 29px 0 0;
+  padding: 0;
+}
+
+.my_delete_button ul li {
+  float: left;
+  margin-right: 10px;
+}
+
+.my_delete_button ul li button {
+  background: none repeat scroll 0 0 #fff;
+  border: 1px solid #e8eaec;
+  color: #333;
+  display: block;
+  font-size: 12px;
+  height: 23px;
+  padding-top: 3px;
+  text-align: center;
+  width: 23px;
 }

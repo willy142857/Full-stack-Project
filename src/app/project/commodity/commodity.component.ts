@@ -1,8 +1,8 @@
 import { AuthService } from 'src/app/auth/auth.service';
 import { ActivatedRoute } from '@angular/router';
 import { Project, Comment} from 'src/app/project/project';
-import { ProjectService } from './../project/project.service';
-import { CartsService } from './../cart/carts.service';
+import { ProjectService } from '../project.service';
+import { CartsService } from '../../cart/carts.service';
 import { CommoditiesService } from './commodities.service';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -21,7 +21,6 @@ export class CommodityComponent implements OnInit {
   percentage: any;
 
   comment = {
-    username: '',
     project_id: Number,
     rating: Number,
     comment: '',
@@ -92,15 +91,23 @@ export class CommodityComponent implements OnInit {
   }
 
   createComment() {
-    this.authService.createComment(this.comment);
-    window.location.reload();
+    if (this.authService.isLogin()) {
+      this.authService.createComment(this.comment);
+      window.location.reload();
+    } else {
+      alert('請先登入');
+    }
   }
 
   orderFeedback(event) {
-    if (confirm('確定加入購物車?')) {
-      this.feedback.feedback_id = event.id;
-      console.log(this.feedback);
-      this.authService.orderFeedback(this.feedback);
+    if (this.authService.isLogin()) {
+      if (confirm('確定加入購物車?')) {
+        this.feedback.feedback_id = event.id;
+        console.log(this.feedback);
+        this.authService.orderFeedback(this.feedback);
+      }
+    } else {
+      alert('請先登入');
     }
   }
 }

@@ -7,33 +7,33 @@
           <h5>{{ '文藝' | translate }}</h5>
           <div class="cat_menu_line"></div>
             <ul class="cat_nav">
-              <li><a [routerLink]="['projects/categories', 1]" routerLinkActive="router-link-active">{{ '音樂' | translate }}</a></li>
-              <li><a [routerLink]="['projects/categories', 2]" routerLinkActive="router-link-active">{{ '攝影' | translate }}</a></li>
-              <li><a [routerLink]="['projects/categories', 3]" routerLinkActive="router-link-active">{{ '出版' | translate }}</a></li>
-              <li><a [routerLink]="['projects/categories', 4]" routerLinkActive="router-link-active">{{ '藝術' | translate }}</a></li>
-              <li><a [routerLink]="['projects/categories', 5]" routerLinkActive="router-link-active">{{ '設計' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 1]" routerLinkActive="router-link-active">{{ '音樂' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 2]" routerLinkActive="router-link-active">{{ '攝影' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 3]" routerLinkActive="router-link-active">{{ '出版' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 4]" routerLinkActive="router-link-active">{{ '藝術' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 5]" routerLinkActive="router-link-active">{{ '設計' | translate }}</a></li>
             </ul>
           </div>
           <div class="cat_middle">
             <h5>{{ '生活' | translate }}</h5>
             <div class="cat_menu_line"></div>
             <ul class="cat_nav">
-              <li><a [routerLink]="['projects/categories', 6]" routerLinkActive="router-link-active">{{ '飲食' | translate }}</a></li>
-              <li><a [routerLink]="['projects/categories', 7]" routerLinkActive="router-link-active">{{ '時尚' | translate }}</a></li>
-              <li><a [routerLink]="['projects/categories', 8]" routerLinkActive="router-link-active">{{ '教育' | translate }}</a></li>
-              <li><a [routerLink]="['projects/categories', 9]" routerLinkActive="router-link-active">{{ '科技' | translate }}</a></li>
-              <li><a [routerLink]="['projects/categories', 10]" routerLinkActive="router-link-active">{{ '社會' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 6]" routerLinkActive="router-link-active">{{ '飲食' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 7]" routerLinkActive="router-link-active">{{ '時尚' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 8]" routerLinkActive="router-link-active">{{ '教育' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 9]" routerLinkActive="router-link-active">{{ '科技' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 10]" routerLinkActive="router-link-active">{{ '社會' | translate }}</a></li>
             </ul>
           </div>
           <div class="cat_middle_right">
             <h5>{{ '娛樂' | translate }}</h5>
             <div class="cat_menu_line"></div>
             <ul class="cat_nav">
-              <li><a [routerLink]="['projects/categories', 11]" routerLinkActive="router-link-active">{{ '表演' | translate }}</a></li>
-              <li><a [routerLink]="['projects/categories', 12]" routerLinkActive="router-link-active">{{ '遊戲' | translate }}</a></li>
-              <li><a [routerLink]="['projects/categories', 13]" routerLinkActive="router-link-active">{{ '地方創生' | translate }}</a></li>
-              <li><a [routerLink]="['projects/categories', 14]" routerLinkActive="router-link-active">{{ '電影動畫' | translate }}</a></li>
-              <li><a [routerLink]="['projects/categories', 15]" routerLinkActive="router-link-active">{{ '插畫漫畫' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 11]" routerLinkActive="router-link-active">{{ '表演' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 12]" routerLinkActive="router-link-active">{{ '遊戲' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 13]" routerLinkActive="router-link-active">{{ '地方創生' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 14]" routerLinkActive="router-link-active">{{ '電影動畫' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 15]" routerLinkActive="router-link-active">{{ '插畫漫畫' | translate }}</a></li>
             </ul>
         </div>
       </div>
@@ -42,14 +42,14 @@
       <nav class="mainmenu">
         <ul id="nav">
           <!--問: 顯示當前頁面的做法-->
-          <li [ngClass] = "{'current-page-item': pathUrl !== '/create' && pathUrl !== '/projects' }">
-            <a [routerLink]="['/']" routerLinkActive="router-link-active" (click)="check()" >{{ 'home' | translate }}</a>
+          <li routerLinkActive="current-page-item" [routerLinkActiveOptions]="{exact: true}" >
+            <a [routerLink]="['/']" >{{ 'home' | translate }}</a>
           </li>
-          <li [ngClass]="{'current-page-item': pathUrl === '/create' }">
-            <a [routerLink]="['/create']" routerLinkActive="router-link-active" (click)="check()">{{ '提案' | translate }}</a>
+          <li routerLinkActive="current-page-item">
+            <a [routerLink]="['/create']" >{{ '提案' | translate }}</a>
         </li>
-          <li [ngClass]="{ 'current-page-item': pathUrl === '/projects' }">
-            <a [routerLink]="['/projects/index']" routerLinkActive="router-link-active" (click)="check()">{{ '探索' | translate }}</a>
+          <li routerLinkActive="current-page-item">
+            <a [routerLink]="['/projects']" >{{ '探索' | translate }}</a>
             <!--<ul id="sub-menu7">
                 <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '所有計畫' | translate }}</a></li>
                 <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '最後衝刺' | translate }}</a></li>
@@ -67,35 +67,33 @@
           {{'我要贊助' | translate}}</a>
       </div>
     </span>
-    <!--問杰仕: 購物車項目總數的變數
-      價錢的變數是哪個{{pitem?.feedbackdes}} ${{pitem?.feedbackprice}}-->
     <span [hidden]="!isLogin">
       <div class="nav_right floatright">
-        <a [routerLink]="['/cart']" routerLinkActive="router-link-active">
+        <a [routerLink]="['/cart']" routerLinkActive="router-link-active" >
           <img src="assets/images/bag.png" alt="Bag" />
-          {{'我要贊助' | translate}} 2 {{'贊助計畫' | translate}}</a>
+            {{'我要贊助' | translate}} {{count}} {{'贊助計畫' | translate}}
+        </a>
         <div class="cart_menu">
 
-        <ng-container *ngFor="let pitem of projectlist;">
-          <div class="cart_items">
-            <div class="c_item_img floatleft">
-              <a [routerLink]="['/cart']" routerLinkActive="router-link-active">
-                <img src= {{pitem.img_path}} alt="" /></a>
-            </div>
-            <div class="c_item_totals floatleft">
-              <div class="c_item_totals_detail floatleft">
-                <!-- TODO:設定路由 -->
+          <ng-container *ngFor="let pitem of projectlist;">
+            <div class="cart_items">
+              <div class="c_item_img floatleft">
                 <a [routerLink]="['/cart']" routerLinkActive="router-link-active">
-                  <h5>{{pitem.name}}</h5>
-                </a>
-                <span>$ {{pitem?.feedbackprice}}</span>
+                  <img src= {{pitem.img_path}} alt="" /></a>
               </div>
-              <div class="close_icon_cart floatleft">
-                <img src="assets/images/close.png" alt="" />
+              <div class="c_item_totals floatleft">
+                <div class="c_item_totals_detail floatleft">
+                  <a [routerLink]="['/cart']" routerLinkActive="router-link-active">
+                    <h5>{{pitem?.name}}</h5>
+                  </a>
+                  <span>$ {{pitem?.feedbackprice}}</span>
+                </div>
+                <div class="close_icon_cart floatleft">
+                  <img src="assets/images/close.png" alt="" />
+                </div>
               </div>
             </div>
-          </div>
-        </ng-container>
+          </ng-container>
 
           <div class="cart_totals">
             <div class="c_totals_left floatleft">

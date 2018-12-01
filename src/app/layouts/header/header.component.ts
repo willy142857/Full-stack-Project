@@ -45,10 +45,10 @@ export class HeaderComponent implements OnInit {
 
   enter(event: KeyboardEvent) {
     if ( event.keyCode === 13 ) {
-      this.searchService.searchData.keyword = this.searchWord;
-      console.log(this.searchService.searchData.keyword);
+      // this.searchService.searchData.keyword = this.searchWord;
+      // console.log(this.searchService.searchData.keyword);
 
-      this.searchService.search(this.searchService.searchData.keyword);
+      // this.searchService.search(this.searchService.searchData.keyword);
       this.router.navigate(['/projects/search', this.searchWord]);
       this.searchWord = '';
     }

@@ -5,19 +5,34 @@ import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { AuthGuard } from '../auth/auth.guard';
 import { IndexComponent } from './index/index.component';
+import { CommodityComponent } from './commodity/commodity.component';
 
 const routes: Routes = [
   {
-    path: 'projects/index',
-    component: IndexComponent,
-  },
-  {
-    path: 'projects/categories/:id',
-    component: IndexComponent,
-  },
-  {
-    path: 'projects/search/:keyword',
-    component: IndexComponent,
+    path: 'projects',
+    children: [
+      {
+        path: '',
+        component: IndexComponent,
+      },
+      {
+        path: ':id',
+        component: CommodityComponent,
+      },
+      {
+        path: 'search',
+        children: [
+          {
+            path: 'categories/:id',
+            component: IndexComponent,
+          },
+          {
+            path: ':keyword',
+            component: IndexComponent,
+          },
+        ]
+      }
+    ]
   },
   {
     path: 'create',

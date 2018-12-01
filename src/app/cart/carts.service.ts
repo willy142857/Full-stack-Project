@@ -36,14 +36,14 @@ export class CartsService {
           }
         }
       );
-    this.initialFollowingProject();
-    this.totalCharge();
   }
 
   initialFollowingProject() {
-    for (let index = 0; index < this.followingProjectlist.length; index++) {
-      this.followingProjectlist[index].feedbackprice = this.followingFeedbacklist[index].price;
-      this.followingProjectlist[index].feedbackdes = this.followingFeedbacklist[index].description;
+    if (this.followingProjectlist !== undefined) {
+      for (let index = 0; index < this.followingProjectlist.length; index++) {
+        this.followingProjectlist[index].feedbackprice = this.followingFeedbacklist[index].price;
+        this.followingProjectlist[index].feedbackdes = this.followingFeedbacklist[index].description;
+      }
     }
   }
 
@@ -91,10 +91,11 @@ export class CartsService {
   }
 
   totalCharge() {
-    console.log(this.followingProjectlist.length);
-    this.totalmoney = 0;
-    for (let index = 0; index < this.followingFeedbacklist.length; index++) {
-      this.totalmoney = this.totalmoney + this.followingFeedbacklist[index].price;
+    if (this.followingFeedbacklist !== undefined) {
+      this.totalmoney = 0;
+      for (let index = 0; index < this.followingFeedbacklist.length; index++) {
+        this.totalmoney = this.totalmoney + this.followingFeedbacklist[index].price;
+      }
     }
   }
 }

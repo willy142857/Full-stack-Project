@@ -9,7 +9,6 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { AppComponent } from './app.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-import { CommodityComponent } from './commodity/commodity.component';
 
 import { SharedModule } from './shared/shared.module';
 import { LayoutsModule } from './layouts/layouts.module';
@@ -25,7 +24,6 @@ export function createTranslateLoader(http: HttpClient) {
   declarations: [
     AppComponent,
     CartComponent,
-    CommodityComponent,
     CheckoutComponent,
   ],
   imports: [

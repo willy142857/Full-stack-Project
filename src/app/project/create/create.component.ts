@@ -8,12 +8,6 @@ import { Project, Category, Feedback } from '../project';
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit {
-  feedback: Feedback = {
-    date: null,
-    price: null,
-    description: null
-  };
-
   // test data
   project: Project = {
     fundraiser: '約瑞柯文哲',
@@ -30,7 +24,7 @@ export class CreateComponent implements OnInit {
       「真像一塊塊綠豆糕。」一位外號叫「大食客」的同學緊接著說。\
       我們不禁哄堂大笑，同樣的一件衣料，每個人卻有不同的感覺。\
       那位朋友連忙把衣料用紙包好，她覺得衣料就是衣料，不是棋盤，也不是稿紙，更不是綠豆糕。',
-    feedbacks: [this.feedback],
+    feedbacks: [this.getNewProj()],
     img_path: null,
     relative_web: 'google.com',
   };
@@ -58,7 +52,16 @@ export class CreateComponent implements OnInit {
         console.log(data.feedbacks);
       });
   }
+
   addFeedback() {
-    this.project.feedbacks.push(this.feedback);
+    this.project.feedbacks.push(this.getNewProj());
+  }
+
+  getNewProj() {
+    return {
+      date: null,
+      price: null,
+      description: null
+    };
   }
 }
