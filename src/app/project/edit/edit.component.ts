@@ -13,6 +13,8 @@ export class EditComponent implements OnInit {
   project: Project;
   categories: Category[];
   feedbacks: Feedback[] = [];
+  img: any;
+
   constructor(
     private projectService: ProjectService,
     private router: Router,
@@ -28,6 +30,7 @@ export class EditComponent implements OnInit {
       this.id = params.id;
       this.projectService.getProject(this.id).subscribe((project: Project) => {
         this.project = project;
+        this.img = project.img_path;
       });
     });
   }
@@ -40,6 +43,18 @@ export class EditComponent implements OnInit {
     });
   }
 
+  readURL(input) {
+    if (input.target.files && input.target.files[0]) {
+      const reader = new FileReader();
+
+      reader.onload = e => {
+        this.img = reader.result;
+      };
+
+      reader.readAsDataURL(input.target.files[0]);
+      this.project.img_path = input.target.files[0];
+    }
+  }
   addFeedback() {
     this.project.feedbacks.push(this.getNewProj());
   }

@@ -30,7 +30,7 @@ export class CreateComponent implements OnInit {
     relative_web: 'google.com',
   };
   categories: Category[];
-
+  img: any;
   category = this.projectService.category;
   nowDate = new Date();
   constructor(private projectService: ProjectService, private router: Router) { }
@@ -52,6 +52,17 @@ export class CreateComponent implements OnInit {
         }
         console.log(data.feedbacks);
       });
+  }
+
+  readURL(input) {
+    if (input.target.files && input.target.files[0]) {
+      const reader = new FileReader();
+      reader.readAsDataURL(input.target.files[0]);
+      reader.onload = e => {
+        this.img = reader.result;
+        this.project.img_path = this.img;
+      };
+    }
   }
 
   addFeedback() {

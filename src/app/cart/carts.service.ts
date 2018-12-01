@@ -18,16 +18,12 @@ export class CartsService {
   followingFeedbacklist: Feedback[];
   user: Member;
 
-  order = {
-    project_id: Number,
-    feedback_id: Number,
-    address: ''
-  };
+  tempPro: any;
 
   getUserAllInfo() {
-    this.followingProjectlist = JSON.parse(
-      localStorage.getItem(localStorage.getItem('token'))
-    );
+    this.tempPro = localStorage.getItem('data');
+    this.followingProjectlist = JSON.parse(this.tempPro);
+    console.log(this.followingProjectlist);
   }
 
   getUserAllInfoOld() {

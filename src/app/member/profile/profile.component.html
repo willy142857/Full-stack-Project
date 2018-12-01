@@ -170,6 +170,8 @@
               <div class="p_name">{{ project.name }}</div>
               <div class="p_founder">{{ project.fundraiser }}</div>
               <div class="p_dsp">{{ project.brief }}</div>
+              <img style="cursor:pointer" src="assets/images/cog.png" alt="" [routerLink]="['/project',project.id,'edit']"
+                  routerLinkActive="router-link-active">
               <svg width="350">
                 <line x1="0" y1="0" x2="350" y2="0" fill="none" stroke-width="3" stroke="#cccccc" />
                 <line x1="0" y1="0" x2="350" y2="0" fill="none" stroke-width="3" stroke-linecap="round"

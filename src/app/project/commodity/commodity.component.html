@@ -154,7 +154,7 @@
               <div>
                 <ng-container *ngFor="let feedback of list.feedbacks; let i = index;">
                   <div>
-                    <form (submit)="orderFeedback(feedback)">
+                    <form>
                       <div class="item">
                         <div>
                           <h3> {{ '計畫.方案' | translate }}{{i+1}}：</h3>
@@ -169,7 +169,7 @@
                           </span>
                           </div>
                           <div class="invest_button">
-                            <input type="submit" value=" {{ '贊助計畫' | translate }}">
+                            <input type="button" value=" {{ '計畫.贊助計畫' | translate }}" (click)="orderFeedback(feedback)">
                           </div>
                         </div>
                       </div>
