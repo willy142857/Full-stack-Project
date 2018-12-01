@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from 'src/app/project/project.service';
 import { Project } from 'src/app/project/project';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-home-trending',
@@ -29,8 +30,6 @@ export class TrendingComponent implements OnInit {
 
   // 計算剩餘日期
   leftDay(project: Project): number {
-    const end = new Date(project.ended_at);
-    const start = new Date(project.started_at);
-    return (end.getTime() - start.getTime()) / 1000 / 60 / 60 / 24;
+    return this.projectService.calcLeftDay(project);
   }
 }

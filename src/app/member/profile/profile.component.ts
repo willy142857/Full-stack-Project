@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { Member } from '../member';
 import { Route, RouterEvent, Router } from '@angular/router';
 import { Project } from 'src/app/project/project';
+import { ProjectService } from 'src/app/project/project.service';
 
 @Component({
   selector: 'app-profile',
@@ -12,7 +13,8 @@ import { Project } from 'src/app/project/project';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  constructor(private httpClient: HttpClient, private router: Router) {}
+  constructor(private httpClient: HttpClient, private router: Router,
+    private projectService: ProjectService) {}
 
   dasharray = 350;
   user: Member;
@@ -44,9 +46,7 @@ export class ProfileComponent implements OnInit {
   }
 
   leftDay(project: Project): number {
-    const end = new Date(project.ended_at);
-    const start = new Date(project.started_at);
-    return Math.floor((end.getTime() - start.getTime()) / 1000 / 60 / 60 / 24);
+    return this.projectService.calcLeftDay(project);
   }
 
   onSubmit(form) {
