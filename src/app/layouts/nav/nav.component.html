@@ -42,14 +42,14 @@
       <nav class="mainmenu">
         <ul id="nav">
           <!--問: 顯示當前頁面的做法-->
-          <li [ngClass] = "{'current-page-item': pathUrl !== '/create' && pathUrl !== '/projects' }">
-            <a [routerLink]="['/']" routerLinkActive="router-link-active" (click)="check()" >{{ 'home' | translate }}</a>
+          <li routerLinkActive="current-page-item" [routerLinkActiveOptions]="{exact: true}" >
+            <a [routerLink]="['/']" >{{ 'home' | translate }}</a>
           </li>
-          <li [ngClass]="{'current-page-item': pathUrl === '/create' }">
-            <a [routerLink]="['/create']" routerLinkActive="router-link-active" (click)="check()">{{ '提案' | translate }}</a>
+          <li routerLinkActive="current-page-item">
+            <a [routerLink]="['/create']" >{{ '提案' | translate }}</a>
         </li>
-          <li [ngClass]="{ 'current-page-item': pathUrl === '/projects' }">
-            <a [routerLink]="['/projects/index']" routerLinkActive="router-link-active" (click)="check()">{{ '探索' | translate }}</a>
+          <li routerLinkActive="current-page-item">
+            <a [routerLink]="['/projects']" >{{ '探索' | translate }}</a>
             <!--<ul id="sub-menu7">
                 <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '所有計畫' | translate }}</a></li>
                 <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '最後衝刺' | translate }}</a></li>
