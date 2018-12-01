@@ -14,7 +14,6 @@ export class CheckoutComponent implements OnInit {
   }
 
   get projectlist() {
-    console.log('checkout get');
     this.cartsservice.initialFollowingProject();
     this.cartsservice.totalCharge();
     return this.cartsservice.followingProjectlist;
