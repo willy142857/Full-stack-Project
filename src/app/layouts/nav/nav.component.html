@@ -42,14 +42,19 @@
       <nav class="mainmenu">
         <ul id="nav">
           <!--問: 顯示當前頁面的做法-->
-          <li>
-            <a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{'current-page-item': true}" >{{ 'home' | translate }}</a>
+          <li routerLinkActive="current-page-item" [routerLinkActiveOptions]="{exact: true}" >
+            <a [routerLink]="['/']" >{{ 'home' | translate }}</a>
           </li>
-          <li>
-            <a [routerLink]="['/create']" routerLinkActive="active" [routerLinkActiveOptions]="{'current-page-item': true}">{{ '提案' | translate }}</a>
+          <li routerLinkActive="current-page-item">
+            <a [routerLink]="['/create']" >{{ '提案' | translate }}</a>
         </li>
+<<<<<<< HEAD
           <li>
             <a [routerLink]="['/projects']" routerLinkActive="active" [routerLinkActiveOptions]="{'current-page-item': true}">{{ '探索' | translate }}</a>
+=======
+          <li routerLinkActive="current-page-item">
+            <a [routerLink]="['/projects']" >{{ '探索' | translate }}</a>
+>>>>>>> 7a8d86939b6ba8f610e6aa10433b534fcce44aac
             <!--<ul id="sub-menu7">
                 <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '所有計畫' | translate }}</a></li>
                 <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '最後衝刺' | translate }}</a></li>
@@ -71,9 +76,9 @@
       價錢的變數是哪個{{pitem?.feedbackdes}} ${{pitem?.feedbackprice}}-->
     <span [hidden]="!isLogin">
       <div class="nav_right floatright">
-        <a [routerLink]="['/cart']" routerLinkActive="router-link-active">
+        <a [routerLink]="['/cart']" routerLinkActive="router-link-active" >
           <img src="assets/images/bag.png" alt="Bag" />
-          {{'我要贊助' | translate}} 2 {{'贊助計畫' | translate}}</a>
+          {{'我要贊助' | translate}} {{count}} {{'贊助計畫' | translate}}</a>
         <div class="cart_menu">
 
           <ng-container *ngFor="let pitem of projectlist;">
@@ -87,7 +92,7 @@
                   <a [routerLink]="['/cart']" routerLinkActive="router-link-active">
                     <h5>{{pitem.name}}</h5>
                   </a>
-                  <span>$ {{pitem?.feedbackprice}}</span>
+                  <span>$ {{pitem.feedbackprice}}</span>
                 </div>
                 <div class="close_icon_cart floatleft">
                   <img src="assets/images/close.png" alt="" />
