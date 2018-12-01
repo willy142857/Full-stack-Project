@@ -27,7 +27,9 @@ export class NavComponent implements OnInit {
     return this.cartsservice.totalmoney;
   }
   get count() {
-    return this.projectlist.length;
+    if (this.projectlist.length !== undefined) {
+      return this.projectlist.length;
+    }
   }
 
   ngOnInit() {

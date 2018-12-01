@@ -12,6 +12,7 @@ export class CartComponent implements OnInit {
   }
 
   get projectlist() {
+    console.log('cart get');
     this.cartsservice.initialFollowingProject();
     this.cartsservice.totalCharge();
     return this.cartsservice.followingProjectlist;

@@ -48,13 +48,8 @@
           <li routerLinkActive="current-page-item">
             <a [routerLink]="['/create']" >{{ '提案' | translate }}</a>
         </li>
-<<<<<<< HEAD
-          <li>
-            <a [routerLink]="['/projects']" routerLinkActive="active" [routerLinkActiveOptions]="{'current-page-item': true}">{{ '探索' | translate }}</a>
-=======
           <li routerLinkActive="current-page-item">
             <a [routerLink]="['/projects']" >{{ '探索' | translate }}</a>
->>>>>>> 7a8d86939b6ba8f610e6aa10433b534fcce44aac
             <!--<ul id="sub-menu7">
                 <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '所有計畫' | translate }}</a></li>
                 <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '最後衝刺' | translate }}</a></li>
@@ -78,7 +73,7 @@
       <div class="nav_right floatright">
         <a [routerLink]="['/cart']" routerLinkActive="router-link-active" >
           <img src="assets/images/bag.png" alt="Bag" />
-          {{'我要贊助' | translate}} {{count}} {{'贊助計畫' | translate}}</a>
+          {{'我要贊助' | translate}}  {{'贊助計畫' | translate}}</a>
         <div class="cart_menu">
 
           <ng-container *ngFor="let pitem of projectlist;">
