@@ -22,13 +22,10 @@ export class NavComponent implements OnInit {
   current = {
     'current-page-item': false,
   };
-  count: any;
   totalmoney;
   projectlist: ProjectPlus[];
   ngOnInit() {
     scroll(0, 0);
-    this.checkLogin();
-    this.check();
   }
   check() {
     this.pathUrl = this.location.path(); // 獲取當前url的子路徑(也就是當前url#後面的内容,不包括参數)
@@ -43,6 +40,8 @@ export class NavComponent implements OnInit {
   }
 
   get isLogin() {
+    this.checkLogin();
+    this.check();
     return this.authService.isLogin();
   }
 
@@ -51,7 +50,6 @@ export class NavComponent implements OnInit {
       this.cartsservice.getUserAllInfo();
       this.projectlist = this.cartsservice.followingProjectlist;
       this.totalmoney = this.cartsservice.totalmoney;
-      this.count = this.projectlist.length;
     }
   }
 }
