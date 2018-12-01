@@ -36,16 +36,17 @@ export class IndexComponent implements OnInit {
         this.projects = this.originalProj;
         if (id) {
           this.filterProjects(id);
-        } else if (keyword) {
-          this.getSearch();
+        }
+        if (keyword) {
+          this.getSearch(keyword);
         }
       });
 
     });
   }
 
-  getSearch() {
-    this.projects = this.searchService.searchProjectsName;
+  getSearch(keyword: string) {
+    this.projects = this.projects.filter(project => project.name.indexOf(keyword) !== -1);
   }
 
   filterProjects(id: number) {

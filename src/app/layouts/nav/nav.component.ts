@@ -13,11 +13,7 @@ export class NavComponent implements OnInit {
     private authService: AuthService,
     private cartsservice: CartsService,
     ) { }
-  pathUrl;
-  routeUrl;
-  current = {
-    'current-page-item': false,
-  };
+
   get projectlist() {
     this.cartsservice.initialFollowingProject();
     this.cartsservice.totalCharge();
@@ -27,6 +23,7 @@ export class NavComponent implements OnInit {
     return this.cartsservice.totalmoney;
   }
   get count() {
+    // console.log(this.projectlist.length);
     return this.projectlist.length;
   }
 
