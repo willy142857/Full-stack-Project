@@ -7,15 +7,17 @@
 
         <div class="p_form">
           <form (ngSubmit)="form.form.valid&&onSubmit()" #form="ngForm">
-            <div class="form-group" [ngClass]="{'invalid': fundraiser.invalid&&form.submitted}">
-              <label for="fundraiser">{{ '計畫.提案人' | translate }} *</label>
-              <input type="text" id="fundraiser" placeholder="{{ '請輸入姓名' | translate }}" name="fundraiser"
-                maxlength="20" [(ngModel)]="project.fundraiser" #fundraiser="ngModel" disabled>
-            </div>
-            <div class="form-group" [ngClass]="{'invalid': email.invalid&&(email.dirty||form.submitted)}">
-              <label for="email">{{ '信箱' | translate }} *</label>
-              <input type="email" id="email" placeholder="{{ '請輸入信箱' | translate }}" name="email"
-                maxlength="60" [(ngModel)]="project.email" #email="ngModel" email required>
+            <div class="form-group">
+              <div class="form-control-left" [ngClass]="{'invalid': fundraiser.invalid&&form.submitted}">
+                <label for="fundraiser">{{ '計畫.提案人' | translate }} *</label>
+                <input type="text" id="fundraiser" placeholder="{{ '請輸入姓名' | translate }}" name="fundraiser"
+                  maxlength="20" [(ngModel)]="project.fundraiser" #fundraiser="ngModel" disabled>
+              </div>
+              <div class="form-control-right" [ngClass]="{'invalid': email.invalid&&(email.dirty||form.submitted)}">
+                <label for="email">{{ '信箱' | translate }} *</label>
+                <input type="email" id="email" placeholder="{{ '請輸入信箱' | translate }}" name="email"
+                  maxlength="60" [(ngModel)]="project.email" #email="ngModel" email required>
+              </div>
             </div>
             <div class="form-group">
               <div class="form-control-left" [ngClass]="{'invalid': startAt.invalid&&form.submitted}">
@@ -28,14 +30,6 @@
                 <input type="date" id="end_date" name="end_date" [(ngModel)]="project.ended_at"
                   #endAt="ngModel" disabled>
               </div>
-            </div>
-            <div class="form-group" [ngClass]="{'invalid': id.invalid&&form.submitted}">
-              <label for="category"> {{ '分類' | translate }}</label>
-              <select id="category" name="category" [(ngModel)]="project.category_id" required #id="ngModel">
-                <option *ngFor="let category of categories" [value]="category.id">
-                  {{ category.category | translate }}
-                </option>
-              </select>
             </div>
             <div class="form-group" [ngClass]="{'invalid': name.invalid&&form.submitted}">
               <label for="name">{{ '計畫.名稱' | translate }} *</label>
@@ -51,16 +45,26 @@
                   <span class="input-group-addon">NTD</span>
                 </div>
               </div>
+              <div class="form-control-right" [ngClass]="{'invalid': id.invalid&&form.submitted}">
+                <label for="category"> {{ '分類' | translate }}</label>
+                <select id="category" name="category" [(ngModel)]="project.category_id" required
+                  #id="ngModel">
+                  <option *ngFor="let category of categories" [value]="category.id">
+                    {{ category.category | translate }}
+                  </option>
+                </select>
+              </div>
             </div>
             <div class="form-group" [ngClass]="{'invalid': brief.invalid&&form.submitted}">
               <label for="brief">{{ '計畫.簡介' | translate }} *</label>
               <input type="text" id="brief" placeholder="{{ '請輸入簡介' | translate }}" name="brief"
                 [(ngModel)]="project.brief" #brief="ngModel" required>
             </div>
-            <div class="form-group" [ngClass]="{'invalid': img.invalid&&form.submitted}">
+            <div class="form-group" [ngClass]="{'invalid': img==undefined&&form.submitted}">
               <label for="cover">{{ '計畫.封面照片' | translate }} *</label>
-              <input type="file" id="cover" name="file" [(ngModel)]="project.img_path" #img="ngModel"
-                required>
+              <input type="file" (change)="readURL($event)" accept="image/gif, image/jpeg, image/png"
+                enctype="multipart/form-data" required>
+              <img *ngIf="img!=undefined" [src]="img" style="width:50%; height: 50%; overflow:scroll">
             </div>
             <div class="s_order form-group" [ngClass]="{'invalid': dsp.invalid&&form.submitted}">
               <label for="br">{{ '計畫.說明' | translate }} *</label>
