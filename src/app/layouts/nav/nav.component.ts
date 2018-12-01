@@ -41,7 +41,6 @@ export class NavComponent implements OnInit {
 
   get isLogin() {
     this.checkLogin();
-    this.check();
     return this.authService.isLogin();
   }
 
