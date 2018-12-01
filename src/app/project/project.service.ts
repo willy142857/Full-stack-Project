@@ -63,6 +63,8 @@ export class ProjectService {
   calcLeftDay(project: Project): number {
     const end = new Date(project.ended_at);
     const start = new Date(project.started_at);
-    return Math.floor((end.getTime() - start.getTime()) / 1000 / 60 / 60 / 24);
+    const now = new Date;
+
+    return Math.ceil((end.getTime() - now.getTime()) / 1000 / 60 / 60 / 24);
   }
 }
