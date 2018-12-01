@@ -23,12 +23,14 @@ export class NavComponent implements OnInit {
     return this.cartsservice.totalmoney;
   }
   get count() {
-    // console.log(this.projectlist.length);
-    return this.projectlist.length;
+    if (this.projectlist.length !== undefined) {
+      return this.projectlist.length;
+    }
   }
 
   ngOnInit() {
     scroll(0, 0);
+    this.checkLogin();
   }
 
   get isLogin() {

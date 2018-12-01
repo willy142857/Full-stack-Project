@@ -22,7 +22,6 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {
     scroll(0, 0);
-    console.log(this.projectlist);
   }
 
   buttomClickMinus(index) {
