@@ -17,7 +17,17 @@ export class CartsService {
   followingFeedbacklist: Feedback[];
   user: Member;
 
+  order = {
+    project_id: Number,
+    feedback_id: Number,
+    address: '',
+  };
+
   getUserAllInfo() {
+    this.followingProjectlist = JSON.parse(localStorage.getItem(localStorage.getItem('token')));
+  }
+
+  getUserAllInfoOld() {
     this.httpClient
       .get(`${environment.api}/profile`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
@@ -91,10 +101,10 @@ export class CartsService {
   }
 
   totalCharge() {
-    if (this.followingFeedbacklist !== undefined) {
+    if (this.followingProjectlist !== undefined) {
       this.totalmoney = 0;
-      for (let index = 0; index < this.followingFeedbacklist.length; index++) {
-        this.totalmoney = this.totalmoney + this.followingFeedbacklist[index].price;
+      for (let index = 0; index < this.followingProjectlist.length; index++) {
+        this.totalmoney = this.totalmoney + this.followingProjectlist[index].feedbackprice;
       }
     }
   }

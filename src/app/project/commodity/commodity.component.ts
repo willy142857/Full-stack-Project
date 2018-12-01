@@ -1,6 +1,6 @@
 import { AuthService } from 'src/app/auth/auth.service';
 import { ActivatedRoute } from '@angular/router';
-import { Project, Comment} from 'src/app/project/project';
+import { Project, Comment, ProjectPlus} from 'src/app/project/project';
 import { ProjectService } from '../project.service';
 import { CartsService } from '../../cart/carts.service';
 import { CommoditiesService } from './commodities.service';
@@ -30,6 +30,9 @@ export class CommodityComponent implements OnInit {
     feedback_id: Number,
     project_id: Number,
   };
+
+  followingProjects: ProjectPlus;
+  followingProjectsInfo: any;
 
   get messages() {
     return this.commoditiesService.messages;
@@ -103,8 +106,13 @@ export class CommodityComponent implements OnInit {
     if (this.authService.isLogin()) {
       if (confirm('確定加入購物車?')) {
         this.feedback.feedback_id = event.id;
-        console.log(this.feedback);
-        this.authService.orderFeedback(this.feedback);
+
+        this.followingProjectsInfo = JSON.stringify(this.followingProjects);
+        localStorage.setItem(localStorage.getItem('token'), this.followingProjectsInfo);
+
+        // this.feedback.feedback_id = event.id;
+        // console.log(this.feedback);
+        // this.authService.orderFeedback(this.feedback);
       }
     } else {
       alert('請先登入');

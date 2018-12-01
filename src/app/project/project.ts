@@ -61,6 +61,7 @@ export interface ProjectPlus {
   relative_web: string;
   created_at?: string;
   updated_at?: string;
+  feedbackid?: number;
   feedbackdes?: string;
   feedbackprice?: number;
 }
