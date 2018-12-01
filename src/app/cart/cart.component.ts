@@ -7,9 +7,7 @@ import { CartsService } from './carts.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  constructor(private cartsservice: CartsService) {
-    this.cartsservice.getUserAllInfo();
-  }
+  constructor(private cartsservice: CartsService) { }
 
   get projectlist() {
     // this.cartsservice.initialFollowingProject();
@@ -22,6 +20,7 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {
     scroll(0, 0);
+    this.cartsservice.getUserAllInfo();
   }
 
   buttomClickMinus(index) {

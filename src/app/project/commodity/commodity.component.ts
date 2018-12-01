@@ -92,6 +92,8 @@ export class CommodityComponent implements OnInit {
         console.log(this.list);
       });
     });
+    this.cartsservice.getUserAllInfo();
+    this.followingProjects = this.cartsservice.followingProjectlist;
   }
 
   createComment() {
