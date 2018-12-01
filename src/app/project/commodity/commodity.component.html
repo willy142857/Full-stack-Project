@@ -43,14 +43,14 @@
               <div class="product_detail_heading">
                 <div class="detail_heading_left">
                   <div>
-                    <h3>{{list?.name}}</h3>
+                    <h3>{{list?.name | translate}}</h3>
                     <br>
-                    <h5>by {{list?.fundraiser}}</h5>
+                    <h5>by {{list?.fundraiser | translate}}</h5>
                   </div>
                 </div><br>
                 <div class="detail_heading_left">
                   <div>
-                    類別： {{ list?.category_name }}
+                    {{ 'category' | translate }}： {{ list?.category_name | translate}}
                   </div>
                 </div>
               </div>
@@ -60,14 +60,14 @@
                     <h4 class="panel-title product_accordion_head">
                       <a data-toggle="collapse" data-parent="#home-accordion-single" href="#collapseOneP" aria-expanded="true"
                         aria-controls="collapseOneP">
-                        簡介
+                        {{ '計畫.簡介' | translate }}
                         <span class="floatright"><i class="fa fa-minus"></i></span>
                       </a>
                     </h4>
                   </div>
                   <div id="collapseOneP" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOneP">
                     <div class="panel-body product_ac_body">
-                      <p>{{list?.brief}}</p>
+                      <p>{{list?.brief | translate}}</p>
                     </div>
                   </div>
                 </div>
@@ -76,7 +76,7 @@
                     <h4 class="panel-title product_accordion_head">
                       <a class="collapsed" data-toggle="collapse" data-parent="#home-accordion-single" href="#collapseTwoP"
                         aria-expanded="false" aria-controls="collapseTwoP">
-                        募資狀況
+                        {{'計畫.募資狀況' | translate }}
                         <span class="floatright"><i class="fa fa-plus"></i></span>
                       </a>
                     </h4>
@@ -89,8 +89,8 @@
                         </div>
                       </div>
                       <div class="panel-body fit">
-                        已募資金額：{{list?.curr_amount}}
-                        <br>目標金額：{{list?.goal_amount}}
+                        {{ '計畫.已募資金額' | translate }}：{{list?.curr_amount}}
+                        <br> {{ '計畫.目標金額' | translate }}：{{list?.goal_amount}}
                       </div>
                     </div>
                   </div>
@@ -100,7 +100,7 @@
                     <h4 class="panel-title product_accordion_head">
                       <a class="collapsed" data-toggle="collapse" data-parent="#home-accordion-single" href="#collapseThreeP"
                         aria-expanded="false" aria-controls="collapseThreeP">
-                        詳細資料
+                        {{ '計畫.詳細資料' | translate }}
                         <span class="floatright"><i class="fa fa-plus"></i></span>
                       </a>
                     </h4>
@@ -109,23 +109,23 @@
                     <div class="panel-body product_accordion_head">
                       <div class="single_color sp_single_col">
                         <div class="color_heading">
-                          <h5>贊助人數：{{list?.backer}}人</h5>
+                          <h5> {{ '計畫.贊助人數' | translate }}：{{list?.backer}}人</h5>
                         </div>
                       </div>
                       <div class="single_color">
                         <div class="color_heading">
-                          <h5>剩餘時間：{{date()}}天</h5>
+                          <h5> {{ '計畫.剩餘時間' | translate }}：{{date()}} {{ '計畫.天' | translate }}</h5>
                         </div>
                       </div>
                       <div class="single_color">
                         <div class="color_heading" width="400" >
-                          <h5>時程：<br>{{list?.started_at | date:'y/MM/d' }} ~ {{list?.ended_at | date:'y/MM/d' }}</h5>
+                          <h5> {{ '計畫.時程' | translate }}：<br>{{list?.started_at | date:'y/MM/d' }} ~ {{list?.ended_at | date:'y/MM/d' }}</h5>
                         </div>
                       </div>
 
                       <div class="single_color">
                         <div class="color_heading">
-                          <h5>聯絡信箱：{{list?.email}}</h5>
+                          <h5> {{ '計畫.聯絡信箱' | translate }}：{{list?.email}}</h5>
                         </div>
                       </div>
 
@@ -147,7 +147,7 @@
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="main_category_right product-box">
-          <h2 class="product">贊助計畫方案</h2>
+          <h2 class="product"> {{ '計畫.贊助計畫方案' | translate }}</h2>
           <div class="multi_line_long"></div>
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
@@ -157,19 +157,19 @@
                     <form (submit)="orderFeedback(feedback)">
                       <div class="item">
                         <div>
-                          <h3>方案{{i+1}}：</h3>
+                          <h3> {{ '計畫.方案' | translate }}{{i+1}}：</h3>
                         </div>
                         <div class="multi_lines_text">
                          <span style="font-size: 24px">{{feedback.description}}</span>
                           <div>
                             <span class="feedback_color">
-                            已贊助人數：{{feedback.backer}}<br>
-                            到期日期：{{feedback.date}}<br>
-                            贊助金額: {{feedback.price}}
+                              {{ '計畫.贊助人數' | translate }}：{{feedback.backer}}<br>
+                              {{ '計畫.到期日期' | translate }}：{{feedback.date}}<br>
+                              {{ '計畫.贊助金額' | translate }}: {{feedback.price}}
                           </span>
                           </div>
                           <div class="invest_button">
-                            <input type="submit" value="贊助計畫">
+                            <input type="submit" value=" {{ '贊助計畫' | translate }}">
                           </div>
                         </div>
                       </div>
@@ -193,13 +193,13 @@
         <div class="product_page_tab">
           <div role="tabpanel">
             <ul class="nav nav-tabs tab-product" role="tablist">
-              <li role="presentation" class="active"><a href="#home2" aria-controls="home2" role="tab" data-toggle="tab">商品描述</a></li>
-              <li role="presentation"><a href="#messages2" aria-controls="messages2" role="tab" data-toggle="tab">留言板</a></li>
+              <li role="presentation" class="active"><a href="#home2" aria-controls="home2" role="tab" data-toggle="tab"> {{ '計畫.商品描述' | translate }}</a></li>
+              <li role="presentation"><a href="#messages2" aria-controls="messages2" role="tab" data-toggle="tab"> {{ '計畫.留言板' | translate }}</a></li>
             </ul>
 
             <div class="tab-content tab-p-details">
               <div role="tabpanel" class="tab-pane active" id="home2">
-                <h2>商品描述</h2>
+                <h2> {{ '計畫.商品描述' | translate }}</h2>
                 <div class="multi_line"></div>
                 <p>
                   {{list.description}}
@@ -209,7 +209,7 @@
                 <div class="review_comments">
                   <div class="review_heading">
                     <div class="review_heading_left">
-                      <h2><span>留言</span></h2>
+                      <h2><span> {{ '計畫.留言' | translate }}</span></h2>
                       <div class="multi_line"></div>
                     </div>
                   </div>
@@ -235,7 +235,7 @@
                   </ng-container>
                   <div class="Review_input">
                     <div class="review_input_heading">
-                      <h3>Write your review</h3>
+                      <h3> {{ '計畫.留言' | translate }}</h3>
                       <div class="multi_line"></div>
                     </div>
                     <form>
@@ -249,9 +249,9 @@
                       <div class="review_comment">
                         <!-- <input type="text" placeholder="Enter Your Nickname" [(ngModel)]="comment.username" name="userName" /><br> -->
                         <!-- <input type="text" placeholder="Summary of your Review" /><br> -->
-                        <textarea name="" id="" cols="30" rows="10" placeholder="Write your review" [(ngModel)]="comment.comment" name="comment"></textarea><br>
+                        <textarea name="" id="" cols="30" rows="10" placeholder=" {{ '計畫.寫下留言' | translate }}" [(ngModel)]="comment.comment" name="comment"></textarea><br>
                         <div class="message_button">
-                          <input type="button" value="Submit Review" (click)="createComment()"/>
+                          <input type="button" value="{{'計畫.留言評論' | translate}}" (click)="createComment()"/>
                         </div>
                       </div>
                     </form>
