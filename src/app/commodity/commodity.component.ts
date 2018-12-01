@@ -21,6 +21,7 @@ export class CommodityComponent implements OnInit {
   percentage: any;
 
   comment = {
+    username: '',
     project_id: Number,
     rating: Number,
     comment: '',
@@ -91,23 +92,15 @@ export class CommodityComponent implements OnInit {
   }
 
   createComment() {
-    if (this.authService.isLogin()) {
-      this.authService.createComment(this.comment);
-      window.location.reload();
-    } else {
-      alert('請先登入');
-    }
+    this.authService.createComment(this.comment);
+    window.location.reload();
   }
 
   orderFeedback(event) {
-    if (this.authService.isLogin()) {
-      if (confirm('確定加入購物車?')) {
-        this.feedback.feedback_id = event.id;
-        console.log(this.feedback);
-        this.authService.orderFeedback(this.feedback);
-      }
-    } else {
-      alert('請先登入');
+    if (confirm('確定加入購物車?')) {
+      this.feedback.feedback_id = event.id;
+      console.log(this.feedback);
+      this.authService.orderFeedback(this.feedback);
     }
   }
 }
