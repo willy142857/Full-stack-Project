@@ -23,8 +23,8 @@ export class NavComponent implements OnInit {
     return this.cartsservice.totalmoney;
   }
   get count() {
-    if (this.projectlist.length !== undefined) {
-      return this.projectlist.length;
+    if (this.cartsservice.followingProjectlist !== undefined) {
+      return this.cartsservice.followingProjectlist.length;
     }
   }
 
