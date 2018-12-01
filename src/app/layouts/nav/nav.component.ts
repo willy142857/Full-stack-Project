@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common' ;
-import { ActivatedRoute } from '@angular/router';
 import { CartsService } from 'src/app/cart/carts.service';
 import { AuthService } from 'src/app/auth/auth.service';
 
@@ -12,8 +10,6 @@ import { AuthService } from 'src/app/auth/auth.service';
 export class NavComponent implements OnInit {
   constructor(
     private authService: AuthService,
-    private location: Location,
-    private route: ActivatedRoute,
     private cartsservice: CartsService,
     ) { }
   pathUrl;
