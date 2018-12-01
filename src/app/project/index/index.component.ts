@@ -23,7 +23,7 @@ export class IndexComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      const id = params.id;
+      const id = +params.id;
       const keyword = params.keyword;
 
       this.projectService.getCategories().
