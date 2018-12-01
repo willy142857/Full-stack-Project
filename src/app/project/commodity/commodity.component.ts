@@ -92,6 +92,10 @@ export class CommodityComponent implements OnInit {
         console.log(this.list);
       });
     });
+    this.cartsservice.getUserAllInfo();
+    if (this.cartsservice.followingProjectlist !== null) {
+      this.followingProjects = this.cartsservice.followingProjectlist;
+    }
   }
 
   createComment() {
@@ -110,12 +114,10 @@ export class CommodityComponent implements OnInit {
         this.tempPro.feedbackid = event.id;
         this.tempPro.feedbackdes = event.description;
         this.tempPro.feedbackprice = event.price;
-        console.log(this.tempPro);
         this.followingProjects.push(this.tempPro);
-        console.log(this.followingProjects);
         this.followingProjectsInfo = JSON.stringify(this.followingProjects);
         localStorage.setItem('data', this.followingProjectsInfo);
-
+        this.cartsservice.getUserAllInfo();
         // this.feedback.feedback_id = event.id;
         // console.log(this.feedback);
         // this.authService.orderFeedback(this.feedback);
