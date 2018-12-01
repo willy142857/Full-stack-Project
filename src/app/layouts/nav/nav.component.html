@@ -7,41 +7,42 @@
           <h5>{{ '文藝' | translate }}</h5>
           <div class="cat_menu_line"></div>
             <ul class="cat_nav">
-              <li><a [routerLink]="[searchCatUrl, 1]" routerLinkActive="router-link-active">{{ '音樂' | translate }}</a></li>
-              <li><a [routerLink]="[searchCatUrl, 2]" routerLinkActive="router-link-active">{{ '攝影' | translate }}</a></li>
-              <li><a [routerLink]="[searchCatUrl, 3]" routerLinkActive="router-link-active">{{ '出版' | translate }}</a></li>
-              <li><a [routerLink]="[searchCatUrl, 4]" routerLinkActive="router-link-active">{{ '藝術' | translate }}</a></li>
-              <li><a [routerLink]="[searchCatUrl, 5]" routerLinkActive="router-link-active">{{ '設計' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 1]" >{{ '音樂' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 2]" >{{ '攝影' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 3]" >{{ '出版' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 4]" >{{ '藝術' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 5]" >{{ '設計' | translate }}</a></li>
             </ul>
           </div>
           <div class="cat_middle">
             <h5>{{ '生活' | translate }}</h5>
             <div class="cat_menu_line"></div>
             <ul class="cat_nav">
-              <li><a [routerLink]="[searchCatUrl, 6]" routerLinkActive="router-link-active">{{ '飲食' | translate }}</a></li>
-              <li><a [routerLink]="[searchCatUrl, 7]" routerLinkActive="router-link-active">{{ '時尚' | translate }}</a></li>
-              <li><a [routerLink]="[searchCatUrl, 8]" routerLinkActive="router-link-active">{{ '教育' | translate }}</a></li>
-              <li><a [routerLink]="[searchCatUrl, 9]" routerLinkActive="router-link-active">{{ '科技' | translate }}</a></li>
-              <li><a [routerLink]="[searchCatUrl, 10]" routerLinkActive="router-link-active">{{ '社會' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 6]" >{{ '飲食' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 7]" >{{ '時尚' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 8]" >{{ '教育' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 9]" >{{ '科技' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 10]" >{{ '社會' | translate }}</a></li>
             </ul>
           </div>
           <div class="cat_middle_right">
             <h5>{{ '娛樂' | translate }}</h5>
             <div class="cat_menu_line"></div>
             <ul class="cat_nav">
-              <li><a [routerLink]="[searchCatUrl, 11]" routerLinkActive="router-link-active">{{ '表演' | translate }}</a></li>
-              <li><a [routerLink]="[searchCatUrl, 12]" routerLinkActive="router-link-active">{{ '遊戲' | translate }}</a></li>
-              <li><a [routerLink]="[searchCatUrl, 13]" routerLinkActive="router-link-active">{{ '地方創生' | translate }}</a></li>
-              <li><a [routerLink]="[searchCatUrl, 14]" routerLinkActive="router-link-active">{{ '電影動畫' | translate }}</a></li>
-              <li><a [routerLink]="[searchCatUrl, 15]" routerLinkActive="router-link-active">{{ '插畫漫畫' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 11]" >{{ '表演' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 12]" >{{ '遊戲' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 13]" >{{ '地方創生' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 14]" >{{ '電影動畫' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 15]" >{{ '插畫漫畫' | translate }}</a></li>
+              <li><br></li>
             </ul>
-        </div>
+          </div>
+
       </div>
     </div>
     <div class="nav_center">
       <nav class="mainmenu">
         <ul id="nav">
-          <!--問: 顯示當前頁面的做法-->
           <li routerLinkActive="current-page-item" [routerLinkActiveOptions]="{exact: true}" >
             <a [routerLink]="['/']" >{{ 'home' | translate }}</a>
           </li>
@@ -50,11 +51,6 @@
         </li>
           <li routerLinkActive="current-page-item">
             <a [routerLink]="['/projects']" >{{ '探索' | translate }}</a>
-            <!--<ul id="sub-menu7">
-                <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '所有計畫' | translate }}</a></li>
-                <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '最後衝刺' | translate }}</a></li>
-                <li><a [routerLink]="['/']" routerLinkActive="router-link-active">{{ '最新啟動' | translate }}</a></li>
-            </ul>-->
           </li>
 
         </ul>
@@ -62,14 +58,14 @@
     </div>
     <span [hidden]="isLogin">
       <div class="nav_right floatright">
-        <a [routerLink]="['/login']" routerLinkActive="router-link-active">
+        <a [routerLink]="['/login']" >
           <img src="assets/images/bag.png" alt="Bag" />
           {{'我要贊助' | translate}}</a>
       </div>
     </span>
     <span [hidden]="!isLogin">
       <div class="nav_right floatright">
-        <a [routerLink]="['/cart']" routerLinkActive="router-link-active" >
+        <a [routerLink]="['/cart']"  >
           <img src="assets/images/bag.png" alt="Bag" />
             {{'我要贊助' | translate}} {{count}} {{'贊助計畫' | translate}}
         </a>
@@ -78,12 +74,12 @@
           <ng-container *ngFor="let pitem of projectlist;">
             <div class="cart_items">
               <div class="c_item_img floatleft">
-                <a [routerLink]="['/cart']" routerLinkActive="router-link-active">
+                <a [routerLink]="['/cart']" >
                   <img src= {{pitem.img_path}} alt="" /></a>
               </div>
               <div class="c_item_totals floatleft">
                 <div class="c_item_totals_detail floatleft">
-                  <a [routerLink]="['/cart']" routerLinkActive="router-link-active">
+                  <a [routerLink]="['/cart']" >
                     <h5>{{pitem?.name}}</h5>
                   </a>
                   <span>$ {{pitem?.feedbackprice}}</span>
@@ -120,57 +116,57 @@
     <!-- MOBILE ONLY CONTENT -->
     <div class="only-for-mobile">
       <ul class="ofm">
-        <li class="m_nav"><i class="fa fa-bars"></i> Navigation</li>
+        <li class="m_nav"><i class="fa fa-bars"></i> {{ 'menu' | translate }}</li>
       </ul>
 
       <!-- MOBILE MENU -->
       <div class="mobi-menu">
         <div id='cssmenu'>
           <ul>
-            <li class='has-sub'>
-              <a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ 'Home' | translate }}</span></a>
-
+            <li>
+              <a [routerLink]="['/']" >
+                <span>{{ 'home' | translate }}</span></a>
             </li>
             <li class='has-sub'>
-              <a href='category-1.html'><span>{{ 'category' | translate }}</span></a>
+              <a><span>{{ 'category' | translate }}</span></a>
               <ul>
                 <li class='has-sub'>
-                  <a href='#'><span>{{ '文藝' | translate }}</span></a>
+                  <a><span>{{ '文藝' | translate }}</span></a>
                   <ul>
-                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '音樂' | translate }}</span></a></li>
-                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '攝影' | translate }}</span></a></li>
-                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '出版' | translate }}</span></a></li>
-                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '藝術' | translate }}</span></a></li>
-                      <li class='last'><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '設計' | translate }}</span></a></li>
+                      <li><a [routerLink]="['searchCatUrl, 1']" ><span>{{ '音樂' | translate }}</span></a></li>
+                      <li><a [routerLink]="['searchCatUrl, 2']" ><span>{{ '攝影' | translate }}</span></a></li>
+                      <li><a [routerLink]="['searchCatUrl, 3']" ><span>{{ '出版' | translate }}</span></a></li>
+                      <li><a [routerLink]="['searchCatUrl, 4']" ><span>{{ '藝術' | translate }}</span></a></li>
+                      <li class='last'><a [routerLink]="['searchCatUrl, 5']" ><span>{{ '設計' | translate }}</span></a></li>
                   </ul>
                 </li>
                 <li class='has-sub'>
-                  <a href='#'><span>{{ '生活' | translate }}</span></a>
+                  <a><span>{{ '生活' | translate }}</span></a>
                   <ul>
-                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '飲食' | translate }}</span></a></li>
-                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '時尚' | translate }}</span></a></li>
-                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '教育' | translate }}</span></a></li>
-                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '科技' | translate }}</span></a></li>
-                      <li class='last'><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '社會' | translate }}</span></a></li>
+                      <li><a [routerLink]="['searchCatUrl, 6']" ><span>{{ '飲食' | translate }}</span></a></li>
+                      <li><a [routerLink]="['searchCatUrl, 7']" ><span>{{ '時尚' | translate }}</span></a></li>
+                      <li><a [routerLink]="['searchCatUrl, 8']" ><span>{{ '教育' | translate }}</span></a></li>
+                      <li><a [routerLink]="['searchCatUrl, 9']" ><span>{{ '科技' | translate }}</span></a></li>
+                      <li class='last'><a [routerLink]="['searchCatUrl, 10']" ><span>{{ '社會' | translate }}</span></a></li>
                   </ul>
                 </li>
                 <li class='has-sub'>
-                  <a href='#'><span>{{ '娛樂' | translate }}</span></a>
+                  <a><span>{{ '娛樂' | translate }}</span></a>
                   <ul>
-                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '表演' | translate }}</span></a></li>
-                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '遊戲' | translate }}</span></a></li>
-                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '地方創生' | translate }}</span></a></li>
-                      <li><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '電影動畫' | translate }}</span></a></li>
-                      <li class='last'><a [routerLink]="['/']" routerLinkActive="router-link-active"><span>{{ '插畫漫畫' | translate }}</span></a></li>
+                      <li><a [routerLink]="['searchCatUrl, 11']" ><span>{{ '表演' | translate }}</span></a></li>
+                      <li><a [routerLink]="['searchCatUrl, 12']" ><span>{{ '遊戲' | translate }}</span></a></li>
+                      <li><a [routerLink]="['searchCatUrl, 13']" ><span>{{ '地方創生' | translate }}</span></a></li>
+                      <li><a [routerLink]="['searchCatUrl, 14']" ><span>{{ '電影動畫' | translate }}</span></a></li>
+                      <li class='last'><a [routerLink]="['searchCatUrl, 15']" ><span>{{ '插畫漫畫' | translate }}</span></a></li>
                   </ul>
                 </li>
-                <li class="img-nav">
+                <!-- <li class="img-nav">
                   <div class="container">
                     <div class="clearfix"></div>
                     <div class="space20"></div>
                     <div class="clearfix"></div>
                     <div class="row in1">
-                      <div class="col-md-6">
+                     <div class="col-md-6">
                         <a href="#"><img src="assets/images/menu_cat.png" class="img-responsive" alt="" /></a>
                       </div>
                       <div class="col-md-6">
@@ -183,26 +179,17 @@
                     <div class="space20"></div>
                     <div class="clearfix"></div>
                   </div>
-                </li>
-              </ul>
-            </li>
-            <li class='has-sub'>
-              <a href='category-1.html'><span>{{ '探索' | translate }}</span></a>
-              <ul class="sub-nav">
-                <li><a href="#"><span>{{ '所有提案' | translate }}</span></a></li>
-                <li><a href="#"><span>{{ '最後衝刺' | translate }}</span></a></li>
-                <li><a href="#"><span>{{ '最新啟動' | translate }}</span></a></li>
-              </ul>
-            </li>
-            <li class='has-sub'>
-              <a href='#'><span>{{ '提案' | translate }}</span></a>
-              <ul id="sub-nav">
-                <li><a href="category-1.html">{{ '一次性集資' | translate }}</a></li>
-                <li><a href="category-2.html">{{ '訂閱式專案' | translate }}</a></li>
+                </li> -->
               </ul>
             </li>
             <li>
-              <a [routerLink]="['/cart']" routerLinkActive="router-link-active"><span>{{ '我要贊助' | translate }}</span></a>
+              <a [routerLink]="['/create']"><span>{{ '提案' | translate }}</span></a>
+            </li>
+            <li>
+              <a [routerLink]="['/projects']"><span>{{ '探索' | translate }}</span></a>
+            </li>
+            <li>
+              <a [routerLink]="['/cart']"><span>{{ '我要贊助' | translate }}</span></a>
             </li>
           </ul>
         </div>

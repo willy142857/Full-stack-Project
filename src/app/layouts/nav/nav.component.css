@@ -73,3 +73,47 @@ nav.mainmenu {
   border-top: 4px solid #3c3c3c;
   text-decoration: none;
 }
+
+.nav_left:hover .cat_mega_menu {
+  opacity: 1;
+  top: 64px;
+  width: 600px;
+  transition: all 0.5s ease 0s;
+  z-index: 99;
+}
+
+.cat_left {
+  float: left;
+  margin-right: 0px;
+  padding-top: 40px;
+  width: 33.3%;
+}
+
+.cat_middle {
+  float: left;
+  width: 33.3%;
+  margin-right: 0px;
+  padding-top: 40px;
+}
+
+.cat_middle_right {
+  float: left;
+  width: 33.3%;
+  margin-right: 0px;
+  padding-top: 40px;
+}
+
+.cat_img {
+  float: right;
+  margin-right: 46px;
+  width: 0%;
+}
+
+.cat_left>h5,
+.cat_middle>h5,
+.cat_middle_right>h5 {
+  font-size: 13px;
+  margin-bottom: 10px;
+  text-align: left;
+  text-transform: uppercase;
+}
