@@ -9,20 +9,21 @@ import { ProjectPlus } from 'src/app/project/project';
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent implements OnInit {
-  projectlist: ProjectPlus[];
-  totalmoney;
   constructor(private cartsservice: CartsService, private router: Router) {
     this.cartsservice.getUserAllInfo();
   }
 
-  // get list() {
-  //   return this.cartsservice.followingProjectlist;
-  // }
+  get projectlist() {
+    this.cartsservice.initialFollowingProject();
+    this.cartsservice.totalCharge();
+    return this.cartsservice.followingProjectlist;
+  }
+  get totalmoney() {
+    return this.cartsservice.totalmoney;
+  }
 
   ngOnInit() {
     scroll(0, 0);
-    this.projectlist = this.cartsservice.followingProjectlist;
-    this.totalmoney = this.cartsservice.totalmoney;
   }
 
   checkout() {
