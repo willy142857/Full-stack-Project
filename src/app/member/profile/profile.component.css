@@ -75,7 +75,7 @@
   font-size: 15px;
   word-break: break-all;
   margin-bottom: 10%;
-  height: 80px;
+  height: 60px;
   overflow: hidden;
 }
 
@@ -86,5 +86,8 @@
   margin-top: 3%;
 }
 
-
+.point :hover
+{
+  cursor: pointer;
+}
 
