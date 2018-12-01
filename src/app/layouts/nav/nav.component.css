@@ -65,7 +65,11 @@
   float: left;
   width: 66%;
 }
-
 nav.mainmenu {
   position: relative;
+}
+
+.mainmenu ul#nav li.current-page-item a {
+  border-top: 4px solid #3c3c3c;
+  text-decoration: none;
 }

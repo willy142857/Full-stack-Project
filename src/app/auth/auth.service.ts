@@ -55,7 +55,7 @@ export class AuthService {
 
   isLogin() {
     return (localStorage.getItem('token') !== null &&
-      !this.jwtHelper.isTokenExpired());
+      !this.jwtHelper.isTokenExpired(localStorage.getItem('token')));
   }
 
   // 移到core/service/comment.service
