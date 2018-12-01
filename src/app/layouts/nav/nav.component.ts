@@ -11,8 +11,8 @@ export class NavComponent implements OnInit {
   searchCatUrl = 'projects/search/categories';
   constructor(
     private authService: AuthService,
-    private cartsservice: CartsService,
-    ) { }
+    private cartsservice: CartsService
+  ) {}
 
   get projectlist() {
     // this.cartsservice.initialFollowingProject();
@@ -24,6 +24,9 @@ export class NavComponent implements OnInit {
   }
   get count() {
     if (this.cartsservice.followingProjectlist !== undefined) {
+      if (this.cartsservice.followingProjectlist === null) {
+        return 0;
+      }
       return this.cartsservice.followingProjectlist.length;
     }
   }

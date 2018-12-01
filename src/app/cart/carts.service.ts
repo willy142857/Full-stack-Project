@@ -8,9 +8,10 @@ import { Feedback, ProjectPlus } from 'src/app/project/project';
 @Injectable({
   providedIn: 'root'
 })
-
 export class CartsService {
-  constructor(private httpClient: HttpClient, private router: Router) { }
+  constructor(private httpClient: HttpClient, private router: Router) {
+    this.followingProjectlist = [];
+  }
 
   totalmoney;
   followingProjectlist: ProjectPlus[];
@@ -20,11 +21,13 @@ export class CartsService {
   order = {
     project_id: Number,
     feedback_id: Number,
-    address: '',
+    address: ''
   };
 
   getUserAllInfo() {
-    this.followingProjectlist = JSON.parse(localStorage.getItem(localStorage.getItem('token')));
+    this.followingProjectlist = JSON.parse(
+      localStorage.getItem(localStorage.getItem('token'))
+    );
   }
 
   getUserAllInfoOld() {
@@ -51,8 +54,12 @@ export class CartsService {
   initialFollowingProject() {
     if (this.followingProjectlist !== undefined) {
       for (let index = 0; index < this.followingProjectlist.length; index++) {
-        this.followingProjectlist[index].feedbackprice = this.followingFeedbacklist[index].price;
-        this.followingProjectlist[index].feedbackdes = this.followingFeedbacklist[index].description;
+        this.followingProjectlist[
+          index
+        ].feedbackprice = this.followingFeedbacklist[index].price;
+        this.followingProjectlist[
+          index
+        ].feedbackdes = this.followingFeedbacklist[index].description;
       }
     }
   }
@@ -103,8 +110,13 @@ export class CartsService {
   totalCharge() {
     if (this.followingProjectlist !== undefined) {
       this.totalmoney = 0;
-      for (let index = 0; index < this.followingProjectlist.length; index++) {
-        this.totalmoney = this.totalmoney + this.followingProjectlist[index].feedbackprice;
+      if (this.followingProjectlist === null) {
+        this.totalmoney = 0;
+      } else {
+        for (let index = 0; index < this.followingProjectlist.length; index++) {
+          this.totalmoney =
+            this.totalmoney + this.followingProjectlist[index].feedbackprice;
+        }
       }
     }
   }
