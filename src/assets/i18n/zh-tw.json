@@ -27,7 +27,8 @@
 
   "homepage": {
     "trending": "熱門提案",
-    "leftDay": "剩餘{{value}}天"
+    "leftDay": "剩餘{{value}}天",
+    "未開始": "未開始"
   },
 
   "文藝": "文藝",

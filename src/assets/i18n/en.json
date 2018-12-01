@@ -26,7 +26,8 @@
 
   "homepage": {
     "trending": "trending",
-    "leftDay": "{{value}} days left"
+    "leftDay": "{{value}} days left",
+    "未開始": "just wait!"
   },
 
   "menu": "menu",

@@ -141,8 +141,10 @@
                   stroke="#16982B" [style.stroke-dasharray]="dasharray" [style.stroke-dashoffset]="progress(project)" />
                 <text id="count" x="0" y="20" text-anchor="left" dy="7" font-size="14">
                   {{ project.curr_amount | currency:'':'symbol':'1.0-0' }}</text>
-                <text id="time" x="350" y="20" text-anchor="end" dy="7" font-size="14"
-                  [translate]="'homepage.leftDay'" [translateParams]="{ value: leftDay(project) }">
+                  <text *ngIf="leftDay(project)!=-1" id="time" x="350" y="20" text-anchor="end" dy="7" font-size="14"
+                  [translate]="'homepage.leftDay'" [translateParams]="{ value: leftDay(project) }"></text>
+                <text *ngIf="leftDay(project)==-1" id="time" x="350" y="20" text-anchor="end" dy="7" font-size="14"
+                  [translate]="'homepage.未開始'">
                 </text>
               </svg>
             </div>
@@ -178,8 +180,10 @@
                   stroke="#16982B" [style.stroke-dasharray]="dasharray" [style.stroke-dashoffset]="progress(project)" />
                 <text id="count" x="0" y="20" text-anchor="left" dy="7" font-size="14">
                   {{ project.curr_amount | currency:'':'symbol':'1.0-0' }}</text>
-                <text id="time" x="350" y="20" text-anchor="end" dy="7" font-size="14"
-                  [translate]="'homepage.leftDay'" [translateParams]="{ value: leftDay(project) }">
+                <text *ngIf="leftDay(project)!=-1" id="time" x="350" y="20" text-anchor="end" dy="7" font-size="14"
+                  [translate]="'homepage.leftDay'" [translateParams]="{ value: leftDay(project) }"></text>
+                <text *ngIf="leftDay(project)==-1" id="time" x="350" y="20" text-anchor="end" dy="7" font-size="14"
+                  [translate]="'homepage.未開始'">
                 </text>
               </svg>
             </div>
