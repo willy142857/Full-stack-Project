@@ -73,7 +73,7 @@
       <div class="nav_right floatright">
         <a [routerLink]="['/cart']" routerLinkActive="router-link-active">
           <img src="assets/images/bag.png" alt="Bag" />
-          {{'我要贊助' | translate}} 2 {{'贊助計畫' | translate}}</a>
+          {{'我要贊助' | translate}} {{count}} {{'贊助計畫' | translate}}</a>
         <div class="cart_menu">
 
           <ng-container *ngFor="let pitem of projectlist;">
