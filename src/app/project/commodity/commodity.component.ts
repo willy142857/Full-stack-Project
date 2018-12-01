@@ -1,8 +1,8 @@
 import { AuthService } from 'src/app/auth/auth.service';
 import { ActivatedRoute } from '@angular/router';
 import { Project, Comment} from 'src/app/project/project';
-import { ProjectService } from './../project/project.service';
-import { CartsService } from './../cart/carts.service';
+import { ProjectService } from '../project.service';
+import { CartsService } from '../../cart/carts.service';
 import { CommoditiesService } from './commodities.service';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';

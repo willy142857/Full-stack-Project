@@ -11,6 +11,7 @@ import { AuthService } from 'src/app/auth/auth.service';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
+  searchCatUrl = 'projects/search/categories';
   constructor(
     private authService: AuthService,
     private location: Location,

@@ -1,4 +1,3 @@
-import { CommodityComponent } from './commodity/commodity.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { CartComponent } from './cart/cart.component';
@@ -16,14 +15,6 @@ const routes: Routes = [
     path: 'checkout',
     component: CheckoutComponent,
     canActivate: [AuthGuard]
-  },
-  {
-    path: 'commodity',
-    component: CommodityComponent
-  },
-  {
-    path: 'commodity/:id',
-    component: CommodityComponent
   },
 ];
 
