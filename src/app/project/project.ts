@@ -4,6 +4,7 @@ export interface Project {
   email: string;
   name: string;
   category_id: number;
+  category_name: string;
   brief: string;
   started_at: string;
   ended_at: string;
@@ -48,6 +49,7 @@ export interface ProjectPlus {
   email: string;
   name: string;
   category_id: number;
+  category_name: string;
   brief: string;
   started_at: string;
   ended_at: string;

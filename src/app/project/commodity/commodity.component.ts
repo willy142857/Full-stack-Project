@@ -105,7 +105,10 @@ export class CommodityComponent implements OnInit {
   orderFeedback(event) {
     if (this.authService.isLogin()) {
       if (confirm('確定加入購物車?')) {
-        this.feedback.feedback_id = event.id;
+        this.followingProjects = this.list;
+        this.followingProjects.feedbackid = event.id;
+        this.followingProjects.feedbackdes = event.description;
+        this.followingProjects.feedbackprice = event.price;
 
         this.followingProjectsInfo = JSON.stringify(this.followingProjects);
         localStorage.setItem(localStorage.getItem('token'), this.followingProjectsInfo);

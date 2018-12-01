@@ -14,6 +14,7 @@ export class CreateComponent implements OnInit {
     email: 'qwerty@gmail.com',
     name: '練肖話',
     category_id: 7,
+    category_name: '..',
     brief: '票投姚文智，電狼3-4',
     started_at: '2018-12-08',
     ended_at: '2018-12-09',
