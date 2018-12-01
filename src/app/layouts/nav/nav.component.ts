@@ -11,13 +11,12 @@ import { AuthService } from 'src/app/auth/auth.service';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-
   constructor(
     private authService: AuthService,
     private location: Location,
     private route: ActivatedRoute,
     private cartsservice: CartsService,
-    ) {}
+    ) { }
   pathUrl;
   routeUrl;
   current = {
@@ -27,8 +26,6 @@ export class NavComponent implements OnInit {
   projectlist: ProjectPlus[];
   ngOnInit() {
     scroll(0, 0);
-    this.checkLogin();
-    this.check();
   }
   check() {
     this.pathUrl = this.location.path(); // 獲取當前url的子路徑(也就是當前url#後面的内容,不包括参數)
@@ -43,6 +40,8 @@ export class NavComponent implements OnInit {
   }
 
   get isLogin() {
+    this.checkLogin();
+    this.check();
     return this.authService.isLogin();
   }
 
@@ -52,9 +51,5 @@ export class NavComponent implements OnInit {
       this.projectlist = this.cartsservice.followingProjectlist;
       this.totalmoney = this.cartsservice.totalmoney;
     }
-  }
-  buttomClickMinus(index) {
-    this.cartsservice.buttomClickMinus(index);
-    this.totalmoney = this.cartsservice.totalmoney;
   }
 }

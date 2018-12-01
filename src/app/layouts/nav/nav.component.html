@@ -76,26 +76,25 @@
           {{'我要贊助' | translate}} 2 {{'贊助計畫' | translate}}</a>
         <div class="cart_menu">
 
-        <ng-container *ngFor="let pitem of projectlist;">
-          <div class="cart_items">
-            <div class="c_item_img floatleft">
-              <a [routerLink]="['/cart']" routerLinkActive="router-link-active">
-                <img src= {{pitem.img_path}} alt="" /></a>
-            </div>
-            <div class="c_item_totals floatleft">
-              <div class="c_item_totals_detail floatleft">
-                <!-- TODO:設定路由 -->
+          <ng-container *ngFor="let pitem of projectlist;">
+            <div class="cart_items">
+              <div class="c_item_img floatleft">
                 <a [routerLink]="['/cart']" routerLinkActive="router-link-active">
-                  <h5>{{pitem.name}}</h5>
-                </a>
-                <span>$ {{pitem?.feedbackprice}}</span>
+                  <img src= {{pitem.img_path}} alt="" /></a>
               </div>
-              <div class="close_icon_cart floatleft">
-                <img src="assets/images/close.png" alt="" />
+              <div class="c_item_totals floatleft">
+                <div class="c_item_totals_detail floatleft">
+                  <a [routerLink]="['/cart']" routerLinkActive="router-link-active">
+                    <h5>{{pitem.name}}</h5>
+                  </a>
+                  <span>$ {{pitem?.feedbackprice}}</span>
+                </div>
+                <div class="close_icon_cart floatleft">
+                  <img src="assets/images/close.png" alt="" />
+                </div>
               </div>
             </div>
-          </div>
-        </ng-container>
+          </ng-container>
 
           <div class="cart_totals">
             <div class="c_totals_left floatleft">
