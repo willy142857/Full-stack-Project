@@ -20,7 +20,9 @@
                   <line x1="0" y1="0" x2="350" y2="0" fill="none" stroke-width="3" stroke="#cccccc" />
                   <line x1="0" y1="0" x2="350" y2="0" fill="none" stroke-width="3" stroke-linecap="round"
                     stroke="#16982B" [style.stroke-dasharray]="dasharray" [style.stroke-dashoffset]="progress(project)" />
-                    <text *ngIf="leftDay(project)!=-1" id="time" x="350" y="20" text-anchor="end" dy="7" font-size="14"
+                   <text id="count" x="0" y="20" text-anchor="left" dy="7" font-size="14">
+                    {{ project.curr_amount | currency:'':'symbol':'1.0-0' }}</text>
+                  <text *ngIf="leftDay(project)!=-1" id="time" x="350" y="20" text-anchor="end" dy="7" font-size="14"
                     [translate]="'homepage.leftDay'" [translateParams]="{ value: leftDay(project) }"></text>
                   <text *ngIf="leftDay(project)==-1" id="time" x="350" y="20" text-anchor="end" dy="7" font-size="14"
                     [translate]="'homepage.未開始'">
