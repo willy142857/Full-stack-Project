@@ -9,9 +9,10 @@ import { ResetpasswordComponent } from './resetpassword/resetpassword.component'
 import { RetrievepasswordComponent } from './retrievepassword/retrievepassword.component';
 import { RaisedProjectComponent } from './raised-project/raised-project.component';
 import { EditComponent } from './raised-project/edit/edit.component';
+import { ProjectModule } from '../project/project.module';
 
 @NgModule({
-  imports: [CommonModule, MemberRoutingModule, SharedModule],
+  imports: [CommonModule, MemberRoutingModule, SharedModule, ProjectModule],
   declarations: [
     LoginComponent,
     RegisterComponent,

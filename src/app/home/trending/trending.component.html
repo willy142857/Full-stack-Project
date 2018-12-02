@@ -1,39 +1,15 @@
 <h2 class="p_title">所有贊助專案</h2>
-
-<section class="promotion_area">
+<section>
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <div class="promo_inner">
-          <div class="row">
-
-            <div *ngFor="let project of projects" class="col-md-4 col-sm-4 col-xs-12">
-              <div class="p_box">
-                <div class="images_box">
-                  <img style="cursor: pointer" [src]="project.img_path" alt="project img not found"
-                  [routerLink]="['/projects', project.id]" routerLinkActive="router-link-active">
-                </div>
-                <div class="p_name">{{ project.name }}</div>
-                <div class="p_founder">{{ project.fundraiser }}</div>
-                <div class="p_dsp">{{ project.brief }}</div>
-                <svg width="350">
-                  <line x1="0" y1="0" x2="350" y2="0" fill="none" stroke-width="3" stroke="#cccccc" />
-                  <line x1="0" y1="0" x2="350" y2="0" fill="none" stroke-width="3" stroke-linecap="round"
-                    stroke="#16982B" [style.stroke-dasharray]="dasharray" [style.stroke-dashoffset]="progress(project)" />
-                  <text id="count" x="0" y="20" text-anchor="left" dy="7" font-size="14">
-                    {{ project.curr_amount | currency:'':'symbol':'1.0-0' }}</text>
-                  <text *ngIf="leftDay(project)!=-1" id="time" x="350" y="20" text-anchor="end" dy="7" font-size="14"
-                    [translate]="'homepage.leftDay'" [translateParams]="{ value: leftDay(project) }"></text>
-                  <text *ngIf="leftDay(project)==-1" id="time" x="350" y="20" text-anchor="end" dy="7" font-size="14"
-                    [translate]="'homepage.未開始'">
-                  </text>
-                </svg>
-              </div>
-
-            </div>
-          </div>
+            <ng-container *ngFor="let project of projects">
+              <app-project-unit class="col-md-4" [project]="project"></app-project-unit>
+            </ng-container>
         </div>
       </div>
     </div>
-  </div>
 </section>
+
+
+

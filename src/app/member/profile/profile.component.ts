@@ -16,7 +16,6 @@ export class ProfileComponent implements OnInit {
   constructor(private httpClient: HttpClient, private router: Router,
     private projectService: ProjectService) {}
 
-  dasharray = 350;
   user: Member;
   photo: any;
   ngOnInit() {
@@ -36,17 +35,6 @@ export class ProfileComponent implements OnInit {
         }
       }
     );
-  }
-
-  progress(project: Project): number {
-    const ratio =
-      this.dasharray -
-      (project.curr_amount / project.goal_amount) * this.dasharray;
-    return ratio < 0 ? 0 : ratio;
-  }
-
-  leftDay(project: Project): number {
-    return this.projectService.calcLeftDay(project);
   }
 
   onSubmit(form) {
