@@ -37,7 +37,7 @@ export class IndexComponent implements OnInit {
         this.originalProj = projects;
         this.projects = this.originalProj;
         if (id) {
-          this.title = this.categories[id].category;
+          this.title = this.categories[id - 1].category;
           this.filterProjects(id);
         }
         if (keyword) {
