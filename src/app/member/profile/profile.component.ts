@@ -17,6 +17,7 @@ export class ProfileComponent implements OnInit {
   dasharray = 350;
   user: Member;
   photo: any;
+  editPhoto = false;
   ngOnInit() {
     scroll(0, 0);
     this.httpClient.get(`${environment.api}/profile`).subscribe(
@@ -34,6 +35,10 @@ export class ProfileComponent implements OnInit {
         }
       }
     );
+  }
+
+  editProfilePhoto() {
+    this.editPhoto = !this.editPhoto;
   }
 
   progress(project: Project): number {
