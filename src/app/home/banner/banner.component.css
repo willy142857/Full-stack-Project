@@ -16,3 +16,60 @@
   width: 100%;
   position: relative;
 }
+
+
+/* B10532010 */
+
+.myContainer{
+
+  width: 100%;
+  height: 30vw;
+
+}
+
+
+li{
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  height: 30vw;
+  background-color: rgb(200,200,80);
+  text-align: center;
+  line-height: 30vw;
+  float: left;
+  font-weight: bold;
+  font-size: 120px;
+}
+
+.show{
+  width: 100%;
+  height:35vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.show>span{
+  position: absolute;
+  width: 30px;
+  height: 50px;
+  top: 50%;
+  margin-top: -25px;
+  background-size: 55px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(0,0,0,.4);
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity .3s;
+}
+.show:hover>span{
+  opacity: 1;
+}
+.show>span:first-child{
+  left: 10px;
+  background-image: url("../../../assets/img/prev.png");
+}
+.show>span:last-child{
+  right: 10px;
+  background-image: url("../../../assets/img/next.png");
+}

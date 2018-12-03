@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { JwtModule } from '@auth0/angular-jwt';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { CartComponent } from './cart/cart.component';
@@ -51,7 +52,8 @@ export function createTranslateLoader(http: HttpClient) {
     HomeModule,
     ProjectModule,
     MemberModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
