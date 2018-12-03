@@ -118,6 +118,25 @@ nav.mainmenu {
   text-transform: uppercase;
 }
 
+.alignleft {
+  float: left;
+  margin-right: 10px;
+}
+
+.cart_view_bottom .c_totals_left {
+  background: none repeat scroll 0 0 #2f2f2f;
+  padding: 15px;
+  text-align: center;
+  width: 50%;
+}
+
+.cart_view_bottom .c_totals_right {
+  background: none repeat scroll 0 0 #3c3c3c;
+  padding: 15px;
+  text-align: center;
+  width: 50%;
+}
+
 .mobi_right_li {float:right !important;}
 #cssmenu, #cssmenu ul, #cssmenu ul li, #cssmenu ul li a {
   background: none repeat scroll 0 0 #626262;
