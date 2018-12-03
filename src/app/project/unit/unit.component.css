@@ -1,0 +1,43 @@
+.p-box {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  height: 500px;
+  width: 100%;
+}
+
+.p-img {
+ height: 200px;
+ width: 100%;
+ cursor: pointer;
+}
+
+.p-text {
+  height: 240px;
+  width: 100%;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.p-name {
+  margin-top: 3%;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.p-founder {
+  margin-top: 3%;
+  font-size: 18px;
+}
+
+.p-dsp {
+  margin-top: 4%;
+  font-size: 15px;
+  word-break: break-all;
+}
+
+.p-title {
+  text-align: center;
+  font-size: 30;
+  font-weight: bold;
+  margin-top: 3%;
+}

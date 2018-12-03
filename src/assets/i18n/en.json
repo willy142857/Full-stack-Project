@@ -26,9 +26,12 @@
 
   "homepage": {
     "trending": "trending",
-    "leftDay": "{{value}} days left"
+    "leftDay": "{{value}} days left",
+    "未開始": "just wait!",
+    "已結束": "Ended!"
   },
 
+  "menu": "menu",
   "文藝": "literature",
   "生活": "life",
   "娛樂": "entertainment",
@@ -114,7 +117,8 @@
     "不同意": "whattttttt?",
     "提交": "submit",
     "修改": "edit",
-    "取消": "cancel"
+    "取消": "cancel",
+    "贊助計畫": "Support"
   },
 
   "購物車": {

@@ -1,28 +1,30 @@
 body {
-  font-family: "微软雅黑";
-  text-align:center;font-family: 'Open Sans', sans-serif;
+  font-family: '微软雅黑';
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .Bar {
   position: relative;
   width: 200px;
-  /* 宽度 */ border: 1px solid#f0c32f;
+  /* 宽度 */
+  border: 1px solid#f0c32f;
   padding: 1px;
 }
-.Bar div{
+.Bar div {
   display: block;
   position: relative;
-  background:#f0c32f;/* 进度条背景颜色 */
+  background: #f0c32f; /* 进度条背景颜色 */
   color: black;
   height: 20px; /* 高度 */
   line-height: 20px;
   /* 必须和高度一致，文本才能垂直居中 */
 }
-.Bar div span{
+.Bar div span {
   position: absolute;
-  width: 200px;/* 宽度 */
- text-align: center;
- font-weight: bold;
+  width: 200px; /* 宽度 */
+  text-align: center;
+  font-weight: bold;
 }
 
 .feedback_color {
@@ -37,7 +39,7 @@ body {
   padding: 0px;
 }
 
-.invest_button>input[type="submit"] {
+.invest_button > input[type='button'] {
   background: none repeat scroll 0 0 #ff6766;
   border: 2px solid #ff6766;
   color: #fff;
@@ -52,12 +54,12 @@ body {
   height: 30px;
 }
 
-.invest_button>input[type="submit"]:hover {
+.invest_button > input[type='submit']:hover {
   background: #fff;
   color: #232323;
 }
 
-.message_button>input[type="button"] {
+.message_button > input[type='button'] {
   background: none repeat scroll 0 0 #ff6766;
   border: 2px solid #ff6766;
   color: #fff;
@@ -71,12 +73,12 @@ body {
   height: 30px;
 }
 
-.message_button>input[type="submit"]:hover {
+.message_button > input[type='submit']:hover {
   background: #fff;
   color: #232323;
 }
 
-.review_comment input[type="text"] {
+.review_comment input[type='text'] {
   background: transparent none repeat scroll 0 0;
   border: 1px solid #d3d3d3;
   color: #333;
@@ -100,16 +102,15 @@ body {
 
 hr.style-five {
   border: 0;
-    height: 1px;
-    width: 600px;
-    background: #333;
-    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+  height: 1px;
+  width: 600px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
 hr.style-five:after {
   /* Not really supposed to work, but does */
   content: '\00a0'; /* Prevent margin collapse */
 }
-
 
 .multi_line_long {
   border-bottom: 2px solid #ff6766;
@@ -129,11 +130,11 @@ hr.style-five:after {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  content: "\f006";
+  content: '\f006';
   color: #aaaaaa;
 }
 
-.fa:hover{
+.fa:hover {
   display: inline-block;
   font-family: FontAwesome;
   font-style: normal;
@@ -141,11 +142,11 @@ hr.style-five:after {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  content: "\f006";
+  content: '\f006';
   color: #ff6766;
 }
 
-.pink{
+.pink {
   color: #ff6766;
 }
 
@@ -170,7 +171,7 @@ hr.style-five:after {
   padding: 1px 2px;
 }
 
-.star{
+.star {
   float: left;
   overflow: hidden;
   width: 60%;
@@ -205,6 +206,22 @@ hr.style-five:after {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  content: "\f006";
+  content: '\f006';
   color: #ff6766;
+}
+
+.single_img {
+  float: left;
+  margin-right: 1%;
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.single_img img {
+  width: auto;
+  height: 100%;
 }

@@ -9,7 +9,6 @@ import { Project } from 'src/app/project/project';
 })
 export class TrendingComponent implements OnInit {
   projects: Project[];
-  dasharray = 350;
 
   constructor(private projectService: ProjectService) {}
 
@@ -18,19 +17,5 @@ export class TrendingComponent implements OnInit {
       console.log(project);
       this.projects = project;
     });
-  }
-
-  progress(project: Project): number {
-    const ratio =
-      this.dasharray -
-      (project.curr_amount / project.goal_amount) * this.dasharray;
-    return ratio < 0 ? 0 : ratio;
-  }
-
-  // 計算剩餘日期
-  leftDay(project: Project): number {
-    const end = new Date(project.ended_at);
-    const start = new Date(project.started_at);
-    return (end.getTime() - start.getTime()) / 1000 / 60 / 60 / 24;
   }
 }

@@ -60,9 +60,16 @@ export class ProjectService {
     return this.httpClient.get(`${environment.api}/categories`);
   }
 
+  // 未開始，return -1;已結束 return -2;else return left date
   calcLeftDay(project: Project): number {
     const end = new Date(project.ended_at);
     const start = new Date(project.started_at);
-    return (end.getTime() - start.getTime()) / 1000 / 60 / 60 / 24;
+    const now = new Date;
+    if (start.getTime() > now.getTime()) {
+      return -1;
+    } else if (now.getTime() > end.getTime()) {
+      return -2;
+    }
+    return Math.ceil((end.getTime() - now.getTime()) / 1000 / 60 / 60 / 24);
   }
 }

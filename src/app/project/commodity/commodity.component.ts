@@ -31,7 +31,8 @@ export class CommodityComponent implements OnInit {
     project_id: Number,
   };
 
-  followingProjects: ProjectPlus;
+  tempPro: ProjectPlus;
+  followingProjects: ProjectPlus[] = [];
   followingProjectsInfo: any;
 
   get messages() {
@@ -91,6 +92,10 @@ export class CommodityComponent implements OnInit {
         console.log(this.list);
       });
     });
+    this.cartsservice.getUserAllInfo();
+    if (this.cartsservice.followingProjectlist !== null) {
+      this.followingProjects = this.cartsservice.followingProjectlist;
+    }
   }
 
   createComment() {
@@ -105,14 +110,14 @@ export class CommodityComponent implements OnInit {
   orderFeedback(event) {
     if (this.authService.isLogin()) {
       if (confirm('確定加入購物車?')) {
-        this.followingProjects = this.list;
-        this.followingProjects.feedbackid = event.id;
-        this.followingProjects.feedbackdes = event.description;
-        this.followingProjects.feedbackprice = event.price;
-
+        this.tempPro = this.list;
+        this.tempPro.feedbackid = event.id;
+        this.tempPro.feedbackdes = event.description;
+        this.tempPro.feedbackprice = event.price;
+        this.followingProjects.push(this.tempPro);
         this.followingProjectsInfo = JSON.stringify(this.followingProjects);
-        localStorage.setItem(localStorage.getItem('token'), this.followingProjectsInfo);
-
+        localStorage.setItem('data', this.followingProjectsInfo);
+        this.cartsservice.getUserAllInfo();
         // this.feedback.feedback_id = event.id;
         // console.log(this.feedback);
         // this.authService.orderFeedback(this.feedback);

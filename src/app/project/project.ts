@@ -26,6 +26,7 @@ export interface Category {
 }
 
 export interface Comment {
+  profile_URL: string;
   username: string;
   rating: number;
   comment: string;

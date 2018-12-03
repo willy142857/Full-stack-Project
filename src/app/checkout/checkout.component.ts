@@ -9,9 +9,7 @@ import { ProjectPlus } from 'src/app/project/project';
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent implements OnInit {
-  constructor(private cartsservice: CartsService, private router: Router) {
-    this.cartsservice.getUserAllInfo();
-  }
+  constructor(private cartsservice: CartsService, private router: Router) {}
 
   get projectlist() {
     // this.cartsservice.initialFollowingProject();
@@ -24,6 +22,7 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit() {
     scroll(0, 0);
+    this.cartsservice.getUserAllInfo();
   }
 
   checkout() {

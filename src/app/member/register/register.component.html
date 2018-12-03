@@ -204,7 +204,7 @@
               Check is required
             </div>
           </div>
-
+          <re-captcha [(ngModel)]="model.captcha" name="captcha" required #captchaControl="ngModel"></re-captcha>
           <div class="submit_btn form-group">
             <input type="submit" value="{{ '註冊' | translate }}" />
           </div>

@@ -154,7 +154,7 @@
               <div>
                 <ng-container *ngFor="let feedback of list.feedbacks; let i = index;">
                   <div>
-                    <form (submit)="orderFeedback(feedback)">
+                    <form>
                       <div class="item">
                         <div>
                           <h3> {{ '計畫.方案' | translate }}{{i+1}}：</h3>
@@ -169,7 +169,7 @@
                           </span>
                           </div>
                           <div class="invest_button">
-                            <input type="submit" value=" {{ '贊助計畫' | translate }}">
+                            <input type="button" value=" {{ '計畫.贊助計畫' | translate }}" (click)="orderFeedback(feedback)">
                           </div>
                         </div>
                       </div>
@@ -215,8 +215,8 @@
                   </div>
                   <ng-container *ngFor='let comment of list.comments'>
                     <div class="single_review_comment" *ngIf="show_stars(comment)">
-                      <div class="single_review_img">
-                        <img src="/assets/images/single_rv1.png" alt="" />
+                      <div class="single_img">
+                        <img [src]="comment.profile_URL" alt="" />
                       </div>
                       <div class="single_review">
                         <h4>{{comment.username}}</h4>

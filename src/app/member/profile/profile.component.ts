@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { Member } from '../member';
 import { Route, RouterEvent, Router } from '@angular/router';
 import { Project } from 'src/app/project/project';
+import { ProjectService } from 'src/app/project/project.service';
 
 @Component({
   selector: 'app-profile',
@@ -12,9 +13,9 @@ import { Project } from 'src/app/project/project';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  constructor(private httpClient: HttpClient, private router: Router) {}
+  constructor(private httpClient: HttpClient, private router: Router,
+    private projectService: ProjectService) {}
 
-  dasharray = 350;
   user: Member;
   photo: any;
   editPhoto = false;
@@ -37,6 +38,7 @@ export class ProfileComponent implements OnInit {
     );
   }
 
+<<<<<<< HEAD
   editProfilePhoto() {
     this.editPhoto = !this.editPhoto;
   }
@@ -54,6 +56,8 @@ export class ProfileComponent implements OnInit {
     return Math.floor((end.getTime() - start.getTime()) / 1000 / 60 / 60 / 24);
   }
 
+=======
+>>>>>>> e5649aac00eb2cac13d2f2bbd9a4ec603b66d3d8
   onSubmit(form) {
     this.httpClient.put(`${environment.api}/profile`, this.user).subscribe(
       data => {
