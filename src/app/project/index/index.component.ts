@@ -14,6 +14,7 @@ export class IndexComponent implements OnInit {
   categories: Category[];
   originalProj: Project[];
   projects: Project[];
+  title;
 
   constructor(
     private projectService: ProjectService,
@@ -29,15 +30,18 @@ export class IndexComponent implements OnInit {
       this.projectService.getCategories().
         subscribe((categories: Category[]) => {
           this.categories = categories;
+          // console.log(this.categories[0].category);
         });
 
       this.projectService.getProjects().subscribe((projects: Project[]) => {
         this.originalProj = projects;
         this.projects = this.originalProj;
         if (id) {
+          this.title = this.categories[id].category;
           this.filterProjects(id);
         }
         if (keyword) {
+          this.title = '搜尋:' + keyword;
           this.getSearch(keyword);
         }
       });

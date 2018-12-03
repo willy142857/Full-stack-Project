@@ -118,11 +118,6 @@ nav.mainmenu {
   text-transform: uppercase;
 }
 
-.alignleft {
-  float: left;
-  margin-right: 10px;
-}
-
 .cart_view_bottom .c_totals_left {
   background: none repeat scroll 0 0 #2f2f2f;
   padding: 15px;
