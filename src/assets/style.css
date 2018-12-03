@@ -51,7 +51,7 @@ This Template Is Fully Coded By Shakhawat H. from codingcouples.com
 
 .alignleft {
   float: left;
-  margin-right: 10px;
+  margin-right: 15px;
 }
 
 .alignright {
@@ -806,14 +806,14 @@ nav.mainmenu::after {
 }
 
 .cart_view_bottom .c_totals_left {
-  background: none repeat scroll 0 0 #2f2f2f;
+  background: none repeat scroll 0 0 #eb5e5d;
   padding: 15px;
   text-align: center;
   width: 50%;
 }
 
 .cart_view_bottom .c_totals_right {
-  background: none repeat scroll 0 0 #3c3c3c;
+  background: none repeat scroll 0 0 #FF6766;
   padding: 15px;
   text-align: center;
   width: 50%;

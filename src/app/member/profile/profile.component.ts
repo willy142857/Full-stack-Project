@@ -13,9 +13,12 @@ import { ProjectService } from 'src/app/project/project.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  constructor(private httpClient: HttpClient, private router: Router,
-    private projectService: ProjectService) {}
-
+  constructor(
+    private httpClient: HttpClient,
+    private router: Router,
+    private projectService: ProjectService
+  ) {}
+  dasharray = 350;
   user: Member;
   photo: any;
   editPhoto = false;
@@ -38,7 +41,6 @@ export class ProfileComponent implements OnInit {
     );
   }
 
-<<<<<<< HEAD
   editProfilePhoto() {
     this.editPhoto = !this.editPhoto;
   }
@@ -56,8 +58,6 @@ export class ProfileComponent implements OnInit {
     return Math.floor((end.getTime() - start.getTime()) / 1000 / 60 / 60 / 24);
   }
 
-=======
->>>>>>> e5649aac00eb2cac13d2f2bbd9a4ec603b66d3d8
   onSubmit(form) {
     this.httpClient.put(`${environment.api}/profile`, this.user).subscribe(
       data => {
