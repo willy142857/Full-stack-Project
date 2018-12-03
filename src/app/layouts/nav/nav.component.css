@@ -117,3 +117,13 @@ nav.mainmenu {
   text-align: left;
   text-transform: uppercase;
 }
+
+.mobi_right_li {float:right !important;}
+#cssmenu, #cssmenu ul, #cssmenu ul li, #cssmenu ul li a {
+  background: none repeat scroll 0 0 #626262;
+  color:#fff;
+}
+#cssmenu, #cssmenu ul, #cssmenu ul li, #cssmenu ul li a {
+  background: none repeat scroll 0 0 #626262;
+  color:#fff;
+}

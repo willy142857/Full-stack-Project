@@ -70,7 +70,6 @@
             {{'我要贊助' | translate}} {{count}} {{'贊助計畫' | translate}}
         </a>
         <div class="cart_menu">
-
           <ng-container *ngFor="let pitem of projectlist;">
             <div class="cart_items">
               <div class="c_item_img floatleft">
@@ -116,50 +115,47 @@
     <!-- MOBILE ONLY CONTENT -->
     <div class="only-for-mobile">
       <ul class="ofm">
-        <li class="m_nav"><i class="fa fa-bars"></i> {{ 'menu' | translate }}</li>
+        <li class="m_nav"><i class="fa fa-bars"></i>&nbsp;&nbsp;ZecCup</li>
       </ul>
 
       <!-- MOBILE MENU -->
       <div class="mobi-menu">
         <div id='cssmenu'>
           <ul>
-            <li>
-              <a [routerLink]="['/']" >
-                <span>{{ 'home' | translate }}</span></a>
+            <li><a [routerLink]="['/']" ><span>{{ 'home' | translate }}</span></a></li>
+            <li><a [routerLink]="['/cart']"><span>{{ '我要贊助' | translate }}</span></a></li>
+            <li><a [routerLink]="['/create']"><span>{{ '提案' | translate }}</span></a></li>
+            <li><a [routerLink]="['/projects']"><span>{{ '探索' | translate }}</span></a></li>
+            <li class='has-sub'>
+              <a><span>{{ '文藝' | translate }}</span></a>
+              <ul>
+                  <li><a [routerLink]="['searchCatUrl, 1']" ><span>{{ '音樂' | translate }}</span></a></li>
+                  <li><a [routerLink]="['searchCatUrl, 2']" ><span>{{ '攝影' | translate }}</span></a></li>
+                  <li><a [routerLink]="['searchCatUrl, 3']" ><span>{{ '出版' | translate }}</span></a></li>
+                  <li><a [routerLink]="['searchCatUrl, 4']" ><span>{{ '藝術' | translate }}</span></a></li>
+                  <li class='last'><a [routerLink]="['searchCatUrl, 5']" ><span>{{ '設計' | translate }}</span></a></li>
+              </ul>
             </li>
             <li class='has-sub'>
-              <a><span>{{ 'category' | translate }}</span></a>
+              <a><span>{{ '生活' | translate }}</span></a>
               <ul>
-                <li class='has-sub'>
-                  <a><span>{{ '文藝' | translate }}</span></a>
-                  <ul>
-                      <li><a [routerLink]="['searchCatUrl, 1']" ><span>{{ '音樂' | translate }}</span></a></li>
-                      <li><a [routerLink]="['searchCatUrl, 2']" ><span>{{ '攝影' | translate }}</span></a></li>
-                      <li><a [routerLink]="['searchCatUrl, 3']" ><span>{{ '出版' | translate }}</span></a></li>
-                      <li><a [routerLink]="['searchCatUrl, 4']" ><span>{{ '藝術' | translate }}</span></a></li>
-                      <li class='last'><a [routerLink]="['searchCatUrl, 5']" ><span>{{ '設計' | translate }}</span></a></li>
-                  </ul>
-                </li>
-                <li class='has-sub'>
-                  <a><span>{{ '生活' | translate }}</span></a>
-                  <ul>
-                      <li><a [routerLink]="['searchCatUrl, 6']" ><span>{{ '飲食' | translate }}</span></a></li>
-                      <li><a [routerLink]="['searchCatUrl, 7']" ><span>{{ '時尚' | translate }}</span></a></li>
-                      <li><a [routerLink]="['searchCatUrl, 8']" ><span>{{ '教育' | translate }}</span></a></li>
-                      <li><a [routerLink]="['searchCatUrl, 9']" ><span>{{ '科技' | translate }}</span></a></li>
-                      <li class='last'><a [routerLink]="['searchCatUrl, 10']" ><span>{{ '社會' | translate }}</span></a></li>
-                  </ul>
-                </li>
-                <li class='has-sub'>
-                  <a><span>{{ '娛樂' | translate }}</span></a>
-                  <ul>
-                      <li><a [routerLink]="['searchCatUrl, 11']" ><span>{{ '表演' | translate }}</span></a></li>
-                      <li><a [routerLink]="['searchCatUrl, 12']" ><span>{{ '遊戲' | translate }}</span></a></li>
-                      <li><a [routerLink]="['searchCatUrl, 13']" ><span>{{ '地方創生' | translate }}</span></a></li>
-                      <li><a [routerLink]="['searchCatUrl, 14']" ><span>{{ '電影動畫' | translate }}</span></a></li>
-                      <li class='last'><a [routerLink]="['searchCatUrl, 15']" ><span>{{ '插畫漫畫' | translate }}</span></a></li>
-                  </ul>
-                </li>
+                  <li><a [routerLink]="['searchCatUrl, 6']" ><span>{{ '飲食' | translate }}</span></a></li>
+                  <li><a [routerLink]="['searchCatUrl, 7']" ><span>{{ '時尚' | translate }}</span></a></li>
+                  <li><a [routerLink]="['searchCatUrl, 8']" ><span>{{ '教育' | translate }}</span></a></li>
+                  <li><a [routerLink]="['searchCatUrl, 9']" ><span>{{ '科技' | translate }}</span></a></li>
+                  <li class='last'><a [routerLink]="['searchCatUrl, 10']" ><span>{{ '社會' | translate }}</span></a></li>
+              </ul>
+            </li>
+            <li class='has-sub'>
+              <a><span>{{ '娛樂' | translate }}</span></a>
+              <ul>
+                  <li><a [routerLink]="['searchCatUrl, 11']" ><span>{{ '表演' | translate }}</span></a></li>
+                  <li><a [routerLink]="['searchCatUrl, 12']" ><span>{{ '遊戲' | translate }}</span></a></li>
+                  <li><a [routerLink]="['searchCatUrl, 13']" ><span>{{ '地方創生' | translate }}</span></a></li>
+                  <li><a [routerLink]="['searchCatUrl, 14']" ><span>{{ '電影動畫' | translate }}</span></a></li>
+                  <li class='last'><a [routerLink]="['searchCatUrl, 15']" ><span>{{ '插畫漫畫' | translate }}</span></a></li>
+              </ul>
+            </li>
                 <!-- <li class="img-nav">
                   <div class="container">
                     <div class="clearfix"></div>
@@ -180,17 +176,6 @@
                     <div class="clearfix"></div>
                   </div>
                 </li> -->
-              </ul>
-            </li>
-            <li>
-              <a [routerLink]="['/create']"><span>{{ '提案' | translate }}</span></a>
-            </li>
-            <li>
-              <a [routerLink]="['/projects']"><span>{{ '探索' | translate }}</span></a>
-            </li>
-            <li>
-              <a [routerLink]="['/cart']"><span>{{ '我要贊助' | translate }}</span></a>
-            </li>
           </ul>
         </div>
       </div>

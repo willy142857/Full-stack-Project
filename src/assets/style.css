@@ -4408,7 +4408,7 @@ input[type="number"].hotfix::-webkit-inner-spin-button {
 }
 
 .holder::after {
-  background: url("images/plus.png") no-repeat scroll 50% 50% transparent;
+  background: url("images/plus.png") no-repeat scroll 50% 50% rgba(255, 255, 255);
   border: 1px solid transparent;
   border-radius: 50%;
   content: "";
@@ -4423,7 +4423,7 @@ input[type="number"].hotfix::-webkit-inner-spin-button {
 
 #cssmenu>ul>li.active>a>span::after,
 #cssmenu>ul>li.open>a>span::after {
-  background: url("images/minus.png") no-repeat scroll 50% 50% rgba(0, 0, 0, 0);
+  background: url("images/minus.png") no-repeat scroll 50% 50% rgba(255, 255, 255);
   border: 1px solid transparent;
   border-radius: 50%;
   content: "";
