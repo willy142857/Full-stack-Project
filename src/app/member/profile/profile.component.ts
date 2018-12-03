@@ -18,7 +18,6 @@ export class ProfileComponent implements OnInit {
     private router: Router,
     private projectService: ProjectService
   ) {}
-  dasharray = 350;
   user: Member;
   photo: any;
   editPhoto = false;
@@ -43,19 +42,6 @@ export class ProfileComponent implements OnInit {
 
   editProfilePhoto() {
     this.editPhoto = !this.editPhoto;
-  }
-
-  progress(project: Project): number {
-    const ratio =
-      this.dasharray -
-      (project.curr_amount / project.goal_amount) * this.dasharray;
-    return ratio < 0 ? 0 : ratio;
-  }
-
-  leftDay(project: Project): number {
-    const end = new Date(project.ended_at);
-    const start = new Date(project.started_at);
-    return Math.floor((end.getTime() - start.getTime()) / 1000 / 60 / 60 / 24);
   }
 
   onSubmit(form) {
