@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../project.service';
 import { Router } from '@angular/router';
 import { Project, Category, Feedback } from '../project';
+import { AuthService } from 'src/app/auth/auth.service';
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
@@ -33,7 +34,9 @@ export class CreateComponent implements OnInit {
   img: any;
   category = this.projectService.category;
   nowDate = new Date();
-  constructor(private projectService: ProjectService, private router: Router) { }
+  constructor(private projectService: ProjectService,
+    private router: Router,
+    private authService: AuthService) { }
 
   ngOnInit() {
     scroll(0, 0);
@@ -44,14 +47,17 @@ export class CreateComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.project);
-    this.projectService.createProject(this.project).
+    if (this.authService.isLogin()) {
+      this.projectService.createProject(this.project).
       subscribe((data: any) => {
         if (data.success) {
+          alert('提案成功');
           this.router.navigateByUrl('/');
         }
-        console.log(data.feedbacks);
       });
+    } else {
+      this.router.navigateByUrl('/login');
+    }
   }
 
   readURL(input) {

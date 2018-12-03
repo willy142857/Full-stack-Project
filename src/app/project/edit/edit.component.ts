@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../project.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Project, Category, Feedback } from '../project';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-edit',
@@ -18,10 +19,12 @@ export class EditComponent implements OnInit {
   constructor(
     private projectService: ProjectService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private authService: AuthService
   ) {}
 
   ngOnInit() {
+    scroll(0, 0);
     this.route.params.subscribe(params => {
       this.projectService.getCategories().
         subscribe((categories: Category[]) => {
@@ -36,11 +39,16 @@ export class EditComponent implements OnInit {
   }
 
   onSubmit() {
-    this.projectService.editProject(this.project, this.id, this.feedbacks).subscribe((data: any) => {
-      if (data.success) {
-        this.router.navigateByUrl('/');
-      }
-    });
+    if (this.authService.isLogin()) {
+      this.projectService.editProject(this.project, this.id, this.feedbacks).subscribe((data: any) => {
+        if (data.success) {
+          alert('修改成功');
+          this.router.navigateByUrl('/');
+        }
+      });
+    } else {
+      this.router.navigateByUrl('/login');
+    }
   }
 
   readURL(input) {
