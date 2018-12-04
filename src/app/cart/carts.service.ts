@@ -23,7 +23,7 @@ export class CartsService {
   getUserAllInfo() {
     this.tempPro = localStorage.getItem('data');
     this.followingProjectlist = JSON.parse(this.tempPro);
-    console.log(this.followingProjectlist);
+    // console.log(this.followingProjectlist);
   }
 
   getUserAllInfoOld() {

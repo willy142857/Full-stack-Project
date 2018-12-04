@@ -103,19 +103,20 @@
 						<div class="shipping_form">
 							<div class="country_select country_select2">
 								<p>{{'購物車.國家'|translate}}</p>
-								<select class="selectpicker sel_state">
-								  <option>Taiwan</option>
-								  <option>Bangladesh</option>
-								  <option>USA</option>
-								  <option>UK</option>
-								  <option>Canda</option>
-								  <option>Australia</option>
+								<select class="selectpicker sel_state" [(ngModel)]="feedback.country">
+                  <option value="">-- 請選擇 --</option>
+								  <option value="Taiwan">Taiwan</option>
+								  <option value="Bangladesh">Bangladesh</option>
+								  <option value="USA">USA</option>
+								  <option value="UK">UK</option>
+								  <option value="Canda">Canda</option>
+								  <option value="Australia">Australia</option>
 								</select>
 							</div>
 							<div class="c_name_box">
 								<div class="c_name_box_left">
 									<p>{{'購物車.姓名'|translate}} <span>*</span></p>
-									<input type="text">
+									<input type="text" value="" [(ngModel)]="feedback.name">
 								</div>
 								<!-- <div class="c_name_box_right">
 									<p>Last Name <span>*</span></p>
@@ -128,7 +129,7 @@
 							</div> -->
 							<div class="c_address">
 								<p>{{'購物車.地址'|translate}} <span>*</span></p>
-								<input type="text" placeholder="">
+								<input type="text" value="" placeholder="" [(ngModel)]="feedback.address">
 							</div>
 							<!-- <div class="s_town">
 								<p>Town/City <span>*</span></p>
@@ -136,7 +137,7 @@
 							</div> -->
 							<div class="s_order">
 								<p>{{'購物車.備註'|translate}} <span>*</span></p>
-								<textarea name="" cols="30" rows="10"></textarea>
+								<textarea name="" cols="30" rows="10" [(ngModel)]="feedback.note"></textarea>
 							</div>
 
 						</div>

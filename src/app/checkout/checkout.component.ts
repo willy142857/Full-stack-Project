@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartsService } from '../cart/carts.service';
 import { Router } from '@angular/router';
 import { ProjectPlus } from 'src/app/project/project';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-checkout',
@@ -9,7 +10,19 @@ import { ProjectPlus } from 'src/app/project/project';
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent implements OnInit {
-  constructor(private cartsservice: CartsService, private router: Router) {}
+  constructor(private cartsservice: CartsService,
+              private router: Router,
+              private authService: AuthService
+              ) {}
+
+  feedback = {
+    feedback_id: 1,
+    project_id: 1,
+    country: '',
+    name: '',
+    address: '',
+    note: '',
+  };
 
   get projectlist() {
     // this.cartsservice.initialFollowingProject();
@@ -26,8 +39,21 @@ export class CheckoutComponent implements OnInit {
   }
 
   checkout() {
-    if (confirm('確定加入購物車?')) {
-      this.router.navigate(['/']);
+    if (confirm('確定贊助這些商品?')) {
+      if (this.projectlist != null) {
+        for (let index = 0; index < this.projectlist.length; index++) {
+          this.feedback.feedback_id = this.projectlist[index].feedbackid;
+          this.feedback.project_id = this.projectlist[index].id;
+          this.feedback.country = 'Taiwan';
+          console.log(this.feedback);
+          this.authService.orderFeedback(this.feedback);
+        }
+        localStorage.removeItem('data');
+        this.cartsservice.getUserAllInfo();
+        this.router.navigate(['/']);
+      } else {
+        alert('你沒有贊助任何商品');
+      }
     }
   }
 
