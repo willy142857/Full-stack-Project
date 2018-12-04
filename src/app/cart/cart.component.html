@@ -46,7 +46,7 @@
             </div>
           </div>
 
-          <ng-container *ngFor="let pitem of projectlist;">
+          <ng-container *ngFor="let pitem of projectlist; let indexhere = index">
             <div class="cart_item">
               <div class="cart_item_img">
                 <img src= {{pitem.img_path}} alt="" />
@@ -68,7 +68,7 @@
               </div>
               <div class="my_delete_button">
                 <ul>
-                  <li><button>x</button></li>
+                  <li><button (click)="delete(indexhere)">x</button></li>
                 </ul>
               </div>
             </div>

@@ -19,11 +19,19 @@ export class CartsService {
   user: Member;
 
   tempPro: any;
+  followingProjectsInfo: any;
 
   getUserAllInfo() {
     this.tempPro = localStorage.getItem('data');
     this.followingProjectlist = JSON.parse(this.tempPro);
     // console.log(this.followingProjectlist);
+  }
+
+  deleteOneProject(index) {
+    this.followingProjectlist.splice(index, 1);
+    this.followingProjectsInfo = JSON.stringify(this.followingProjectlist);
+    localStorage.setItem('data', this.followingProjectsInfo);
+    this.getUserAllInfo();
   }
 
   getUserAllInfoOld() {

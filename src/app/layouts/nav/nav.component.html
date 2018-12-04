@@ -70,7 +70,7 @@
             {{'我要贊助' | translate}} {{count}} {{'贊助計畫' | translate}}
         </a>
         <div class="cart_menu">
-          <ng-container *ngFor="let pitem of projectlist;">
+          <ng-container *ngFor="let pitem of projectlist; let indexhere = index">
             <div class="cart_items">
               <div class="c_item_img floatleft">
                 <a [routerLink]="['/cart']" >
@@ -84,7 +84,7 @@
                   <span>$ {{pitem?.feedbackprice}}</span>
                 </div>
                 <div class="close_icon_cart floatleft">
-                  <img src="assets/images/close.png" alt="" />
+                  <img src="assets/images/close.png" alt="" (click)="delete(indexhere)"/>
                 </div>
               </div>
             </div>

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartsService } from '../cart/carts.service';
 import { Router } from '@angular/router';
-import { ProjectPlus } from 'src/app/project/project';
 import { AuthService } from '../auth/auth.service';
 
 @Component({
@@ -18,7 +17,7 @@ export class CheckoutComponent implements OnInit {
   feedback = {
     feedback_id: 1,
     project_id: 1,
-    country: '',
+    country: 'Taiwan',
     name: '',
     address: '',
     note: '',
@@ -40,11 +39,16 @@ export class CheckoutComponent implements OnInit {
 
   checkout() {
     if (confirm('確定贊助這些商品?')) {
-      if (this.projectlist != null) {
+      if (this.feedback.country === '') {
+        alert('plz input country');
+      } else if (this.feedback.name === '') {
+        alert('plz input your name');
+      } else if (this.feedback.address === '') {
+        alert('plz input your address');
+      } else if (this.projectlist != null) {
         for (let index = 0; index < this.projectlist.length; index++) {
           this.feedback.feedback_id = this.projectlist[index].feedbackid;
           this.feedback.project_id = this.projectlist[index].id;
-          this.feedback.country = 'Taiwan';
           console.log(this.feedback);
           this.authService.orderFeedback(this.feedback);
         }

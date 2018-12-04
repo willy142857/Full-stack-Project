@@ -45,4 +45,10 @@ export class NavComponent implements OnInit {
       this.cartsservice.getUserAllInfo();
     }
   }
+
+  delete(index) {
+    if (confirm('你確定要移除 ' + this.projectlist[index].name)) {
+      this.cartsservice.deleteOneProject(index);
+    }
+  }
 }

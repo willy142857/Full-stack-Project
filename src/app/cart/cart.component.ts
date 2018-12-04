@@ -30,4 +30,10 @@ export class CartComponent implements OnInit {
   buttomClickPlus(index) {
     this.cartsservice.buttomClickPlus(index);
   }
+
+  delete(index) {
+    if (confirm('你確定要移除 ' + this.projectlist[index].name)) {
+      this.cartsservice.deleteOneProject(index);
+    }
+  }
 }
