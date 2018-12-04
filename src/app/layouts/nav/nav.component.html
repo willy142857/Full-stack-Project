@@ -73,12 +73,12 @@
           <ng-container *ngFor="let pitem of projectlist; let indexhere = index">
             <div class="cart_items">
               <div class="c_item_img floatleft">
-                <a [routerLink]="['/cart']" >
+                <a [routerLink]="['/projects/',projectlist[indexhere].id]" >
                   <img src= {{pitem.img_path}} alt="" /></a>
               </div>
               <div class="c_item_totals floatleft">
                 <div class="c_item_totals_detail floatleft">
-                  <a [routerLink]="['/cart']" >
+                  <a [routerLink]="['/projects/',projectlist[indexhere].id]" >
                     <h5>{{pitem?.name}}</h5>
                   </a>
                   <span>$ {{pitem?.feedbackprice}}</span>

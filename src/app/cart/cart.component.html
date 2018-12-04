@@ -49,7 +49,7 @@
           <ng-container *ngFor="let pitem of projectlist; let indexhere = index">
             <div class="cart_item">
               <div class="cart_item_img">
-                <img src= {{pitem.img_path}} alt="" />
+                <img src= {{pitem.img_path}} alt="" [routerLink]="['/projects/',projectlist[indexhere].id]"/>
                 <p>{{pitem?.name}}</p>
               </div>
               <div class="my_feedback_des">
@@ -62,8 +62,8 @@
                   <li><button (click)="buttomClickPlus(indexhere)"><i class="fa fa-plus"></i></button></li>
                 </ul>
               </div> -->
-              <div class="cart_total">
-                <p>${{pitem?.feedbackprice}}</p>
+              <div class="my_cart_total">
+                <p>$ {{pitem?.feedbackprice}}</p>
                 <!-- <span><i class="fa fa-close"></i></span> -->
               </div>
               <div class="my_delete_button">

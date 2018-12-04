@@ -55,6 +55,7 @@ export class CheckoutComponent implements OnInit {
         localStorage.removeItem('data');
         this.cartsservice.getUserAllInfo();
         this.router.navigate(['/']);
+        alert('謝謝你的支持');
       } else {
         alert('你沒有贊助任何商品');
       }
