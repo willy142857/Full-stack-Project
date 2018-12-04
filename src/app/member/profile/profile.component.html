@@ -142,6 +142,8 @@
   <div class="row">
     <div class="col-md-12">
       <ng-container *ngFor="let project of user?.raisingProjects">
+          <img style="cursor:pointer" src="assets/images/cog.png" alt="" [routerLink]="['/project',project.id,'edit']"
+                  routerLinkActive="router-link-active">
         <app-project-unit
           class="col-md-4 col-sm-6 col-xs-12"
           [project]="project"
