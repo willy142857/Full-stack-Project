@@ -13,9 +13,11 @@ export class TrendingComponent implements OnInit {
   constructor(private projectService: ProjectService) {}
 
   ngOnInit() {
-    this.projectService.getProjects().subscribe((project: Project[]) => {
-      console.log(project);
-      this.projects = project;
+    this.projectService.getProjects().subscribe((projects: Project[]) => {
+      this.projects = projects.filter(project => (
+        this.projectService.calcLeftDay(project) >= 0
+      ));
+      console.log(this.projects);
     });
   }
 }

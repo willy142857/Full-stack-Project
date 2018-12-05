@@ -30,12 +30,13 @@ export class IndexComponent implements OnInit {
       this.projectService.getCategories().
         subscribe((categories: Category[]) => {
           this.categories = categories;
-          // console.log(this.categories[0].category);
         });
 
       this.projectService.getProjects().subscribe((projects: Project[]) => {
         this.originalProj = projects;
-        this.projects = this.originalProj;
+        this.projects = this.originalProj.filter(project => (
+          this.leftDay(project) >= 0
+        ));
         if (id) {
           this.title = this.categories[id - 1].category;
           this.filterProjects(id);
