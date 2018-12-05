@@ -92,6 +92,14 @@
     "已募資金額": "Current Funds",
     "目標金額": "Goal Funds",
     "詳細資料": "Details",
+
+    "回饋清單": {
+      "金額": "$",
+      "時間": "Date",
+      "說明": "Description",
+      "贊助人數": "Backers"
+    },
+
     "贊助人數": "Bakcers",
     "剩餘時間": "Days Left",
     "天": "Days",
