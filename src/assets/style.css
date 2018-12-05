@@ -730,6 +730,8 @@ nav.mainmenu::after {
 
 .cart_menu .cart_items .c_item_img img {
   margin-top: 0;
+  overflow: inherit;
+  margin-right: 10%;
 }
 
 .c_item_totals_detail.floatleft>a {
@@ -764,6 +766,7 @@ nav.mainmenu::after {
 
 .c_item_totals_detail {
   width: 66%;
+  margin-left: 40px;
 }
 
 .c_item_img>img {
