@@ -134,4 +134,8 @@ export class BannerComponent implements OnInit {
   ngOnInit() {
     this.autoPlay();
   }
+
+  leftDay(project) {
+    // this.projectService.calcLeftDay(project);
+  }
 }
