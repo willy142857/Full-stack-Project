@@ -86,7 +86,7 @@
                   <div id="collapseTwoP" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwoP">
                     <div>
                       <div class="Bar">
-                        <div [style.width.%]="list.curr_amount / list.goal_amount * 100">
+                        <div [style.width.%]="list.curr_amount / list.goal_amount * 100 > 100? 100 : list.curr_amount / list.goal_amount * 100">
                             <span>{{ percentage }}%</span>
                         </div>
                       </div>
@@ -162,7 +162,7 @@
                           <h3> {{ '計畫.方案' | translate }}{{i+1}}：</h3>
                         </div>
                         <div class="multi_lines_text">
-                         <span style="font-size: 24px">{{feedback.description}}</span>
+                         <span style="font-size: 18px">{{feedback.description}}</span>
                           <div>
                             <span class="feedback_color">
                               {{ '計畫.贊助人數' | translate }}：{{feedback.backer}}<br>
@@ -202,7 +202,7 @@
             <div class="tab-content tab-p-details">
               <div role="tabpanel" class="tab-pane active" id="home2">
                 <h2> {{ '計畫.商品描述' | translate }}</h2>
-                <div class="multi_line"></div>
+                <div class="multi_lines_text"></div>
                 <p>
                   {{list.description}}
                 </p>

@@ -57,13 +57,13 @@ export class IndexComponent implements OnInit {
   }
 
   getSearch(keyword: string) {
-    this.projects = this.projects.filter(
+    this.projects = this.originalProj.filter(
       project => project.name.indexOf(keyword) !== -1
     );
   }
 
   filterProjects(id: number) {
-    this.projects = this.projects.filter(project => project.category_id === id);
+    this.projects = this.originalProj.filter(project => project.category_id === id);
   }
 
   progress(project: Project): number {
