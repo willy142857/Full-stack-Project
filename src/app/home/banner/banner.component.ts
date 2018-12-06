@@ -7,6 +7,8 @@ import {
   transition,
   style
 } from '@angular/animations';
+import { AuthService } from 'src/app/auth/auth.service';
+import { Project } from 'src/app/project/project';
 
 @Component({
   selector: 'app-home-banner',
@@ -69,26 +71,9 @@ import {
   ]
 })
 export class BannerComponent implements OnInit {
-  projects = [
-    {
-      img: 'assets/images/carBanner.jpg',
-      name: '1124',
-      date: '8'
-    },
-    {
-      img: 'assets/images/slider-temp2.jpg',
-      name: '滅東廠',
-      date: '7'
-    }
-  ];
+  projects: Project[];
 
-  selected = [
-    {
-      img: 'assets/images/angel.jpg',
-      name: '計畫名稱',
-      date: '18'
-    }
-  ];
+  selected: Project[] = [];
   constructor(private projectService: ProjectService) {}
 
   state = 'stay';
@@ -110,13 +95,11 @@ export class BannerComponent implements OnInit {
     } else if (this.state === 'moveRight') {
       const last = this.projects.length - 1;
       this.selected.unshift(this.projects[last]);
-      this.projects.unshift( this.selected[1]);
+      this.projects.unshift(this.selected[1]);
       this.selected.pop();
       this.projects.pop();
       this.state = 'stayR';
     }
-    console.log(this.selected);
-    console.log(this.state);
   }
 
   stopPlay(): void {
@@ -132,10 +115,40 @@ export class BannerComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.projectService
+      .getRecentProjects()
+      .subscribe((recentProjects: Project[]) => {
+        this.projects = recentProjects;
+        this.selected.push(this.projects[0]);
+        this.projects.shift();
+        for (let i = 0; i < 4; i++) {
+          if (this.projects[i].name.length >= 15) {
+            console.log(this.projects[i].name);
+            this.projects[i].name = this.projects[i].name.slice(0, 14);
+            console.log(this.projects[i].name);
+          }
+        }
+        if (this.selected[0].name.length >= 15) {
+          this.selected[0].name = this.selected[0].name.slice(0, 14);
+        }
+      });
+    // if (this.projects !== undefined) {
+    //   for (let i = 0; i < 5; i++) {
+    //     if (this.projects[i].name.length >= 10) {
+    //       this.projects[i].name = this.projects[i].name.slice(0, 9);
+    //       console.log(this.projects[i].name);
+    //     }
+    //   }
+    //   if (this.selected[0].name.length >= 10) {
+    //     this.selected[0].name = this.selected[0].name.slice(0, 9);
+    //   }
+    // }
+
     this.autoPlay();
   }
 
-  leftDay(project) {
-    // this.projectService.calcLeftDay(project);
+  leftDay() {
+    this.projectService.calcLeftDay(this.selected[0]);
+    console.log(this.selected[0]);
   }
 }

@@ -60,6 +60,10 @@ export class ProjectService {
     return this.httpClient.get(`${environment.api}/categories`);
   }
 
+  getRecentProjects() {
+    return this.httpClient.get(`${environment.api}/projects/recent`);
+  }
+
   // 未開始，return -1;已結束 return -2;else return left date
   calcLeftDay(project: Project): number {
     const end = new Date(project.ended_at);
