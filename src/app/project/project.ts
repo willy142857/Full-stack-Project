@@ -1,6 +1,6 @@
 export interface Project {
   id?: number;
-  raising_user_id: number;
+  raising_user_id?: number;
   fundraiser: string;
   email: string;
   name: string;

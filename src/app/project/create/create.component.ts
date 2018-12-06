@@ -9,31 +9,26 @@ import { AuthService } from 'src/app/auth/auth.service';
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit {
-  // test data
   project: Project = {
-    fundraiser: '約瑞柯文哲',
-    email: 'qwerty@gmail.com',
-    name: '練肖話',
-    category_id: 7,
-    category_name: '..',
-    brief: '票投姚文智，電狼3-4',
-    started_at: '2018-12-08',
-    ended_at: '2018-12-09',
+    fundraiser: null,
+    email: null,
+    name: null,
+    category_id: null,
+    category_name: null,
+    brief: null,
+    started_at: null,
+    ended_at: null,
     goal_amount: 94879487,
-    description: '朋友買了一件衣料，綠色的底子帶白色方格，\
-      當她拿給我們看時，一位對圍棋十分感與趣的同學說：「啊，好像棋盤似的。」\
-      「我看倒有點像稿紙。」我說。\
-      「真像一塊塊綠豆糕。」一位外號叫「大食客」的同學緊接著說。\
-      我們不禁哄堂大笑，同樣的一件衣料，每個人卻有不同的感覺。\
-      那位朋友連忙把衣料用紙包好，她覺得衣料就是衣料，不是棋盤，也不是稿紙，更不是綠豆糕。',
+    description: null,
     feedbacks: [this.getNewProj()],
     img_path: null,
-    relative_web: 'google.com',
+    relative_web: null,
   };
   categories: Category[];
   img: any;
   category = this.projectService.category;
   nowDate = new Date();
+
   constructor(private projectService: ProjectService,
     private router: Router,
     private authService: AuthService) { }
@@ -53,7 +48,12 @@ export class CreateComponent implements OnInit {
         if (data.success) {
           alert('提案成功');
           this.router.navigateByUrl('/');
+        } else {
+          alert('fail');
         }
+      },
+      response => {
+        alert(response.error.message);
       });
     } else {
       this.router.navigateByUrl('/login');
