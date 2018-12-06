@@ -1,5 +1,5 @@
 import { AuthService } from 'src/app/auth/auth.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Project, Comment, ProjectPlus} from 'src/app/project/project';
 import { ProjectService } from '../project.service';
 import { CartsService } from '../../cart/carts.service';
@@ -78,6 +78,7 @@ export class CommodityComponent implements OnInit {
     private cartsservice: CartsService,
      private projectservic: ProjectService,
      private route: ActivatedRoute,
+     private router: Router,
      private authService: AuthService) {}
   ngOnInit() {
     scroll(0, 0);
@@ -109,7 +110,11 @@ export class CommodityComponent implements OnInit {
 
   orderFeedback(event) {
     if (this.authService.isLogin()) {
-      if (confirm('確定加入購物車?')) {
+      if (new Date().getTime() < new Date(this.list.started_at).getTime()) {
+        alert('!!計畫未開始!!');
+      } else if (new Date().getTime() > new Date(this.list.ended_at).getTime()) {
+        alert('!!計畫已结束!!');
+      } else if (confirm('確定加入購物車?')) {
         this.tempPro = this.list;
         this.tempPro.feedbackid = event.id;
         this.tempPro.feedbackdes = event.description;
@@ -124,6 +129,7 @@ export class CommodityComponent implements OnInit {
       }
     } else {
       alert('請先登入');
+      this.router.navigate(['/login']);
     }
   }
 }
