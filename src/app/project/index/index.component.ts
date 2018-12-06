@@ -15,6 +15,7 @@ export class IndexComponent implements OnInit {
   originalProj: Project[];
   projects: Project[];
   title;
+  searchTitle;
 
   constructor(
     private projectService: ProjectService,
@@ -42,7 +43,8 @@ export class IndexComponent implements OnInit {
           this.filterProjects(id);
         }
         if (keyword) {
-          this.title = '搜尋:' + keyword;
+          this.title = '搜尋: ';
+          this.searchTitle = keyword;
           this.getSearch(keyword);
         }
       });

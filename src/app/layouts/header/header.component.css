@@ -74,6 +74,16 @@ nav.currency {
   text-decoration: none;
 }
 
+.header_left input[type="text"] {
+  border: medium none;
+  color: #000;
+  font-weight: 500;
+  margin-left: 13px;
+  padding-left: 10px;
+  padding-top: 3px;
+  text-transform: none;
+  }
+
 /* ============================================
 14. IE CSS
 ===============================================*/

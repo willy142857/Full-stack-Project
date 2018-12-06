@@ -23,6 +23,7 @@
   "首頁": "home",
   "分類": "category",
   "搜尋": "search",
+  "搜尋: ": "Search: ",
 
   "homepage": {
     "trending": "trending",
@@ -78,6 +79,8 @@
   "台灣, 台北市大安區基隆路四段43號": "No.43, Section 4, Keelung Road, Daan District, Taipei, Taiwan",
   "電話": "TEL",
   "著作權": "Copyright",
+
+  "所有贊助專案": "All Sponsorship Projects",
 
   "計畫": {
     "提案": "Raise Fund",
