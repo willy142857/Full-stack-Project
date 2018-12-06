@@ -18,7 +18,8 @@ export class LoginComponent implements OnInit {
 
   user = {
     email: '',
-    password: ''
+    password: '',
+    remember: ''
   };
 
   ngOnInit() {
@@ -26,6 +27,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    console.log(this.user);
     this.authService.login(this.user);
   }
 }
