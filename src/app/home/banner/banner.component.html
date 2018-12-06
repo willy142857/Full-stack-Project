@@ -16,8 +16,9 @@
         (@carousel.done)="afterPlay()"
       >
         <img
-          style="margin: 0 auto; height:550px; width:100%"
+          style="margin: 0 auto; height:550px; width:100%; cursor:pointer"
           [src]="selected[0].img_path"
+          [routerLink]="['/projects', selected[0].id]"
         />
       </div>
       <div

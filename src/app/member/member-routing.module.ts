@@ -9,6 +9,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { AuthGuard } from '../auth/auth.guard';
 import { RaisedProjectComponent } from './raised-project/raised-project.component';
 import { EditComponent } from './raised-project/edit/edit.component';
+import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,10 @@ const routes: Routes = [
   {
     path: 'raisedEdit/:id',
     component: EditComponent
+  },
+  {
+    path: 'profile/:id',
+    component: UserComponent,
   },
 ];
 

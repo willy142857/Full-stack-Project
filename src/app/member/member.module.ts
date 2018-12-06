@@ -10,6 +10,7 @@ import { RetrievepasswordComponent } from './retrievepassword/retrievepassword.c
 import { RaisedProjectComponent } from './raised-project/raised-project.component';
 import { EditComponent } from './raised-project/edit/edit.component';
 import { ProjectModule } from '../project/project.module';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   imports: [CommonModule, MemberRoutingModule, SharedModule, ProjectModule],
@@ -20,7 +21,8 @@ import { ProjectModule } from '../project/project.module';
     ResetpasswordComponent,
     RetrievepasswordComponent,
     RaisedProjectComponent,
-    EditComponent
+    EditComponent,
+    UserComponent
   ],
   exports: [
     LoginComponent,

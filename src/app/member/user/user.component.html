@@ -1,0 +1,118 @@
+<div class="content">
+  <div class="row">
+    <div class="col-md-offset-2 col-sm-offset-2 col-md-8 col-sm-8 col-xs-12">
+      <h3 class="profile-header">個人資料</h3>
+
+      <form *ngIf="user !== undefined" #form="ngForm">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group">
+            <label>{{ 'name' | translate }}</label>
+            <input
+              type="text"
+              [(ngModel)]="user.name"
+              name="name"
+              #name="ngModel"
+              readonly
+            />
+          </div>
+          <div class="form-group">
+            <label>{{ '手機號碼' | translate }}</label>
+            <input
+              type="number"
+              [(ngModel)]="user.phone"
+              name="phone"
+              #phone="ngModel"
+              readonly
+            />
+          </div>
+          <div class="form-group">
+            <p><label>性別</label></p>
+            <input
+              type="radio"
+              name="text"
+              value="男"
+              [(ngModel)]="user.sex"
+              check="user.sex==男"
+              readonly
+            />男
+            <input
+              type="radio"
+              name="text"
+              value="女"
+              [(ngModel)]="user.sex"
+              check="user.sex==女"
+              readonly
+            />女
+          </div>
+          <div class="form-group">
+            <label>地址</label>
+            <input
+              type="text"
+              class="is-valid"
+              [(ngModel)]="user.address"
+              name="address"
+              #address="ngModel"
+              readonly
+            />
+          </div>
+          <div class="form-group">
+            <label>生日</label>
+            <input
+              type="date"
+              class="is-valid"
+              [(ngModel)]="user.birth"
+              name="birth"
+              #birth="ngModel"
+              readonly
+            />
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="s_order form-group">
+            <label>個人介紹</label>
+            <textarea
+              name="description"
+              [(ngModel)]="user.description"
+              readonly
+            ></textarea>
+          </div>
+          <label>大頭照</label> <br />
+          <img
+            *ngIf="photo !== undefined"
+            [src]="photo"
+            style="width:50%; height: 50%; overflow:scroll;"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<h3 class="profile-header">已追蹤的專案</h3>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <ng-container *ngFor="let project of user?.followingProjects">
+        <app-project-unit
+          class="col-md-4 col-sm-6 col-xs-12"
+          [project]="project"
+        ></app-project-unit>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<h3 class="profile-header">已提案的專案</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div
+        class="col-md-4 col-sm-6 col-xs-12"
+        *ngFor="let project of user?.raisingProjects"
+      >
+        <app-project-unit [project]="project"></app-project-unit>
+      </div>
+    </div>
+  </div>
+</div>

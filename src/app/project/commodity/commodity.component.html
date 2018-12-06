@@ -1,4 +1,4 @@
-<section class="gray_tshirt_area" *ngIf="list!==undefined">
+<section class="gray_tshirt_area" *ngIf="list !== undefined">
   <div class="container">
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
@@ -11,131 +11,242 @@
                   <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="home">
                       <div class="single_p_image">
-                        <a href="/assets/images/single-large.jpg" data-lightbox="image-1" data-title="My caption"><img
-                            src="images/product-plus.png" alt="" /></a>
-                        <img id="zoom_02" src="{{list.img_path}}" data-zoom-image="/assets/images/single-large.jpg"
-                          alt="" />
+                        <a
+                          href="/assets/images/single-large.jpg"
+                          data-lightbox="image-1"
+                          data-title="My caption"
+                          ><img src="images/product-plus.png" alt=""
+                        /></a>
+                        <img
+                          id="zoom_02"
+                          src="{{list.img_path}}"
+                          data-zoom-image="/assets/images/single-large.jpg"
+                          alt=""
+                        />
                       </div>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="profile">
                       <div class="single_p_image">
-                        <a href="/assets/images/single-large1.png" data-lightbox="image-1" data-title="My caption"><img
-                            src="/assets/images/product-plus.png" alt="" /></a>
-                        <img id="zoom_03" src="/assets/images/product_detail_05.png" data-zoom-image="/assets/images/single-large1.png"
-                          alt="" />
+                        <a
+                          href="/assets/images/single-large1.png"
+                          data-lightbox="image-1"
+                          data-title="My caption"
+                          ><img src="/assets/images/product-plus.png" alt=""
+                        /></a>
+                        <img
+                          id="zoom_03"
+                          src="/assets/images/product_detail_05.png"
+                          data-zoom-image="/assets/images/single-large1.png"
+                          alt=""
+                        />
                       </div>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="messages">
                       <div class="single_p_image">
-                        <a href="/assets/images/single-large2.png" data-lightbox="image-1" data-title="My caption"><img
-                            src="/assets/images/product-plus.png" alt="" /></a>
-                        <img id="zoom_04" src="/assets/images/angel.jpg" data-zoom-image="/assets/images/single-large2.png"
-                          alt="" />
+                        <a
+                          href="/assets/images/single-large2.png"
+                          data-lightbox="image-1"
+                          data-title="My caption"
+                          ><img src="/assets/images/product-plus.png" alt=""
+                        /></a>
+                        <img
+                          id="zoom_04"
+                          src="/assets/images/angel.jpg"
+                          data-zoom-image="/assets/images/single-large2.png"
+                          alt=""
+                        />
                       </div>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12">
-
               <div class="product_detail_heading">
                 <div class="detail_heading_left">
                   <div>
-                    <h3>{{list?.name | translate}}</h3>
-                    <br>
-                    <h5>by {{list?.fundraiser | translate}}</h5>
+                    <h3>{{ list?.name | translate }}</h3>
+                    <br />
+                    <h5>
+                      by
+                      <span
+                        [routerLink]="['/profile', list.raising_user_id]"
+                        style="cursor:pointer"
+                        >{{ list?.fundraiser | translate }}</span
+                      >
+                    </h5>
                   </div>
-                </div><br>
+                </div>
+                <br />
                 <div class="detail_heading_left">
                   <div>
-                    {{ 'category' | translate }}： {{ list?.category_name | translate}}
+                    {{ 'category' | translate }}：
+                    {{ list?.category_name | translate }}
                   </div>
                 </div>
               </div>
-              <div class="panel-group product_accordion" id="home-accordion-single" role="tablist" aria-multiselectable="true">
+              <div
+                class="panel-group product_accordion"
+                id="home-accordion-single"
+                role="tablist"
+                aria-multiselectable="true"
+              >
                 <div class="panel panel-default product_default">
-                  <div class="panel-heading product_accordion_heading" role="tab" id="headingOneP">
+                  <div
+                    class="panel-heading product_accordion_heading"
+                    role="tab"
+                    id="headingOneP"
+                  >
                     <h4 class="panel-title product_accordion_head">
-                      <a data-toggle="collapse" href="#collapseOneP" aria-expanded="true"
-                        aria-controls="collapseOneP" (click)="changePicState(0)">
+                      <a
+                        data-toggle="collapse"
+                        href="#collapseOneP"
+                        aria-expanded="true"
+                        aria-controls="collapseOneP"
+                        (click)="changePicState(0)"
+                      >
                         {{ '計畫.簡介' | translate }}
-                        <span class="floatright"><i [ngClass]="toggle[0]? 'fa fa-minus':'fa fa-plus'"></i>
+                        <span class="floatright"
+                          ><i
+                            [ngClass]="toggle[0] ? 'fa fa-minus' : 'fa fa-plus'"
+                          ></i>
                         </span>
-
                       </a>
                     </h4>
                   </div>
-                  <div id="collapseOneP" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOneP">
+                  <div
+                    id="collapseOneP"
+                    class="panel-collapse collapse in"
+                    role="tabpanel"
+                    aria-labelledby="headingOneP"
+                  >
                     <div class="panel-body product_ac_body">
-                      <p>{{list?.brief | translate}}</p>
+                      <p>{{ list?.brief | translate }}</p>
                     </div>
                   </div>
                 </div>
                 <div class="panel panel-default product_default">
-                  <div class="panel-heading product_accordion_heading" role="tab" id="headingTwoP">
+                  <div
+                    class="panel-heading product_accordion_heading"
+                    role="tab"
+                    id="headingTwoP"
+                  >
                     <h4 class="panel-title product_accordion_head">
-                      <a class="collapsed" data-toggle="collapse" href="#collapseTwoP"
-                        aria-expanded="false" aria-controls="collapseTwoP"  (click)="changePicState(1)">
-                        {{'計畫.募資狀況' | translate }}
-                        <span class="floatright"><i [ngClass]="toggle[1]? 'fa fa-minus':'fa fa-plus'"></i></span>
+                      <a
+                        class="collapsed"
+                        data-toggle="collapse"
+                        href="#collapseTwoP"
+                        aria-expanded="false"
+                        aria-controls="collapseTwoP"
+                        (click)="changePicState(1)"
+                      >
+                        {{ '計畫.募資狀況' | translate }}
+                        <span class="floatright"
+                          ><i
+                            [ngClass]="toggle[1] ? 'fa fa-minus' : 'fa fa-plus'"
+                          ></i
+                        ></span>
                       </a>
                     </h4>
                   </div>
-                  <div id="collapseTwoP" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwoP">
+                  <div
+                    id="collapseTwoP"
+                    class="panel-collapse collapse"
+                    role="tabpanel"
+                    aria-labelledby="headingTwoP"
+                  >
                     <div>
                       <div class="Bar">
-                        <div [style.width.%]="list.curr_amount / list.goal_amount * 100">
-                            <span>{{ percentage }}%</span>
+                        <div
+                          [style.width.%]="
+                            (list.curr_amount / list.goal_amount) * 100
+                          "
+                        >
+                          <span>{{ percentage }}%</span>
                         </div>
                       </div>
                       <div class="panel-body fit">
-                        {{ '計畫.已募資金額' | translate }}：{{list?.curr_amount}}
-                        <br> {{ '計畫.目標金額' | translate }}：{{list?.goal_amount}}
+                        {{ '計畫.已募資金額' | translate }}：{{
+                          list?.curr_amount
+                        }}
+                        <br />
+                        {{ '計畫.目標金額' | translate }}：{{
+                          list?.goal_amount
+                        }}
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="panel panel-default product_default">
-                  <div class="panel-heading product_accordion_heading" role="tab" id="headingThreeP">
+                  <div
+                    class="panel-heading product_accordion_heading"
+                    role="tab"
+                    id="headingThreeP"
+                  >
                     <h4 class="panel-title product_accordion_head">
-                      <a class="collapsed" data-toggle="collapse" href="#collapseThreeP"
-                        aria-expanded="false" aria-controls="collapseThreeP" (click)="changePicState(2)">
+                      <a
+                        class="collapsed"
+                        data-toggle="collapse"
+                        href="#collapseThreeP"
+                        aria-expanded="false"
+                        aria-controls="collapseThreeP"
+                        (click)="changePicState(2)"
+                      >
                         {{ '計畫.詳細資料' | translate }}
-                        <span class="floatright"><i [ngClass]="toggle[2]? 'fa fa-minus':'fa fa-plus'"></i></span>
+                        <span class="floatright"
+                          ><i
+                            [ngClass]="toggle[2] ? 'fa fa-minus' : 'fa fa-plus'"
+                          ></i
+                        ></span>
                       </a>
                     </h4>
                   </div>
-                  <div id="collapseThreeP" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThreeP">
+                  <div
+                    id="collapseThreeP"
+                    class="panel-collapse collapse"
+                    role="tabpanel"
+                    aria-labelledby="headingThreeP"
+                  >
                     <div class="panel-body product_accordion_head">
                       <div class="single_color sp_single_col">
                         <div class="color_heading">
-                          <h5> {{ '計畫.贊助人數' | translate }}：{{list?.backer}}人</h5>
+                          <h5>
+                            {{ '計畫.贊助人數' | translate }}：{{
+                              list?.backer
+                            }}人
+                          </h5>
                         </div>
                       </div>
                       <div class="single_color">
                         <div class="color_heading">
-                          <h5> {{ '計畫.剩餘時間' | translate }}：{{date()}} {{ '計畫.天' | translate }}</h5>
+                          <h5>
+                            {{ '計畫.剩餘時間' | translate }}：{{ date() }}
+                            {{ '計畫.天' | translate }}
+                          </h5>
                         </div>
                       </div>
                       <div class="single_color">
-                        <div class="color_heading" width="400" >
-                          <h5> {{ '計畫.時程' | translate }}：<br>{{list?.started_at | date:'y/MM/d' }} ~ {{list?.ended_at | date:'y/MM/d' }}</h5>
+                        <div class="color_heading" width="400">
+                          <h5>
+                            {{ '計畫.時程' | translate }}：<br />{{
+                              list?.started_at | date: 'y/MM/d'
+                            }}
+                            ~ {{ list?.ended_at | date: 'y/MM/d' }}
+                          </h5>
                         </div>
                       </div>
 
                       <div class="single_color">
                         <div class="color_heading">
-                          <h5> {{ '計畫.聯絡信箱' | translate }}：{{list?.email}}</h5>
+                          <h5>
+                            {{ '計畫.聯絡信箱' | translate }}：{{ list?.email }}
+                          </h5>
                         </div>
                       </div>
-
                     </div>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -144,34 +255,50 @@
   </div>
 </section>
 
-<section class="main_category_area product_page_caro" *ngIf="list!==undefined">
+<section
+  class="main_category_area product_page_caro"
+  *ngIf="list !== undefined"
+>
   <div class="container">
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="main_category_right product-box">
-          <h2 class="product"> {{ '計畫.贊助計畫方案' | translate }}</h2>
+          <h2 class="product">{{ '計畫.贊助計畫方案' | translate }}</h2>
           <div class="multi_line_long"></div>
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div>
-                <ng-container *ngFor="let feedback of list.feedbacks; let i = index;">
+                <ng-container
+                  *ngFor="let feedback of list.feedbacks; let i = index"
+                >
                   <div>
                     <form>
                       <div class="item">
                         <div>
-                          <h3> {{ '計畫.方案' | translate }}{{i+1}}：</h3>
+                          <h3>{{ '計畫.方案' | translate }}{{ i + 1 }}：</h3>
                         </div>
                         <div class="multi_lines_text">
-                         <span style="font-size: 24px">{{feedback.description}}</span>
+                          <span style="font-size: 24px">{{
+                            feedback.description
+                          }}</span>
                           <div>
                             <span class="feedback_color">
-                              {{ '計畫.贊助人數' | translate }}：{{feedback.backer}}<br>
-                              {{ '計畫.到期日期' | translate }}：{{feedback.date}}<br>
-                              {{ '計畫.贊助金額' | translate }}: {{feedback.price}}
-                          </span>
+                              {{ '計畫.贊助人數' | translate }}：{{
+                                feedback.backer
+                              }}<br />
+                              {{ '計畫.到期日期' | translate }}：{{
+                                feedback.date
+                              }}<br />
+                              {{ '計畫.贊助金額' | translate }}:
+                              {{ feedback.price }}
+                            </span>
                           </div>
                           <div class="invest_button">
-                            <input type="button" value=" {{ '計畫.贊助計畫' | translate }}" (click)="orderFeedback(feedback)">
+                            <input
+                              type="button"
+                              value=" {{ '計畫.贊助計畫' | translate }}"
+                              (click)="orderFeedback(feedback)"
+                            />
                           </div>
                         </div>
                       </div>
@@ -188,72 +315,119 @@
   </div>
 </section>
 
-<section class="product_page_tab_area" *ngIf="list!==undefined">
+<section class="product_page_tab_area" *ngIf="list !== undefined">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <div class="product_page_tab">
           <div role="tabpanel">
             <ul class="nav nav-tabs tab-product" role="tablist">
-              <li role="presentation" class="active"><a href="#home2" aria-controls="home2" role="tab" data-toggle="tab"> {{ '計畫.商品描述' | translate }}</a></li>
-              <li role="presentation"><a href="#messages2" aria-controls="messages2" role="tab" data-toggle="tab"> {{ '計畫.留言板' | translate }}</a></li>
+              <li role="presentation" class="active">
+                <a
+                  href="#home2"
+                  aria-controls="home2"
+                  role="tab"
+                  data-toggle="tab"
+                >
+                  {{ '計畫.商品描述' | translate }}</a
+                >
+              </li>
+              <li role="presentation">
+                <a
+                  href="#messages2"
+                  aria-controls="messages2"
+                  role="tab"
+                  data-toggle="tab"
+                >
+                  {{ '計畫.留言板' | translate }}</a
+                >
+              </li>
             </ul>
 
             <div class="tab-content tab-p-details">
               <div role="tabpanel" class="tab-pane active" id="home2">
-                <h2> {{ '計畫.商品描述' | translate }}</h2>
+                <h2>{{ '計畫.商品描述' | translate }}</h2>
                 <div class="multi_line"></div>
-                <p>
-                  {{list.description}}
-                </p>
+                <p>{{ list.description }}</p>
               </div>
               <div role="tabpanel" class="tab-pane" id="messages2">
                 <div class="review_comments">
                   <div class="review_heading">
                     <div class="review_heading_left">
-                      <h2><span> {{ '計畫.留言' | translate }}</span></h2>
+                      <h2>
+                        <span> {{ '計畫.留言' | translate }}</span>
+                      </h2>
                       <div class="multi_line"></div>
                     </div>
                   </div>
-                  <ng-container *ngFor='let comment of list.comments'>
-                    <div class="single_review_comment" *ngIf="show_stars(comment)">
+                  <ng-container *ngFor="let comment of list.comments">
+                    <div
+                      class="single_review_comment"
+                      *ngIf="show_stars(comment)"
+                    >
                       <div class="single_img">
                         <img [src]="comment.profile_URL" alt="" />
                       </div>
                       <div class="single_review">
-                        <h4>{{comment.username}}</h4>
+                        <h4>{{ comment.username }}</h4>
 
                         <ul id="single_review_star">
                           <ng-container *ngFor="let star of comment.stars">
                             <li><i class="fa2 fa-star-o" *ngIf="star"></i></li>
                           </ng-container>
                         </ul>
-                        <p>{{comment.comment}}</p>
+                        <p>{{ comment.comment }}</p>
                         <div class="review_italic">
-                          <p>{{comment.date | date:'y/MM/d'}}</p>
+                          <p>{{ comment.date | date: 'y/MM/d' }}</p>
                         </div>
                       </div>
                     </div>
                   </ng-container>
                   <div class="Review_input">
                     <div class="review_input_heading">
-                      <h3> {{ '計畫.留言' | translate }}</h3>
+                      <h3>{{ '計畫.留言' | translate }}</h3>
                       <div class="multi_line"></div>
                     </div>
                     <form>
                       <div class="star">
                         <ul>
-                          <ng-container *ngFor="let star of user_stars; let i = index">
-                            <li><i class="fa fa-star-o" [ngClass]="{'pink': star}" (click)="score_stars(i+1)"></i></li>
+                          <ng-container
+                            *ngFor="let star of user_stars; let i = index"
+                          >
+                            <li>
+                              <i
+                                class="fa fa-star-o"
+                                [ngClass]="{ pink: star }"
+                                (click)="score_stars(i + 1)"
+                              ></i>
+                            </li>
                           </ng-container>
                         </ul>
-                      </div><br>
+                      </div>
+                      <br />
                       <div class="review_comment">
-                        <!-- <input type="text" placeholder="Enter Your Nickname" [(ngModel)]="comment.username" name="userName" /><br> -->
-                        <!-- <input type="text" placeholder="Summary of your Review" /><br> -->
-                        <textarea name="" id="" cols="30" rows="10" placeholder=" {{ '計畫.寫下留言' | translate }}" [(ngModel)]="comment.comment" name="comment"></textarea><br>
+                        <!--
+                          <input type="text" placeholder="Enter Your Nickname" [(ngModel)]="comment.username" name="userName" /><br>
+                        -->
+                        <!--
+                          <input type="text" placeholder="Summary of your Review" /><br>
+                        -->
+                        <textarea
+                          name=""
+                          id=""
+                          cols="30"
+                          rows="10"
+                          placeholder=" {{ '計畫.寫下留言' | translate }}"
+                          [(ngModel)]="comment.comment"
+                          name="comment"
+                        ></textarea
+                        ><br />
                         <div class="invest_button">
-                          <input type="button" value="{{'計畫.留言評論' | translate}}" (click)="createComment()"/>
+                          <input
+                            type="button"
+                            value="{{'計畫.留言評論' | translate}}"
+                            (click)="createComment()"
+                          />
                         </div>
                       </div>
                     </form>

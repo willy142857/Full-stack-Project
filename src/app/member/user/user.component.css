@@ -1,0 +1,93 @@
+.invalid input,
+.invalid textarea {
+  border: 1px solid red;
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.password_commit {
+  padding: 0px;
+}
+
+.password_commit>input[type='submit'] {
+  background: none repeat scroll 0 0 #ff6766;
+  border: 2px solid #ff6766;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 8px auto 15px;
+  padding: 7px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 15%;
+}
+
+.password_commit>input[type='submit']:hover {
+  background: #fff;
+  color: #232323;
+}
+
+.register_area {
+  background: none repeat scroll 0 0 #f7f8f9;
+  border-top: 1px solid #eeeeee;
+  padding: 60px 0;
+}
+
+.invalid_feedback {
+  color: red;
+}
+
+.is-invalid {
+  border: 1px solid red;
+  background: none repeat scroll 0 0 #f7f8f9;
+  padding: 9px;
+  width: 100%;
+}
+
+.is-valid {
+  background: none repeat scroll 0 0 #f7f8f9;
+  border: 1px solid #e8e8e8;
+  padding: 9px;
+  width: 100%;
+}
+
+.p_box {
+  margin-top: 0%;
+  height: 500px;
+}
+
+.p_name {
+  margin-top: 3%;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.p_founder {
+  margin-top: 3%;
+  font-size: 18px;
+}
+
+.p_dsp {
+  margin-top: 4%;
+  font-size: 15px;
+  word-break: break-all;
+  margin-bottom: 10%;
+  height: 60px;
+  overflow: hidden;
+}
+
+.p_title {
+  text-align: center;
+  font-size: 30;
+  font-weight: bold;
+  margin-top: 3%;
+}
+
+.point :hover
+{
+  cursor: pointer;
+}
+

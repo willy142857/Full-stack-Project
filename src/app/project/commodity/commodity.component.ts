@@ -1,6 +1,6 @@
 import { AuthService } from 'src/app/auth/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Project, Comment, ProjectPlus} from 'src/app/project/project';
+import { Project, Comment, ProjectPlus } from 'src/app/project/project';
 import { ProjectService } from '../project.service';
 import { CartsService } from '../../cart/carts.service';
 import { CommoditiesService } from './commodities.service';
@@ -24,12 +24,12 @@ export class CommodityComponent implements OnInit {
   comment = {
     project_id: Number,
     rating: Number,
-    comment: '',
+    comment: ''
   };
 
   feedback = {
     feedback_id: Number,
-    project_id: Number,
+    project_id: Number
   };
 
   tempPro: ProjectPlus;
@@ -44,10 +44,9 @@ export class CommodityComponent implements OnInit {
   diffDays: number;
 
   changePicState(i: number) {
-    if(this.toggle[i] === true) {
+    if (this.toggle[i] === true) {
       this.toggle[i] = false;
-    }
-    else if(this.toggle[i] === false){
+    } else if (this.toggle[i] === false) {
       this.toggle[i] = true;
     }
   }
@@ -59,8 +58,11 @@ export class CommodityComponent implements OnInit {
       return '!!已结束!!  ';
     } else if (
       new Date(this.list.started_at).getTime() < new Date().getTime() &&
-      new Date().getTime() < new Date(this.list.ended_at).getTime()) {
-      this.diff = Math.abs(new Date(this.list.ended_at).getTime() - new Date().getTime());
+      new Date().getTime() < new Date(this.list.ended_at).getTime()
+    ) {
+      this.diff = Math.abs(
+        new Date(this.list.ended_at).getTime() - new Date().getTime()
+      );
       this.diffDays = Math.ceil(this.diff / (1000 * 3600 * 24));
       return this.diffDays;
     }
@@ -87,10 +89,11 @@ export class CommodityComponent implements OnInit {
   constructor(
     private commoditiesService: CommoditiesService,
     private cartsservice: CartsService,
-     private projectservic: ProjectService,
-     private route: ActivatedRoute,
-     private router: Router,
-     private authService: AuthService) {}
+    private projectservic: ProjectService,
+    private route: ActivatedRoute,
+    private router: Router,
+    private authService: AuthService
+  ) {}
   ngOnInit() {
     scroll(0, 0);
     this.route.params.subscribe(data => {
@@ -99,7 +102,9 @@ export class CommodityComponent implements OnInit {
       const id = data.id;
       this.projectservic.getProject(id).subscribe((project: Project) => {
         this.list = project;
-        this.percentage = Number(this.list.curr_amount / this.list.goal_amount * 100).toFixed(2);
+        this.percentage = Number(
+          (this.list.curr_amount / this.list.goal_amount) * 100
+        ).toFixed(2);
         // this.feedback = JSON.parse(this.list.feedback);
         console.log(this.list);
       });
@@ -123,7 +128,9 @@ export class CommodityComponent implements OnInit {
     if (this.authService.isLogin()) {
       if (new Date().getTime() < new Date(this.list.started_at).getTime()) {
         alert('!!計畫未開始!!');
-      } else if (new Date().getTime() > new Date(this.list.ended_at).getTime()) {
+      } else if (
+        new Date().getTime() > new Date(this.list.ended_at).getTime()
+      ) {
         alert('!!計畫已结束!!');
       } else if (confirm('確定加入購物車?')) {
         this.tempPro = this.list;
