@@ -20,27 +20,32 @@ export class IndexComponent implements OnInit {
   constructor(
     private projectService: ProjectService,
     private route: ActivatedRoute,
-    public searchService: SearchService,
-    ) {}
+    public searchService: SearchService
+  ) {}
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       const id = +params.id;
       const keyword = params.keyword;
 
-      this.projectService.getCategories().
-        subscribe((categories: Category[]) => {
+      this.projectService
+        .getCategories()
+        .subscribe((categories: Category[]) => {
           this.categories = categories;
         });
 
       this.projectService.getProjects().subscribe((projects: Project[]) => {
         this.originalProj = projects;
-        this.projects = this.originalProj.filter(project => (
-          this.leftDay(project) >= 0
-        ));
+        this.projects = this.originalProj.filter(
+          project => this.leftDay(project) >= 0
+        );
         if (id) {
-          this.title = this.categories[id - 1].category;
-          this.filterProjects(id);
+          if (id > 15) {
+            this.sorting(id);
+          } else {
+            this.title = this.categories[id - 1].category;
+            this.filterProjects(id);
+          }
         }
         if (keyword) {
           this.title = '搜尋: ';
@@ -48,12 +53,13 @@ export class IndexComponent implements OnInit {
           this.getSearch(keyword);
         }
       });
-
     });
   }
 
   getSearch(keyword: string) {
-    this.projects = this.projects.filter(project => project.name.indexOf(keyword) !== -1);
+    this.projects = this.projects.filter(
+      project => project.name.indexOf(keyword) !== -1
+    );
   }
 
   filterProjects(id: number) {
@@ -61,8 +67,51 @@ export class IndexComponent implements OnInit {
   }
 
   progress(project: Project): number {
-    const ratio = this.dasharray - (project.curr_amount / project.goal_amount) * this.dasharray;
+    const ratio =
+      this.dasharray -
+      (project.curr_amount / project.goal_amount) * this.dasharray;
     return ratio < 0 ? 0 : ratio;
+  }
+
+  sorting(id: number) {
+    if (id === 16) {
+      this.projects.sort(function
+        (left, right) {
+          if (left.backer < right.backer) {
+            return -1;
+          }
+          if (left.backer > right.backer) {
+            return 1;
+          }
+          return 0;
+        }
+      );
+    } else if (id === 17) {
+      this.projects.sort(function
+        (left, right) {
+          if (left.started_at < right.started_at) {
+            return -1;
+          }
+          if (left.started_at > right.started_at) {
+            return 1;
+          }
+          return 0;
+        }
+      );
+    } else if (id === 18) {
+      this.projects.sort(function
+        (left, right) {
+          if (left.started_at > right.started_at) {
+            return -1;
+          }
+          if (left.started_at < right.started_at) {
+            return 1;
+          }
+          return 0;
+        }
+      );
+    }
+    console.log(this.projects);
   }
 
   // 計算剩餘日期

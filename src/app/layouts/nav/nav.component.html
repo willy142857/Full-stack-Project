@@ -51,6 +51,12 @@
         </li>
           <li routerLinkActive="current-page-item">
             <a [routerLink]="['/projects']" >{{ '探索' | translate }}</a>
+            <ul id="sub-menu">
+              <li><a [routerLink]="[searchCatUrl, 16]" >{{ '依熱門排序' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 17]" >{{ '時間↑' | translate }}</a></li>
+              <li><a [routerLink]="[searchCatUrl, 18]" >{{ '時間↓' | translate }}</a></li>
+              <li><br></li>
+            </ul>
           </li>
 
         </ul>
