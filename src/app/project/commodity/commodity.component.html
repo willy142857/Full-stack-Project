@@ -157,12 +157,8 @@
                   >
                     <div>
                       <div class="Bar">
-                        <div
-                          [style.width.%]="
-                            (list.curr_amount / list.goal_amount) * 100
-                          "
-                        >
-                          <span>{{ percentage }}%</span>
+                        <div [style.width.%]="list.curr_amount / list.goal_amount * 100 > 100? 100 : list.curr_amount / list.goal_amount * 100">
+                            <span>{{ percentage }}%</span>
                         </div>
                       </div>
                       <div class="panel-body fit">
@@ -278,9 +274,7 @@
                           <h3>{{ '計畫.方案' | translate }}{{ i + 1 }}：</h3>
                         </div>
                         <div class="multi_lines_text">
-                          <span style="font-size: 24px">{{
-                            feedback.description
-                          }}</span>
+                         <span style="font-size: 18px">{{feedback.description}}</span>
                           <div>
                             <span class="feedback_color">
                               {{ '計畫.贊助人數' | translate }}：{{
@@ -346,9 +340,11 @@
 
             <div class="tab-content tab-p-details">
               <div role="tabpanel" class="tab-pane active" id="home2">
-                <h2>{{ '計畫.商品描述' | translate }}</h2>
-                <div class="multi_line"></div>
-                <p>{{ list.description }}</p>
+                <h2> {{ '計畫.商品描述' | translate }}</h2>
+                <div class="multi_lines_text"></div>
+                <p>
+                  {{list.description}}
+                </p>
               </div>
               <div role="tabpanel" class="tab-pane" id="messages2">
                 <div class="review_comments">
