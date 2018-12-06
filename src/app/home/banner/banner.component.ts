@@ -124,25 +124,14 @@ export class BannerComponent implements OnInit {
         for (let i = 0; i < 4; i++) {
           if (this.projects[i].name.length >= 15) {
             console.log(this.projects[i].name);
-            this.projects[i].name = this.projects[i].name.slice(0, 14);
+            this.projects[i].name = this.projects[i].name.slice(0, 14) + '．．．';
             console.log(this.projects[i].name);
           }
         }
         if (this.selected[0].name.length >= 15) {
-          this.selected[0].name = this.selected[0].name.slice(0, 14);
+          this.selected[0].name = this.selected[0].name.slice(0, 14) + '．．．';
         }
       });
-    // if (this.projects !== undefined) {
-    //   for (let i = 0; i < 5; i++) {
-    //     if (this.projects[i].name.length >= 10) {
-    //       this.projects[i].name = this.projects[i].name.slice(0, 9);
-    //       console.log(this.projects[i].name);
-    //     }
-    //   }
-    //   if (this.selected[0].name.length >= 10) {
-    //     this.selected[0].name = this.selected[0].name.slice(0, 9);
-    //   }
-    // }
 
     this.autoPlay();
   }
