@@ -137,7 +137,6 @@ export class BannerComponent implements OnInit {
   }
 
   leftDay() {
-    this.projectService.calcLeftDay(this.selected[0]);
-    console.log(this.selected[0]);
+    return this.projectService.calcLeftDay(this.selected[0]);
   }
 }
