@@ -8,6 +8,7 @@
             <i class="fa fa-envelope"></i>&nbsp;{{ '訂閱我們' | translate }}
             <input type="text" name="email" placeholder="{{ 'your email' | translate }}" [(ngModel)]="data.email" />
             <input type="submit" value="{{ 'submit' | translate }}" (click)="makeSubscription()" />
+            <input type="submit" value="{{ 'cancel' | translate }}" (click)="cancelSubscription()" />
           </div>
         </div>
       </div>

@@ -121,6 +121,7 @@ export class CommodityComponent implements OnInit {
       window.location.reload();
     } else {
       alert('請先登入');
+      this.router.navigate(['/login']);
     }
   }
 
