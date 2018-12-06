@@ -129,9 +129,9 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-4 col-sm-6 col-xs-12">
+    <div class="col-md-12">
       <ng-container *ngFor="let project of user?.followingProjects">
-        <app-project-unit class="col-md-4" [project]="project"></app-project-unit>
+        <app-project-unit class="col-md-4 col-sm-6 col-xs-12" [project]="project"></app-project-unit>
       </ng-container>
     </div>
   </div>
@@ -141,14 +141,11 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <ng-container *ngFor="let project of user?.raisingProjects">
+      <div class="col-md-4 col-sm-6 col-xs-12" *ngFor="let project of user?.raisingProjects">
           <img style="cursor:pointer" src="assets/images/cog.png" alt="" [routerLink]="['/project',project.id,'edit']"
                   routerLinkActive="router-link-active">
-        <app-project-unit
-          class="col-md-4 col-sm-6 col-xs-12"
-          [project]="project"
-        ></app-project-unit>
-      </ng-container>
+        <app-project-unit [project]="project"></app-project-unit>
+      </div>
     </div>
   </div>
 </div>
