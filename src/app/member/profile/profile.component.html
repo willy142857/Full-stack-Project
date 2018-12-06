@@ -25,14 +25,14 @@
               *ngIf="form.submitted && name.invalid"
               class="invalid_feedback"
             >
-              Name is required
+            {{ '必須欄位' | translate }}
             </div>
           </div>
           <div
             class="form-group"
             [ngClass]="{ invalid: form.submitted && phone.invalid }"
           >
-            <label>手機號碼</label>
+            <label>{{ '手機號碼' | translate }}</label>
             <input
               type="number"
               [(ngModel)]="user.phone"
@@ -44,7 +44,7 @@
               *ngIf="form.submitted && phone.invalid"
               class="invalid_feedback"
             >
-              Phone number is required
+            {{ '必須欄位' | translate }}
             </div>
           </div>
           <div class="form-group">
