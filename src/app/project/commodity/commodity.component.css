@@ -103,7 +103,7 @@ body {
 hr.style-five {
   border: 0;
   height: 1px;
-  width: 600px;
+  width: auto;
   background: #333;
   background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
