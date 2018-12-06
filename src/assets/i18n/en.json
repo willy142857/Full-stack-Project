@@ -23,6 +23,22 @@
   "首頁": "home",
   "分類": "category",
   "搜尋": "search",
+  "搜尋: ": "Search: ",
+  "登入或註冊帳號": "Login or Register an Account",
+  "新會員": "New Account",
+  "註冊帳號您將能夠贊助募資團隊，或是發起一場募資。": "Registering an account will allow you to sponsor a fundraising team or initiate a fundraising.",
+  "註冊一個帳號": "Register an Account",
+  "已註冊會員": "Login an Account",
+  "如果您已經有帳號了，請登入": "If you already have an account, please login",
+  "忘記密碼?": "Forget password?",
+  "記得密碼": "Remember password",
+  "必須欄位": "Required",
+  "手機號碼": "Phone number",
+  "密碼(至少六碼)": "Password(at least six characters)",
+  "確認密碼": "Confirm password",
+  "密碼不一致": "Inconsistent password",
+  "我已詳閱並同意": "I have read and agree to ",
+  "使用者條款": "the terms of the user",
 
   "homepage": {
     "trending": "trending",
@@ -78,6 +94,8 @@
   "台灣, 台北市大安區基隆路四段43號": "No.43, Section 4, Keelung Road, Daan District, Taipei, Taiwan",
   "電話": "TEL",
   "著作權": "Copyright",
+
+  "所有贊助專案": "All Sponsorship Projects",
 
   "計畫": {
     "提案": "Raise Fund",

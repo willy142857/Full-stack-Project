@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-qa',
@@ -7,22 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QAComponent implements OnInit {
 
-  constructor() { }
-  ask = false;
-  ask1 = false;
+  langs = this.translateService.getLangs();
+  currLang = this.translateService.currentLang;
 
-  questionClick(ask) {
-    console.log(ask);
-    if (!ask) {
-      ask = true;
-    } else {
-      ask = false;
-    }
-    console.log(ask);
-  }
+  constructor(
+    private translateService: TranslateService,
+  ) { }
 
   ngOnInit() {
     scroll(0, 0);
+    this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
+      localStorage.setItem('lang', this.translateService.currentLang);
+      this.currLang = this.translateService.currentLang;
+    });
   }
 
 }

@@ -141,3 +141,13 @@ nav.mainmenu {
   background: none repeat scroll 0 0 #626262;
   color:#fff;
 }
+.cart_menu .cart_items .c_item_img img {
+  margin-top: 0;
+  overflow: inherit;
+  margin-right: 10%;
+}
+
+.c_item_totals_detail {
+  width: 66%;
+  margin-left: 40px;
+}

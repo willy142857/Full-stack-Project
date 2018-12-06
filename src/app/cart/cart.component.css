@@ -24,7 +24,7 @@
 
 .product_form_total>a[href="/checkout"] {
   background: none repeat scroll 0 0 #fff;
-  border: 2px solid #ff6766;
+  border: 2px solid #3c3c3c;
   color: #232323;
   display: block;
   text-decoration: none;
@@ -38,7 +38,7 @@
 }
 
 .product_form_total>a[href="/checkout"]:hover {
-  background: none repeat scroll 0 0 #ff6766;
+  background: none repeat scroll 0 0 #3c3c3c;
   color: #fff;
 }
 
@@ -47,14 +47,14 @@
 }
 
 .main_cart_area .product_form_total>a[href="/checkout"]:hover {
-  background: none repeat scroll 0 0 #ff6766;
-  border: 2px solid #ff6766;
+  background: none repeat scroll 0 0 #3c3c3c;
+  border: 2px solid #3c3c3c;
   color: #fff;
 }
 
 .mycoupon {
   background: none repeat scroll 0 0 #f7f8f9;
-  border: 2px solid #ff6766;
+  border: 2px solid #3c3c3c;
   color: #232323;
   display: block;
   text-decoration: none;
@@ -68,7 +68,7 @@
 }
 
 .mycoupon:hover {
-  background: none repeat scroll 0 0 #ff6766;
+  background: none repeat scroll 0 0 #3c3c3c;
   color: #fff;
 }
 
@@ -126,4 +126,13 @@
   padding-top: 3px;
   text-align: center;
   width: 23px;
+}
+
+
+#home-accordion i {
+    background: none repeat scroll 0 0 #3c3c3c;
+    color: #fff;
+    display: block;
+    font-size: 10px;
+    padding: 2px 5px 1px;
 }
