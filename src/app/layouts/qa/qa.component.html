@@ -1,4 +1,4 @@
-<div class="container">
+<div *ngIf="currLang=='zh-tw'; else elseTag" class="container">
   <div>
     <br>
     <h2 class="question_title">常見問答
@@ -207,3 +207,173 @@
       <br>
   </div>
 </div>
+
+<ng-template #elseTag>
+<div class="container">
+      <div>
+        <br>
+        <h2 class="question_title">Frequently Asked Questions
+        </h2>
+      </div>
+      <br>
+      <div class="qa_proposal_section">
+        <h3 class="qa_proposal_title">Initiate a project</h3>
+          <div class="qa_section" >
+            <br>
+            <h5 class="qa_proposal">◆&nbsp; Does the sponsor have an identity restriction?</h5>
+              <div class="answer_section">To start a project on the blame, you must <strong>Taiwan residents</strong> and own <strong>Taiwan’s bank account</strong>
+                <br>
+              </div>
+            <br>
+          </div>
+        <br>
+        <div class="qa_section" >
+          <br>
+          <h5 class="qa_proposal">◆&nbsp; Is there a time limit for fundraising? </h5>
+            <div class="answer_section">The recommended program is around 35-45 days. Planning for too long a time is less helpful for reaching the standard. Sponsors will therefore not see the urgency of your need for funds. The fundraising period does not include the execution time of the plan. There is no limit to the execution time of the project.
+            </div>
+            <br>
+        </div>
+        <br>
+        <div class="qa_section" >
+          <br>
+          <h5 class="qa_proposal">◆&nbsp; Is there a limit to the fundraising goal? </h5>
+            <div class="answer_section">There is no limit on the amount. But as long as the project on the blame does not reach the goal, The amount of sponsorship received will be returned to the supporters in full.
+            </div>
+            <br>
+        </div>
+        <br>
+        <div class="qa_section" >
+          <br>
+          <h5 class="qa_proposal">◆&nbsp;Do you have to pay for the project? </h5>
+            <div class="answer_section"><strong>8%</strong> for the amount of the charge after the project is successfully charged. It includes the handling fee for the Golden Stream service and the accountability charge, as well as the maintenance fee for the accountability website. We charge a small amount of website maintenance fees to ensure that the responsibilities are long-term and help more creators.
+            </div>
+            <br>
+        </div>
+        <br>
+        <div class="qa_section" >
+          <br>
+          <h5 class="qa_proposal">◆&nbsp; The project fundraising I initiated was successful. When will I get the sponsorship? </h5>
+            <div class="answer_section">After the successful completion of the project, the accountability will be deducted from the handling fee required for the delivery. The remaining collections will be paid to the proposer before <strong>the 13th of the next month</strong>.
+            </div>
+            <br>
+        </div>
+        <br>
+        <div class="qa_section" >
+          <br>
+          <h5 class="qa_proposal">◆&nbsp;My fundraising plan was successful, how can I contact the sponsor? </h5>
+            <div class="answer_section">After the project is successfully completed, the sponsor’s can be found in the Project Pages toolbox. "Sponsor List", which contains contact information and sponsorship details for all sponsors.
+            </div>
+            <br>
+        </div>
+        <br>
+        <div class="qa_section" >
+          <br>
+          <h5 class="qa_proposal">◆&nbsp;Is the project on the responsibility of the public to be covered by public welfare? </h5>
+            <div class="answer_section">If the sponsor wants to raise a charity fundraising plan, it is recommended to first go to the competent authority or professional Consult relevant specifications and take corresponding measures. In addition, the blame suggests that the crowdfunding plan should be provided back. Feed to the sponsor. If your plan can't provide feedback, you will lose the crowd raising. "You support, I give back the spirit of mutual benefit.
+            </div>
+            <br>
+        </div>
+        <br>
+        <div class="qa_section" >
+          <br>
+          <h5 class="qa_proposal">◆&nbsp;What are the benefits of starting a project on accountability? </h5>
+            <div class="answer_section">The responsibility is to encourage and help creative people in Taiwan to do what they want. In addition to the exposure on the account of the website and the Facebook page, There is also the opportunity to board other social media platforms that work with us. Responsibility has always focused on design The art, creative projects have gathered a very enthusiastic community of art and design enthusiasts. Responsible team members from the background of product design, web design, urban design, fashion design, music, etc. Every effort will be made to provide professional advice to help the sponsor realize his dreams.
+            </div>
+            <br>
+        </div>
+        <br>
+        <div class="qa_section" >
+          <br>
+          <h5 class="qa_proposal">◆&nbsp;What happens after the proposal on the site? </h5>
+            <div class="answer_section">You will receive a letter confirming receipt of the project. At this time your project will be in the state of <strong>pending review</strong>. At the same time, you can slowly put all the content Finish, add feedback options and more. After the completion of the review steps by the colleagues in the project department, If approved, we will send a notification letter to the mailbox you used to register your membership. After everything is ready, you must contact the project team to confirm that the project is complete. The plan will be made public on the website.
+            </div>
+            <br>
+        </div>
+        <br>
+    <div class="qa_section" >
+              <br>
+              <h5 class="qa_proposal">◆&nbsp;I want a proposal, but my content is not ready yet, can you discuss it with you first? </h5>
+                <div class="answer_section">After the proposal on the account, before the official launch, You can continue to modify the project content, so don't worry if the data is not ready yet. Proposal, after that, there is time to modify! But please note that you still have to provide enough plans. The content is evaluated by the Ministry of Projects.
+                </div>
+                <br>
+            </div>
+            <br>
+            <div class="qa_section" >
+              <br>
+              <h5 class="qa_proposal">◆&nbsp;Why is the project subject to review? </h5>
+                <div class="answer_section">The blame has always had unique program categories and ethnic groups. This is because we are trying to cultivate a community of <strong>Artistic design cultures. </strong>
+                </div>
+                <br>
+            </div>
+            <br>
+          </div>
+          <div class="qa_sponsor_section">
+              <h3 class="qa_sponsor_title">Sponsorship Program</h3>
+              <div class="qa_section" >
+                <br>
+                <h5 class="qa_sponsor">◆&nbsp;I am not in Taiwan/is Taiwanese able to support the project? </h5>
+                  <div class="answer_section">Yes, but not all plans are shipped outside of Taiwan. It is recommended that you use the contact proposer feature on the plan page to confirm with the sponsor before using the sponsorship plan.
+                  </div>
+                  <br>
+              </div>
+              <br>
+              <div class="qa_section" >
+              <br>
+              <h5 class="qa_sponsor">◆&nbsp;When will the sponsorship report receive feedback? </h5>
+                <div class="answer_section">The options for each project feedback are different, and the expected delivery date is indicated below the feedback option description. However, because the expected delivery date of the option is an estimate, it may not be accurate. Please pay close attention to the sponsor’s updates, Dynamic to determine the time. If you have any doubts, please use the Contact Proposer function on the Programs page to confirm with the sponsor.
+                </div>
+                <br>
+              </div>
+              <br>
+              <div class="qa_section" >
+              <br>
+              <h5 class="qa_sponsor">◆&nbsp;If the plan I support does not succeed/fail, where does the money I sponsored go? </h5>
+                <div class="answer_section">If the project deadline has not yet reached the target, the accountability will refund the amount you supported through the original payment method at the time of sponsorship. (Does not include virtual account transfer transaction fee). You will receive a refund letter from Golden Stream. Please follow the instructions in the letter to complete the refund step.
+                </div>
+                <br>
+              </div>
+              <br>
+              <div class="qa_section" >
+              <br>
+              <h5 class="qa_sponsor">◆&nbsp;I want to cancel sponsorship or refund, what should I do? </h5>
+                <div class="answer_section">If the program you support is still not in the process of funding, You can contact the customer service department, we will refund the amount you support through the original payment method when you sponsored. (Does not include virtual account transfer transaction fee). If the plan has already been funded, You will need to contact the sponsor.
+                </div>
+                <br>
+              </div>
+              <br>
+              <div class="qa_section" >
+              <br>
+              <h5 class="qa_sponsor">◆&nbsp;How do I want to sponsor a project? </h5>
+                <div class="answer_section">There is currently a domestic and international credit card and physical ATM payment. In the event that a refund may be required if the plan fails, the accountability does not provide the function of overcharging.
+                </div>
+                <br>
+              </div>
+              <br>
+              <div class="qa_section" >
+              <br>
+              <h5 class="qa_sponsor">◆&nbsp; I haven’t received sponsorship feedback yet, what should I do? </h5>
+                <div class="answer_section">After the project is successful, the information for the project will be provided by the sponsor. The blame will not interfere. If in doubt, you can go to the project page to see if the sponsor is on the proposal page. Make a plan update, or use the contact proposer feature on the plan page to confirm with the sponsor. Also recommended Ask the sponsor directly to the proposal plan fan page, website, etc. If you still don't get a response, You are welcome to contact us and leave your contact information. We will ask the sponsor to contact you.
+                </div>
+                <br>
+              </div>
+              <br>
+              <div class="qa_section" >
+              <br>
+              <h5 class="qa_sponsor">◆&nbsp; Does the sponsorship plan have a receipt? </h5>
+                <div class="answer_section">After sponsoring the project, you will receive Paynow, the company that is responsible for the cooperation. The email receipt certificate sent, this certificate is not an electronic invoice. Invoice or receipt for sponsorship feedback, After the project has successfully reached the target, it will be handled by the plan sponsor.
+                </div>
+                <br>
+              </div>
+              <br>
+              <div class="qa_section" >
+              <br>
+              <h5 class="qa_sponsor">◆&nbsp; I transferred using physical ATM, why haven’t I received a sponsorship confirmation letter? </h5>
+                <div class="answer_section">If you haven’t received your confirmation letter after 24 hours, please confirm that the amount has left your bank account. Please contact your account and provide your order number.
+                </div>
+                <br>
+              </div>
+              <br>
+          </div>
+        </div>
+</ng-template>

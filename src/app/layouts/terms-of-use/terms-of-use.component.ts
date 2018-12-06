@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-terms-of-use',
@@ -7,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TermsOfUseComponent implements OnInit {
 
-  constructor() { }
+  langs = this.translateService.getLangs();
+  currLang = this.translateService.currentLang;
+
+  constructor(
+    private translateService: TranslateService,
+  ) { }
 
   ngOnInit() {
     scroll(0, 0);
+    this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
+      localStorage.setItem('lang', this.translateService.currentLang);
+      this.currLang = this.translateService.currentLang;
+    });
   }
-
 }
