@@ -134,6 +134,18 @@ hr.style-five:after {
   color: #aaaaaa;
 }
 
+.fa2 {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: '\f006';
+  color:  #ff6766;
+}
+
 .fa:hover {
   display: inline-block;
   font-family: FontAwesome;
@@ -224,4 +236,21 @@ hr.style-five:after {
 .single_img img {
   width: auto;
   height: 100%;
+}
+
+.invest_button[_ngcontent-c4] > input[type='button'][_ngcontent-c4] {
+  background: none repeat scroll 0 0;
+  background-color: #494949;
+  border: 2px solid;
+  border-color: #494949;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 8px auto 15px;
+  padding: 7px;
+  margin-left: 200px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 120px;
+  height: 40px;
 }

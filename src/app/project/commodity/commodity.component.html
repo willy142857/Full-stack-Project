@@ -58,10 +58,12 @@
                 <div class="panel panel-default product_default">
                   <div class="panel-heading product_accordion_heading" role="tab" id="headingOneP">
                     <h4 class="panel-title product_accordion_head">
-                      <a data-toggle="collapse" data-parent="#home-accordion-single" href="#collapseOneP" aria-expanded="true"
-                        aria-controls="collapseOneP">
+                      <a data-toggle="collapse" href="#collapseOneP" aria-expanded="true"
+                        aria-controls="collapseOneP" (click)="changePicState(0)">
                         {{ '計畫.簡介' | translate }}
-                        <span class="floatright"><i class="fa fa-minus"></i></span>
+                        <span class="floatright"><i [ngClass]="toggle[0]? 'fa fa-minus':'fa fa-plus'"></i>
+                        </span>
+
                       </a>
                     </h4>
                   </div>
@@ -74,10 +76,10 @@
                 <div class="panel panel-default product_default">
                   <div class="panel-heading product_accordion_heading" role="tab" id="headingTwoP">
                     <h4 class="panel-title product_accordion_head">
-                      <a class="collapsed" data-toggle="collapse" data-parent="#home-accordion-single" href="#collapseTwoP"
-                        aria-expanded="false" aria-controls="collapseTwoP">
+                      <a class="collapsed" data-toggle="collapse" href="#collapseTwoP"
+                        aria-expanded="false" aria-controls="collapseTwoP"  (click)="changePicState(1)">
                         {{'計畫.募資狀況' | translate }}
-                        <span class="floatright"><i class="fa fa-plus"></i></span>
+                        <span class="floatright"><i [ngClass]="toggle[1]? 'fa fa-minus':'fa fa-plus'"></i></span>
                       </a>
                     </h4>
                   </div>
@@ -98,10 +100,10 @@
                 <div class="panel panel-default product_default">
                   <div class="panel-heading product_accordion_heading" role="tab" id="headingThreeP">
                     <h4 class="panel-title product_accordion_head">
-                      <a class="collapsed" data-toggle="collapse" data-parent="#home-accordion-single" href="#collapseThreeP"
-                        aria-expanded="false" aria-controls="collapseThreeP">
+                      <a class="collapsed" data-toggle="collapse" href="#collapseThreeP"
+                        aria-expanded="false" aria-controls="collapseThreeP" (click)="changePicState(2)">
                         {{ '計畫.詳細資料' | translate }}
-                        <span class="floatright"><i class="fa fa-plus"></i></span>
+                        <span class="floatright"><i [ngClass]="toggle[2]? 'fa fa-minus':'fa fa-plus'"></i></span>
                       </a>
                     </h4>
                   </div>
@@ -223,7 +225,7 @@
 
                         <ul id="single_review_star">
                           <ng-container *ngFor="let star of comment.stars">
-                            <li><a href="" class="fa fa-star-o" *ngIf="star"></a></li>
+                            <li><i class="fa2 fa-star-o" *ngIf="star"></i></li>
                           </ng-container>
                         </ul>
                         <p>{{comment.comment}}</p>
@@ -242,7 +244,7 @@
                       <div class="star">
                         <ul>
                           <ng-container *ngFor="let star of user_stars; let i = index">
-                            <li><a class="fa fa-star-o" [ngClass]="{'pink': star}" (click)="score_stars(i+1)"></a></li>
+                            <li><i class="fa fa-star-o" [ngClass]="{'pink': star}" (click)="score_stars(i+1)"></i></li>
                           </ng-container>
                         </ul>
                       </div><br>
@@ -250,7 +252,7 @@
                         <!-- <input type="text" placeholder="Enter Your Nickname" [(ngModel)]="comment.username" name="userName" /><br> -->
                         <!-- <input type="text" placeholder="Summary of your Review" /><br> -->
                         <textarea name="" id="" cols="30" rows="10" placeholder=" {{ '計畫.寫下留言' | translate }}" [(ngModel)]="comment.comment" name="comment"></textarea><br>
-                        <div class="message_button">
+                        <div class="invest_button">
                           <input type="button" value="{{'計畫.留言評論' | translate}}" (click)="createComment()"/>
                         </div>
                       </div>

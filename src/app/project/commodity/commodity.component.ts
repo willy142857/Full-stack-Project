@@ -19,6 +19,7 @@ export class CommodityComponent implements OnInit {
   new_commodity: any;
   list: Project;
   percentage: any;
+  toggle: boolean[] = [true, false, false];
 
   comment = {
     project_id: Number,
@@ -41,6 +42,16 @@ export class CommodityComponent implements OnInit {
 
   diff: number;
   diffDays: number;
+
+  changePicState(i: number) {
+    if(this.toggle[i] === true) {
+      this.toggle[i] = false;
+    }
+    else if(this.toggle[i] === false){
+      this.toggle[i] = true;
+    }
+  }
+
   date() {
     if (new Date().getTime() < new Date(this.list.started_at).getTime()) {
       return '!!未開始!!  ';
