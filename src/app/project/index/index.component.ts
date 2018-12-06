@@ -55,7 +55,7 @@ export class IndexComponent implements OnInit {
   }
 
   filterProjects(id: number) {
-    this.projects = this.originalProj.filter(project => project.category_id === id);
+    this.projects = this.projects.filter(project => project.category_id === id);
   }
 
   progress(project: Project): number {
