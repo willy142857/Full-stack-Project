@@ -1,6 +1,6 @@
 <!-- HOME SLIDER -->
 <div class="row">
-  <div class="col-md-8 col-md-offset-2">
+  <div class="col-md-10" style="margin-left: 8.6%">
       <div class="show" (mouseenter)="stopPlay()" (mouseleave)="autoPlay()">
           <!-- TODO:將圖片用ngfor顯示在首頁，並設定點擊後導向路由 -->
 
@@ -8,13 +8,13 @@
           <div class="myContainer" [@carousel]="state" (@carousel.done)="afterPlay()">
             <img style="margin: 0 auto; height:550px; width:100%" [src]="selected[0].img" />
           </div>
-          <div style="position:relative; top: -450px; left: 50px; font-family: 'Montserrat', sans-serif; font-size: 50px;
-            font-weight: 700; line-height:0px;text-transform: uppercase; color: #232323; text-shadow: 0 0 3px #fff">
+          <div style="position:relative; top: -10px; left: 50px; font-family: 'Montserrat', sans-serif; font-size: 50px;
+            font-weight: 700; line-height:0px;text-transform: uppercase; color:#FCE6C9; text-shadow: 0 0 3px #fff">
             {{ selected[0].name }}
           </div>
-          <div style="position:relative; top: -400px; left: 50px;
-            font-family: cabin Sans; font-size: 17px; font-weight: bold; text-transform: uppercase; color: #232323;"
-            [translate]="'homepage.leftDay'" [translateParams]="{ value: leftDay(project) }">
+          <div style="position:relative; top: 20px; left: 50px;
+            font-family: cabin Sans; font-size: 17px; font-weight: bold; text-transform: uppercase; color: #FCE6C9;"
+            [translate]="'homepage.leftDay'" [translateParams]="{ value: leftDay(selected[0]) }">
           </div>
           <span (click)="playNext()"></span>
       </div>
