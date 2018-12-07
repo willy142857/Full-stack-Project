@@ -142,6 +142,9 @@ export class CommodityComponent implements OnInit {
         this.followingProjectsInfo = JSON.stringify(this.followingProjects);
         localStorage.setItem('data', this.followingProjectsInfo);
         this.cartsservice.getUserAllInfo();
+        if (this.cartsservice.followingProjectlist !== null) {
+          this.followingProjects = this.cartsservice.followingProjectlist;
+        }
         // this.feedback.feedback_id = event.id;
         // console.log(this.feedback);
         // this.authService.orderFeedback(this.feedback);
