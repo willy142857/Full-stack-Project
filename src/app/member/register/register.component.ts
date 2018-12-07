@@ -23,6 +23,6 @@ export class RegisterComponent implements OnInit {
 
     this.authService.register(this.model);
 
-    //this.router.navigate(['/']);
+    // this.router.navigate(['/']);
   }
 }

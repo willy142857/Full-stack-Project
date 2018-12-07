@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-resetpassword',
@@ -11,7 +12,7 @@ export class ResetpasswordComponent implements OnInit {
   newPasswordConfirm = '';
   passwordCheck = true;
   passwordEmpty = false;
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   user = {
     email: '',
@@ -49,6 +50,7 @@ export class ResetpasswordComponent implements OnInit {
     console.log(this.user.email);
     if (this.passwordCheck && !this.passwordEmpty) {
       this.authService.resetPassword(this.user).subscribe((data: any) => {});
+      this.router.navigate(['/login']);
     }
   }
 }
