@@ -123,9 +123,7 @@ export class BannerComponent implements OnInit {
         this.projects.shift();
         for (let i = 0; i < 4; i++) {
           if (this.projects[i].name.length >= 15) {
-            console.log(this.projects[i].name);
             this.projects[i].name = this.projects[i].name.slice(0, 14) + '．．．';
-            console.log(this.projects[i].name);
           }
         }
         if (this.selected[0].name.length >= 15) {
