@@ -191,7 +191,9 @@
 							</div>
 							<div class="checkbox">
 								<label>
-								  <input type="checkbox"> {{ '購物車.我已經詳細閱讀' | translate }} <span>{{ '購物車.合約條款' | translate }}</span>
+                  <input type="checkbox"
+                  [(ngModel)]="check"
+                  /> {{ '購物車.我已經詳細閱讀' | translate }} <span>{{ '購物車.合約條款' | translate }}</span>
 								</label>
 							</div>
 							<input type="submit" value="{{ '購物車.下單' | translate }}" (click)="checkout()">

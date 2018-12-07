@@ -27,7 +27,7 @@ export class CheckoutComponent implements OnInit {
     note: '',
   };
 
-  user: Member;
+  check = false;
 
   get projectlist() {
     // this.cartsservice.initialFollowingProject();
@@ -65,6 +65,7 @@ export class CheckoutComponent implements OnInit {
   }
 
   checkout() {
+    console.log(this.check);
     if (confirm('確定贊助這些商品?')) {
       if (this.feedback.country === '') {
         alert('plz input country');
@@ -72,6 +73,8 @@ export class CheckoutComponent implements OnInit {
         alert('plz input your name');
       } else if (this.feedback.address === '') {
         alert('plz input your address');
+      } else if (this.check !== true) {
+        alert('plz check the contract');
       } else if (this.projectlist != null) {
         for (let index = 0; index < this.projectlist.length; index++) {
           this.feedback.feedback_id = this.projectlist[index].feedbackid;
