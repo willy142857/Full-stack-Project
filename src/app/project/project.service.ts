@@ -50,7 +50,7 @@ export class ProjectService {
     return this.httpClient.get(`${environment.api}/projects/${id}`);
   }
   createProject(project: Project) {
-     return this.httpClient.post(`${environment.api}/projects`, project);
+    return this.httpClient.post(`${environment.api}/projects`, project);
   }
   editProject(project: Project, id: number, newFeedbacks: Feedback[]) {
     return this.httpClient.put(`${environment.api}/projects/${id}`, project);
@@ -68,10 +68,10 @@ export class ProjectService {
   calcLeftDay(project: Project): number {
     const end = new Date(project.ended_at);
     const start = new Date(project.started_at);
-    const now = new Date;
+    const now = new Date();
     if (start.getTime() > now.getTime()) {
       return -1;
-    } else if (now.getTime() > end.getTime()) {
+    } else if (now.getDay() > end.getDay() + 1) {
       return -2;
     }
     return Math.ceil((end.getTime() - now.getTime()) / 1000 / 60 / 60 / 24);
