@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { CartsService } from '../cart/carts.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth/auth.service';
+import { Member } from '../member/member';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-checkout',
@@ -11,7 +14,8 @@ import { AuthService } from '../auth/auth.service';
 export class CheckoutComponent implements OnInit {
   constructor(private cartsservice: CartsService,
               private router: Router,
-              private authService: AuthService
+              private authService: AuthService,
+              private httpClient: HttpClient
               ) {}
 
   feedback = {
@@ -22,6 +26,8 @@ export class CheckoutComponent implements OnInit {
     address: '',
     note: '',
   };
+
+  user: Member;
 
   get projectlist() {
     // this.cartsservice.initialFollowingProject();
@@ -35,6 +41,27 @@ export class CheckoutComponent implements OnInit {
   ngOnInit() {
     scroll(0, 0);
     this.cartsservice.getUserAllInfo();
+    this.getUserAllInfo();
+  }
+
+  getUserAllInfo() {
+    this.httpClient
+      .get(`${environment.api}/profile`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+      })
+      .subscribe(
+        (data: Member) => {
+          console.log(data);
+          this.feedback.name = data.name;
+          this.feedback.address = data.address;
+        },
+        response => {
+          if (response.status === 401) {
+            alert('請先登入');
+            this.router.navigate(['/login']);
+          }
+        }
+      );
   }
 
   checkout() {
