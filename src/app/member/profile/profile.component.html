@@ -1,7 +1,7 @@
 <div class="content">
   <div class="row">
     <div class="col-md-offset-2 col-sm-offset-2 col-md-8 col-sm-8 col-xs-12">
-      <h3 class="profile-header">個人資料</h3>
+      <h3 class="profile-header">{{ '個人資料' | translate }}</h3>
 
       <form
         *ngIf="user !== undefined"
@@ -48,24 +48,24 @@
             </div>
           </div>
           <div class="form-group">
-            <p><label>性別</label></p>
+            <p><label>{{ '性別' | translate }}</label></p>
             <input
               type="radio"
               name="text"
               value="男"
               [(ngModel)]="user.sex"
               check="user.sex==男"
-            />男
+            />{{ '男' | translate }}
             <input
               type="radio"
               name="text"
               value="女"
               [(ngModel)]="user.sex"
               check="user.sex==女"
-            />女
+            />{{ '女' | translate }}
           </div>
           <div class="form-group">
-            <label>地址</label>
+            <label>{{ '地址' | translate }}</label>
             <input
               type="text"
               class="is-valid"
@@ -75,7 +75,7 @@
             />
           </div>
           <div class="form-group">
-            <label>生日</label>
+            <label>{{ '生日' | translate }}</label>
             <input
               type="date"
               class="is-valid"
@@ -88,13 +88,13 @@
 
         <div class="col-md-6 col-sm-6 col-xs-12">
           <div class="s_order form-group">
-            <label>個人介紹</label>
+            <label>{{ '個人介紹' | translate }}</label>
             <textarea
               name="description"
               [(ngModel)]="user.description"
             ></textarea>
           </div>
-          <label>大頭照</label>
+          <label>{{ '大頭照' | translate }}</label>
           <img
             style="cursor:pointer"
             src="assets/images/cog.png"
@@ -118,14 +118,14 @@
         <div class="col-md-12">
           <div class="submit_btn form-group">
             <!-- TODO:驗證表單再重新導向 -->
-            <input type="submit" value="修正" />
+            <input type="submit" value="{{ '修正' | translate }}" />
           </div>
         </div>
       </form>
     </div>
   </div>
 </div>
-<h3 class="profile-header">已追蹤的專案</h3>
+<h3 class="profile-header">{{ '已追蹤的專案' | translate }}</h3>
 
 <div class="container">
   <div class="row">
@@ -137,7 +137,7 @@
   </div>
 </div>
 
-<h3 class="profile-header">已提案的專案</h3>
+<h3 class="profile-header">{{ '已提案的專案' | translate }}</h3>
 <div class="container">
   <div class="row">
     <div class="col-md-12">

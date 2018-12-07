@@ -57,7 +57,7 @@
                 [(ngModel)]="user.password"
                 #f2="ngModel"
                 name="password"
-                placeholder="密碼"
+                placeholder="{{ '密碼' | translate }}"
                 required
               />
               <a
@@ -83,7 +83,7 @@
             <!-- .remember -->
 
             <div class="submit">
-              <input (click)="login(user)" type="submit" value="登入" />
+              <input (click)="login(user)" type="submit" value="{{ '登入' | translate }}" />
               <sup class="surely">*</sup
               ><span>{{ '必須欄位' | translate }}</span>
             </div>
