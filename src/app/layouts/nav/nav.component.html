@@ -131,7 +131,14 @@
             <li><a [routerLink]="['/']" ><span>{{ 'home' | translate }}</span></a></li>
             <li><a [routerLink]="['/cart']"><span>{{ '我要贊助' | translate }}</span></a></li>
             <li><a [routerLink]="['/create']"><span>{{ '提案' | translate }}</span></a></li>
-            <li><a [routerLink]="['/projects']"><span>{{ '探索' | translate }}</span></a></li>
+            <li class='has-sub'>
+              <a [routerLink]="['/projects']"><span>{{ '探索' | translate }}</span></a>
+              <ul>
+                  <li><a [routerLink]="[searchCatUrl, 16]" >{{ '依熱門排序' | translate }}</a></li>
+                  <li><a [routerLink]="[searchCatUrl, 17]" >{{ '時間↑' | translate }}</a></li>
+                  <li><a [routerLink]="[searchCatUrl, 18]" >{{ '時間↓' | translate }}</a></li>
+                </ul>
+            </li>
             <li class='has-sub'>
               <a><span>{{ '文藝' | translate }}</span></a>
               <ul>
