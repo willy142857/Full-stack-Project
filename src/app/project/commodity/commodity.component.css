@@ -39,9 +39,11 @@ body {
   padding: 0px;
 }
 
-/* .invest_button > input[type='button'] {
-  background: none repeat scroll 0 0 #ff6766;
-  border: 2px solid #ff6766;
+.invest_button > input[type='button'] {
+  background: none repeat scroll 0 0;
+  background-color: #494949;
+  border: 2px solid;
+  border-color: #494949;
   color: #fff;
   font-size: 13px;
   font-weight: 700;
@@ -50,9 +52,9 @@ body {
   margin-left: 200px;
   text-align: center;
   text-transform: uppercase;
-  width: 80px;
-  height: 30px;
-} */
+  width: 120px;
+  height: 40px;
+}
 
 .invest_button > input[type='submit']:hover {
   background: #fff;
@@ -238,19 +240,4 @@ hr.style-five:after {
   height: 100%;
 }
 
-.invest_button[_ngcontent-c4] > input[type='button'][_ngcontent-c4] {
-  background: none repeat scroll 0 0;
-  background-color: #494949;
-  border: 2px solid;
-  border-color: #494949;
-  color: #fff;
-  font-size: 13px;
-  font-weight: 700;
-  margin: 8px auto 15px;
-  padding: 7px;
-  margin-left: 200px;
-  text-align: center;
-  text-transform: uppercase;
-  width: 120px;
-  height: 40px;
-}
+
