@@ -7,7 +7,9 @@ import { CartsService } from './carts.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  constructor(private cartsservice: CartsService) { }
+  constructor(private cartsservice: CartsService) {}
+
+  toggle = true;
 
   get projectlist() {
     // this.cartsservice.initialFollowingProject();
@@ -16,6 +18,14 @@ export class CartComponent implements OnInit {
   }
   get totalmoney() {
     return this.cartsservice.totalmoney;
+  }
+
+  changePicState(i: number) {
+    if (this.toggle === true) {
+      this.toggle = false;
+    } else if (this.toggle === false) {
+      this.toggle = true;
+    }
   }
 
   ngOnInit() {
