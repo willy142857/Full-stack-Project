@@ -39,6 +39,7 @@ export class EditComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log(this.project);
     if (this.authService.isLogin()) {
       this.projectService.editProject(this.project, this.id, this.feedbacks).subscribe((data: any) => {
         if (data.success) {
@@ -54,13 +55,11 @@ export class EditComponent implements OnInit {
   readURL(input) {
     if (input.target.files && input.target.files[0]) {
       const reader = new FileReader();
-
+      reader.readAsDataURL(input.target.files[0]);
       reader.onload = e => {
         this.img = reader.result;
+        this.project.img_path = this.img;
       };
-
-      reader.readAsDataURL(input.target.files[0]);
-      this.project.img_path = input.target.files[0];
     }
   }
   addFeedback() {
