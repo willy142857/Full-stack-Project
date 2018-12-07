@@ -130,7 +130,7 @@ export class CommodityComponent implements OnInit {
       if (new Date().getTime() < new Date(this.list.started_at).getTime()) {
         alert('!!計畫未開始!!');
       } else if (
-        new Date().getTime() > new Date(this.list.ended_at).getTime()
+        new Date().getTime() > new Date(this.list.ended_at).getTime() + 1
       ) {
         alert('!!計畫已结束!!');
       } else if (confirm('確定加入購物車?')) {
