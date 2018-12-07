@@ -34,27 +34,6 @@ export class CartsService {
     this.getUserAllInfo();
   }
 
-  getUserAllInfoOld() {
-    this.httpClient
-      .get(`${environment.api}/profile`, {
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-      })
-      .subscribe(
-        (data: Member) => {
-          console.log(data);
-          this.user = data;
-          this.followingProjectlist = data.followingProjects;
-          this.followingFeedbacklist = data.followingFeedbacks;
-        },
-        response => {
-          if (response.status === 401) {
-            alert('請先登入');
-            this.router.navigate(['/login']);
-          }
-        }
-      );
-  }
-
   initialFollowingProject() {
     if (this.followingProjectlist !== undefined) {
       for (let index = 0; index < this.followingProjectlist.length; index++) {

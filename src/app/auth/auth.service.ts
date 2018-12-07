@@ -14,7 +14,7 @@ export class AuthService {
     this.httpClient.post(`${environment.api}/register`, user).subscribe(
       (data: any) => {
         if (data.success) {
-          this.router.navigate(['/login']);
+          this.login(user);
         } else {
           alert('fail');
         }
