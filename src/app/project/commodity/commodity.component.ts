@@ -127,10 +127,10 @@ export class CommodityComponent implements OnInit {
 
   orderFeedback(event) {
     if (this.authService.isLogin()) {
-      if (new Date().getTime() < new Date(this.list.started_at).getTime()) {
+      if (new Date().getDay() < new Date(this.list.started_at).getDay()) {
         alert('!!計畫未開始!!');
       } else if (
-        new Date().getTime() > new Date(this.list.ended_at).getTime()
+        new Date().getDay() > new Date(this.list.ended_at).getDay()
       ) {
         alert('!!計畫已结束!!');
       } else if (confirm('確定加入購物車?')) {
