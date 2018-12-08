@@ -6,6 +6,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { JwtModule } from '@auth0/angular-jwt';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { environment } from 'src/environments/environment';
 
 import { AppComponent } from './app.component';
 import { CartComponent } from './cart/cart.component';
@@ -21,6 +22,9 @@ export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
+export function tokenGetter() {
+  return localStorage.getItem('token');
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,11 +43,9 @@ export function createTranslateLoader(http: HttpClient) {
     }),
     JwtModule.forRoot({
       config: {
-        tokenGetter: () => {
-          return localStorage.getItem('token');
-        },
-        whitelistedDomains: ['localhost:8000'],
-        blacklistedRoutes: ['localhost:8000/auth/'],
+        tokenGetter: tokenGetter,
+        whitelistedDomains: [environment.domain],
+        blacklistedRoutes: [`${environment.domain}/auth/`],
         skipWhenExpired: true,
       }
     }),

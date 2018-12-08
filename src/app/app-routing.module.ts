@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-import { RaisedProjectComponent } from './member/raised-project/raised-project.component';
 import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
