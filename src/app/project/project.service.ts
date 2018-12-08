@@ -71,7 +71,7 @@ export class ProjectService {
     const now = new Date();
     if (start.getTime() > now.getTime()) {
       return -1;
-    } else if (now.getDay() > end.getDay() + 1) {
+    } else if (now.getTime() > end.getTime() + 1) {
       return -2;
     }
     return Math.ceil((end.getTime() - now.getTime()) / 1000 / 60 / 60 / 24);
